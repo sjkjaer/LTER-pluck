@@ -124,6 +124,185 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="read-in-data" class="level3">
 <h3 class="anchored" data-anchor-id="read-in-data">read in data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mass <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"/Users/lter/Library/CloudStorage/Box-Box/ARC LTER 7 (Terrestrial)/Plucks/Pluck 2024/Data/Aboveground/Shoot_data_collection_mass_ID.xlsx"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#74 obs, 141 variables</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 141
+  Block Treatment  Quad Surface_area_cm2 Date_collected      Date_sorted Plucker
+  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;dttm&gt;                    &lt;dbl&gt; &lt;chr&gt;  
+1     2 F10           3              400 2024-07-26 00:00:00       45500 MD, JM…
+2     1 F10           4              400 2024-07-24 00:00:00       45498 AH, KG 
+3     2 F10           4              400 2024-07-26 00:00:00       45500 IS, KG…
+4     2 F10           2              400 2024-07-26 00:00:00       45500 SS, CG…
+5     1 F10           2              400 2024-07-24 00:00:00       45498 SS, CG…
+6     3 F10           2              400 2024-07-26 00:00:00       45502 Missing
+# ℹ 134 more variables: Balance &lt;chr&gt;, Weigher &lt;chr&gt;,
+#   Erivag_BladeSheathInflCulm_bag_number &lt;chr&gt;,
+#   Erivag_BladeSheathInflCulm_mass_g &lt;dbl&gt;, Erivag_Rhizome_bag_number &lt;chr&gt;,
+#   Erivag_Rhizome_mass_g &lt;chr&gt;, Carbig_BladeSheathInflCulm_bag_number &lt;chr&gt;,
+#   Carbig_BladeSheathInflCulm_mass_g &lt;dbl&gt;, Carbig_Rhizome_bag_number &lt;chr&gt;,
+#   Carbig_Rhizome_mass_g &lt;dbl&gt;, OtherGraminoid_Species &lt;chr&gt;,
+#   OtherGraminoid_BladeSheathInflCulm_bag_number &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+</section>
+<section id="tidy-columns-and-rows" class="level3">
+<h3 class="anchored" data-anchor-id="tidy-columns-and-rows">tidy columns and rows</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "Block"                                        
+  [2] "Treatment"                                    
+  [3] "Quad"                                         
+  [4] "Surface_area_cm2"                             
+  [5] "Date_collected"                               
+  [6] "Date_sorted"                                  
+  [7] "Plucker"                                      
+  [8] "Balance"                                      
+  [9] "Weigher"                                      
+ [10] "Erivag_BladeSheathInflCulm_bag_number"        
+ [11] "Erivag_BladeSheathInflCulm_mass_g"            
+ [12] "Erivag_Rhizome_bag_number"                    
+ [13] "Erivag_Rhizome_mass_g"                        
+ [14] "Carbig_BladeSheathInflCulm_bag_number"        
+ [15] "Carbig_BladeSheathInflCulm_mass_g"            
+ [16] "Carbig_Rhizome_bag_number"                    
+ [17] "Carbig_Rhizome_mass_g"                        
+ [18] "OtherGraminoid_Species"                       
+ [19] "OtherGraminoid_BladeSheathInflCulm_bag_number"
+ [20] "OtherGraminoid_BladeSheathInflCulm_mass_g"    
+ [21] "OtherGraminoid_Rhizome_bag_number"            
+ [22] "OtherGraminoid_Rhizome_mass_g"                
+ [23] "Betnan_NewLeaves_bag_number"                  
+ [24] "Betnan_NewLeaves_mass_g"                      
+ [25] "Betnan_NewStems_bag_number"                   
+ [26] "Betnan_NewStems_mass_g"                       
+ [27] "Betnan_OldStems_bag_number"                   
+ [28] "Betnan_OldStems_mass_g"                       
+ [29] "Betnan_Inflor_bag_number"                     
+ [30] "Betnan_Inflor_mass_g"                         
+ [31] "Betnan_BelowStem_bag_number"                  
+ [32] "Betnan_BelowStem_mass_g"                      
+ [33] "Salpul_NewLeaves_bag_number"                  
+ [34] "Salpul_NewLeaves_mass_g"                      
+ [35] "Salpul_NewStems_bag_number"                   
+ [36] "Salpul_NewStems_mass_g"                       
+ [37] "Salpul_OldStems_bag_number"                   
+ [38] "Salpul_OldStems_mass_g"                       
+ [39] "Salpul_Inflor_bag_number"                     
+ [40] "Salpul_Inflor_mass_g"                         
+ [41] "Salpul_BelowStem_bag_number"                  
+ [42] "Salpul_BelowStem_mass_g"                      
+ [43] "Vaculi_NewLeaves_bag_number"                  
+ [44] "Vaculi_NewLeaves_mass_g"                      
+ [45] "Vaculi_NewStems_bag_number"                   
+ [46] "Vaculi_NewStems_mass_g"                       
+ [47] "Vaculi_OldStems_bag_number"                   
+ [48] "Vaculi_OldStems_mass_g"                       
+ [49] "Vaculi_Inflor_bag_number"                     
+ [50] "Vaculi_Inflor_mass_g"                         
+ [51] "Vaculi_BelowStem_bag_number"                  
+ [52] "Vaculi_BelowStem_mass_g"                      
+ [53] "OtherDeciduous_Species"                       
+ [54] "OtherDeciduous_NewLeaves_bag_number"          
+ [55] "OtherDeciduous_NewLeaves_mass_g"              
+ [56] "OtherDeciduous_NewStems_bag_number"           
+ [57] "OtherDeciduous_NewStems_mass_g"               
+ [58] "OtherDeciduous_OldStems_bag_number"           
+ [59] "OtherDeciduous_OldStems_mass_g"               
+ [60] "OtherDeciduous_Inflor_bag_number"             
+ [61] "OtherDeciduous_Inflor_mass_g"                 
+ [62] "OtherDeciduous_BelowStem_bag_number"          
+ [63] "OtherDeciduous_BelowStem_mass_g"              
+ [64] "Ledpal_NewLeaves_bag_number"                  
+ [65] "Ledpal_NewLeaves_mass_g"                      
+ [66] "Ledpal_NewStems_bag_number"                   
+ [67] "Ledpal_NewStems_mass_g"                       
+ [68] "Ledpal_OldLeaves_bag_number"                  
+ [69] "Ledpal_OldLeaves_mass_g"                      
+ [70] "Ledpal_OldStems_bag_number"                   
+ [71] "Ledpal_OldStems_mass_g"                       
+ [72] "Ledpal_Inflor_bag_number"                     
+ [73] "Ledpal_Inflor_mass_g"                         
+ [74] "Ledpal_BelowStem_bag_number"                  
+ [75] "Ledpal_BelowStem_mass_g"                      
+ [76] "Vacvit_NewLeaves_bag_number"                  
+ [77] "Vacvit_NewLeaves_mass_g"                      
+ [78] "Vacvit_NewStems_bag_number"                   
+ [79] "Vacvit_NewStems_mass_g"                       
+ [80] "Vacvit_OldLeaves_bag_number"                  
+ [81] "Vacvit_OldLeaves_mass_g"                      
+ [82] "Vacvit_OldStems_bag_number"                   
+ [83] "Vacvit_OldStems_mass_g"                       
+ [84] "Vacvit_Inflor_bag_number"                     
+ [85] "Vacvit_Inflor_mass_g"                         
+ [86] "Vacvit_BelowStem_bag_number"                  
+ [87] "Vacvit_BelowStem_mass_g"                      
+ [88] "Castet_NewStems_bag_number"                   
+ [89] "Castet_NewStems_mass_g"                       
+ [90] "Castet_OldStems_bag_number"                   
+ [91] "Castet_OldStems_mass_g"                       
+ [92] "Castet_Inflor_bag_number"                     
+ [93] "Castet_Inflor_mass_g"                         
+ [94] "Castet_BelowStem_bag_number"                  
+ [95] "Castet_BelowStem_mass_g"                      
+ [96] "OtherEvergreen_Species"                       
+ [97] "OtherEvergreen_NewLeaves_bag_number"          
+ [98] "OtherEvergreen_NewLeaves_mass_g"              
+ [99] "OtherEvergreen_NewStems_bag_number"           
+[100] "OtherEvergreen_NewStems_mass_g"               
+[101] "OtherEvergreen_OldLeaves_bag_number"          
+[102] "OtherEvergreen_OldLeaves_mass_g"              
+[103] "OtherEvergreen_OldStems_bag_number"           
+[104] "OtherEvergreen_OldStems_mass_g"               
+[105] "OtherEvergreen_Inflor_bag_number"             
+[106] "OtherEvergreen_Inflor_mass_g"                 
+[107] "OtherEvergreen_BelowStem_bag_number"          
+[108] "OtherEvergreen_BelowStem_mass_g"              
+[109] "Rubcha_LeavesStems_bag_number"                
+[110] "Rubcha_LeavesStems_mass_g"                    
+[111] "Rubcha_InflorStalks_bag_number"               
+[112] "Rubcha_InflorStalks_mass_g"                   
+[113] "Rubcha_BelowStem_bag_number"                  
+[114] "Rubcha_BelowStem_mass_g"                      
+[115] "Petfri_LeavesStems_bag_number"                
+[116] "Petfri_LeavesStems_mass_g"                    
+[117] "Petfri_InflorStalks_bag_number"               
+[118] "Petfri_InflorStalks_mass_g"                   
+[119] "Petfri_BelowStem_bag_number"                  
+[120] "Petfri_BelowStem_mass_g"                      
+[121] "OtherForb_Species"                            
+[122] "OtherForb_LeavesStems_bag_number"             
+[123] "OtherForb_LeavesStems_mass_g"                 
+[124] "OtherForb_InflorStalks_bag_number"            
+[125] "OtherForb_InflorStalks_mass_g"                
+[126] "OtherForb_BelowStem_bag_number"               
+[127] "OtherForb_BelowStem_mass_g"                   
+[128] "Sphagnum_Green_bag_number"                    
+[129] "Sphagnum_Green_mass_g"                        
+[130] "OtherMoss_Species"                            
+[131] "OtherMoss_Green_bag_number"                   
+[132] "OtherMoss_Green_mass_g"                       
+[133] "Lichen_Live_bag_number"                       
+[134] "Lichen_Live_mass_g"                           
+[135] "Attached_Wood_bag_number"                     
+[136] "Attached_Wood_mass_g"                         
+[137] "Attached_Litter_bag_number"                   
+[138] "Attached_Litter_mass_g"                       
+[139] "Loose_Litter_bag_number"                      
+[140] "Loose_Litter_mass_g"                          
+[141] "Notes"                                        </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop columns we don't want</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mass1 <span class="ot">&lt;-</span> <span class="fu">select</span>(mass, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Date_collected"</span>,<span class="st">"Date_sorted"</span>,<span class="st">"Plucker"</span>,<span class="st">"Balance"</span>,<span class="st">"Weigher"</span>,<span class="st">"Notes"</span>))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#74 obs, 135 variables</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># drop empty rows at the bottom</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>mass2 <span class="ot">&lt;-</span> mass1[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">73</span><span class="sc">:</span><span class="dv">74</span>),]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#72 obs of 135 variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 
 </main>

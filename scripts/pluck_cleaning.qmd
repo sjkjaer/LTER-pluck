@@ -6,7 +6,6 @@ date: 03-09-2026
 ---
 
 ### load packages
-
 ```{r, message=FALSE}
 library(tidyverse)
 library(readr)
@@ -15,7 +14,23 @@ library(here)
 ```
 
 ### read in data
-
-```{r}
-
+```{r, message=FALSE, warning=FALSE}
+#read in files from Box
+mass <- read_excel("/Users/lter/Library/CloudStorage/Box-Box/ARC LTER 7 (Terrestrial)/Plucks/Pluck 2024/Data/Aboveground/Shoot_data_collection_mass_ID.xlsx")
+#74 obs, 141 variables
+head(mass)
 ```
+
+### tidy columns and rows
+```{r, message=FALSE}
+colnames(mass)
+# drop columns we don't want
+mass1 <- select(mass, -c("Date_collected","Date_sorted","Plucker","Balance","Weigher","Notes"))
+#74 obs, 135 variables
+
+# drop empty rows at the bottom
+mass2 <- mass1[-c(73:74),]
+#72 obs of 135 variables
+```
+
+
