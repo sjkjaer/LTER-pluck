@@ -33,3 +33,8 @@ Wrote:
 -   /processed_data/**pluck_ids.csv**
 
     -   clean list of one ID value for each plot, the first occurence of the ID value from each quad, for use with the EA data
+    
+-   /processed_data/**pluck_id_mass.csv**
+
+    -   one ID value per plot and the sum mass across all 4 quads of that plot
+    -   may remove the Total_mass_g 

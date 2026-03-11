@@ -5,6 +5,8 @@ author: Savannah Kjaer
 date: 03-09-2026
 ---
 
+# aboveground
+
 ## Set up
 
 ### load packages
@@ -167,15 +169,70 @@ mass_g4<-mass_g3 %>%
 
 # sum quads to combine with EA
 # should we combine them or leave it off?? bc then the same data will be in 2 places
-mass_g5 <- mass_g4 %>%
+mass_g_sum <- mass_g4 %>%
 rowwise() %>%
 mutate(Total_mass_g = sum(across(c(6:9)), na.rm = T))
 #1134 of 10
 
 # remove Q1-4
 # keep only one obs per row
-mass_g6 <- mass_g5[,-c(6:9)]
+mass_g_sum1 <- mass_g_sum[,-c(6:9)]
 #1134 of 6
 # now just one total mass per plot
-head(mass_g6)
+head(mass_g_sum1)
+```
+
+### combine
+
+```{r}
+head(mass_id5)
+#1134 of 6
+head(mass_g_sum1)
+#1134 of 6
+
+# join
+mass3 <- left_join(mass_id5, mass_g_sum1)
+# Joining with by = join_by(Block, Treatment, Surface_area_cm2, Species, Tissue)
+#1134 of 3
+head(mass3)
+```
+
+### create functional group column
+
+```{r}
+unique(mass3$Species)
+
+#remove "loose litter"
+mass4 <- mass3[!(mass3$Species %in% "Loose"),]
+#1116 of 7
+
+#create Growth_form column
+mass5 <- mass4 %>% mutate(Growth_form = case_when(
+    startsWith(Species, "Erivag") ~ "Graminoid",
+    startsWith(Species, "OtherGraminoid") ~ "Graminoid",
+    startsWith(Species, "Carbig") ~ "Graminoid",
+    startsWith(Species, "Betnan") ~ "Deciduous",
+    startsWith(Species, "Salpul") ~ "Deciduous",
+    startsWith(Species, "Vaculi") ~ "Deciduous",
+    startsWith(Species, "OtherDeciduous") ~ "Deciduous",
+    startsWith(Species, "Ledpal") ~ "Evergreen",
+    startsWith(Species, "Vacvit") ~ "Evergreen",
+    startsWith(Species, "Castet") ~ "Evergreen",
+    startsWith(Species, "OtherEvergreen") ~ "Evergreen",
+    startsWith(Species, "Rubcha") ~ "Forb",
+    startsWith(Species, "Petfri") ~ "Forb",
+    startsWith(Species, "OtherForb") ~ "Forb",
+    startsWith(Species, "Sphagnum") ~ "Moss",
+    startsWith(Species, "OtherMoss") ~ "Moss",
+    startsWith(Species, "Lichen") ~ "Lichen",
+    startsWith(Species, "Attached") ~ "Litter"
+    ))
+#1116 of 8
+
+#Sample ID number appeared twice, 1152 
+#counted the one that ran with samples from the same plot
+mass5$ID[mass5$ID == "1152" & mass5$Species == "Erivag"] <- NA
+head(mass5)
+
+write.csv(mass5, "processed_data/pluck_id_mass.csv", row.names=FALSE)
 ```
