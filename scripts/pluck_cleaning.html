@@ -125,19 +125,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="read-in-data" class="level3">
 <h3 class="anchored" data-anchor-id="read-in-data">read in data</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mass <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"/Users/lter/Library/CloudStorage/Box-Box/ARC LTER 7 (Terrestrial)/Plucks/Pluck 2024/Data/Aboveground/Shoot_data_collection_mass_ID.xlsx"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#74 obs, 141 variables</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#read in files from /raw_data/ folder</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mass <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/LTER-pluck/raw_data/Shoot_data_collection_mass.xlsx"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#74 obs, 141 variables</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 141
   Block Treatment  Quad Surface_area_cm2 Date_collected      Date_sorted Plucker
   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;dttm&gt;                    &lt;dbl&gt; &lt;chr&gt;  
-1     2 F10           3              400 2024-07-26 00:00:00       45500 MD, JM…
-2     1 F10           4              400 2024-07-24 00:00:00       45498 AH, KG 
-3     2 F10           4              400 2024-07-26 00:00:00       45500 IS, KG…
-4     2 F10           2              400 2024-07-26 00:00:00       45500 SS, CG…
-5     1 F10           2              400 2024-07-24 00:00:00       45498 SS, CG…
-6     3 F10           2              400 2024-07-26 00:00:00       45502 Missing
+1     1 CT            1              400 2024-07-24 00:00:00       45498 AH, MD…
+2     1 CT            2              400 2024-07-24 00:00:00       45498 SS, CG…
+3     1 CT            3              400 2024-07-24 00:00:00       45498 EB, JS…
+4     1 CT            4              400 2024-07-24 00:00:00       45498 EL, LG 
+5     1 F0.5          1              400 2024-07-25 00:00:00       45502 IM, SK…
+6     1 F0.5          2              400 2024-07-25 00:00:00       45502 Missing
 # ℹ 134 more variables: Balance &lt;chr&gt;, Weigher &lt;chr&gt;,
 #   Erivag_BladeSheathInflCulm_bag_number &lt;chr&gt;,
 #   Erivag_BladeSheathInflCulm_mass_g &lt;dbl&gt;, Erivag_Rhizome_bag_number &lt;chr&gt;,

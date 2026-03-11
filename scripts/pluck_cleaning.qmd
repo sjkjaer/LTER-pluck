@@ -6,7 +6,7 @@ date: 03-09-2026
 ---
 
 ### load packages
-```{r, message=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(readr)
 library(readxl)
@@ -15,9 +15,8 @@ library(here)
 
 ### read in data
 ```{r, message=FALSE, warning=FALSE}
-#read in files from Box
-mass <- read_excel("raw_data/Shoot_data_collection_mass.xlsx")
-#Shoot_data_collection_mass <- read_excel("raw_data/Shoot_data_collection_mass.xlsx")
+#read in files from /raw_data/ folder
+mass <- read_excel("~/LTER-pluck/raw_data/Shoot_data_collection_mass.xlsx")
 #74 obs, 141 variables
 head(mass)
 ```
