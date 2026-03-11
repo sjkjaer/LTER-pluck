@@ -236,3 +236,74 @@ head(mass5)
 
 write.csv(mass5, "processed_data/pluck_id_mass.csv", row.names=FALSE)
 ```
+
+
+## Belowground
+
+### read in data
+
+```{r, message=FALSE, warning=FALSE}
+bg <- read_excel("~/LTER-pluck/raw_data/Root_data_collection_mass.xlsx",
+                 col_types = c("numeric", "text", "numeric", "text", "numeric", "numeric", "date", "date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "text"))
+#146 obs, 15 variables
+#lots of columns that were numbers were being read as characters, appearing in scientific notation, etc
+head(bg)
+colnames(bg)
+```
+
+### tidy columns and rows
+
+```{r}
+# remove unwanted columns
+bg1 <- select(bg, -c("Date_collected","Date_sorted"))
+#146 obs, 13 variables
+
+# remove 2 empty rows
+bg2 <- bg1[-c(145:146),]
+#144
+```
+
+### separate masses and IDs
+
+```{r}
+bg_names <- select(bg2, -ends_with("mass_g"))
+#144, 10
+head(bg_names)
+
+bg_mass <- select(bg2, -ends_with("bag_number"))
+#144, 10
+head(bg_mass)
+```
+
+### sort IDs into one column
+
+```{r}
+bg_names_copy<-bg_names
+# preserve proper copy, 144 of 10
+
+colnames(bg_names)
+bg_names1 <- select(bg_names, -c("Core_surface_area_cm2","Depth_cm","Root_notes"))
+#144 of 7
+
+#wide2long
+bg_names2 <- bg_names1 %>% pivot_longer(cols = c(5:7), names_to = "Root_type", values_to = "ID")
+#432 of 6
+
+bg_names3<-bg_names2 %>% pivot_wider(names_from = Quad, values_from = ID)
+#108 of 8
+
+# create ID for plot, ignore quads
+bg_names3$ID <- coalesce(bg_names3$`1`, bg_names3$`2`, bg_names3$`3`, bg_names3$`4`)
+#108 of 9
+# ID is the first appearance of a bag number
+
+bg_names3$Root_type <- 
+  sub("_root_bag_number","",bg_names3$Root_type)
+
+# remove quads
+bg_names4 <- bg_names3[,-c(5:8)]
+head(bg_names4)
+
+write.csv(bg_names4, "processed_data/pluck_ids_bg.csv", row.names=FALSE)
+```
+

@@ -23,6 +23,10 @@ Read in:
 -   /raw_data/**Shoot_data_collection_mass.xlsx**
 
     -   raw data of aboveground dry masses
+    
+-   /raw_data/**Root_data_collection_mass.xlsx**
+
+    -   raw data of belowground dry masses
 
 Wrote:
 
@@ -32,9 +36,13 @@ Wrote:
 
 -   /processed_data/**pluck_ids.csv**
 
-    -   clean list of one ID value for each plot, the first occurence of the ID value from each quad, for use with the EA data
+    -   one ID value for each plot, the first occurence of the ID value from each quad, for use with the EA data
     
 -   /processed_data/**pluck_id_mass.csv**
 
     -   one ID value per plot and the sum mass across all 4 quads of that plot
     -   may remove the Total_mass_g 
+    
+-   /processed_data/**pluck_ids_bg.csv**
+
+    -   one ID value for each plot, the first occurence of the ID value from each quad, for use with the EA data
