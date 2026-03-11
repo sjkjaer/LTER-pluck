@@ -16,7 +16,8 @@ library(here)
 ### read in data
 ```{r, message=FALSE, warning=FALSE}
 #read in files from Box
-mass <- read_excel("/Users/lter/Library/CloudStorage/Box-Box/ARC LTER 7 (Terrestrial)/Plucks/Pluck 2024/Data/Aboveground/Shoot_data_collection_mass_ID.xlsx")
+mass <- read_excel("raw_data/Shoot_data_collection_mass.xlsx")
+#Shoot_data_collection_mass <- read_excel("raw_data/Shoot_data_collection_mass.xlsx")
 #74 obs, 141 variables
 head(mass)
 ```
