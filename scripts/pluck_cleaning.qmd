@@ -33,4 +33,74 @@ mass2 <- mass1[-c(73:74),]
 #72 obs of 135 variables
 ```
 
+### separate mass and IDs
+```{r}
+# remove mass columns
+mass_id <- select(mass2, -ends_with("mass_g"))
+#72 obs, 72 variables
+head(mass_id)
 
+# remove other species column
+mass_id1 <- select(mass_id, -ends_with("Species"))
+#72 obs, 67 variables
+head(mass_id1)
+
+###go back and add other species later###
+
+#remove name columns
+mass_g <- select(mass2, -ends_with("bag_number"))
+#72 obs, 72 variables
+mass_g1 <- select(mass_g, -ends_with("Species"))
+#67 variables
+head(mass_g1)
+```
+
+### sort IDs into one per plot
+```{r}
+# preserve proper copy, 72 of 67
+mass_id_copy<- mass_id1
+
+# wide2long
+head(mass_id1)
+mass_id2 <- mass_id1 %>% pivot_longer(cols = c(ends_with('_bag_number')), names_to = "Tissue", values_to = "ID")
+#4536 obs, 6 variables
+head(mass_id2)
+
+#put all quads into one row per plot
+mass_id3<-mass_id2 %>% pivot_wider(names_from = Quad, values_from = ID)
+#1134 of 8
+head(mass_id3)
+
+#create one ID per plot, ignore quads
+mass_id3[mass_id3 == "NA"] <- NA
+#"NA" wasn't NA
+
+mass_id3$ID <- coalesce(mass_id3$`1`, mass_id3$`2`, mass_id3$`3`, mass_id3$`4`)
+#ID is the first appearance of a bag number
+#if Q1 exists, uses that number, then tries Q2, Q3, Q4
+head(mass_id3)
+
+#remove "_bag_number" in tissue column
+mass_id3$Tissue <- 
+  sub("_bag_number","",mass_id3$Tissue)
+head(mass_id3)
+
+#remove Q1-4
+mass_id4 <- mass_id3[,-c(5:8)]
+#1134 of 5
+#now just one ID number for a plot
+head(mass_id4)
+
+write.csv(mass_id4, "~/LTER-pluck/processed_data/pluck_ids.csv", row.names=FALSE)
+```
+
+## COME BACK TO THIS
+how to deal with burnt samples
+```{r}
+#these ID's only correspond with Q3&4, they are NA's for Q1&2
+#because of the burnt 
+#mass_id5$ID[mass_id5$ID == "204" & mass_id5$Block == "1"] <- NA
+#mass_id5$ID[mass_id5$ID == "205" & mass_id5$Block == "1"] <- NA
+#mass_id5$ID[mass_id5$ID == "258" & mass_id5$Block == "1"] <- NA
+#mass_id5$ID[mass_id5$ID == "59" & mass_id5$Block == "1"] <- NA
+```
