@@ -93,7 +93,7 @@ mass_id3$ID <- coalesce(mass_id3$`1`, mass_id3$`2`, mass_id3$`3`, mass_id3$`4`)
 
 #remove "_bag_number" in tissue column
 mass_id3$Tissue <- 
-  sub("_bag_number","",mass_id3$Tissue)
+  sub("_bag_number","",mass_id3$Tissue) 
 
 # separate values in Tissue column into Species and Tissue
 mass_id4 <- mass_id3 %>%
@@ -106,7 +106,7 @@ mass_id5 <- mass_id4[,-c(6:9)]
 # now just one ID number for a plot
 head(mass_id5)
 
-write.csv(mass_id5, "~/LTER-pluck/processed_data/pluck_ids.csv", row.names=FALSE)
+write.csv(mass_id5, "~/LTER-pluck/processed_data/ag_ids.csv", row.names=FALSE)
 ```
 
 ## COME BACK TO THIS
@@ -156,7 +156,7 @@ mass_g3 <- mass_g2 %>%
 #4536 of 7
 head(mass_g3)
 
-write.csv(mass_g3, "~/LTER-pluck/processed_data/final_data/AG_mass_quad.csv", row.names=FALSE)
+write.csv(mass_g3, "~/LTER-pluck/processed_data/final_data/ag_mass_quad.csv", row.names=FALSE)
 ```
 
 ### sum masses across quads for one value per plot
@@ -234,7 +234,7 @@ mass5 <- mass4 %>% mutate(Growth_form = case_when(
 mass5$ID[mass5$ID == "1152" & mass5$Species == "Erivag"] <- NA
 head(mass5)
 
-write.csv(mass5, "processed_data/pluck_id_mass.csv", row.names=FALSE)
+write.csv(mass5, "~/LTER-pluck/processed_data/ag_id_mass.csv", row.names=FALSE)
 ```
 
 
@@ -304,6 +304,60 @@ bg_names3$Root_type <-
 bg_names4 <- bg_names3[,-c(5:8)]
 head(bg_names4)
 
-write.csv(bg_names4, "processed_data/pluck_ids_bg.csv", row.names=FALSE)
+write.csv(bg_names4, "~/LTER-pluck/processed_data/bg_ids.csv", row.names=FALSE)
 ```
 
+### create longform mass table for publishing
+
+```{r}
+# wide2long
+bg_mass_copy<-bg_mass
+# preserve proper copy, 144 of 11
+colnames(bg_mass)
+
+# calculate core volume
+bg_mass$Core_volume_cm3<-with(bg_mass, Core_surface_area_cm2 * Depth_cm)
+
+bg_mass1 <- bg_mass %>% pivot_longer(cols = c(7:9), names_to = "Root_type", values_to = "Mass_g")
+#432 of 10
+
+bg_mass1$Root_type <- 
+  sub("_root_mass_g","",bg_mass1$Root_type)
+head(bg_mass1)
+
+write.csv(bg_mass1, "~/LTER-pluck/processed_data/final_data/bg_mass_quad.csv", row.names=F)
+```
+
+### sum masses across quads
+
+```{r}
+# sum quads
+bg_sum <- bg_mass1 %>% 
+  group_by(Block, Treatment, Horizon, Root_type) %>%
+  summarise( 
+    Total_mass_g = sum(Mass_g, na.rm = TRUE), # summarizing quads for one per plot
+    Core_surface_area_cm2 = mean(Core_surface_area_cm2, na.rm=TRUE), # should be the same within a plot
+    # removed depth bc it varies with each q, mean or sum feels deceptive
+    Total_core_volume_cm3 = sum(Core_volume_cm3, na.rm = TRUE)) #sum of all cores
+view(bg_sum)
+#108 of 7
+```
+
+### combine
+
+```{r}
+head(bg_names4)
+#108 of 5
+head(bg_sum)
+#108 of 7
+
+bg3<-left_join(bg_names4, bg_sum)
+# join_by(Block, Treatment, Horizon, Root_type)
+#108 obs of 8
+head(bg3)
+
+write.csv(bg3, "~/LTER-pluck/processed_data/bg_id_mass.csv", row.names=FALSE)
+```
+
+saved, rendering, pushed to git, deleted extra files
+START HERE with reading in total cores

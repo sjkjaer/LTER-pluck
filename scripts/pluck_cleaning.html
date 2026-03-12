@@ -110,6 +110,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="aboveground" class="level1">
+<h1>aboveground</h1>
 <section id="set-up" class="level2">
 <h2 class="anchored" data-anchor-id="set-up">Set up</h2>
 <section id="load-packages" class="level3">
@@ -376,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co">#remove "_bag_number" in tissue column</span></span>
 <span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>mass_id3<span class="sc">$</span>Tissue <span class="ot">&lt;-</span> </span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_bag_number"</span>,<span class="st">""</span>,mass_id3<span class="sc">$</span>Tissue)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_bag_number"</span>,<span class="st">""</span>,mass_id3<span class="sc">$</span>Tissue) </span>
 <span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="co"># separate values in Tissue column into Species and Tissue</span></span>
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>mass_id4 <span class="ot">&lt;-</span> mass_id3 <span class="sc">%&gt;%</span></span>
@@ -399,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5     1 CT                     400 OtherGraminoid BladeSheathInflCulm 204  
 6     1 CT                     400 OtherGraminoid Rhizome             205  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(mass_id5, <span class="st">"~/LTER-pluck/processed_data/pluck_ids.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(mass_id5, <span class="st">"~/LTER-pluck/processed_data/ag_ids.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -423,10 +425,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># some values characters not numbers</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># turns the "missing" values to NA's</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>cols.num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">67</span>)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># check</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>mass_g1[cols.num] <span class="ot">&lt;-</span> <span class="fu">sapply</span>(mass_g1[cols.num],as.numeric)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(mass_g1, class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>mass_g1[cols.num] <span class="ot">&lt;-</span> <span class="fu">sapply</span>(mass_g1[cols.num],as.numeric)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># check</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(mass_g1, class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="create-longform-mass-table-for-publishing" class="level3">
@@ -459,7 +460,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5     1 CT            1              400 OtherGraminoid BladeSheathInflC…  0    
 6     1 CT            1              400 OtherGraminoid Rhizome            0    </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(mass_g3, <span class="st">"~/LTER-pluck/processed_data/final_data/AG_mass_quad.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(mass_g3, <span class="st">"~/LTER-pluck/processed_data/final_data/ag_mass_quad.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sum-masses-across-quads-for-one-value-per-plot" class="level3">
@@ -472,17 +473,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># sum quads to combine with EA</span></span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># should we combine them or leave it off?? bc then the same data will be in 2 places</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>mass_g5 <span class="ot">&lt;-</span> mass_g4 <span class="sc">%&gt;%</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>mass_g_sum <span class="ot">&lt;-</span> mass_g4 <span class="sc">%&gt;%</span></span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">Total_mass_g =</span> <span class="fu">sum</span>(<span class="fu">across</span>(<span class="fu">c</span>(<span class="dv">6</span><span class="sc">:</span><span class="dv">9</span>)), <span class="at">na.rm =</span> T))</span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 10</span></span>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># remove Q1-4</span></span>
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="co"># keep only one obs per row</span></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>mass_g6 <span class="ot">&lt;-</span> mass_g5[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">6</span><span class="sc">:</span><span class="dv">9</span>)]</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>mass_g_sum1 <span class="ot">&lt;-</span> mass_g_sum[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">6</span><span class="sc">:</span><span class="dv">9</span>)]</span>
 <span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 6</span></span>
 <span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="co"># now just one total mass per plot</span></span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_g6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_g_sum1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
 # Rowwise: 
@@ -496,6 +497,359 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 6     1 CT                     400 OtherGraminoid Rhizome                  0.066</code></pre>
 </div>
 </div>
+</section>
+<section id="combine" class="level3">
+<h3 class="anchored" data-anchor-id="combine">combine</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_id5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  Block Treatment Surface_area_cm2 Species        Tissue              ID   
+  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;               &lt;chr&gt;
+1     1 CT                     400 Erivag         BladeSheathInflCulm 264  
+2     1 CT                     400 Erivag         Rhizome             268  
+3     1 CT                     400 Carbig         BladeSheathInflCulm 285  
+4     1 CT                     400 Carbig         Rhizome             258  
+5     1 CT                     400 OtherGraminoid BladeSheathInflCulm 204  
+6     1 CT                     400 OtherGraminoid Rhizome             205  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 6</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_g_sum1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+# Rowwise: 
+  Block Treatment Surface_area_cm2 Species        Tissue            Total_mass_g
+  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;                    &lt;dbl&gt;
+1     1 CT                     400 Erivag         BladeSheathInflC…        2.72 
+2     1 CT                     400 Erivag         Rhizome                  1.71 
+3     1 CT                     400 Carbig         BladeSheathInflC…        1.09 
+4     1 CT                     400 Carbig         Rhizome                  5.82 
+5     1 CT                     400 OtherGraminoid BladeSheathInflC…        0.044
+6     1 CT                     400 OtherGraminoid Rhizome                  0.066</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 6</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># join</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>mass3 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(mass_id5, mass_g_sum1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(Block, Treatment, Surface_area_cm2, Species,
+Tissue)`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Joining with by = join_by(Block, Treatment, Surface_area_cm2, Species, Tissue)</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 3</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  Block Treatment Surface_area_cm2 Species        Tissue      ID    Total_mass_g
+  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;       &lt;chr&gt;        &lt;dbl&gt;
+1     1 CT                     400 Erivag         BladeSheat… 264          2.72 
+2     1 CT                     400 Erivag         Rhizome     268          1.71 
+3     1 CT                     400 Carbig         BladeSheat… 285          1.09 
+4     1 CT                     400 Carbig         Rhizome     258          5.82 
+5     1 CT                     400 OtherGraminoid BladeSheat… 204          0.044
+6     1 CT                     400 OtherGraminoid Rhizome     205          0.066</code></pre>
+</div>
+</div>
+</section>
+<section id="create-functional-group-column" class="level3">
+<h3 class="anchored" data-anchor-id="create-functional-group-column">create functional group column</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(mass3<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Erivag"         "Carbig"         "OtherGraminoid" "Betnan"        
+ [5] "Salpul"         "Vaculi"         "OtherDeciduous" "Ledpal"        
+ [9] "Vacvit"         "Castet"         "OtherEvergreen" "Rubcha"        
+[13] "Petfri"         "OtherForb"      "Sphagnum"       "OtherMoss"     
+[17] "Lichen"         "Attached"       "Loose"         </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#remove "loose litter"</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>mass4 <span class="ot">&lt;-</span> mass3[<span class="sc">!</span>(mass3<span class="sc">$</span>Species <span class="sc">%in%</span> <span class="st">"Loose"</span>),]</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">#1116 of 7</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co">#create Growth_form column</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>mass5 <span class="ot">&lt;-</span> mass4 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Growth_form =</span> <span class="fu">case_when</span>(</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Erivag"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherGraminoid"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Carbig"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Betnan"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Salpul"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Vaculi"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherDeciduous"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Ledpal"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Vacvit"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Castet"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherEvergreen"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Rubcha"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Petfri"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherForb"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Sphagnum"</span>) <span class="sc">~</span> <span class="st">"Moss"</span>,</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherMoss"</span>) <span class="sc">~</span> <span class="st">"Moss"</span>,</span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Lichen"</span>) <span class="sc">~</span> <span class="st">"Lichen"</span>,</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Attached"</span>) <span class="sc">~</span> <span class="st">"Litter"</span></span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="co">#1116 of 8</span></span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="co">#Sample ID number appeared twice, 1152 </span></span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a><span class="co">#counted the one that ran with samples from the same plot</span></span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>mass5<span class="sc">$</span>ID[mass5<span class="sc">$</span>ID <span class="sc">==</span> <span class="st">"1152"</span> <span class="sc">&amp;</span> mass5<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"Erivag"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  Block Treatment Surface_area_cm2 Species Tissue ID    Total_mass_g Growth_form
+  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;      
+1     1 CT                     400 Erivag  Blade… 264          2.72  Graminoid  
+2     1 CT                     400 Erivag  Rhizo… 268          1.71  Graminoid  
+3     1 CT                     400 Carbig  Blade… 285          1.09  Graminoid  
+4     1 CT                     400 Carbig  Rhizo… 258          5.82  Graminoid  
+5     1 CT                     400 OtherG… Blade… 204          0.044 Graminoid  
+6     1 CT                     400 OtherG… Rhizo… 205          0.066 Graminoid  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(mass5, <span class="st">"~/LTER-pluck/processed_data/ag_id_mass.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="belowground" class="level2">
+<h2 class="anchored" data-anchor-id="belowground">Belowground</h2>
+<section id="read-in-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="read-in-data-1">read in data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>bg <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/LTER-pluck/raw_data/Root_data_collection_mass.xlsx"</span>,</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col_types =</span> <span class="fu">c</span>(<span class="st">"numeric"</span>, <span class="st">"text"</span>, <span class="st">"numeric"</span>, <span class="st">"text"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"date"</span>, <span class="st">"date"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"text"</span>))</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">#146 obs, 15 variables</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">#lots of columns that were numbers were being read as characters, appearing in scientific notation, etc</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 15
+  Block Treatment  Quad Horizon Core_surface_area_cm2 Depth_cm
+  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;    &lt;dbl&gt;
+1     1 CT            1 O                        25        4.5
+2     1 CT            1 M                        15.9     18  
+3     1 CT            2 O                        25       13  
+4     1 CT            2 M                        15.9     10.5
+5     1 CT            3 O                        25       23  
+6     1 CT            3 M                        15.9     NA  
+# ℹ 9 more variables: Date_collected &lt;dttm&gt;, Date_sorted &lt;dttm&gt;,
+#   Fine_root_bag_number &lt;dbl&gt;, Fine_root_mass_g &lt;dbl&gt;,
+#   Coarse_root_bag_number &lt;dbl&gt;, Coarse_root_mass_g &lt;dbl&gt;,
+#   Erivag_root_bag_number &lt;dbl&gt;, Erivag_root_mass_g &lt;dbl&gt;, Root_notes &lt;chr&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Block"                  "Treatment"              "Quad"                  
+ [4] "Horizon"                "Core_surface_area_cm2"  "Depth_cm"              
+ [7] "Date_collected"         "Date_sorted"            "Fine_root_bag_number"  
+[10] "Fine_root_mass_g"       "Coarse_root_bag_number" "Coarse_root_mass_g"    
+[13] "Erivag_root_bag_number" "Erivag_root_mass_g"     "Root_notes"            </code></pre>
+</div>
+</div>
+</section>
+<section id="tidy-columns-and-rows-1" class="level3">
+<h3 class="anchored" data-anchor-id="tidy-columns-and-rows-1">tidy columns and rows</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove unwanted columns</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>bg1 <span class="ot">&lt;-</span> <span class="fu">select</span>(bg, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Date_collected"</span>,<span class="st">"Date_sorted"</span>))</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co">#146 obs, 13 variables</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># remove 2 empty rows</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>bg2 <span class="ot">&lt;-</span> bg1[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">145</span><span class="sc">:</span><span class="dv">146</span>),]</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co">#144</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="separate-masses-and-ids" class="level3">
+<h3 class="anchored" data-anchor-id="separate-masses-and-ids">separate masses and IDs</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>bg_names <span class="ot">&lt;-</span> <span class="fu">select</span>(bg2, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"mass_g"</span>))</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co">#144, 10</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 10
+  Block Treatment  Quad Horizon Core_surface_area_cm2 Depth_cm
+  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;    &lt;dbl&gt;
+1     1 CT            1 O                        25        4.5
+2     1 CT            1 M                        15.9     18  
+3     1 CT            2 O                        25       13  
+4     1 CT            2 M                        15.9     10.5
+5     1 CT            3 O                        25       23  
+6     1 CT            3 M                        15.9     NA  
+# ℹ 4 more variables: Fine_root_bag_number &lt;dbl&gt;, Coarse_root_bag_number &lt;dbl&gt;,
+#   Erivag_root_bag_number &lt;dbl&gt;, Root_notes &lt;chr&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>bg_mass <span class="ot">&lt;-</span> <span class="fu">select</span>(bg2, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"bag_number"</span>))</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">#144, 10</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 10
+  Block Treatment  Quad Horizon Core_surface_area_cm2 Depth_cm Fine_root_mass_g
+  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;    &lt;dbl&gt;            &lt;dbl&gt;
+1     1 CT            1 O                        25        4.5            0.049
+2     1 CT            1 M                        15.9     18              0.22 
+3     1 CT            2 O                        25       13              1.55 
+4     1 CT            2 M                        15.9     10.5            0.306
+5     1 CT            3 O                        25       23              3.77 
+6     1 CT            3 M                        15.9     NA             NA    
+# ℹ 3 more variables: Coarse_root_mass_g &lt;dbl&gt;, Erivag_root_mass_g &lt;dbl&gt;,
+#   Root_notes &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="sort-ids-into-one-column" class="level3">
+<h3 class="anchored" data-anchor-id="sort-ids-into-one-column">sort IDs into one column</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>bg_names_copy<span class="ot">&lt;-</span>bg_names</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># preserve proper copy, 144 of 10</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Block"                  "Treatment"              "Quad"                  
+ [4] "Horizon"                "Core_surface_area_cm2"  "Depth_cm"              
+ [7] "Fine_root_bag_number"   "Coarse_root_bag_number" "Erivag_root_bag_number"
+[10] "Root_notes"            </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>bg_names1 <span class="ot">&lt;-</span> <span class="fu">select</span>(bg_names, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Core_surface_area_cm2"</span>,<span class="st">"Depth_cm"</span>,<span class="st">"Root_notes"</span>))</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co">#144 of 7</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co">#wide2long</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>bg_names2 <span class="ot">&lt;-</span> bg_names1 <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">7</span>), <span class="at">names_to =</span> <span class="st">"Root_type"</span>, <span class="at">values_to =</span> <span class="st">"ID"</span>)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="co">#432 of 6</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>bg_names3<span class="ot">&lt;-</span>bg_names2 <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Quad, <span class="at">values_from =</span> ID)</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 8</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="co"># create ID for plot, ignore quads</span></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>bg_names3<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">coalesce</span>(bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">1</span><span class="st">`</span>, bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">2</span><span class="st">`</span>, bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">3</span><span class="st">`</span>, bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">4</span><span class="st">`</span>)</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 9</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ID is the first appearance of a bag number</span></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>bg_names3<span class="sc">$</span>Root_type <span class="ot">&lt;-</span> </span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_root_bag_number"</span>,<span class="st">""</span>,bg_names3<span class="sc">$</span>Root_type)</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a><span class="co"># remove quads</span></span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>bg_names4 <span class="ot">&lt;-</span> bg_names3[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>)]</span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_names4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+  Block Treatment Horizon Root_type    ID
+  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;
+1     1 CT        O       Fine          1
+2     1 CT        O       Coarse       NA
+3     1 CT        O       Erivag        3
+4     1 CT        M       Fine          4
+5     1 CT        M       Coarse       NA
+6     1 CT        M       Erivag        6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(bg_names4, <span class="st">"~/LTER-pluck/processed_data/bg_ids.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="create-longform-mass-table-for-publishing-1" class="level3">
+<h3 class="anchored" data-anchor-id="create-longform-mass-table-for-publishing-1">create longform mass table for publishing</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wide2long</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>bg_mass_copy<span class="ot">&lt;-</span>bg_mass</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co"># preserve proper copy, 144 of 11</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg_mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Block"                 "Treatment"             "Quad"                 
+ [4] "Horizon"               "Core_surface_area_cm2" "Depth_cm"             
+ [7] "Fine_root_mass_g"      "Coarse_root_mass_g"    "Erivag_root_mass_g"   
+[10] "Root_notes"           </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate core volume</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>bg_mass<span class="sc">$</span>Core_volume_cm3<span class="ot">&lt;-</span><span class="fu">with</span>(bg_mass, Core_surface_area_cm2 <span class="sc">*</span> Depth_cm)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>bg_mass1 <span class="ot">&lt;-</span> bg_mass <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>), <span class="at">names_to =</span> <span class="st">"Root_type"</span>, <span class="at">values_to =</span> <span class="st">"Mass_g"</span>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="co">#432 of 10</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>bg_mass1<span class="sc">$</span>Root_type <span class="ot">&lt;-</span> </span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_root_mass_g"</span>,<span class="st">""</span>,bg_mass1<span class="sc">$</span>Root_type)</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_mass1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 10
+  Block Treatment  Quad Horizon Core_surface_area_cm2 Depth_cm Root_notes
+  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;     
+1     1 CT            1 O                        25        4.5 &lt;NA&gt;      
+2     1 CT            1 O                        25        4.5 &lt;NA&gt;      
+3     1 CT            1 O                        25        4.5 &lt;NA&gt;      
+4     1 CT            1 M                        15.9     18   &lt;NA&gt;      
+5     1 CT            1 M                        15.9     18   &lt;NA&gt;      
+6     1 CT            1 M                        15.9     18   &lt;NA&gt;      
+# ℹ 3 more variables: Core_volume_cm3 &lt;dbl&gt;, Root_type &lt;chr&gt;, Mass_g &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(bg_mass1, <span class="st">"~/LTER-pluck/processed_data/final_data/bg_mass_quad.csv"</span>, <span class="at">row.names=</span>F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sum-masses-across-quads" class="level3">
+<h3 class="anchored" data-anchor-id="sum-masses-across-quads">sum masses across quads</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sum quads</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>bg_sum <span class="ot">&lt;-</span> bg_mass1 <span class="sc">%&gt;%</span> </span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Block, Treatment, Horizon, Root_type) <span class="sc">%&gt;%</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>( </span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_mass_g =</span> <span class="fu">sum</span>(Mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="co"># summarizing quads for one per plot</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Core_surface_area_cm2 =</span> <span class="fu">mean</span>(Core_surface_area_cm2, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="co"># should be the same within a plot</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># removed depth bc it varies with each q, mean or sum feels deceptive</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total_core_volume_cm3 =</span> <span class="fu">sum</span>(Core_volume_cm3, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="co">#sum of all cores</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'Block', 'Treatment', 'Horizon'. You can
+override using the `.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(bg_sum)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="combine-1" class="level3">
+<h3 class="anchored" data-anchor-id="combine-1">combine</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_names4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+  Block Treatment Horizon Root_type    ID
+  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;
+1     1 CT        O       Fine          1
+2     1 CT        O       Coarse       NA
+3     1 CT        O       Erivag        3
+4     1 CT        M       Fine          4
+5     1 CT        M       Coarse       NA
+6     1 CT        M       Erivag        6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 5</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+# Groups:   Block, Treatment, Horizon [2]
+  Block Treatment Horizon Root_type Total_mass_g Core_surface_area_cm2
+  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;            &lt;dbl&gt;                 &lt;dbl&gt;
+1     1 CT        M       Coarse           0                      15.9
+2     1 CT        M       Erivag           0.185                  15.9
+3     1 CT        M       Fine             0.563                  15.9
+4     1 CT        O       Coarse           0                      25  
+5     1 CT        O       Erivag           0.65                   25  
+6     1 CT        O       Fine             7.29                   25  
+# ℹ 1 more variable: Total_core_volume_cm3 &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 7</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>bg3<span class="ot">&lt;-</span><span class="fu">left_join</span>(bg_names4, bg_sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(Block, Treatment, Horizon, Root_type)`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># join_by(Block, Treatment, Horizon, Root_type)</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="co">#108 obs of 8</span></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  Block Treatment Horizon Root_type    ID Total_mass_g Core_surface_area_cm2
+  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;        &lt;dbl&gt;                 &lt;dbl&gt;
+1     1 CT        O       Fine          1        7.29                   25  
+2     1 CT        O       Coarse       NA        0                      25  
+3     1 CT        O       Erivag        3        0.65                   25  
+4     1 CT        M       Fine          4        0.563                  15.9
+5     1 CT        M       Coarse       NA        0                      15.9
+6     1 CT        M       Erivag        6        0.185                  15.9
+# ℹ 1 more variable: Total_core_volume_cm3 &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(bg3, <span class="st">"~/LTER-pluck/processed_data/bg_id_mass.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 </section>
 

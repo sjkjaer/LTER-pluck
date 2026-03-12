@@ -30,19 +30,28 @@ Read in:
 
 Wrote:
 
--   /processed_data/final_data/**AG_mass_quad.csv**
+-   /processed_data/final_data/**ag_mass_quad.csv**
 
     -   clean, longform version of aboveground dry masses
 
--   /processed_data/**pluck_ids.csv**
+-   /processed_data/**ag_ids.csv**
 
     -   one ID value for each plot, the first occurence of the ID value from each quad, for use with the EA data
     
--   /processed_data/**pluck_id_mass.csv**
+-   /processed_data/**ag_id_mass.csv**
 
     -   one ID value per plot and the sum mass across all 4 quads of that plot
-    -   may remove the Total_mass_g 
+    -   may remove the Total_mass_g bc it's a repeat of quads
     
--   /processed_data/**pluck_ids_bg.csv**
+-   /processed_data/**bg_ids.csv**
 
     -   one ID value for each plot, the first occurence of the ID value from each quad, for use with the EA data
+    
+-   /processed_data/final_data/**bg_mass_quad.csv**
+
+    -   clean, longform version of belowground dry masses
+    
+-   /processed_data/**bg_id_mass.csv**
+
+    -   one ID value per plot and the sum mass across all 4 quads of that plot
+    -   may remove the Total_mass_g bc it's a repeat of quads   
