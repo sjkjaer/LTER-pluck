@@ -359,5 +359,16 @@ head(bg3)
 write.csv(bg3, "~/LTER-pluck/processed_data/bg_id_mass.csv", row.names=FALSE)
 ```
 
-saved, rendering, pushed to git, deleted extra files
-START HERE with reading in total cores
+
+## Total Cores
+
+### read in data
+
+```{r, message=FALSE, warning=FALSE}
+# read in files from /raw_data/ folder
+tc <- read_excel("~/LTER-pluck/raw_data/Soil_data_total_cores_jm.xlsx")
+#83 obs, 14 variables
+head(tc)
+
+```
+
