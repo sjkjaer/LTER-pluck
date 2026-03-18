@@ -5,8 +5,6 @@ author: Savannah Kjaer
 date: 03-09-2026
 ---
 
-# aboveground
-
 ## Set up
 
 ### load packages
@@ -17,6 +15,8 @@ library(readr)
 library(readxl)
 library(here)
 ```
+
+## Aboveground
 
 ### read in data
 
@@ -32,15 +32,14 @@ head(mass)
 ### tidy columns and rows
 
 ```{r, message=FALSE}
-colnames(mass)
-# drop columns we don't want
+# drop columns we don't want, organizational not informational
 mass1 <- select(mass, 
-                -c("Date_collected","Date_sorted","Plucker","Balance","Weigher","Notes"))
-#74 obs, 135 variables
+                -c("Date_sorted","Plucker","Balance","Weigher","Notes"))
+#74 obs, 136 variables
 
 # drop empty rows at the bottom
 mass2 <- mass1[-c(73:74),]
-#72 obs of 135 variables
+#72 obs of 136 variables
 ```
 
 ### separate mass and IDs
@@ -48,90 +47,28 @@ mass2 <- mass1[-c(73:74),]
 ```{r}
 # remove mass columns
 mass_id <- select(mass2, -ends_with("mass_g"))
-#72 obs, 72 variables
+#72 obs, 73 variables
 
 # remove other species column
 mass_id1 <- select(mass_id, -ends_with("Species"))
-#72 obs, 67 variables
-
-### go back and add other species later 
+#72 obs, 68 variables
 
 # remove name columns
 mass_g <- select(mass2, -ends_with("bag_number"))
-#72 obs, 72 variables
+#72 obs, 73 variables
 mass_g1 <- select(mass_g, -ends_with("Species"))
-#67 variables
+#68 variables
 head(mass_g1)
-```
-
-### sort IDs into one per plot
-
-```{r}
-# preserve proper copy, 72 of 67
-mass_id_copy<- mass_id1
-
-# wide2long
-mass_id2 <- mass_id1 %>% 
-  pivot_longer(cols = c(ends_with('_bag_number')),
-               names_to = "Tissue",
-               values_to = "ID")
-#4536 obs, 6 variables
-
-# put all quads into one row per plot
-mass_id3<-mass_id2 %>%
-  pivot_wider(names_from = Quad,
-              values_from = ID)
-#1134 of 9
-
-# create one ID per plot, ignore quads
-mass_id3[mass_id3 == "NA"] <- NA
-# "NA" wasn't NA
-
-mass_id3$ID <- coalesce(mass_id3$`1`, mass_id3$`2`, mass_id3$`3`, mass_id3$`4`)
-# ID is the first appearance of a bag number
-# if Q1 exists, uses that number, then tries Q2, Q3, Q4
-
-#remove "_bag_number" in tissue column
-mass_id3$Tissue <- 
-  sub("_bag_number","",mass_id3$Tissue) 
-
-# separate values in Tissue column into Species and Tissue
-mass_id4 <- mass_id3 %>%
-  separate(Tissue, c("Species", "Tissue"))
-#1134 of 10
-
-# remove Q1-4
-mass_id5 <- mass_id4[,-c(6:9)]
-#1134 of 6
-# now just one ID number for a plot
-head(mass_id5)
-
-write.csv(mass_id5, "~/LTER-pluck/processed_data/ag_ids.csv", row.names=FALSE)
-```
-
-## COME BACK TO THIS
-
-how to deal with burnt samples
-
-```{r}
-# these ID's only correspond with Q3&4, they are NA's for Q1&2
-# because of the burnt 
-#mass_id5$ID[mass_id5$ID == "204" & mass_id5$Block == "1"] <- NA
-#mass_id5$ID[mass_id5$ID == "205" & mass_id5$Block == "1"] <- NA
-#mass_id5$ID[mass_id5$ID == "258" & mass_id5$Block == "1"] <- NA
-#mass_id5$ID[mass_id5$ID == "59" & mass_id5$Block == "1"] <- NA
 ```
 
 ### classes to numeric
 
 ```{r, warning=FALSE, output=FALSE}
-# preserve proper copy, 72 of 67
-mass_g_copy<-mass_g1
-
-# some values characters not numbers
+# some mass columns as characters not numbers
 # turns the "missing" values to NA's
-cols.num <- c(5:67)
+cols.num <- c(6:68)
 mass_g1[cols.num] <- sapply(mass_g1[cols.num],as.numeric)
+
 # check
 sapply(mass_g1, class)
 ```
@@ -141,59 +78,88 @@ sapply(mass_g1, class)
 ```{r}
 # wide2long
 mass_g2 <- mass_g1 %>%
-  pivot_longer(cols = c(5:67),
+  pivot_longer(cols = c(6:68),
                names_to = "Tissue",
                values_to = "Mass_g")
-#4536 obs, 6 variables
+#4536 obs, 7 variables
 
 # remove "_mass_g" from tissue col
 mass_g2$Tissue <- 
   sub("_mass_g","",mass_g2$Tissue)
 
-# separate values in Tissue column inot Species and Tissue
+# separate values in Tissue column into Species and Tissue
 mass_g3 <- mass_g2 %>%
   separate(Tissue, c("Species", "Tissue"))
-#4536 of 7
+#4536 of 8
 head(mass_g3)
-
-write.csv(mass_g3, "~/LTER-pluck/processed_data/final_data/ag_mass_quad.csv", row.names=FALSE)
 ```
 
-### sum masses across quads for one value per plot
+### sort IDs into one per plot
 
 ```{r}
+# wide2long
+mass_id2 <- mass_id1 %>% 
+  pivot_longer(cols = c(ends_with('_bag_number')),
+               names_to = "Tissue",
+               values_to = "Plot_tissue_ID")
+#4536 obs, 7 variables
+
 # put all quads into one row per plot
-mass_g4<-mass_g3 %>%
-  pivot_wider(names_from = Quad, values_from = Mass_g)
+mass_id3<-mass_id2 %>%
+  pivot_wider(names_from = Quad,
+              values_from = Plot_tissue_ID)
 #1134 of 9
 
-# sum quads to combine with EA
-# should we combine them or leave it off?? bc then the same data will be in 2 places
-mass_g_sum <- mass_g4 %>%
-rowwise() %>%
-mutate(Total_mass_g = sum(across(c(6:9)), na.rm = T))
-#1134 of 10
+# create one ID per plot, ignore quads
 
-# remove Q1-4
-# keep only one obs per row
-mass_g_sum1 <- mass_g_sum[,-c(6:9)]
-#1134 of 6
-# now just one total mass per plot
-head(mass_g_sum1)
+# "NA" wasn't NA
+mass_id4 <- mass_id3 %>%
+  mutate(across(c(`1`, `2`, `3`, `4`), ~na_if(., "NA")))
+
+# ID is the first appearance of a bag number
+# if Q1 exists, uses that number, then tries Q2, Q3, Q4
+mass_id4$Plot_tissue_ID <- coalesce(mass_id4$`1`, mass_id4$`2`, mass_id4$`3`, mass_id4$`4`)
+
+# remove "_bag_number" in tissue column
+mass_id4$Tissue <- 
+  sub("_bag_number","",mass_id4$Tissue) 
+
+# separate values in Tissue column into Species and Tissue
+mass_id5 <- mass_id4 %>%
+  separate(Tissue, c("Species", "Tissue"))
+#1134 of 11
+
+# remove quads
+mass_id6 <- mass_id5[,-c(7:10)]
+#1134 of 7
+
+# now just one ID number for a plot
+head(mass_id6)
+```
+
+### corrections
+
+```{r}
+# these ID's only correspond with B1 CT Q3&4, which were the burnt samples that will be excluded
+# make them NA's for Q1&2
+mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "204"] <- NA
+mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "205"] <- NA
+mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "258"] <- NA
+mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "59"] <- NA
 ```
 
 ### combine
 
 ```{r}
-head(mass_id5)
-#1134 of 6
-head(mass_g_sum1)
-#1134 of 6
+head(mass_id6)
+#1134 of 7
+head(mass_g3)
+#4536 of 8
 
 # join
-mass3 <- left_join(mass_id5, mass_g_sum1)
-# Joining with by = join_by(Block, Treatment, Surface_area_cm2, Species, Tissue)
-#1134 of 3
+mass3 <- left_join(mass_g3, mass_id6)
+# Joining with by = join_by(Block, Treatment, Surface_area_cm2, Date_collected, Species, Tissue)
+#4536 of 9
 head(mass3)
 ```
 
@@ -202,9 +168,9 @@ head(mass3)
 ```{r}
 unique(mass3$Species)
 
-#remove "loose litter"
+# remove "loose litter", not counted consistently
 mass4 <- mass3[!(mass3$Species %in% "Loose"),]
-#1116 of 7
+#4464 of 9
 
 #create Growth_form column
 mass5 <- mass4 %>% mutate(Growth_form = case_when(
@@ -227,14 +193,20 @@ mass5 <- mass4 %>% mutate(Growth_form = case_when(
     startsWith(Species, "Lichen") ~ "Lichen",
     startsWith(Species, "Attached") ~ "Litter"
     ))
-#1116 of 8
+#of 10
 
 #Sample ID number appeared twice, 1152 
 #counted the one that ran with samples from the same plot
-mass5$ID[mass5$ID == "1152" & mass5$Species == "Erivag"] <- NA
-head(mass5)
+mass5$Plot_tissue_ID[mass5$Plot_tissue_ID == "1152" & mass5$Species == "Erivag"] <- NA
+```
 
-write.csv(mass5, "~/LTER-pluck/processed_data/ag_id_mass.csv", row.names=FALSE)
+### write final_data/ag_mass.csv
+
+```{r}
+view(mass5)
+#4464 of 9
+
+write.csv(mass5, "~/LTER-pluck/processed_data/final_data/ag_mass.csv", row.names=FALSE)
 ```
 
 
