@@ -58,7 +58,6 @@ mass_g <- select(mass2, -ends_with("bag_number"))
 #72 obs, 73 variables
 mass_g1 <- select(mass_g, -ends_with("Species"))
 #68 variables
-head(mass_g1)
 ```
 
 ### classes to numeric
@@ -91,7 +90,6 @@ mass_g2$Tissue <-
 mass_g3 <- mass_g2 %>%
   separate(Tissue, c("Species", "Tissue"))
 #4536 of 8
-head(mass_g3)
 ```
 
 ### sort IDs into one per plot
@@ -150,7 +148,7 @@ mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "59"] <- NA
 
 ### combine
 
-```{r}
+```{r, message=FALSE}
 head(mass_id6)
 #1134 of 7
 head(mass_g3)
@@ -202,7 +200,7 @@ mass5$Plot_tissue_ID[mass5$Plot_tissue_ID == "1152" & mass5$Species == "Erivag"]
 
 ### add notes
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 # add notes
 head(mass5)
 mass5 <- mass5 %>%
@@ -252,7 +250,7 @@ bg2 <- bg1[-c(145:146),]
 
 ### separate masses and IDs
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 bg_names <- select(bg2, -ends_with("mass_g"))
 #144, 11
 head(bg_names)
@@ -273,7 +271,6 @@ bg_mass1 <- bg_mass %>% pivot_longer(cols = c(8:10), names_to = "Root_type", val
 
 bg_mass1$Root_type <- 
   sub("_root_mass_g","",bg_mass1$Root_type)
-head(bg_mass1)
 ```
 
 ### sort IDs into one column
@@ -307,7 +304,7 @@ head(bg_names4)
 
 ### combine
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 head(bg_names4)
 #108 of 6
 head(bg_mass1)
@@ -399,8 +396,6 @@ tc3 <- transform(tc3, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "T
 tc3 <- transform(tc3, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "This was the redo of 3A"), "This was a redo of 3A, which had a lot of sludge"))
 tc3 <- transform(tc3, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "This was a redo of 3A"), "This was a redo of 3A, which had a lot of sludge"))
 tc3 <- transform(tc3, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "This was the redo of 2A"), "This was a redo of 2A, which had a lot of sludge"))
-
-unique(tc3$Soil_notes)
 ```
 
 ### write final_data/tc_mass_quad.csv
