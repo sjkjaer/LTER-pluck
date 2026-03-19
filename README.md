@@ -1,6 +1,18 @@
 # LTER-pluck
 
-Data from the LTER 2024 pluck
+author: Savannah Kjaer
+
+date: 03-18-2026
+
+## Overview
+
+This repository tracks all data processing from the ARC LTER 2024 Pluck.
+
+Quadrats were sampled from the CT, F0.5, F1, F2, F5, and F10 treatments of the MAT06 fertilizer gradient experiment during "peak green" in late July 2024 and sorted within the following days. For "aboveground" (aboveground tissue and rhizomes) samples, four 10 x 40 cm quadrats were removed from each plot (block x treatment) and sorted to species and tissue type. For "belowground" (roots) samples, four 5 x 5 cm quadrats were removed from each plot and sorted by root type. For "total core" samples, four cores were taken from each plot and sorted into aboveground, organic, and mineral horizons. All samples were then dried and weighed.
+
+Samples were then shipped to Lamont. After combining the samples from all four quads within a plot, they were ground and homgenized. A small subsample was run through the elemental analyzer for percent carbon and nitrogen by weight.
+
+Methods can be found here: <https://app.box.com/file/1667812761561>
 
 ## Folder organization
 
@@ -23,35 +35,21 @@ Read in:
 -   /raw_data/**Shoot_data_collection_mass.xlsx**
 
     -   raw data of aboveground dry masses
-    
+
 -   /raw_data/**Root_data_collection_mass.xlsx**
 
     -   raw data of belowground dry masses
 
 Wrote:
 
--   /processed_data/final_data/**ag_mass_quad.csv**
+-   /final_data/**ag_mass.csv**
 
     -   clean, longform version of aboveground dry masses
 
--   /processed_data/**ag_ids.csv**
-
-    -   one ID value for each plot, the first occurence of the ID value from each quad, for use with the EA data
-    
--   /processed_data/**ag_id_mass.csv**
-
-    -   one ID value per plot and the sum mass across all 4 quads of that plot
-    -   may remove the Total_mass_g bc it's a repeat of quads
-    
--   /processed_data/**bg_ids.csv**
-
-    -   one ID value for each plot, the first occurence of the ID value from each quad, for use with the EA data
-    
--   /processed_data/final_data/**bg_mass_quad.csv**
+-   /final_data/**bg_mass.csv**
 
     -   clean, longform version of belowground dry masses
-    
--   /processed_data/**bg_id_mass.csv**
 
-    -   one ID value per plot and the sum mass across all 4 quads of that plot
-    -   may remove the Total_mass_g bc it's a repeat of quads   
+-   /final_data/**tc_mass.csv**
+
+    -   clean, longform version of total core dry masses

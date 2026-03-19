@@ -354,19 +354,72 @@ display: none;
 
 <div id="lter-pluck" class="section level1">
 <h1>LTER-pluck</h1>
-<p>Data from the LTER 2024 pluck</p>
-<div id="folder-organization" class="section level3">
-<h3>Folder organization</h3>
+<p>author: Savannah Kjaer</p>
+<p>date: 03-18-2026</p>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>This repository tracks all data processing from the ARC LTER 2024
+Pluck.</p>
+<p>Quadrats were sampled from the CT, F0.5, F1, F2, F5, and F10
+treatments of the MAT06 fertilizer gradient experiment during “peak
+green” in late July 2024 and sorted within the following days. For
+“aboveground” (aboveground tissue and rhizomes) samples, four 10 x 40 cm
+quadrats were removed from each plot (block x treatment) and sorted to
+species and tissue type. For “belowground” (roots) samples, four 5 x 5
+cm quadrats were removed from each plot and sorted by root type. For
+“total core” samples, four cores were taken from each plot and sorted
+into aboveground, organic, and mineral horizons. All samples were then
+dried and weighed.</p>
+<p>Samples were then shipped to Lamont. After combining the samples from
+all four quads within a plot, they were ground and homgenized. A small
+subsample was run through the elemental analyzer for percent carbon and
+nitrogen by weight.</p>
+<p>Methods can be found here: <a href="https://app.box.com/file/1667812761561" class="uri">https://app.box.com/file/1667812761561</a></p>
+</div>
+<div id="folder-organization" class="section level2">
+<h2>Folder organization</h2>
 <ul>
 <li><p>raw_data - contains unedited, raw copies of all data. DO NOT
 edit!</p></li>
 <li><p>processed_data - any and all edited versions of data</p>
 <ul>
-<li>clean_data - <em>final</em> clean copies of data</li>
+<li>final_data - final, clean copies of data ready to be published</li>
 </ul></li>
 <li><p>scripts - R Quarto files</p></li>
 <li><p>plots - any plots generated</p></li>
 </ul>
+</div>
+<div id="data-organization" class="section level2">
+<h2>Data organization</h2>
+<div id="scriptspluck_cleaning.qmd" class="section level3">
+<h3>scripts/pluck_cleaning.qmd</h3>
+<p>Read in:</p>
+<ul>
+<li><p>/raw_data/<strong>Shoot_data_collection_mass.xlsx</strong></p>
+<ul>
+<li>raw data of aboveground dry masses</li>
+</ul></li>
+<li><p>/raw_data/<strong>Root_data_collection_mass.xlsx</strong></p>
+<ul>
+<li>raw data of belowground dry masses</li>
+</ul></li>
+</ul>
+<p>Wrote:</p>
+<ul>
+<li><p>/final_data/<strong>ag_mass.csv</strong></p>
+<ul>
+<li>clean, longform version of aboveground dry masses</li>
+</ul></li>
+<li><p>/final_data/<strong>bg_mass.csv</strong></p>
+<ul>
+<li>clean, longform version of belowground dry masses</li>
+</ul></li>
+<li><p>/final_data/<strong>tc_mass.csv</strong></p>
+<ul>
+<li>clean, longform version of total core dry masses</li>
+</ul></li>
+</ul>
+</div>
 </div>
 </div>
 
