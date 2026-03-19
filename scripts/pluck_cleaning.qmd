@@ -200,11 +200,25 @@ mass5 <- mass4 %>% mutate(Growth_form = case_when(
 mass5$Plot_tissue_ID[mass5$Plot_tissue_ID == "1152" & mass5$Species == "Erivag"] <- NA
 ```
 
+### add notes
+
+```{r}
+# add notes
+head(mass5)
+mass5 <- mass5 %>%
+  mutate(
+    Notes = case_when(
+      (Plot_tissue_ID == "1736" & Quad == "3") ~ "Suspected misidentified Eri vag rhizomes",
+      (Plot_tissue_ID == "1739" & Quad == "3") ~ "Suspected misidentified Litter"
+    ))
+#of 11
+```
+
 ### write final_data/ag_mass.csv
 
 ```{r}
 view(mass5)
-#4464 of 9
+#4464 of 11
 
 write.csv(mass5, "~/LTER-pluck/processed_data/final_data/ag_mass.csv", row.names=FALSE)
 ```
@@ -220,15 +234,16 @@ bg <- read_excel("~/LTER-pluck/raw_data/Root_data_collection_mass.xlsx",
 #146 obs, 15 variables
 #lots of columns that were numbers were being read as characters, appearing in scientific notation, etc
 head(bg)
-colnames(bg)
 ```
 
 ### tidy columns and rows
 
 ```{r}
 # remove unwanted columns
-bg1 <- select(bg, -c("Date_collected","Date_sorted"))
-#146 obs, 13 variables
+colnames(bg)
+
+bg1 <- select(bg, -c("Date_sorted"))
+#146 obs, 14 variables
 
 # remove 2 empty rows
 bg2 <- bg1[-c(145:146),]
@@ -239,96 +254,99 @@ bg2 <- bg1[-c(145:146),]
 
 ```{r}
 bg_names <- select(bg2, -ends_with("mass_g"))
-#144, 10
+#144, 11
 head(bg_names)
 
 bg_mass <- select(bg2, -ends_with("bag_number"))
-#144, 10
+#144, 11
 head(bg_mass)
-```
-
-### sort IDs into one column
-
-```{r}
-bg_names_copy<-bg_names
-# preserve proper copy, 144 of 10
-
-colnames(bg_names)
-bg_names1 <- select(bg_names, -c("Core_surface_area_cm2","Depth_cm","Root_notes"))
-#144 of 7
-
-#wide2long
-bg_names2 <- bg_names1 %>% pivot_longer(cols = c(5:7), names_to = "Root_type", values_to = "ID")
-#432 of 6
-
-bg_names3<-bg_names2 %>% pivot_wider(names_from = Quad, values_from = ID)
-#108 of 8
-
-# create ID for plot, ignore quads
-bg_names3$ID <- coalesce(bg_names3$`1`, bg_names3$`2`, bg_names3$`3`, bg_names3$`4`)
-#108 of 9
-# ID is the first appearance of a bag number
-
-bg_names3$Root_type <- 
-  sub("_root_bag_number","",bg_names3$Root_type)
-
-# remove quads
-bg_names4 <- bg_names3[,-c(5:8)]
-head(bg_names4)
-
-write.csv(bg_names4, "~/LTER-pluck/processed_data/bg_ids.csv", row.names=FALSE)
 ```
 
 ### create longform mass table for publishing
 
 ```{r}
 # wide2long
-bg_mass_copy<-bg_mass
-# preserve proper copy, 144 of 11
 colnames(bg_mass)
 
-# calculate core volume
-bg_mass$Core_volume_cm3<-with(bg_mass, Core_surface_area_cm2 * Depth_cm)
-
-bg_mass1 <- bg_mass %>% pivot_longer(cols = c(7:9), names_to = "Root_type", values_to = "Mass_g")
+bg_mass1 <- bg_mass %>% pivot_longer(cols = c(8:10), names_to = "Root_type", values_to = "Mass_g")
 #432 of 10
 
 bg_mass1$Root_type <- 
   sub("_root_mass_g","",bg_mass1$Root_type)
 head(bg_mass1)
-
-write.csv(bg_mass1, "~/LTER-pluck/processed_data/final_data/bg_mass_quad.csv", row.names=F)
 ```
 
-### sum masses across quads
+### sort IDs into one column
 
 ```{r}
-# sum quads
-bg_sum <- bg_mass1 %>% 
-  group_by(Block, Treatment, Horizon, Root_type) %>%
-  summarise( 
-    Total_mass_g = sum(Mass_g, na.rm = TRUE), # summarizing quads for one per plot
-    Core_surface_area_cm2 = mean(Core_surface_area_cm2, na.rm=TRUE), # should be the same within a plot
-    # removed depth bc it varies with each q, mean or sum feels deceptive
-    Total_core_volume_cm3 = sum(Core_volume_cm3, na.rm = TRUE)) #sum of all cores
-view(bg_sum)
-#108 of 7
+colnames(bg_names)
+
+bg_names1 <- select(bg_names, -c("Core_surface_area_cm2","Depth_cm","Root_notes"))
+#144 of 8
+
+#wide2long
+head(bg_names1)
+bg_names2 <- bg_names1 %>% pivot_longer(cols = c(6:8), names_to = "Root_type", values_to = "Plot_root_ID")
+#432 of 7
+
+bg_names3<-bg_names2 %>% pivot_wider(names_from = Quad, values_from = Plot_root_ID)
+#108 of 9
+
+# create ID for plot, ignore quads
+bg_names3$Plot_root_ID <- coalesce(bg_names3$`1`, bg_names3$`2`, bg_names3$`3`, bg_names3$`4`)
+#108 of 10
+# ID is the first appearance of a bag number
+
+bg_names3$Root_type <- 
+  sub("_root_bag_number","",bg_names3$Root_type)
+
+# remove quads
+bg_names4 <- bg_names3[,-c(6:9)]
+head(bg_names4)
 ```
 
 ### combine
 
 ```{r}
 head(bg_names4)
-#108 of 5
-head(bg_sum)
-#108 of 7
+#108 of 6
+head(bg_mass1)
+#432 of 10
 
-bg3<-left_join(bg_names4, bg_sum)
-# join_by(Block, Treatment, Horizon, Root_type)
-#108 obs of 8
-head(bg3)
+bg3<-left_join(bg_mass1, bg_names4)
+# join_by(Block, Treatment, Horizon, Date_collected, Root_type)
+#432 of 11
 
-write.csv(bg3, "~/LTER-pluck/processed_data/bg_id_mass.csv", row.names=FALSE)
+# reorder columns
+colnames(bg3)
+col_order <- c("Block", "Treatment", "Quad", "Horizon", "Core_surface_area_cm2", "Depth_cm", "Date_collected", "Root_type", "Mass_g", "Plot_root_ID", "Root_notes")
+bg3 <- bg3[, col_order]
+
+```
+
+### corrections
+
+```{r}
+# tidying notes
+unique(bg3$Root_notes)
+
+# "First with new corer" 
+# "Bag number is not mistake"
+# "Sorting date"
+# all organizational for sorting, not relevant to data
+
+bg4 <- transform(bg3, Root_notes = replace(Root_notes, startsWith(Root_notes, "First with new corer"), NA))
+bg4 <- transform(bg4, Root_notes = replace(Root_notes, startsWith(Root_notes, "Bag number"), NA))
+bg4 <- transform(bg4, Root_notes = replace(Root_notes, startsWith(Root_notes, "Sorting date"), NA))
+```
+
+### write final_data/bg_mass.csv
+
+```{r}
+view(bg4)
+#432 of 11
+
+write.csv(bg4, "~/LTER-pluck/processed_data/final_data/bg_mass.csv", row.names=FALSE)
 ```
 
 
@@ -368,7 +386,7 @@ tc1 <- select(tc, -c("Date_sorted"))
 # B1 F1 Q3 no notes about two org samples existing, removed second with no depth
 # B1 F0.5 Q4_defunct, mislabeled
 tc2 <- tc1[-c(79, 65, 56, 50, 41, 35, 33, 25, 18, 13, 8),]
-#72 obs, dropped 11
+#72 obs, dropped 15
 
 # tidying notes
 unique(tc2$Soil_notes)
@@ -385,10 +403,12 @@ tc3 <- transform(tc3, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "T
 unique(tc3$Soil_notes)
 ```
 
-### write file
+### write final_data/tc_mass_quad.csv
 
 ```{r}
 view(tc3)
-write.csv(tc3, "~/LTER-pluck/processed_data/final_data/tc_mass_quad.csv", row.names = FALSE)
+#72 of 15
+
+write.csv(tc3, "~/LTER-pluck/processed_data/final_data/tc_mass.csv", row.names = FALSE)
 ```
 
