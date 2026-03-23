@@ -18,7 +18,7 @@ Methods can be found here: <https://app.box.com/file/1667812761561>
 
 -   raw_data - contains unedited, raw copies of all data. DO NOT edit!
 
--   processed_data - any and all edited versions of data
+-   processed_data - any edited, intermediate versions of data
 
     -   final_data - final, clean copies of data ready to be published
 
