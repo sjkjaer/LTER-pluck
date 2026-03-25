@@ -3,3 +3,108 @@ title: "EA_cleaning"
 format: html
 ---
 
+## Set up
+
+### load packages
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readr)
+library(readxl)
+library(here)
+```
+
+## Aboveground
+
+### read in data
+
+```{r, message=FALSE}
+cn <- read_excel("~/LTER-pluck/raw_data/CN_results2.xlsx")
+view(cn)
+#953 of 17 variables
+
+id <- read_csv("~/LTER-pluck/processed_data/ag_pluck_id.csv")
+```
+
+### tidy columns and rows
+
+```{r, message=FALSE}
+colnames(cn)
+# removing unnecessary columns
+cn1 <- select(cn, -c("Group", "Sample name", "Inj Date", "Inj Time", "Type", "Weight (mg)", "Protein Factor", "Humidity %", "AS", "Vial"))
+#953 of 7
+#Dropped: "Group", "Sample name", "Date", "Inj Date", "Inj Time", "Type", 
+#"Weight (mg)", "Protein Factor", "Humidity %", "AS", "Vial"
+
+cn1$Carbon <- as.numeric(cn1$Carbon)
+cn1$Nitrogen <- as.numeric(cn1$Nitrogen)
+cn1$Filename <- as.character(cn1$Filename)
+names(cn1)[names(cn1) == 'Sample type'] <- "Sample_type"
+names(cn1)[names(cn1) == "ID"] <- "Plot_tissue_ID"
+```
+
+### separate AG masses from others
+
+```{r}
+cn_ag <- filter(cn1, Sample_type == "AG")
+view(cn_ag)
+#707
+```
+
+### corrections
+
+```{r}
+# two IDs from AG mass data so one renamed to another quad ID
+cn_ag$Plot_tissue_ID[cn_ag$Filename == "09042025013"] <- "1601"
+```
+
+### combine
+
+```{r, message=FALSE}
+head(cn_ag)
+#707 obs of 6
+
+head(id)
+#1134 of 7 
+id$Plot_tissue_ID <- as.character(id$Plot_tissue_ID)
+
+cn2 <- left_join(cn_ag, id)
+# Joining with `by = join_by(Plot_tissue_ID)`
+
+view(cn2)
+#707 of 13
+```
+
+### error check
+
+```{r, message=FALSE}
+cn2.na <- subset(cn2, (is.na(cn2$Block)))
+#112 obs
+
+# remove check results
+cn3 <- cn2 %>%
+  filter(!grepl("Check", Plot_tissue_ID))
+#649
+
+# "NA" wasn't NA
+cn3$Plot_tissue_ID[cn3$Plot_tissue_ID == "NA"] <- NA
+
+cn3.na <- subset(cn3, (is.na(cn3$Plot_tissue_ID)))
+#13
+# checked, can all be removed 
+
+cn4 <- cn3 %>%
+  filter(!(Plot_tissue_ID %in% c(NA)))
+#636, good!!
+
+cn4.na <- subset(cn4, (is.na(cn4$Block)))
+
+# LEFT OFF HERE
+# looking into IDs that appeared in EA results that are not ID names
+# 602, 685, 1548, 1549
+
+# from old script, ignore
+#105 of 699 missing EA values
+#could be too small, missing, failed, undone
+#15% missing rate, 85% present
+```

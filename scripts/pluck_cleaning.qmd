@@ -27,8 +27,6 @@ mass <- read_excel("~/LTER-pluck/raw_data/Shoot_data_collection_mass.xlsx")
 head(mass)
 ```
 
-## Tidy
-
 ### tidy columns and rows
 
 ```{r, message=FALSE}
@@ -144,6 +142,16 @@ mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "204"] <- NA
 mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "205"] <- NA
 mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "258"] <- NA
 mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "59"] <- NA
+
+# two IDs from AG mass data so one renamed to another quad ID
+mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "1152" & mass_id6$Treatment == "F5"] <- "1601"
+```
+
+### create ID list
+
+```{r}
+view(mass_id6)
+write.csv(mass_id6, "~/LTER-pluck/processed_data/ag_pluck_id.csv", row.names = FALSE)
 ```
 
 ### combine
@@ -192,10 +200,6 @@ mass5 <- mass4 %>% mutate(Growth_form = case_when(
     startsWith(Species, "Attached") ~ "Litter"
     ))
 #of 10
-
-#Sample ID number appeared twice, 1152 
-#counted the one that ran with samples from the same plot
-mass5$Plot_tissue_ID[mass5$Plot_tissue_ID == "1152" & mass5$Species == "Erivag"] <- NA
 ```
 
 ### add notes
