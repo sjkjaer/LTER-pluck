@@ -148,10 +148,55 @@ view(cn5)
 #562 obs
 ```
 
-### write final
+### create growth form column
+
 ```{r}
-# START HERE
-# reorder columns
-# write final
+#create Growth_form column
+cn6 <- cn5 %>% mutate(Growth_form = case_when(
+    startsWith(Species, "Erivag") ~ "Graminoid",
+    startsWith(Species, "OtherGraminoid") ~ "Graminoid",
+    startsWith(Species, "Carbig") ~ "Graminoid",
+    startsWith(Species, "Betnan") ~ "Deciduous",
+    startsWith(Species, "Salpul") ~ "Deciduous",
+    startsWith(Species, "Vaculi") ~ "Deciduous",
+    startsWith(Species, "OtherDeciduous") ~ "Deciduous",
+    startsWith(Species, "Ledpal") ~ "Evergreen",
+    startsWith(Species, "Vacvit") ~ "Evergreen",
+    startsWith(Species, "Castet") ~ "Evergreen",
+    startsWith(Species, "OtherEvergreen") ~ "Evergreen",
+    startsWith(Species, "Rubcha") ~ "Forb",
+    startsWith(Species, "Petfri") ~ "Forb",
+    startsWith(Species, "OtherForb") ~ "Forb",
+    startsWith(Species, "Sphagnum") ~ "Moss",
+    startsWith(Species, "OtherMoss") ~ "Moss",
+    startsWith(Species, "Lichen") ~ "Lichen",
+    startsWith(Species, "Attached") ~ "Litter"
+    ))
+#of 14
+```
+
+### final tidy
+
+```{r}
+head(cn6)
+
+cn7 <- select(cn6, -c("Filename", "Date", "Sample_type"))
+col_order <- c("Block", "Treatment", "Surface_area_cm2", "Date_collected", "Species", "Tissue", "Plot_tissue_ID", "Nitrogen", "Carbon", "Growth_form", "Notes")
+cn7 <- cn7[, col_order]
+
+names(cn7)[names(cn7) == 'Nitrogen'] <- "Nitrogen_%"
+names(cn7)[names(cn7) == 'Carbon'] <- "Carbon_%"
+
+```
+
+### write final_data/ag_cn.csv
+```{r}
+write.csv(cn7, "~/LTER-pluck/processed_data/final_data/ag_cn.csv", row.names=FALSE)
+```
+
+## Belowground
+
+```{r}
+
 ```
 
