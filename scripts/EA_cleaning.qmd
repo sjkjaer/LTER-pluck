@@ -24,6 +24,7 @@ view(cn)
 #953 of 17 variables
 
 id <- read_csv("~/LTER-pluck/processed_data/ag_pluck_id.csv")
+#1134 of 7
 ```
 
 ### tidy columns and rows
@@ -33,8 +34,6 @@ colnames(cn)
 # removing unnecessary columns
 cn1 <- select(cn, -c("Group", "Sample name", "Inj Date", "Inj Time", "Type", "Weight (mg)", "Protein Factor", "Humidity %", "AS", "Vial"))
 #953 of 7
-#Dropped: "Group", "Sample name", "Date", "Inj Date", "Inj Time", "Type", 
-#"Weight (mg)", "Protein Factor", "Humidity %", "AS", "Vial"
 
 cn1$Carbon <- as.numeric(cn1$Carbon)
 cn1$Nitrogen <- as.numeric(cn1$Nitrogen)
@@ -56,13 +55,29 @@ view(cn_ag)
 ```{r}
 # two IDs from AG mass data so one renamed to another quad ID
 cn_ag$Plot_tissue_ID[cn_ag$Filename == "09042025013"] <- "1601"
+
+# looking into IDs that appeared in EA results that are not ID names
+# 602, 685, 1548, 1549, 1084
+# 602 was mistyped, paper datasheet say 662
+# 685 was mistyped, paper datasheet say 658
+# 1548 was mistyped, paper datasheet say 1506
+# 1549 was mistyped, paper datasheet say 1507
+# 223 was mistyped, paper datasheet say 222
+# 1084 unclear what sample it was
+
+cn_ag$Plot_tissue_ID[cn_ag$Filename == "04042025044"] <- "662"
+cn_ag$Plot_tissue_ID[cn_ag$Filename == "04042025042"] <- "658"
+cn_ag$Plot_tissue_ID[cn_ag$Filename == "09042025017"] <- "1506"
+cn_ag$Plot_tissue_ID[cn_ag$Filename == "09042025018"] <- "1507"
+cn_ag$Plot_tissue_ID[cn_ag$Filename == "03042025105"] <- "222"
+cn_ag$Plot_tissue_ID[cn_ag$Filename == "24032025073"] <- "NA"
 ```
 
 ### combine
 
 ```{r, message=FALSE}
 head(cn_ag)
-#707 obs of 6
+#707 obs of 7
 
 head(id)
 #1134 of 7 
@@ -79,7 +94,7 @@ view(cn2)
 
 ```{r, message=FALSE}
 cn2.na <- subset(cn2, (is.na(cn2$Block)))
-#112 obs
+#107 obs
 
 # remove check results
 cn3 <- cn2 %>%
@@ -90,21 +105,53 @@ cn3 <- cn2 %>%
 cn3$Plot_tissue_ID[cn3$Plot_tissue_ID == "NA"] <- NA
 
 cn3.na <- subset(cn3, (is.na(cn3$Plot_tissue_ID)))
-#13
+#14
 # checked, can all be removed 
 
 cn4 <- cn3 %>%
   filter(!(Plot_tissue_ID %in% c(NA)))
-#636, good!!
+#635, good!!
 
 cn4.na <- subset(cn4, (is.na(cn4$Block)))
-
-# LEFT OFF HERE
-# looking into IDs that appeared in EA results that are not ID names
-# 602, 685, 1548, 1549
-
-# from old script, ignore
-#105 of 699 missing EA values
-#could be too small, missing, failed, undone
-#15% missing rate, 85% present
 ```
+
+### burnt samples
+
+Looked at values of burnt against unburnt samples, not terribly different but I think it's best to remove them entirely, rather than keep even potentially flawed samples. This removes all samples from B1 F0.5, and B1 CT Q3&4.
+
+```{r}
+# checking burnt B1 against unburnt B2&3
+test <- cn4 %>%
+  filter(Treatment %in% c("F0.5"))
+
+test %>%
+  ggplot() +
+  geom_boxplot(aes(x=Tissue, y=Carbon, col=Notes)) + 
+  facet_wrap(~Species)
+test %>%
+  ggplot() +
+  geom_boxplot(aes(x=Tissue, y=Nitrogen, col=Notes)) + 
+  facet_wrap(~Species)
+```
+
+### remove burnt samples
+
+```{r}
+burnt <- cn4 %>%
+  filter(Notes %in% c("burnt sample"))
+# all burnt, should be removed
+
+cn5 <- cn4 %>%
+  filter(!(Notes %in% c("burnt sample")))
+
+view(cn5)
+#562 obs
+```
+
+### write final
+```{r}
+# START HERE
+# reorder columns
+# write final
+```
+
