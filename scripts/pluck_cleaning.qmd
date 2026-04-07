@@ -306,6 +306,13 @@ bg_names4 <- bg_names3[,-c(6:9)]
 head(bg_names4)
 ```
 
+### create ID list
+
+```{r}
+view(bg_names4)
+write.csv(bg_names4, "~/LTER-pluck/processed_data/bg_pluck_id.csv", row.names = FALSE)
+```
+
 ### combine
 
 ```{r, message=FALSE, warning=FALSE}
