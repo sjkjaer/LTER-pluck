@@ -288,5 +288,87 @@ view(cn_bg5)
 write.csv(cn_bg5, "~/LTER-pluck/processed_data/final_data/bg_cn.csv", row.names=FALSE)
 ```
 
+## Total Cores
+
+### separate BG masses from others
+
+```{r}
+names(cn1)[names(cn1) == "Plot_root_ID"] <- "Plot_horizon_ID"
+
+cn_tc <- filter(cn1, Sample_type == "Total Cores")
+view(cn_tc)
+#80
+```
+
+### corrections
+
+```{r}
+cn_tc$Plot_horizon_ID <- gsub("-T", "-M", cn_tc$Plot_horizon_ID)
+# not sure why mineral was labeled as T?
+```
+
+### combine
+
+```{r, message=FALSE}
+head(cn_tc)
+#44 of 7
+
+cn_bg2 <- left_join(cn_bg, id_bg)
+# Joining with `by = join_by(Plot_root_ID)`
+
+# START HERE
+# add ID to mass data
+# add block, trt, what else to cn results
+
+view(cn_bg2)
+#80 of 12
+```
+
+### error check
+
+```{r, message=FALSE}
+cn2.na <- subset(cn_bg2, (is.na(cn_bg2$Block)))
+#7 obs
+
+# remove check results
+cn_bg3 <- cn_bg2 %>%
+  filter(!grepl("Check", Plot_root_ID))
+#74
+
+# "NA" wasn't NA
+cn_bg3$Plot_root_ID[cn_bg3$Plot_root_ID == "NA"] <- NA
+
+cn_bg3.na <- subset(cn_bg3, (is.na(cn_bg3$Plot_root_ID)))
+#1
+# checked, can be removed 
+
+cn_bg4 <- cn_bg3 %>%
+  filter(!(Plot_root_ID %in% c(NA)))
+#73, good!!
+
+cn_bg4.na <- subset(cn_bg4, (is.na(cn_bg4$Block)))
+```
+
+### final tidy
+
+```{r}
+head(cn_bg4)
+
+cn_bg5 <- select(cn_bg4, -c("Filename", "Date", "Sample_type"))
+col_order <- c("Block", "Treatment", "Date_collected", "Horizon", "Root_type", "Plot_root_ID", "Nitrogen", "Carbon", "Notes")
+cn_bg5 <- cn_bg5[, col_order]
+
+names(cn_bg5)[names(cn_bg5) == 'Nitrogen'] <- "Nitrogen_%"
+names(cn_bg5)[names(cn_bg5) == 'Carbon'] <- "Carbon_%"
+```
+
+### write final_data/ag_cn.csv
+
+```{r}
+view(cn_bg5)
+
+write.csv(cn_bg5, "~/LTER-pluck/processed_data/final_data/bg_cn.csv", row.names=FALSE)
+```
+
 
 
