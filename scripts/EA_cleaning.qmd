@@ -106,7 +106,7 @@ cn3$Plot_tissue_ID[cn3$Plot_tissue_ID == "NA"] <- NA
 
 cn3.na <- subset(cn3, (is.na(cn3$Plot_tissue_ID)))
 #14
-# checked, can all be removed 
+# checked, should be removed 
 
 cn4 <- cn3 %>%
   filter(!(Plot_tissue_ID %in% c(NA)))
@@ -180,21 +180,19 @@ cn6 <- cn5 %>% mutate(Growth_form = case_when(
 ```{r}
 head(cn6)
 
-cn7 <- select(cn6, -c("Filename", "Date", "Sample_type"))
-col_order <- c("Block", "Treatment", "Surface_area_cm2", "Date_collected", "Species", "Tissue", "Plot_tissue_ID", "Nitrogen", "Carbon", "Growth_form", "Notes")
+cn7 <- select(cn6, -c("Filename", "Date", "Sample_type", "Surface_area_cm2"))
+col_order <- c("Block", "Treatment", "Date_collected", "Species", "Tissue", "Plot_tissue_ID", "Nitrogen", "Carbon", "Growth_form", "Notes")
 cn7 <- cn7[, col_order]
 
-names(cn7)[names(cn7) == 'Nitrogen'] <- "Nitrogen_%"
-names(cn7)[names(cn7) == 'Carbon'] <- "Carbon_%"
-
-cn7$Surface_area_cm2 <- c(1600)
-# since it's 4 quads combined, but maybe this column is better just removed?
+names(cn7)[names(cn7) == 'Nitrogen'] <- "Nitrogen_percent"
+names(cn7)[names(cn7) == 'Carbon'] <- "Carbon_percent"
 ```
 
 ### write final_data/ag_cn.csv
 
 ```{r}
 view(cn7)
+#562 of 10
 
 write.csv(cn7, "~/LTER-pluck/processed_data/final_data/ag_cn.csv", row.names=FALSE)
 ```
@@ -258,7 +256,7 @@ cn_bg3$Plot_root_ID[cn_bg3$Plot_root_ID == "NA"] <- NA
 
 cn_bg3.na <- subset(cn_bg3, (is.na(cn_bg3$Plot_root_ID)))
 #1
-# checked, can be removed 
+# checked, should be removed 
 
 cn_bg4 <- cn_bg3 %>%
   filter(!(Plot_root_ID %in% c(NA)))
@@ -276,28 +274,29 @@ cn_bg5 <- select(cn_bg4, -c("Filename", "Date", "Sample_type"))
 col_order <- c("Block", "Treatment", "Date_collected", "Horizon", "Root_type", "Plot_root_ID", "Nitrogen", "Carbon", "Notes")
 cn_bg5 <- cn_bg5[, col_order]
 
-names(cn_bg5)[names(cn_bg5) == 'Nitrogen'] <- "Nitrogen_%"
-names(cn_bg5)[names(cn_bg5) == 'Carbon'] <- "Carbon_%"
+names(cn_bg5)[names(cn_bg5) == 'Nitrogen'] <- "Nitrogen_percent"
+names(cn_bg5)[names(cn_bg5) == 'Carbon'] <- "Carbon_percent"
 ```
 
-### write final_data/ag_cn.csv
+### write final_data/bg_cn.csv
 
 ```{r}
 view(cn_bg5)
+#73 of 9
 
 write.csv(cn_bg5, "~/LTER-pluck/processed_data/final_data/bg_cn.csv", row.names=FALSE)
 ```
 
 ## Total Cores
 
-### separate BG masses from others
+### separate TC masses from others
 
 ```{r}
 names(cn1)[names(cn1) == "Plot_root_ID"] <- "Plot_horizon_ID"
 
 cn_tc <- filter(cn1, Sample_type == "Total Cores")
 view(cn_tc)
-#80
+#44
 ```
 
 ### corrections
@@ -305,70 +304,49 @@ view(cn_tc)
 ```{r}
 cn_tc$Plot_horizon_ID <- gsub("-T", "-M", cn_tc$Plot_horizon_ID)
 # not sure why mineral was labeled as T?
-```
 
-### combine
-
-```{r, message=FALSE}
-head(cn_tc)
-#44 of 7
-
-cn_bg2 <- left_join(cn_bg, id_bg)
-# Joining with `by = join_by(Plot_root_ID)`
-
-# START HERE
-# add ID to mass data
-# add block, trt, what else to cn results
-
-view(cn_bg2)
-#80 of 12
+# create block, trt, horizon columns from id
+cn_tc1 <- cn_tc %>% 
+  separate(Plot_horizon_ID, c("Block", "Treatment", "Horizon"), sep = "-")
 ```
 
 ### error check
 
 ```{r, message=FALSE}
-cn2.na <- subset(cn_bg2, (is.na(cn_bg2$Block)))
-#7 obs
-
 # remove check results
-cn_bg3 <- cn_bg2 %>%
-  filter(!grepl("Check", Plot_root_ID))
-#74
+cn_tc2 <- cn_tc1 %>%
+  filter(!grepl("Check", Block))
+#42
 
 # "NA" wasn't NA
-cn_bg3$Plot_root_ID[cn_bg3$Plot_root_ID == "NA"] <- NA
+cn_tc2$Block[cn_tc2$Block == "NA"] <- NA
 
-cn_bg3.na <- subset(cn_bg3, (is.na(cn_bg3$Plot_root_ID)))
-#1
-# checked, can be removed 
+cn_tc2.na <- subset(cn_tc2, (is.na(cn_tc2$Block)))
+#2
+# checked, should be removed 
 
-cn_bg4 <- cn_bg3 %>%
-  filter(!(Plot_root_ID %in% c(NA)))
-#73, good!!
-
-cn_bg4.na <- subset(cn_bg4, (is.na(cn_bg4$Block)))
+cn_tc3 <- cn_tc2 %>%
+  filter(!(Block %in% c(NA)))
+#40, good!!
 ```
 
 ### final tidy
 
 ```{r}
-head(cn_bg4)
+head(cn_tc3)
 
-cn_bg5 <- select(cn_bg4, -c("Filename", "Date", "Sample_type"))
-col_order <- c("Block", "Treatment", "Date_collected", "Horizon", "Root_type", "Plot_root_ID", "Nitrogen", "Carbon", "Notes")
-cn_bg5 <- cn_bg5[, col_order]
+cn_tc4 <- select(cn_tc3, -c("Filename", "Date", "Sample_type"))
+col_order <- c("Block", "Treatment", "Horizon", "Nitrogen", "Carbon", "Notes")
+cn_tc4 <- cn_tc4[, col_order]
 
-names(cn_bg5)[names(cn_bg5) == 'Nitrogen'] <- "Nitrogen_%"
-names(cn_bg5)[names(cn_bg5) == 'Carbon'] <- "Carbon_%"
+names(cn_tc4)[names(cn_tc4) == 'Nitrogen'] <- "Nitrogen_percent"
+names(cn_tc4)[names(cn_tc4) == 'Carbon'] <- "Carbon_percent"
 ```
 
-### write final_data/ag_cn.csv
+### write final_data/tc_cn.csv
 
 ```{r}
-view(cn_bg5)
+view(cn_tc4)
 
-write.csv(cn_bg5, "~/LTER-pluck/processed_data/final_data/bg_cn.csv", row.names=FALSE)
+write.csv(cn_bg5, "~/LTER-pluck/processed_data/final_data/tc_cn.csv", row.names=FALSE)
 ```
-
-
-

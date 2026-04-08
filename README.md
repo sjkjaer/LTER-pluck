@@ -46,10 +46,42 @@ Wrote:
 
     -   clean, longform version of aboveground dry masses
 
+-   /processed_data/**ag_pluck_id.csv**
+
+    -   list of id numbers for species, tissue type in each plot
+
 -   /final_data/**bg_mass.csv**
 
     -   clean, longform version of belowground dry masses
 
+-   /processed_data/**bg_pluck_id.csv**
+
+    -   list of id numbers for horizon, root type in each plot
+
 -   /final_data/**tc_mass.csv**
 
     -   clean, longform version of total core dry masses
+
+### scripts/EA_cleaning.qmd
+
+Read in:
+
+-   /raw_data/**CN_results2.xlsx**
+
+-   /processed_data/**ag_pluck_id.csv**
+
+-   /processed_data/**bg_pluck_id.csv**
+
+Wrote:
+
+-   /final_data/**ag_cn.csv**
+
+    -   CN results for each plot, species, tissue type combined across quads for AG samples
+
+-   /final_data/**bg_cn.csv**
+
+    -   CN results for each plot, horizon, root type combined across quads for BG samples
+
+-   /final_data/**tc_cn.csv**
+
+    -   CN results for each plot and horizon combined across quads for total core samples

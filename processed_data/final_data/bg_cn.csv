@@ -1,4 +1,4 @@
-"Block","Treatment","Date_collected","Horizon","Root_type","Plot_root_ID","Nitrogen_%","Carbon_%","Notes"
+"Block","Treatment","Date_collected","Horizon","Root_type","Plot_root_ID","Nitrogen_percent","Carbon_percent","Notes"
 1,"CT",2024-07-24,"O","Fine","1",0.957558155059814,48.7275886535645,NA
 1,"CT",2024-07-24,"M","Fine","4",1.12257146835327,41.2821846008301,NA
 1,"CT",2024-07-24,"O","Erivag","3",0.643406391143799,23.5383243560791,NA
