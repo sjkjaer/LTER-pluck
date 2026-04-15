@@ -21,7 +21,7 @@ library(here)
 ```{r, message=FALSE}
 cn <- read_excel("~/LTER-pluck/raw_data/CN_results2.xlsx")
 view(cn)
-#953 of 17 variables
+#1007 of 17 variables
 
 id <- read_csv("~/LTER-pluck/processed_data/ag_pluck_id.csv")
 #1134 of 7
@@ -33,7 +33,7 @@ id <- read_csv("~/LTER-pluck/processed_data/ag_pluck_id.csv")
 colnames(cn)
 # removing unnecessary columns
 cn1 <- select(cn, -c("Group", "Sample name", "Inj Date", "Inj Time", "Type", "Weight (mg)", "Protein Factor", "Humidity %", "AS", "Vial"))
-#953 of 7
+#of 7
 
 cn1$Carbon <- as.numeric(cn1$Carbon)
 cn1$Nitrogen <- as.numeric(cn1$Nitrogen)
@@ -47,7 +47,7 @@ names(cn1)[names(cn1) == "ID"] <- "Plot_tissue_ID"
 ```{r}
 cn_ag <- filter(cn1, Sample_type == "AG")
 view(cn_ag)
-#707
+#760
 ```
 
 ### corrections
@@ -57,13 +57,14 @@ view(cn_ag)
 cn_ag$Plot_tissue_ID[cn_ag$Filename == "09042025013"] <- "1601"
 
 # looking into IDs that appeared in EA results that are not ID names
-# 602, 685, 1548, 1549, 1084
+# 602, 685, 1548, 1549, 1084, 1355
 # 602 was mistyped, paper datasheet say 662
 # 685 was mistyped, paper datasheet say 658
 # 1548 was mistyped, paper datasheet say 1506
 # 1549 was mistyped, paper datasheet say 1507
 # 223 was mistyped, paper datasheet say 222
 # 1084 unclear what sample it was
+# 1355 is under the ID 1164, which was missing so showed up as an ID but not a sample
 
 cn_ag$Plot_tissue_ID[cn_ag$Filename == "04042025044"] <- "662"
 cn_ag$Plot_tissue_ID[cn_ag$Filename == "04042025042"] <- "658"
@@ -71,13 +72,14 @@ cn_ag$Plot_tissue_ID[cn_ag$Filename == "09042025017"] <- "1506"
 cn_ag$Plot_tissue_ID[cn_ag$Filename == "09042025018"] <- "1507"
 cn_ag$Plot_tissue_ID[cn_ag$Filename == "03042025105"] <- "222"
 cn_ag$Plot_tissue_ID[cn_ag$Filename == "24032025073"] <- "NA"
+cn_ag$Plot_tissue_ID[cn_ag$Filename == "23012026046"] <- "1164"
 ```
 
 ### combine
 
 ```{r, message=FALSE}
 head(cn_ag)
-#707 obs of 7
+#760 obs of 7
 
 head(id)
 #1134 of 7 
@@ -87,32 +89,34 @@ cn2 <- left_join(cn_ag, id)
 # Joining with `by = join_by(Plot_tissue_ID)`
 
 view(cn2)
-#707 of 13
+#760 of 13
 ```
 
 ### error check
 
 ```{r, message=FALSE}
 cn2.na <- subset(cn2, (is.na(cn2$Block)))
-#107 obs
+#117 obs
 
 # remove check results
 cn3 <- cn2 %>%
   filter(!grepl("Check", Plot_tissue_ID))
-#649
+#697
 
 # "NA" wasn't NA
 cn3$Plot_tissue_ID[cn3$Plot_tissue_ID == "NA"] <- NA
 
-cn3.na <- subset(cn3, (is.na(cn3$Plot_tissue_ID)))
-#14
-# checked, should be removed 
+cn3.na <- subset(cn3, (is.na(cn3$Block)))
+#54
+# 1186, 538, 1617, 1488, 1476
+# these aren't first quads, just quads that didn't originally get added to the rest
+# how to combine with other samples? better just left out? I don't want to average with the other values bc then it'll be over-represented
+# ask Duncan?
+# leave all out for now
 
 cn4 <- cn3 %>%
-  filter(!(Plot_tissue_ID %in% c(NA)))
-#635, good!!
-
-cn4.na <- subset(cn4, (is.na(cn4$Block)))
+  filter(!(Block %in% c(NA)))
+#643, good!!
 ```
 
 ### burnt samples
@@ -139,13 +143,14 @@ test %>%
 ```{r}
 burnt <- cn4 %>%
   filter(Notes %in% c("burnt sample"))
+#40
 # all burnt, should be removed
 
 cn5 <- cn4 %>%
   filter(!(Notes %in% c("burnt sample")))
 
 view(cn5)
-#562 obs
+#603 obs
 ```
 
 ### create growth form column
@@ -192,7 +197,7 @@ names(cn7)[names(cn7) == 'Carbon'] <- "Carbon_percent"
 
 ```{r}
 view(cn7)
-#562 of 10
+#603 of 10
 
 write.csv(cn7, "~/LTER-pluck/processed_data/final_data/ag_cn.csv", row.names=FALSE)
 ```
