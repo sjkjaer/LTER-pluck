@@ -16,72 +16,76 @@ Methods can be found here: <https://app.box.com/file/1667812761561>
 
 ## Folder organization
 
--   raw_data - contains unedited, raw copies of all data. DO NOT edit!
+-   2012_pluck - everything related to 2012 pluck data cleaning
 
--   processed_data - any edited, intermediate versions of data
+-   2024_pluck - everything related to 2024 pluck data cleaning
 
-    -   final_data - final, clean copies of data ready to be published
+    -   raw_data - contains unedited, raw copies of all data. DO NOT edit!
 
--   scripts - R Quarto files
+    -   processed_data - any edited, intermediate versions of data
 
--   plots - any plots generated
+        -   final_data - final, clean copies of data ready to be published
+
+    -   scripts - R Quarto files
+
+    -   plots - any plots generated
 
 ## Data organization
 
-### scripts/pluck_cleaning.qmd
+### 2024_pluck/scripts/pluck_cleaning.qmd
 
 Read in:
 
--   /raw_data/**Shoot_data_collection_mass.xlsx**
+-   ../raw_data/**Shoot_data_collection_mass.xlsx**
 
     -   raw data of aboveground dry masses
 
--   /raw_data/**Root_data_collection_mass.xlsx**
+-   ../raw_data/**Root_data_collection_mass.xlsx**
 
     -   raw data of belowground dry masses
 
 Wrote:
 
--   /final_data/**ag_mass.csv**
+-   ../processed_data/final_data/**ag_mass.csv**
 
     -   clean, longform version of aboveground dry masses
 
--   /processed_data/**ag_pluck_id.csv**
+-   ../processed_data/**ag_pluck_id.csv**
 
     -   list of id numbers for species, tissue type in each plot
 
--   /final_data/**bg_mass.csv**
+-   ../final_data/**bg_mass.csv**
 
     -   clean, longform version of belowground dry masses
 
--   /processed_data/**bg_pluck_id.csv**
+-   ../processed_data/**bg_pluck_id.csv**
 
     -   list of id numbers for horizon, root type in each plot
 
--   /final_data/**tc_mass.csv**
+-   ../final_data/**tc_mass.csv**
 
     -   clean, longform version of total core dry masses
 
-### scripts/EA_cleaning.qmd
+### 2024_pluck/scripts/EA_cleaning.qmd
 
 Read in:
 
--   /raw_data/**CN_results2.xlsx**
+-   ../raw_data/**CN_results2.xlsx**
 
--   /processed_data/**ag_pluck_id.csv**
+-   ../processed_data/**ag_pluck_id.csv**
 
--   /processed_data/**bg_pluck_id.csv**
+-   ../processed_data/**bg_pluck_id.csv**
 
 Wrote:
 
--   /final_data/**ag_cn.csv**
+-   ../final_data/**ag_cn.csv**
 
     -   CN results for each plot, species, tissue type combined across quads for AG samples
 
--   /final_data/**bg_cn.csv**
+-   ../final_data/**bg_cn.csv**
 
     -   CN results for each plot, horizon, root type combined across quads for BG samples
 
--   /final_data/**tc_cn.csv**
+-   ../final_data/**tc_cn.csv**
 
     -   CN results for each plot and horizon combined across quads for total core samples
