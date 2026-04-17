@@ -1,6 +1,8 @@
 ---
 title: "EA_cleaning"
 format: html
+author: Savannah Kjaer
+date: 04-15-2026
 ---
 
 ## Set up

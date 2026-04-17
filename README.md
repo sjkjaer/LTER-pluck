@@ -14,6 +14,8 @@ Samples were then shipped to Lamont. After combining the samples from all four q
 
 Methods can be found here: <https://app.box.com/file/1667812761561>
 
+It also includes cleaning 2012 pluck data to make it easier to use in R and ready to publish to EDI.
+
 ## Folder organization
 
 -   2012_pluck - everything related to 2012 pluck data cleaning

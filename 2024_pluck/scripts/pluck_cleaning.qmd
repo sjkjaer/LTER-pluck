@@ -22,7 +22,7 @@ library(here)
 
 ```{r, message=FALSE, warning=FALSE}
 # read in files from /raw_data/ folder
-mass <- read_excel("~/LTER-pluck/raw_data/Shoot_data_collection_mass.xlsx")
+mass <- read_excel("~/LTER-pluck/2024_pluck/raw_data/Shoot_data_collection_mass.xlsx")
 #74 obs, 141 variables
 head(mass)
 ```
@@ -30,14 +30,20 @@ head(mass)
 ### tidy columns and rows
 
 ```{r, message=FALSE}
+mass <- clean_names(mass)
+
 # drop columns we don't want, organizational not informational
 mass1 <- select(mass, 
-                -c("Date_sorted","Plucker","Balance","Weigher","Notes"))
+                -c("date_sorted","plucker","balance","weigher","notes"))
 #74 obs, 136 variables
 
 # drop empty rows at the bottom
 mass2 <- mass1[-c(73:74),]
 #72 obs of 136 variables
+
+# add site column
+mass2$site <- c("MAT06")
+#of 137
 ```
 
 ### separate mass and IDs
@@ -45,17 +51,17 @@ mass2 <- mass1[-c(73:74),]
 ```{r}
 # remove mass columns
 mass_id <- select(mass2, -ends_with("mass_g"))
-#72 obs, 73 variables
+#72 obs, 74 variables
 
 # remove other species column
-mass_id1 <- select(mass_id, -ends_with("Species"))
-#72 obs, 68 variables
+mass_id1 <- select(mass_id, -ends_with("species"))
+#72 obs, 69 variables
 
 # remove name columns
 mass_g <- select(mass2, -ends_with("bag_number"))
-#72 obs, 73 variables
-mass_g1 <- select(mass_g, -ends_with("Species"))
-#68 variables
+#72 obs, 74 variables
+mass_g1 <- select(mass_g, -ends_with("species"))
+#69 variables
 ```
 
 ### classes to numeric
@@ -76,18 +82,20 @@ sapply(mass_g1, class)
 # wide2long
 mass_g2 <- mass_g1 %>%
   pivot_longer(cols = c(6:68),
-               names_to = "Tissue",
-               values_to = "Mass_g")
-#4536 obs, 7 variables
+               names_to = "tissue",
+               values_to = "mass_g")
+#4536 obs, 8 variables
 
 # remove "_mass_g" from tissue col
-mass_g2$Tissue <- 
-  sub("_mass_g","",mass_g2$Tissue)
+mass_g2$tissue <- 
+  sub("_mass_g","",mass_g2$tissue)
 
-# separate values in Tissue column into Species and Tissue
+# separate values in tissue column into species and tissue
 mass_g3 <- mass_g2 %>%
-  separate(Tissue, c("Species", "Tissue"))
-#4536 of 8
+  separate(tissue, c("species", "tissue"))
+#4536 of 9
+
+# ***THIS LINE DOESN'T WORK***
 ```
 
 ### sort IDs into one per plot
@@ -96,15 +104,15 @@ mass_g3 <- mass_g2 %>%
 # wide2long
 mass_id2 <- mass_id1 %>% 
   pivot_longer(cols = c(ends_with('_bag_number')),
-               names_to = "Tissue",
-               values_to = "Plot_tissue_ID")
-#4536 obs, 7 variables
+               names_to = "tissue",
+               values_to = "plot_tissue_ID")
+#4536 obs, 8 variables
 
 # put all quads into one row per plot
 mass_id3<-mass_id2 %>%
-  pivot_wider(names_from = Quad,
-              values_from = Plot_tissue_ID)
-#1134 of 9
+  pivot_wider(names_from = quad,
+              values_from = plot_tissue_ID)
+#1134 of 10
 
 # create one ID per plot, ignore quads
 
@@ -114,20 +122,20 @@ mass_id4 <- mass_id3 %>%
 
 # ID is the first appearance of a bag number
 # if Q1 exists, uses that number, then tries Q2, Q3, Q4
-mass_id4$Plot_tissue_ID <- coalesce(mass_id4$`1`, mass_id4$`2`, mass_id4$`3`, mass_id4$`4`)
+mass_id4$plot_tissue_ID <- coalesce(mass_id4$`1`, mass_id4$`2`, mass_id4$`3`, mass_id4$`4`)
 
 # remove "_bag_number" in tissue column
-mass_id4$Tissue <- 
-  sub("_bag_number","",mass_id4$Tissue) 
+mass_id4$tissue <- 
+  sub("_bag_number","",mass_id4$tissue) 
 
-# separate values in Tissue column into Species and Tissue
+# separate values in tissue column into species and tissue
 mass_id5 <- mass_id4 %>%
-  separate(Tissue, c("Species", "Tissue"))
-#1134 of 11
+  separate(tissue, c("species", "tissue"))
+#1134 of 12
 
 # remove quads
-mass_id6 <- mass_id5[,-c(7:10)]
-#1134 of 7
+mass_id6 <- mass_id5[,-c(8:11)]
+#1134 of 8
 
 # now just one ID number for a plot
 head(mass_id6)
@@ -138,68 +146,68 @@ head(mass_id6)
 ```{r}
 # these ID's only correspond with B1 CT Q3&4, which were the burnt samples that will be excluded
 # make them NA's for Q1&2
-mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "204"] <- NA
-mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "205"] <- NA
-mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "258"] <- NA
-mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "59"] <- NA
+mass_id6$plot_tissue_ID[mass_id6$plot_tissue_ID == "204"] <- NA
+mass_id6$plot_tissue_ID[mass_id6$plot_tissue_ID == "205"] <- NA
+mass_id6$plot_tissue_ID[mass_id6$plot_tissue_ID == "258"] <- NA
+mass_id6$plot_tissue_ID[mass_id6$plot_tissue_ID == "59"] <- NA
 
 # two IDs from AG mass data so one renamed to another quad ID
-mass_id6$Plot_tissue_ID[mass_id6$Plot_tissue_ID == "1152" & mass_id6$Treatment == "F5"] <- "1601"
+mass_id6$plot_tissue_ID[mass_id6$plot_tissue_ID == "1152" & mass_id6$treatment == "F5"] <- "1601"
 ```
 
 ### create ID list
 
 ```{r}
 view(mass_id6)
-write.csv(mass_id6, "~/LTER-pluck/processed_data/ag_pluck_id.csv", row.names = FALSE)
+write.csv(mass_id6, "~/LTER-pluck/2024_pluck/processed_data/ag_pluck_id.csv", row.names = FALSE)
 ```
 
 ### combine
 
 ```{r, message=FALSE}
 head(mass_id6)
-#1134 of 7
+#1134 of 8
 head(mass_g3)
-#4536 of 8
+#4536 of 9
 
 # join
 mass3 <- left_join(mass_g3, mass_id6)
-# Joining with by = join_by(Block, Treatment, Surface_area_cm2, Date_collected, Species, Tissue)
-#4536 of 9
+# Joining with by = join_by(block, treatment, surface_area_cm2, date_collected, species, tissue)
+#4536 of 11
 head(mass3)
 ```
 
 ### create functional group column
 
 ```{r}
-unique(mass3$Species)
+unique(mass3$species)
 
 # remove "loose litter", not counted consistently
-mass4 <- mass3[!(mass3$Species %in% "Loose"),]
-#4464 of 9
+mass4 <- mass3[!(mass3$species %in% "Loose"),]
+#4464 of 10
 
-#create Growth_form column
-mass5 <- mass4 %>% mutate(Growth_form = case_when(
-    startsWith(Species, "Erivag") ~ "Graminoid",
-    startsWith(Species, "OtherGraminoid") ~ "Graminoid",
-    startsWith(Species, "Carbig") ~ "Graminoid",
-    startsWith(Species, "Betnan") ~ "Deciduous",
-    startsWith(Species, "Salpul") ~ "Deciduous",
-    startsWith(Species, "Vaculi") ~ "Deciduous",
-    startsWith(Species, "OtherDeciduous") ~ "Deciduous",
-    startsWith(Species, "Ledpal") ~ "Evergreen",
-    startsWith(Species, "Vacvit") ~ "Evergreen",
-    startsWith(Species, "Castet") ~ "Evergreen",
-    startsWith(Species, "OtherEvergreen") ~ "Evergreen",
-    startsWith(Species, "Rubcha") ~ "Forb",
-    startsWith(Species, "Petfri") ~ "Forb",
-    startsWith(Species, "OtherForb") ~ "Forb",
-    startsWith(Species, "Sphagnum") ~ "Moss",
-    startsWith(Species, "OtherMoss") ~ "Moss",
-    startsWith(Species, "Lichen") ~ "Lichen",
-    startsWith(Species, "Attached") ~ "Litter"
+# create Growth_form column
+mass5 <- mass4 %>% mutate(growth_form = case_when(
+    startsWith(species, "Erivag") ~ "Graminoid",
+    startsWith(species, "OtherGraminoid") ~ "Graminoid",
+    startsWith(species, "Carbig") ~ "Graminoid",
+    startsWith(species, "Betnan") ~ "Deciduous",
+    startsWith(species, "Salpul") ~ "Deciduous",
+    startsWith(species, "Vaculi") ~ "Deciduous",
+    startsWith(species, "OtherDeciduous") ~ "Deciduous",
+    startsWith(species, "Ledpal") ~ "Evergreen",
+    startsWith(species, "Vacvit") ~ "Evergreen",
+    startsWith(species, "Castet") ~ "Evergreen",
+    startsWith(species, "OtherEvergreen") ~ "Evergreen",
+    startsWith(species, "Rubcha") ~ "Forb",
+    startsWith(species, "Petfri") ~ "Forb",
+    startsWith(species, "OtherForb") ~ "Forb",
+    startsWith(species, "Sphagnum") ~ "Moss",
+    startsWith(species, "OtherMoss") ~ "Moss",
+    startsWith(species, "Lichen") ~ "Lichen",
+    startsWith(species, "Attached") ~ "Litter"
     ))
-#of 10
+#of 11
 ```
 
 ### add notes
@@ -209,22 +217,31 @@ mass5 <- mass4 %>% mutate(Growth_form = case_when(
 head(mass5)
 mass5 <- mass5 %>%
   mutate(
-    Notes = case_when(
-      (Plot_tissue_ID == "1736" & Quad == "3") ~ "Suspected misidentified Eri vag rhizomes",
-      (Plot_tissue_ID == "1739" & Quad == "3") ~ "Suspected misidentified Litter"
+    notes = case_when(
+      (plot_tissue_ID == "1736" & quad == "3") ~ "Suspected misidentified Eri vag rhizomes",
+      (plot_tissue_ID == "1739" & quad == "3") ~ "Suspected misidentified Litter"
     ))
 #of 11
+```
+
+### final tidy
+
+```{r}
+col_order <- c("date_collected", "site", "block", "treatment", "quad", "surface_area_cm2", "species", "tissue", "growth_form", "plot_tissue_ID", "mass_g", "Notes")
+mass5 <- mass5[, col_order]
 ```
 
 ### write final_data/ag_mass.csv
 
 ```{r}
 view(mass5)
-#4464 of 11
+#4464 of 12
 
-write.csv(mass5, "~/LTER-pluck/processed_data/final_data/ag_mass.csv", row.names=FALSE)
+write.csv(mass5, "~/LTER-pluck/2024_pluck/processed_data/final_data/ag_mass.csv", row.names=FALSE)
 ```
 
+### START HERE ###
+  *** cap col names ***
 
 ## Belowground
 
@@ -287,14 +304,14 @@ bg_names1 <- select(bg_names, -c("Core_surface_area_cm2","Depth_cm","Root_notes"
 
 #wide2long
 head(bg_names1)
-bg_names2 <- bg_names1 %>% pivot_longer(cols = c(6:8), names_to = "Root_type", values_to = "Plot_root_ID")
+bg_names2 <- bg_names1 %>% pivot_longer(cols = c(6:8), names_to = "Root_type", values_to = "plot_root_ID")
 #432 of 7
 
-bg_names3<-bg_names2 %>% pivot_wider(names_from = Quad, values_from = Plot_root_ID)
+bg_names3<-bg_names2 %>% pivot_wider(names_from = Quad, values_from = plot_root_ID)
 #108 of 9
 
 # create ID for plot, ignore quads
-bg_names3$Plot_root_ID <- coalesce(bg_names3$`1`, bg_names3$`2`, bg_names3$`3`, bg_names3$`4`)
+bg_names3$plot_root_ID <- coalesce(bg_names3$`1`, bg_names3$`2`, bg_names3$`3`, bg_names3$`4`)
 #108 of 10
 # ID is the first appearance of a bag number
 
@@ -327,7 +344,7 @@ bg3<-left_join(bg_mass1, bg_names4)
 
 # reorder columns
 colnames(bg3)
-col_order <- c("Block", "Treatment", "Quad", "Horizon", "Core_surface_area_cm2", "Depth_cm", "Date_collected", "Root_type", "Mass_g", "Plot_root_ID", "Root_notes")
+col_order <- c("Block", "Treatment", "Quad", "Horizon", "Core_surface_area_cm2", "Depth_cm", "Date_collected", "Root_type", "Mass_g", "plot_root_ID", "Root_notes")
 bg3 <- bg3[, col_order]
 
 ```
