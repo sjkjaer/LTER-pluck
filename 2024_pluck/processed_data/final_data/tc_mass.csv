@@ -1,4 +1,4 @@
-"Block","Treatment","Quad","Core_surface_area_cm2","Organic_core_depth_cm","Mineral_core_depth_cm","Depth_from_mineral_to_permafrost_cm","Depth_of_core_to_permafrost_cm","Ice_depth_accidentally_cored_cm","Date_collected","Dry_mass_aboveground_g","Dry_mass_organic_horizon_g","Dry_mass_mineral_horizon_g","Soil_notes"
+"block","treatment","quad","core_surface_area_cm2","organic_core_depth_cm","mineral_core_depth_cm","depth_from_mineral_to_permafrost_cm","depth_of_core_to_permafrost_cm","ice_depth_accidentally_cored_cm","date_collected","dry_mass_aboveground_g","dry_mass_organic_horizon_g","dry_mass_mineral_horizon_g","soil_notes"
 1,"CT","1",22.0618344098343,1,"48",0,49,"NA",2024-07-30,"0.28499999999999998","NA","1093.7909999999999",NA
 1,"CT","2",22.0618344098343,12,"24",0,36,"NA",2024-07-30,"0.30099999999999999","14.411","623.66600000000005",NA
 1,"CT","3",22.0618344098343,10,"17",0,27,"NA",2024-07-30,"0.50800000000000001","9.1340000000000003","187.56899999999999",NA

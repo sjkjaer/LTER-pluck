@@ -30,11 +30,9 @@ head(mass)
 ### tidy columns and rows
 
 ```{r, message=FALSE}
-mass <- clean_names(mass)
-
 # drop columns we don't want, organizational not informational
 mass1 <- select(mass, 
-                -c("date_sorted","plucker","balance","weigher","notes"))
+                -c("Date_sorted","Plucker","Balance","Weigher","Notes"))
 #74 obs, 136 variables
 
 # drop empty rows at the bottom
@@ -54,13 +52,13 @@ mass_id <- select(mass2, -ends_with("mass_g"))
 #72 obs, 74 variables
 
 # remove other species column
-mass_id1 <- select(mass_id, -ends_with("species"))
+mass_id1 <- select(mass_id, -ends_with("Species"))
 #72 obs, 69 variables
 
 # remove name columns
 mass_g <- select(mass2, -ends_with("bag_number"))
 #72 obs, 74 variables
-mass_g1 <- select(mass_g, -ends_with("species"))
+mass_g1 <- select(mass_g, -ends_with("Species"))
 #69 variables
 ```
 
@@ -90,12 +88,14 @@ mass_g2 <- mass_g1 %>%
 mass_g2$tissue <- 
   sub("_mass_g","",mass_g2$tissue)
 
+
 # separate values in tissue column into species and tissue
 mass_g3 <- mass_g2 %>%
   separate(tissue, c("species", "tissue"))
 #4536 of 9
 
-# ***THIS LINE DOESN'T WORK***
+unique(mass_g3$species)
+unique(mass_g3$tissue)
 ```
 
 ### sort IDs into one per plot
@@ -110,7 +110,7 @@ mass_id2 <- mass_id1 %>%
 
 # put all quads into one row per plot
 mass_id3<-mass_id2 %>%
-  pivot_wider(names_from = quad,
+  pivot_wider(names_from = Quad,
               values_from = plot_tissue_ID)
 #1134 of 10
 
@@ -152,13 +152,21 @@ mass_id6$plot_tissue_ID[mass_id6$plot_tissue_ID == "258"] <- NA
 mass_id6$plot_tissue_ID[mass_id6$plot_tissue_ID == "59"] <- NA
 
 # two IDs from AG mass data so one renamed to another quad ID
-mass_id6$plot_tissue_ID[mass_id6$plot_tissue_ID == "1152" & mass_id6$treatment == "F5"] <- "1601"
+mass_id6$plot_tissue_ID[mass_id6$plot_tissue_ID == "1152" & mass_id6$Treatment == "F5"] <- "1601"
+```
+
+### clean column names
+
+```{r}
+mass_id6 <- clean_names(mass_id6)
+mass_g3 <- clean_names(mass_g3)
 ```
 
 ### create ID list
 
 ```{r}
 view(mass_id6)
+
 write.csv(mass_id6, "~/LTER-pluck/2024_pluck/processed_data/ag_pluck_id.csv", row.names = FALSE)
 ```
 
@@ -173,7 +181,7 @@ head(mass_g3)
 # join
 mass3 <- left_join(mass_g3, mass_id6)
 # Joining with by = join_by(block, treatment, surface_area_cm2, date_collected, species, tissue)
-#4536 of 11
+#4536 of 10
 head(mass3)
 ```
 
@@ -218,8 +226,8 @@ head(mass5)
 mass5 <- mass5 %>%
   mutate(
     notes = case_when(
-      (plot_tissue_ID == "1736" & quad == "3") ~ "Suspected misidentified Eri vag rhizomes",
-      (plot_tissue_ID == "1739" & quad == "3") ~ "Suspected misidentified Litter"
+      (plot_tissue_id == "1736" & quad == "3") ~ "Suspected misidentified Eri vag rhizomes",
+      (plot_tissue_id == "1739" & quad == "3") ~ "Suspected misidentified Litter"
     ))
 #of 11
 ```
@@ -227,7 +235,7 @@ mass5 <- mass5 %>%
 ### final tidy
 
 ```{r}
-col_order <- c("date_collected", "site", "block", "treatment", "quad", "surface_area_cm2", "species", "tissue", "growth_form", "plot_tissue_ID", "mass_g", "Notes")
+col_order <- c("date_collected", "site", "block", "treatment", "quad", "surface_area_cm2", "species", "tissue", "growth_form", "plot_tissue_id", "mass_g", "notes")
 mass5 <- mass5[, col_order]
 ```
 
@@ -240,15 +248,13 @@ view(mass5)
 write.csv(mass5, "~/LTER-pluck/2024_pluck/processed_data/final_data/ag_mass.csv", row.names=FALSE)
 ```
 
-### START HERE ###
-  *** cap col names ***
 
 ## Belowground
 
 ### read in data
 
 ```{r, message=FALSE, warning=FALSE}
-bg <- read_excel("~/LTER-pluck/raw_data/Root_data_collection_mass.xlsx",
+bg <- read_excel("~/LTER-pluck/2024_pluck/raw_data/Root_data_collection_mass.xlsx",
                  col_types = c("numeric", "text", "numeric", "text", "numeric", "numeric", "date", "date", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "text"))
 #146 obs, 15 variables
 #lots of columns that were numbers were being read as characters, appearing in scientific notation, etc
@@ -258,10 +264,12 @@ head(bg)
 ### tidy columns and rows
 
 ```{r}
+bg <- clean_names(bg)
+
 # remove unwanted columns
 colnames(bg)
 
-bg1 <- select(bg, -c("Date_sorted"))
+bg1 <- select(bg, -c("date_sorted"))
 #146 obs, 14 variables
 
 # remove 2 empty rows
@@ -287,11 +295,11 @@ head(bg_mass)
 # wide2long
 colnames(bg_mass)
 
-bg_mass1 <- bg_mass %>% pivot_longer(cols = c(8:10), names_to = "Root_type", values_to = "Mass_g")
+bg_mass1 <- bg_mass %>% pivot_longer(cols = c(8:10), names_to = "root_type", values_to = "mass_g")
 #432 of 10
 
-bg_mass1$Root_type <- 
-  sub("_root_mass_g","",bg_mass1$Root_type)
+bg_mass1$root_type <- 
+  sub("_root_mass_g","",bg_mass1$root_type)
 ```
 
 ### sort IDs into one column
@@ -299,24 +307,24 @@ bg_mass1$Root_type <-
 ```{r}
 colnames(bg_names)
 
-bg_names1 <- select(bg_names, -c("Core_surface_area_cm2","Depth_cm","Root_notes"))
+bg_names1 <- select(bg_names, -c("core_surface_area_cm2","depth_cm","root_notes"))
 #144 of 8
 
 #wide2long
 head(bg_names1)
-bg_names2 <- bg_names1 %>% pivot_longer(cols = c(6:8), names_to = "Root_type", values_to = "plot_root_ID")
+bg_names2 <- bg_names1 %>% pivot_longer(cols = c(6:8), names_to = "root_type", values_to = "plot_root_id")
 #432 of 7
 
-bg_names3<-bg_names2 %>% pivot_wider(names_from = Quad, values_from = plot_root_ID)
+bg_names3 <- bg_names2 %>% pivot_wider(names_from = quad, values_from = plot_root_id)
 #108 of 9
 
 # create ID for plot, ignore quads
-bg_names3$plot_root_ID <- coalesce(bg_names3$`1`, bg_names3$`2`, bg_names3$`3`, bg_names3$`4`)
+bg_names3$plot_root_id <- coalesce(bg_names3$`1`, bg_names3$`2`, bg_names3$`3`, bg_names3$`4`)
 #108 of 10
 # ID is the first appearance of a bag number
 
-bg_names3$Root_type <- 
-  sub("_root_bag_number","",bg_names3$Root_type)
+bg_names3$root_type <- 
+  sub("_root_bag_number","",bg_names3$root_type)
 
 # remove quads
 bg_names4 <- bg_names3[,-c(6:9)]
@@ -327,7 +335,7 @@ head(bg_names4)
 
 ```{r}
 view(bg_names4)
-write.csv(bg_names4, "~/LTER-pluck/processed_data/bg_pluck_id.csv", row.names = FALSE)
+write.csv(bg_names4, "~/LTER-pluck/2024_pluck/processed_data/bg_pluck_id.csv", row.names = FALSE)
 ```
 
 ### combine
@@ -338,13 +346,13 @@ head(bg_names4)
 head(bg_mass1)
 #432 of 10
 
-bg3<-left_join(bg_mass1, bg_names4)
-# join_by(Block, Treatment, Horizon, Date_collected, Root_type)
+bg3 <- left_join(bg_mass1, bg_names4)
+# join_by(block, treatment, horizon, date_collected, root_type)
 #432 of 11
 
 # reorder columns
 colnames(bg3)
-col_order <- c("Block", "Treatment", "Quad", "Horizon", "Core_surface_area_cm2", "Depth_cm", "Date_collected", "Root_type", "Mass_g", "plot_root_ID", "Root_notes")
+col_order <- c("block", "treatment", "quad", "horizon", "core_surface_area_cm2", "depth_cm", "date_collected", "root_type", "mass_g", "plot_root_id", "root_notes")
 bg3 <- bg3[, col_order]
 
 ```
@@ -353,16 +361,16 @@ bg3 <- bg3[, col_order]
 
 ```{r}
 # tidying notes
-unique(bg3$Root_notes)
+unique(bg3$root_notes)
 
 # "First with new corer" 
 # "Bag number is not mistake"
 # "Sorting date"
 # all organizational for sorting, not relevant to data
 
-bg4 <- transform(bg3, Root_notes = replace(Root_notes, startsWith(Root_notes, "First with new corer"), NA))
-bg4 <- transform(bg4, Root_notes = replace(Root_notes, startsWith(Root_notes, "Bag number"), NA))
-bg4 <- transform(bg4, Root_notes = replace(Root_notes, startsWith(Root_notes, "Sorting date"), NA))
+bg4 <- transform(bg3, root_notes = replace(root_notes, startsWith(root_notes, "First with new corer"), NA))
+bg4 <- transform(bg4, root_notes = replace(root_notes, startsWith(root_notes, "Bag number"), NA))
+bg4 <- transform(bg4, root_notes = replace(root_notes, startsWith(root_notes, "Sorting date"), NA))
 ```
 
 ### write final_data/bg_mass.csv
@@ -371,7 +379,7 @@ bg4 <- transform(bg4, Root_notes = replace(Root_notes, startsWith(Root_notes, "S
 view(bg4)
 #432 of 11
 
-write.csv(bg4, "~/LTER-pluck/processed_data/final_data/bg_mass.csv", row.names=FALSE)
+write.csv(bg4, "~/LTER-pluck/2024_pluck/processed_data/final_data/bg_mass.csv", row.names=FALSE)
 ```
 
 
@@ -381,7 +389,7 @@ write.csv(bg4, "~/LTER-pluck/processed_data/final_data/bg_mass.csv", row.names=F
 
 ```{r, message=FALSE, warning=FALSE}
 # read in files from /raw_data/ folder
-tc <- read_excel("~/LTER-pluck/raw_data/Soil_data_total_cores_jm.xlsx")
+tc <- read_excel("~/LTER-pluck/2024_pluck/raw_data/soil_data_total_cores_jm.xlsx")
 #83 obs, 16 variables
 head(tc)
 ```
@@ -389,9 +397,11 @@ head(tc)
 ### tidy columns
 
 ```{r}
+tc <- clean_names(tc)
+
 colnames(tc)
 # not really relevant other than for our organization during pluck
-tc1 <- select(tc, -c("Date_sorted", "Sample_Type", "Date_sorted"))
+tc1 <- select(tc, -c("date_sorted", "sample_type"))
 #83 obs, 14 variables
 ```
 
@@ -414,16 +424,16 @@ tc2 <- tc1[-c(79, 65, 56, 50, 41, 35, 33, 25, 18, 13, 8),]
 #72 obs, dropped 15
 
 # tidying notes
-unique(tc2$Soil_notes)
+unique(tc2$soil_notes)
 # the info from "mineral is", "depth to permafrost", and "total depth to perm" got its own column, so removed from notes
 # sludge cores were removed, so added explanation to redo
 
-tc3 <- transform(tc2, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "Mineral is"), NA))
-tc3 <- transform(tc3, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "Depth to permafrost"), NA))
-tc3 <- transform(tc3, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "Total depth"), NA))
-tc3 <- transform(tc3, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "This was the redo of 3A"), "This was a redo of 3A, which had a lot of sludge"))
-tc3 <- transform(tc3, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "This was a redo of 3A"), "This was a redo of 3A, which had a lot of sludge"))
-tc3 <- transform(tc3, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "This was the redo of 2A"), "This was a redo of 2A, which had a lot of sludge"))
+tc3 <- transform(tc2, soil_notes = replace(soil_notes, startsWith(soil_notes, "Mineral is"), NA))
+tc3 <- transform(tc3, soil_notes = replace(soil_notes, startsWith(soil_notes, "Depth to permafrost"), NA))
+tc3 <- transform(tc3, soil_notes = replace(soil_notes, startsWith(soil_notes, "Total depth"), NA))
+tc3 <- transform(tc3, soil_notes = replace(soil_notes, startsWith(soil_notes, "This was the redo of 3A"), "This was a redo of 3A, which had a lot of sludge"))
+tc3 <- transform(tc3, soil_notes = replace(soil_notes, startsWith(soil_notes, "This was a redo of 3A"), "This was a redo of 3A, which had a lot of sludge"))
+tc3 <- transform(tc3, soil_notes = replace(soil_notes, startsWith(soil_notes, "This was the redo of 2A"), "This was a redo of 2A, which had a lot of sludge"))
 ```
 
 ### write final_data/tc_mass_quad.csv
@@ -432,6 +442,5 @@ tc3 <- transform(tc3, Soil_notes = replace(Soil_notes, startsWith(Soil_notes, "T
 view(tc3)
 #72 of 14
 
-write.csv(tc3, "~/LTER-pluck/processed_data/final_data/tc_mass.csv", row.names = FALSE)
+write.csv(tc3, "~/LTER-pluck/2024_pluck/processed_data/final_data/tc_mass.csv", row.names = FALSE)
 ```
-
