@@ -44,19 +44,6 @@ colnames(df)
 # remove calculations from raw data
 df1 <- select(df, -c("average_g_quad", "std_err", "count", "average_g_m2", "std_err_g_m2"))
 #315 of 22
-
-names(df) <- sub("^(.{3})", "\\1-", names(df))
-df <- df %>% rename_with(~ paste0("pre-", .x), .cols = c(var1, var2))
-replace <- df1 %>%
-    mutate_at(vars(8:22),list(str_replace_all(.,'-','0'))))
-
-# Insert a hyphen after the first 3 characters
-names(df1) <- str_replace(names(df1), "^(...)", "\\1-")
-
-df2 <- df1 %>%
-  mutate(across(starts_with("b"), 
-                ~ str_replace_all(.x, "^(...)", "\\1-")))
-view(df2)
 ```
 
 ### longform
@@ -66,10 +53,52 @@ view(df2)
 head(df1)
 df2 <- df1 %>%
   pivot_longer(cols = c(8:22),
-               names_to = "Block_quad",
+               names_to = "block_quad",
                values_to = "Mass_g")
 #4725 of 9
 
 head(df2)
 ```
+
+### create block and quad column
+
+```{r}
+# create block column
+df3 <- df2 %>% mutate(Block = case_when(
+    startsWith(block_quad, "b1") ~ "1",
+    startsWith(block_quad, "b2") ~ "2",
+    startsWith(block_quad, "b3") ~ "3",
+    startsWith(block_quad, "b4") ~ "4"
+    ))
+#of 10
+
+# create quad column
+df4 <- df3 %>% mutate(Quad = case_when(
+    endsWith(block_quad, "q1") ~ "1",
+    endsWith(block_quad, "q2") ~ "2",
+    endsWith(block_quad, "q3") ~ "3",
+    endsWith(block_quad, "q4") ~ "4",
+    endsWith(block_quad, "q5") ~ "5"
+    ))
+#of 10
+```
+
+### normalize with 2024 pluck
+
+```{r}
+unique(df4$site)
+
+df4$site <- df4$site %>% 
+  recode("LTER 2006 Low Nutrient Moist Acidic Tussock Tundra" = "MAT06")
+```
+
+### final tidy
+
+```{r}
+col_order <- c("Date_collected", "Site", "Block", "Treatment", "Quad", "Species", "Tissue", "Biomass_category", "Growth_form", "Mass_g")
+
+col_order <- c("Date_collected", "Site", "Block", "Treatment", "Quad", "Surface_area_cm2", "Species", "Tissue", "Growth_form", "Plot_tissue_ID", "Mass_g", "Notes")
+mass5 <- mass5[, col_order]
+```
+
 
