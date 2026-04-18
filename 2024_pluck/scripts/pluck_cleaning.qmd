@@ -52,8 +52,8 @@ mass_id <- select(mass2, -ends_with("mass_g"))
 #72 obs, 74 variables
 
 # remove other species column
-mass_id1 <- select(mass_id, -ends_with("Species"))
-#72 obs, 69 variables
+mass_id1 <- select(mass_id, -ends_with("Species"), -c("Date_collected"))
+#72 obs, 68 variables
 
 # remove name columns
 mass_g <- select(mass2, -ends_with("bag_number"))
@@ -67,8 +67,8 @@ mass_g1 <- select(mass_g, -ends_with("Species"))
 ```{r, warning=FALSE, output=FALSE}
 # some mass columns as characters not numbers
 # turns the "missing" values to NA's
-cols.num <- c(6:68)
-mass_g1[cols.num] <- sapply(mass_g1[cols.num],as.numeric)
+
+mass_g1 <- mass_g1 %>% mutate(across(ends_with("_mass_g"), as.numeric))
 
 # check
 sapply(mass_g1, class)
@@ -79,7 +79,7 @@ sapply(mass_g1, class)
 ```{r}
 # wide2long
 mass_g2 <- mass_g1 %>%
-  pivot_longer(cols = c(6:68),
+  pivot_longer(cols = ends_with("_mass_g"),
                names_to = "tissue",
                values_to = "mass_g")
 #4536 obs, 8 variables
@@ -87,7 +87,6 @@ mass_g2 <- mass_g1 %>%
 # remove "_mass_g" from tissue col
 mass_g2$tissue <- 
   sub("_mass_g","",mass_g2$tissue)
-
 
 # separate values in tissue column into species and tissue
 mass_g3 <- mass_g2 %>%
@@ -106,13 +105,13 @@ mass_id2 <- mass_id1 %>%
   pivot_longer(cols = c(ends_with('_bag_number')),
                names_to = "tissue",
                values_to = "plot_tissue_ID")
-#4536 obs, 8 variables
+#4536 obs, 7 variables
 
 # put all quads into one row per plot
 mass_id3<-mass_id2 %>%
   pivot_wider(names_from = Quad,
               values_from = plot_tissue_ID)
-#1134 of 10
+#1134 of 9
 
 # create one ID per plot, ignore quads
 
@@ -131,11 +130,12 @@ mass_id4$tissue <-
 # separate values in tissue column into species and tissue
 mass_id5 <- mass_id4 %>%
   separate(tissue, c("species", "tissue"))
-#1134 of 12
+#1134 of 11
 
 # remove quads
-mass_id6 <- mass_id5[,-c(8:11)]
-#1134 of 8
+mass_id6 <- mass_id5 %>% 
+  select(-c('1', '2', '3', '4'))
+#of 7
 
 # now just one ID number for a plot
 head(mass_id6)
@@ -174,7 +174,7 @@ write.csv(mass_id6, "~/LTER-pluck/2024_pluck/processed_data/ag_pluck_id.csv", ro
 
 ```{r, message=FALSE}
 head(mass_id6)
-#1134 of 8
+#1134 of 7
 head(mass_g3)
 #4536 of 9
 
@@ -275,17 +275,21 @@ bg1 <- select(bg, -c("date_sorted"))
 # remove 2 empty rows
 bg2 <- bg1[-c(145:146),]
 #144
+
+# add site column
+bg2$site <- c("MAT06")
+#of 137
 ```
 
 ### separate masses and IDs
 
 ```{r, message=FALSE, warning=FALSE}
-bg_names <- select(bg2, -ends_with("mass_g"))
+bg_names <- select(bg2, -ends_with("mass_g"), -c("date_collected"))
 #144, 11
 head(bg_names)
 
 bg_mass <- select(bg2, -ends_with("bag_number"))
-#144, 11
+#144, 12
 head(bg_mass)
 ```
 
@@ -295,7 +299,7 @@ head(bg_mass)
 # wide2long
 colnames(bg_mass)
 
-bg_mass1 <- bg_mass %>% pivot_longer(cols = c(8:10), names_to = "root_type", values_to = "mass_g")
+bg_mass1 <- bg_mass %>% pivot_longer(cols = ends_with("_mass_g"), names_to = "root_type", values_to = "mass_g")
 #432 of 10
 
 bg_mass1$root_type <- 
@@ -312,7 +316,7 @@ bg_names1 <- select(bg_names, -c("core_surface_area_cm2","depth_cm","root_notes"
 
 #wide2long
 head(bg_names1)
-bg_names2 <- bg_names1 %>% pivot_longer(cols = c(6:8), names_to = "root_type", values_to = "plot_root_id")
+bg_names2 <- bg_names1 %>% pivot_longer(cols = ends_with("_bag_number"), names_to = "root_type", values_to = "plot_root_id")
 #432 of 7
 
 bg_names3 <- bg_names2 %>% pivot_wider(names_from = quad, values_from = plot_root_id)
@@ -327,7 +331,10 @@ bg_names3$root_type <-
   sub("_root_bag_number","",bg_names3$root_type)
 
 # remove quads
-bg_names4 <- bg_names3[,-c(6:9)]
+bg_names4 <- bg_names3 %>% 
+  select(-c('1', '2', '3', '4'))
+#of 6
+
 head(bg_names4)
 ```
 
@@ -342,19 +349,13 @@ write.csv(bg_names4, "~/LTER-pluck/2024_pluck/processed_data/bg_pluck_id.csv", r
 
 ```{r, message=FALSE, warning=FALSE}
 head(bg_names4)
-#108 of 6
+#108 of 7
 head(bg_mass1)
-#432 of 10
-
-bg3 <- left_join(bg_mass1, bg_names4)
-# join_by(block, treatment, horizon, date_collected, root_type)
 #432 of 11
 
-# reorder columns
-colnames(bg3)
-col_order <- c("block", "treatment", "quad", "horizon", "core_surface_area_cm2", "depth_cm", "date_collected", "root_type", "mass_g", "plot_root_id", "root_notes")
-bg3 <- bg3[, col_order]
-
+bg3 <- left_join(bg_mass1, bg_names4)
+# join_by(block, treatment, horizon, date_collected, site, root_type)
+#432 of 12
 ```
 
 ### corrections
@@ -371,6 +372,15 @@ unique(bg3$root_notes)
 bg4 <- transform(bg3, root_notes = replace(root_notes, startsWith(root_notes, "First with new corer"), NA))
 bg4 <- transform(bg4, root_notes = replace(root_notes, startsWith(root_notes, "Bag number"), NA))
 bg4 <- transform(bg4, root_notes = replace(root_notes, startsWith(root_notes, "Sorting date"), NA))
+```
+
+### final tidy
+
+```{r}
+# reorder columns
+colnames(bg4)
+col_order <- c("date_collected", "site", "block", "treatment", "quad", "horizon", "core_surface_area_cm2", "depth_cm", "root_type", "plot_root_id", "mass_g", "root_notes")
+bg4 <- bg4[, col_order]
 ```
 
 ### write final_data/bg_mass.csv
@@ -403,6 +413,10 @@ colnames(tc)
 # not really relevant other than for our organization during pluck
 tc1 <- select(tc, -c("date_sorted", "sample_type"))
 #83 obs, 14 variables
+
+# add site column
+tc1$site <- c("MAT06")
+#of 15
 ```
 
 ### corrections
@@ -436,11 +450,20 @@ tc3 <- transform(tc3, soil_notes = replace(soil_notes, startsWith(soil_notes, "T
 tc3 <- transform(tc3, soil_notes = replace(soil_notes, startsWith(soil_notes, "This was the redo of 2A"), "This was a redo of 2A, which had a lot of sludge"))
 ```
 
+### final tidy
+
+```{r}
+# reorder columns
+colnames(tc3)
+col_order <- c("date_collected", "site", "block", "treatment", "quad", "core_surface_area_cm2", "organic_core_depth_cm", "mineral_core_depth_cm", "depth_from_mineral_to_permafrost_cm", "depth_of_core_to_permafrost_cm", "ice_depth_accidentally_cored_cm", "date_collected", "dry_mass_aboveground_g", "dry_mass_organic_horizon_g", "dry_mass_mineral_horizon_g", "soil_notes")
+tc3 <- tc3[, col_order]
+```
+
 ### write final_data/tc_mass_quad.csv
 
 ```{r}
 view(tc3)
-#72 of 14
+#72 of 16
 
 write.csv(tc3, "~/LTER-pluck/2024_pluck/processed_data/final_data/tc_mass.csv", row.names = FALSE)
 ```

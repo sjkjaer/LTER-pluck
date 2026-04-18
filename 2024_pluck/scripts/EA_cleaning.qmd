@@ -21,33 +21,35 @@ library(here)
 ### read in data
 
 ```{r, message=FALSE}
-cn <- read_excel("~/LTER-pluck/raw_data/CN_results2.xlsx")
+cn <- read_excel("~/LTER-pluck/2024_pluck/raw_data/CN_results2.xlsx")
 view(cn)
 #1007 of 17 variables
 
-id <- read_csv("~/LTER-pluck/processed_data/ag_pluck_id.csv")
+id <- read_csv("~/LTER-pluck/2024_pluck/processed_data/ag_pluck_id.csv")
 #1134 of 7
 ```
 
 ### tidy columns and rows
 
 ```{r, message=FALSE}
+cn <- clean_names(cn)
+
 colnames(cn)
 # removing unnecessary columns
-cn1 <- select(cn, -c("Group", "Sample name", "Inj Date", "Inj Time", "Type", "Weight (mg)", "Protein Factor", "Humidity %", "AS", "Vial"))
-#of 7
+cn1 <- select(cn, -c("group", "sample_name", "inj_date", "inj_time", "type", "weight_mg", "protein_factor", "humidity_percent", "as", "vial"))
+#of 6
 
-cn1$Carbon <- as.numeric(cn1$Carbon)
-cn1$Nitrogen <- as.numeric(cn1$Nitrogen)
-cn1$Filename <- as.character(cn1$Filename)
-names(cn1)[names(cn1) == 'Sample type'] <- "Sample_type"
-names(cn1)[names(cn1) == "ID"] <- "Plot_tissue_ID"
+cn1$carbon <- as.numeric(cn1$carbon)
+cn1$nitrogen <- as.numeric(cn1$nitrogen)
+cn1$filename <- as.character(cn1$filename)
+
+names(cn1)[names(cn1) == "id"] <- "plot_tissue_id"
 ```
 
 ### separate AG masses from others
 
 ```{r}
-cn_ag <- filter(cn1, Sample_type == "AG")
+cn_ag <- filter(cn1, sample_type == "AG")
 view(cn_ag)
 #760
 ```
@@ -55,10 +57,10 @@ view(cn_ag)
 ### corrections
 
 ```{r}
-# two IDs from AG mass data so one renamed to another quad ID
-cn_ag$Plot_tissue_ID[cn_ag$Filename == "09042025013"] <- "1601"
+# two ids from AG mass data so one renamed to another quad id
+cn_ag$plot_tissue_id[cn_ag$filename == "09042025013"] <- "1601"
 
-# looking into IDs that appeared in EA results that are not ID names
+# looking into ids that appeared in EA results that are not id names
 # 602, 685, 1548, 1549, 1084, 1355
 # 602 was mistyped, paper datasheet say 662
 # 685 was mistyped, paper datasheet say 658
@@ -66,15 +68,15 @@ cn_ag$Plot_tissue_ID[cn_ag$Filename == "09042025013"] <- "1601"
 # 1549 was mistyped, paper datasheet say 1507
 # 223 was mistyped, paper datasheet say 222
 # 1084 unclear what sample it was
-# 1355 is under the ID 1164, which was missing so showed up as an ID but not a sample
+# 1355 is under the id 1164, which was missing so showed up as an id but not a sample
 
-cn_ag$Plot_tissue_ID[cn_ag$Filename == "04042025044"] <- "662"
-cn_ag$Plot_tissue_ID[cn_ag$Filename == "04042025042"] <- "658"
-cn_ag$Plot_tissue_ID[cn_ag$Filename == "09042025017"] <- "1506"
-cn_ag$Plot_tissue_ID[cn_ag$Filename == "09042025018"] <- "1507"
-cn_ag$Plot_tissue_ID[cn_ag$Filename == "03042025105"] <- "222"
-cn_ag$Plot_tissue_ID[cn_ag$Filename == "24032025073"] <- "NA"
-cn_ag$Plot_tissue_ID[cn_ag$Filename == "23012026046"] <- "1164"
+cn_ag$plot_tissue_id[cn_ag$filename == "04042025044"] <- "662"
+cn_ag$plot_tissue_id[cn_ag$filename == "04042025042"] <- "658"
+cn_ag$plot_tissue_id[cn_ag$filename == "09042025017"] <- "1506"
+cn_ag$plot_tissue_id[cn_ag$filename == "09042025018"] <- "1507"
+cn_ag$plot_tissue_id[cn_ag$filename == "03042025105"] <- "222"
+cn_ag$plot_tissue_id[cn_ag$filename == "24032025073"] <- "NA"
+cn_ag$plot_tissue_id[cn_ag$filename == "23012026046"] <- "1164"
 ```
 
 ### combine
@@ -85,10 +87,10 @@ head(cn_ag)
 
 head(id)
 #1134 of 7 
-id$Plot_tissue_ID <- as.character(id$Plot_tissue_ID)
+id$plot_tissue_id <- as.character(id$plot_tissue_id)
 
 cn2 <- left_join(cn_ag, id)
-# Joining with `by = join_by(Plot_tissue_ID)`
+# Joining with `by = join_by(plot_tissue_id)`
 
 view(cn2)
 #760 of 13
@@ -97,18 +99,18 @@ view(cn2)
 ### error check
 
 ```{r, message=FALSE}
-cn2.na <- subset(cn2, (is.na(cn2$Block)))
+cn2.na <- subset(cn2, (is.na(cn2$block)))
 #117 obs
 
 # remove check results
 cn3 <- cn2 %>%
-  filter(!grepl("Check", Plot_tissue_ID))
+  filter(!grepl("Check", plot_tissue_id))
 #697
 
 # "NA" wasn't NA
-cn3$Plot_tissue_ID[cn3$Plot_tissue_ID == "NA"] <- NA
+cn3$plot_tissue_id[cn3$plot_tissue_id == "NA"] <- NA
 
-cn3.na <- subset(cn3, (is.na(cn3$Block)))
+cn3.na <- subset(cn3, (is.na(cn3$block)))
 #54
 # 1186, 538, 1617, 1488, 1476
 # these aren't first quads, just quads that didn't originally get added to the rest
@@ -117,7 +119,7 @@ cn3.na <- subset(cn3, (is.na(cn3$Block)))
 # leave all out for now
 
 cn4 <- cn3 %>%
-  filter(!(Block %in% c(NA)))
+  filter(!(block %in% c(NA)))
 #643, good!!
 ```
 
@@ -128,28 +130,28 @@ Looked at values of burnt against unburnt samples, not terribly different but I 
 ```{r}
 # checking burnt B1 against unburnt B2&3
 test <- cn4 %>%
-  filter(Treatment %in% c("F0.5"))
+  filter(treatment %in% c("F0.5"))
 
 test %>%
   ggplot() +
-  geom_boxplot(aes(x=Tissue, y=Carbon, col=Notes)) + 
-  facet_wrap(~Species)
+  geom_boxplot(aes(x=tissue, y=carbon, col=notes)) + 
+  facet_wrap(~species)
 test %>%
   ggplot() +
-  geom_boxplot(aes(x=Tissue, y=Nitrogen, col=Notes)) + 
-  facet_wrap(~Species)
+  geom_boxplot(aes(x=tissue, y=nitrogen, col=notes)) + 
+  facet_wrap(~species)
 ```
 
 ### remove burnt samples
 
 ```{r}
 burnt <- cn4 %>%
-  filter(Notes %in% c("burnt sample"))
+  filter(notes %in% c("burnt sample"))
 #40
 # all burnt, should be removed
 
 cn5 <- cn4 %>%
-  filter(!(Notes %in% c("burnt sample")))
+  filter(!(notes %in% c("burnt sample")))
 
 view(cn5)
 #603 obs
@@ -159,25 +161,25 @@ view(cn5)
 
 ```{r}
 #create Growth_form column
-cn6 <- cn5 %>% mutate(Growth_form = case_when(
-    startsWith(Species, "Erivag") ~ "Graminoid",
-    startsWith(Species, "OtherGraminoid") ~ "Graminoid",
-    startsWith(Species, "Carbig") ~ "Graminoid",
-    startsWith(Species, "Betnan") ~ "Deciduous",
-    startsWith(Species, "Salpul") ~ "Deciduous",
-    startsWith(Species, "Vaculi") ~ "Deciduous",
-    startsWith(Species, "OtherDeciduous") ~ "Deciduous",
-    startsWith(Species, "Ledpal") ~ "Evergreen",
-    startsWith(Species, "Vacvit") ~ "Evergreen",
-    startsWith(Species, "Castet") ~ "Evergreen",
-    startsWith(Species, "OtherEvergreen") ~ "Evergreen",
-    startsWith(Species, "Rubcha") ~ "Forb",
-    startsWith(Species, "Petfri") ~ "Forb",
-    startsWith(Species, "OtherForb") ~ "Forb",
-    startsWith(Species, "Sphagnum") ~ "Moss",
-    startsWith(Species, "OtherMoss") ~ "Moss",
-    startsWith(Species, "Lichen") ~ "Lichen",
-    startsWith(Species, "Attached") ~ "Litter"
+cn6 <- cn5 %>% mutate(growth_form = case_when(
+    startsWith(species, "Erivag") ~ "Graminoid",
+    startsWith(species, "OtherGraminoid") ~ "Graminoid",
+    startsWith(species, "Carbig") ~ "Graminoid",
+    startsWith(species, "Betnan") ~ "Deciduous",
+    startsWith(species, "Salpul") ~ "Deciduous",
+    startsWith(species, "Vaculi") ~ "Deciduous",
+    startsWith(species, "OtherDeciduous") ~ "Deciduous",
+    startsWith(species, "Ledpal") ~ "Evergreen",
+    startsWith(species, "Vacvit") ~ "Evergreen",
+    startsWith(species, "Castet") ~ "Evergreen",
+    startsWith(species, "OtherEvergreen") ~ "Evergreen",
+    startsWith(species, "Rubcha") ~ "Forb",
+    startsWith(species, "Petfri") ~ "Forb",
+    startsWith(species, "OtherForb") ~ "Forb",
+    startsWith(species, "Sphagnum") ~ "Moss",
+    startsWith(species, "OtherMoss") ~ "Moss",
+    startsWith(species, "Lichen") ~ "Lichen",
+    startsWith(species, "Attached") ~ "Litter"
     ))
 #of 14
 ```
@@ -187,12 +189,13 @@ cn6 <- cn5 %>% mutate(Growth_form = case_when(
 ```{r}
 head(cn6)
 
-cn7 <- select(cn6, -c("Filename", "Date", "Sample_type", "Surface_area_cm2"))
-col_order <- c("Block", "Treatment", "Date_collected", "Species", "Tissue", "Plot_tissue_ID", "Nitrogen", "Carbon", "Growth_form", "Notes")
+cn7 <- select(cn6, -c("filename", "date", "sample_type", "surface_area_cm2"))
+col_order <- c("site", "block", "treatment",  "species", "tissue", "growth_form", "plot_tissue_id", "nitrogen", "carbon",  "notes")
 cn7 <- cn7[, col_order]
 
-names(cn7)[names(cn7) == 'Nitrogen'] <- "Nitrogen_percent"
-names(cn7)[names(cn7) == 'Carbon'] <- "Carbon_percent"
+
+names(cn7)[names(cn7) == 'nitrogen'] <- "nitrogen_percent"
+names(cn7)[names(cn7) == 'carbon'] <- "carbon_percent"
 ```
 
 ### write final_data/ag_cn.csv
@@ -201,7 +204,7 @@ names(cn7)[names(cn7) == 'Carbon'] <- "Carbon_percent"
 view(cn7)
 #603 of 10
 
-write.csv(cn7, "~/LTER-pluck/processed_data/final_data/ag_cn.csv", row.names=FALSE)
+write.csv(cn7, "~/LTER-pluck/2024_pluck/processed_data/final_data/ag_cn.csv", row.names=FALSE)
 ```
 
 ## Belowground
@@ -209,16 +212,16 @@ write.csv(cn7, "~/LTER-pluck/processed_data/final_data/ag_cn.csv", row.names=FAL
 ### read in data
 
 ```{r, message=FALSE}
-id_bg <- read_csv("~/LTER-pluck/processed_data/bg_pluck_id.csv")
+id_bg <- read_csv("~/LTER-pluck/2024_pluck/processed_data/bg_pluck_id.csv")
 #108 of 6
 ```
 
 ### separate BG masses from others
 
 ```{r}
-names(cn1)[names(cn1) == "Plot_tissue_ID"] <- "Plot_root_ID"
+names(cn1)[names(cn1) == "plot_tissue_id"] <- "plot_root_id"
 
-cn_bg <- filter(cn1, Sample_type == "BG")
+cn_bg <- filter(cn1, sample_type == "BG")
 view(cn_bg)
 #80
 ```
@@ -226,11 +229,11 @@ view(cn_bg)
 ### corrections
 
 ```{r}
-# looking into IDs that appeared in EA results that are not ID names
+# looking into ids that appeared in EA results that are not id names
 # 395 unclear what sample it was
 
-cn_bg$Plot_root_ID[cn_bg$Filename == "11042025025"] <- "NA"
-cn_bg$Plot_root_ID[cn_bg$Filename == "24032025041"] <- "175"
+cn_bg$plot_root_id[cn_bg$filename == "11042025025"] <- "NA"
+cn_bg$plot_root_id[cn_bg$filename == "24032025041"] <- "175"
 ```
 
 ### combine
@@ -238,10 +241,10 @@ cn_bg$Plot_root_ID[cn_bg$Filename == "24032025041"] <- "175"
 ```{r, message=FALSE}
 head(id_bg)
 #108 of 6
-id_bg$Plot_root_ID <- as.character(id_bg$Plot_root_ID)
+id_bg$plot_root_id <- as.character(id_bg$plot_root_id)
 
 cn_bg2 <- left_join(cn_bg, id_bg)
-# Joining with `by = join_by(Plot_root_ID)`
+# Joining with `by = join_by(plot_root_id)`
 
 view(cn_bg2)
 #80 of 12
@@ -250,26 +253,26 @@ view(cn_bg2)
 ### error check
 
 ```{r, message=FALSE}
-cn2.na <- subset(cn_bg2, (is.na(cn_bg2$Block)))
+cn2.na <- subset(cn_bg2, (is.na(cn_bg2$block)))
 #7 obs
 
 # remove check results
 cn_bg3 <- cn_bg2 %>%
-  filter(!grepl("Check", Plot_root_ID))
+  filter(!grepl("Check", plot_root_id))
 #74
 
 # "NA" wasn't NA
-cn_bg3$Plot_root_ID[cn_bg3$Plot_root_ID == "NA"] <- NA
+cn_bg3$plot_root_id[cn_bg3$plot_root_id == "NA"] <- NA
 
-cn_bg3.na <- subset(cn_bg3, (is.na(cn_bg3$Plot_root_ID)))
+cn_bg3.na <- subset(cn_bg3, (is.na(cn_bg3$plot_root_id)))
 #1
 # checked, should be removed 
 
 cn_bg4 <- cn_bg3 %>%
-  filter(!(Plot_root_ID %in% c(NA)))
+  filter(!(plot_root_id %in% c(NA)))
 #73, good!!
 
-cn_bg4.na <- subset(cn_bg4, (is.na(cn_bg4$Block)))
+cn_bg4.na <- subset(cn_bg4, (is.na(cn_bg4$block)))
 ```
 
 ### final tidy
@@ -277,12 +280,12 @@ cn_bg4.na <- subset(cn_bg4, (is.na(cn_bg4$Block)))
 ```{r}
 head(cn_bg4)
 
-cn_bg5 <- select(cn_bg4, -c("Filename", "Date", "Sample_type"))
-col_order <- c("Block", "Treatment", "Date_collected", "Horizon", "Root_type", "Plot_root_ID", "Nitrogen", "Carbon", "Notes")
+cn_bg5 <- select(cn_bg4, -c("filename", "date", "sample_type"))
+col_order <- c("site", "block", "treatment", "horizon", "root_type", "plot_root_id", "nitrogen", "carbon", "notes")
 cn_bg5 <- cn_bg5[, col_order]
 
-names(cn_bg5)[names(cn_bg5) == 'Nitrogen'] <- "Nitrogen_percent"
-names(cn_bg5)[names(cn_bg5) == 'Carbon'] <- "Carbon_percent"
+names(cn_bg5)[names(cn_bg5) == 'nitrogen'] <- "nitrogen_percent"
+names(cn_bg5)[names(cn_bg5) == 'carbon'] <- "carbon_percent"
 ```
 
 ### write final_data/bg_cn.csv
@@ -291,7 +294,7 @@ names(cn_bg5)[names(cn_bg5) == 'Carbon'] <- "Carbon_percent"
 view(cn_bg5)
 #73 of 9
 
-write.csv(cn_bg5, "~/LTER-pluck/processed_data/final_data/bg_cn.csv", row.names=FALSE)
+write.csv(cn_bg5, "~/LTER-pluck/2024_pluck/processed_data/final_data/bg_cn.csv", row.names=FALSE)
 ```
 
 ## Total Cores
@@ -299,9 +302,9 @@ write.csv(cn_bg5, "~/LTER-pluck/processed_data/final_data/bg_cn.csv", row.names=
 ### separate TC masses from others
 
 ```{r}
-names(cn1)[names(cn1) == "Plot_root_ID"] <- "Plot_horizon_ID"
+names(cn1)[names(cn1) == "plot_root_id"] <- "plot_horizon_id"
 
-cn_tc <- filter(cn1, Sample_type == "Total Cores")
+cn_tc <- filter(cn1, sample_type == "Total Cores")
 view(cn_tc)
 #44
 ```
@@ -309,12 +312,12 @@ view(cn_tc)
 ### corrections
 
 ```{r}
-cn_tc$Plot_horizon_ID <- gsub("-T", "-M", cn_tc$Plot_horizon_ID)
+cn_tc$plot_horizon_id <- gsub("-T", "-M", cn_tc$plot_horizon_id)
 # not sure why mineral was labeled as T?
 
 # create block, trt, horizon columns from id
 cn_tc1 <- cn_tc %>% 
-  separate(Plot_horizon_ID, c("Block", "Treatment", "Horizon"), sep = "-")
+  separate(plot_horizon_id, c("Block", "Treatment", "Horizon"), sep = "-")
 ```
 
 ### error check
@@ -335,6 +338,8 @@ cn_tc2.na <- subset(cn_tc2, (is.na(cn_tc2$Block)))
 cn_tc3 <- cn_tc2 %>%
   filter(!(Block %in% c(NA)))
 #40, good!!
+
+cn_tc3 <- clean_names(cn_tc3)
 ```
 
 ### final tidy
@@ -342,12 +347,18 @@ cn_tc3 <- cn_tc2 %>%
 ```{r}
 head(cn_tc3)
 
-cn_tc4 <- select(cn_tc3, -c("Filename", "Date", "Sample_type"))
-col_order <- c("Block", "Treatment", "Horizon", "Nitrogen", "Carbon", "Notes")
+cn_tc3$site <- c("MAT06")
+
+cn_tc4 <- select(cn_tc3, -c("filename", "date", "sample_type"))
+
+col_order <- c("site", "block", "treatment", "horizon", "nitrogen", "carbon", "notes")
 cn_tc4 <- cn_tc4[, col_order]
 
-names(cn_tc4)[names(cn_tc4) == 'Nitrogen'] <- "Nitrogen_percent"
-names(cn_tc4)[names(cn_tc4) == 'Carbon'] <- "Carbon_percent"
+names(cn_tc4)[names(cn_tc4) == 'nitrogen'] <- "nitrogen_percent"
+names(cn_tc4)[names(cn_tc4) == 'carbon'] <- "carbon_percent"
+
+head(cn_tc4)
+#of 7
 ```
 
 ### write final_data/tc_cn.csv
@@ -355,5 +366,5 @@ names(cn_tc4)[names(cn_tc4) == 'Carbon'] <- "Carbon_percent"
 ```{r}
 view(cn_tc4)
 
-write.csv(cn_bg5, "~/LTER-pluck/processed_data/final_data/tc_cn.csv", row.names=FALSE)
+write.csv(cn_tc4, "~/LTER-pluck/2024_pluck/processed_data/final_data/tc_cn.csv", row.names=FALSE)
 ```
