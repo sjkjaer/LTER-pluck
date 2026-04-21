@@ -1,1135 +1,1135 @@
 "block","treatment","surface_area_cm2","site","species","tissue","plot_tissue_id"
-1,"CT",400,"MAT06","Erivag","BladeSheathInflCulm","264"
-1,"CT",400,"MAT06","Erivag","Rhizome","268"
-1,"CT",400,"MAT06","Carbig","BladeSheathInflCulm","285"
-1,"CT",400,"MAT06","Carbig","Rhizome",NA
-1,"CT",400,"MAT06","OtherGraminoid","BladeSheathInflCulm",NA
-1,"CT",400,"MAT06","OtherGraminoid","Rhizome",NA
-1,"CT",400,"MAT06","Betnan","NewLeaves","17"
-1,"CT",400,"MAT06","Betnan","NewStems","18"
-1,"CT",400,"MAT06","Betnan","OldStems","19"
-1,"CT",400,"MAT06","Betnan","Inflor","20"
-1,"CT",400,"MAT06","Betnan","BelowStem","230"
-1,"CT",400,"MAT06","Salpul","NewLeaves",NA
-1,"CT",400,"MAT06","Salpul","NewStems",NA
-1,"CT",400,"MAT06","Salpul","OldStems",NA
-1,"CT",400,"MAT06","Salpul","Inflor",NA
-1,"CT",400,"MAT06","Salpul","BelowStem",NA
-1,"CT",400,"MAT06","Vaculi","NewLeaves",NA
-1,"CT",400,"MAT06","Vaculi","NewStems",NA
-1,"CT",400,"MAT06","Vaculi","OldStems",NA
-1,"CT",400,"MAT06","Vaculi","Inflor",NA
-1,"CT",400,"MAT06","Vaculi","BelowStem",NA
-1,"CT",400,"MAT06","OtherDeciduous","NewLeaves",NA
-1,"CT",400,"MAT06","OtherDeciduous","NewStems",NA
-1,"CT",400,"MAT06","OtherDeciduous","OldStems",NA
-1,"CT",400,"MAT06","OtherDeciduous","Inflor",NA
-1,"CT",400,"MAT06","OtherDeciduous","BelowStem",NA
-1,"CT",400,"MAT06","Ledpal","NewLeaves","281"
-1,"CT",400,"MAT06","Ledpal","NewStems","282"
-1,"CT",400,"MAT06","Ledpal","OldLeaves","283"
-1,"CT",400,"MAT06","Ledpal","OldStems","284"
-1,"CT",400,"MAT06","Ledpal","Inflor","212"
-1,"CT",400,"MAT06","Ledpal","BelowStem","213"
-1,"CT",400,"MAT06","Vacvit","NewLeaves","277"
-1,"CT",400,"MAT06","Vacvit","NewStems","278"
-1,"CT",400,"MAT06","Vacvit","OldLeaves","222"
-1,"CT",400,"MAT06","Vacvit","OldStems","279"
-1,"CT",400,"MAT06","Vacvit","Inflor","276"
-1,"CT",400,"MAT06","Vacvit","BelowStem","280"
-1,"CT",400,"MAT06","Castet","NewStems",NA
-1,"CT",400,"MAT06","Castet","OldStems",NA
-1,"CT",400,"MAT06","Castet","Inflor",NA
-1,"CT",400,"MAT06","Castet","BelowStem",NA
-1,"CT",400,"MAT06","OtherEvergreen","NewLeaves","261"
-1,"CT",400,"MAT06","OtherEvergreen","NewStems","265"
-1,"CT",400,"MAT06","OtherEvergreen","OldLeaves","266"
-1,"CT",400,"MAT06","OtherEvergreen","OldStems","267"
-1,"CT",400,"MAT06","OtherEvergreen","Inflor","25"
-1,"CT",400,"MAT06","OtherEvergreen","BelowStem","26"
-1,"CT",400,"MAT06","Rubcha","LeavesStems","274"
-1,"CT",400,"MAT06","Rubcha","InflorStalks",NA
-1,"CT",400,"MAT06","Rubcha","BelowStem","275"
-1,"CT",400,"MAT06","Petfri","LeavesStems",NA
-1,"CT",400,"MAT06","Petfri","InflorStalks",NA
-1,"CT",400,"MAT06","Petfri","BelowStem",NA
-1,"CT",400,"MAT06","OtherForb","LeavesStems","229"
-1,"CT",400,"MAT06","OtherForb","InflorStalks",NA
-1,"CT",400,"MAT06","OtherForb","BelowStem",NA
+1,"CT",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","264"
+1,"CT",400,"MAT06","Eriophorum vaginatum","Rhizome","268"
+1,"CT",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","285"
+1,"CT",400,"MAT06","Carex bigelowii","Rhizome",NA
+1,"CT",400,"MAT06","Other Graminoid","BladeSheathInflCulm",NA
+1,"CT",400,"MAT06","Other Graminoid","Rhizome",NA
+1,"CT",400,"MAT06","Betula nana","NewLeaves","17"
+1,"CT",400,"MAT06","Betula nana","NewStems","18"
+1,"CT",400,"MAT06","Betula nana","OldStems","19"
+1,"CT",400,"MAT06","Betula nana","Inflor","20"
+1,"CT",400,"MAT06","Betula nana","BelowStem","230"
+1,"CT",400,"MAT06","Salix pulchra","NewLeaves",NA
+1,"CT",400,"MAT06","Salix pulchra","NewStems",NA
+1,"CT",400,"MAT06","Salix pulchra","OldStems",NA
+1,"CT",400,"MAT06","Salix pulchra","Inflor",NA
+1,"CT",400,"MAT06","Salix pulchra","BelowStem",NA
+1,"CT",400,"MAT06","Vaccinium uliginosum","NewLeaves",NA
+1,"CT",400,"MAT06","Vaccinium uliginosum","NewStems",NA
+1,"CT",400,"MAT06","Vaccinium uliginosum","OldStems",NA
+1,"CT",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+1,"CT",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+1,"CT",400,"MAT06","Other Deciduous","NewLeaves",NA
+1,"CT",400,"MAT06","Other Deciduous","NewStems",NA
+1,"CT",400,"MAT06","Other Deciduous","OldStems",NA
+1,"CT",400,"MAT06","Other Deciduous","Inflor",NA
+1,"CT",400,"MAT06","Other Deciduous","BelowStem",NA
+1,"CT",400,"MAT06","Ledum palustre","NewLeaves","281"
+1,"CT",400,"MAT06","Ledum palustre","NewStems","282"
+1,"CT",400,"MAT06","Ledum palustre","OldLeaves","283"
+1,"CT",400,"MAT06","Ledum palustre","OldStems","284"
+1,"CT",400,"MAT06","Ledum palustre","Inflor","212"
+1,"CT",400,"MAT06","Ledum palustre","BelowStem","213"
+1,"CT",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","277"
+1,"CT",400,"MAT06","Vaccinium vitis-idaea","NewStems","278"
+1,"CT",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","222"
+1,"CT",400,"MAT06","Vaccinium vitis-idaea","OldStems","279"
+1,"CT",400,"MAT06","Vaccinium vitis-idaea","Inflor","276"
+1,"CT",400,"MAT06","Vaccinium vitis-idaea","BelowStem","280"
+1,"CT",400,"MAT06","Cassiope tetragona","NewStems",NA
+1,"CT",400,"MAT06","Cassiope tetragona","OldStems",NA
+1,"CT",400,"MAT06","Cassiope tetragona","Inflor",NA
+1,"CT",400,"MAT06","Cassiope tetragona","BelowStem",NA
+1,"CT",400,"MAT06","Other Evergreen","NewLeaves","261"
+1,"CT",400,"MAT06","Other Evergreen","NewStems","265"
+1,"CT",400,"MAT06","Other Evergreen","OldLeaves","266"
+1,"CT",400,"MAT06","Other Evergreen","OldStems","267"
+1,"CT",400,"MAT06","Other Evergreen","Inflor","25"
+1,"CT",400,"MAT06","Other Evergreen","BelowStem","26"
+1,"CT",400,"MAT06","Rubus chamaemorus","LeavesStems","274"
+1,"CT",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+1,"CT",400,"MAT06","Rubus chamaemorus","BelowStem","275"
+1,"CT",400,"MAT06","Petasites frigidus","LeavesStems",NA
+1,"CT",400,"MAT06","Petasites frigidus","InflorStalks",NA
+1,"CT",400,"MAT06","Petasites frigidus","BelowStem",NA
+1,"CT",400,"MAT06","Other Forb","LeavesStems","229"
+1,"CT",400,"MAT06","Other Forb","InflorStalks",NA
+1,"CT",400,"MAT06","Other Forb","BelowStem",NA
 1,"CT",400,"MAT06","Sphagnum","Green","273"
-1,"CT",400,"MAT06","OtherMoss","Green","269"
-1,"CT",400,"MAT06","Lichen","Live","270"
-1,"CT",400,"MAT06","Attached","Wood","226"
-1,"CT",400,"MAT06","Attached","Litter","272"
+1,"CT",400,"MAT06","Other Mosses","Green","269"
+1,"CT",400,"MAT06","Mixed Lichen","Live","270"
+1,"CT",400,"MAT06","Litter","Wood","226"
+1,"CT",400,"MAT06","Litter","Litter","272"
 1,"CT",400,"MAT06","Loose","Litter","271"
-1,"F0.5",400,"MAT06","Erivag","BladeSheathInflCulm","1648"
-1,"F0.5",400,"MAT06","Erivag","Rhizome","1649"
-1,"F0.5",400,"MAT06","Carbig","BladeSheathInflCulm","1650"
-1,"F0.5",400,"MAT06","Carbig","Rhizome","1669"
-1,"F0.5",400,"MAT06","OtherGraminoid","BladeSheathInflCulm",NA
-1,"F0.5",400,"MAT06","OtherGraminoid","Rhizome",NA
-1,"F0.5",400,"MAT06","Betnan","NewLeaves","1627"
-1,"F0.5",400,"MAT06","Betnan","NewStems","1628"
-1,"F0.5",400,"MAT06","Betnan","OldStems","1629"
-1,"F0.5",400,"MAT06","Betnan","Inflor",NA
-1,"F0.5",400,"MAT06","Betnan","BelowStem","1630"
-1,"F0.5",400,"MAT06","Salpul","NewLeaves","1930"
-1,"F0.5",400,"MAT06","Salpul","NewStems","1931"
-1,"F0.5",400,"MAT06","Salpul","OldStems","1932"
-1,"F0.5",400,"MAT06","Salpul","Inflor",NA
-1,"F0.5",400,"MAT06","Salpul","BelowStem","1933"
-1,"F0.5",400,"MAT06","Vaculi","NewLeaves","1637"
-1,"F0.5",400,"MAT06","Vaculi","NewStems","1638"
-1,"F0.5",400,"MAT06","Vaculi","OldStems","1639"
-1,"F0.5",400,"MAT06","Vaculi","Inflor",NA
-1,"F0.5",400,"MAT06","Vaculi","BelowStem","1640"
-1,"F0.5",400,"MAT06","OtherDeciduous","NewLeaves",NA
-1,"F0.5",400,"MAT06","OtherDeciduous","NewStems",NA
-1,"F0.5",400,"MAT06","OtherDeciduous","OldStems",NA
-1,"F0.5",400,"MAT06","OtherDeciduous","Inflor",NA
-1,"F0.5",400,"MAT06","OtherDeciduous","BelowStem",NA
-1,"F0.5",400,"MAT06","Ledpal","NewLeaves","1631"
-1,"F0.5",400,"MAT06","Ledpal","NewStems","1632"
-1,"F0.5",400,"MAT06","Ledpal","OldLeaves","1633"
-1,"F0.5",400,"MAT06","Ledpal","OldStems","1634"
-1,"F0.5",400,"MAT06","Ledpal","Inflor","1635"
-1,"F0.5",400,"MAT06","Ledpal","BelowStem","1636"
-1,"F0.5",400,"MAT06","Vacvit","NewLeaves","1641"
-1,"F0.5",400,"MAT06","Vacvit","NewStems","1642"
-1,"F0.5",400,"MAT06","Vacvit","OldLeaves","1643"
-1,"F0.5",400,"MAT06","Vacvit","OldStems","1644"
-1,"F0.5",400,"MAT06","Vacvit","Inflor","1670"
-1,"F0.5",400,"MAT06","Vacvit","BelowStem","1645"
-1,"F0.5",400,"MAT06","Castet","NewStems",NA
-1,"F0.5",400,"MAT06","Castet","OldStems",NA
-1,"F0.5",400,"MAT06","Castet","Inflor",NA
-1,"F0.5",400,"MAT06","Castet","BelowStem",NA
-1,"F0.5",400,"MAT06","OtherEvergreen","NewLeaves","1652"
-1,"F0.5",400,"MAT06","OtherEvergreen","NewStems","1653"
-1,"F0.5",400,"MAT06","OtherEvergreen","OldLeaves","1654"
-1,"F0.5",400,"MAT06","OtherEvergreen","OldStems","1655"
-1,"F0.5",400,"MAT06","OtherEvergreen","Inflor",NA
-1,"F0.5",400,"MAT06","OtherEvergreen","BelowStem","1656"
-1,"F0.5",400,"MAT06","Rubcha","LeavesStems","1699"
-1,"F0.5",400,"MAT06","Rubcha","InflorStalks",NA
-1,"F0.5",400,"MAT06","Rubcha","BelowStem","1701"
-1,"F0.5",400,"MAT06","Petfri","LeavesStems",NA
-1,"F0.5",400,"MAT06","Petfri","InflorStalks",NA
-1,"F0.5",400,"MAT06","Petfri","BelowStem",NA
-1,"F0.5",400,"MAT06","OtherForb","LeavesStems","1704"
-1,"F0.5",400,"MAT06","OtherForb","InflorStalks","1705"
-1,"F0.5",400,"MAT06","OtherForb","BelowStem","1723"
+1,"F0.5",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","1648"
+1,"F0.5",400,"MAT06","Eriophorum vaginatum","Rhizome","1649"
+1,"F0.5",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","1650"
+1,"F0.5",400,"MAT06","Carex bigelowii","Rhizome","1669"
+1,"F0.5",400,"MAT06","Other Graminoid","BladeSheathInflCulm",NA
+1,"F0.5",400,"MAT06","Other Graminoid","Rhizome",NA
+1,"F0.5",400,"MAT06","Betula nana","NewLeaves","1627"
+1,"F0.5",400,"MAT06","Betula nana","NewStems","1628"
+1,"F0.5",400,"MAT06","Betula nana","OldStems","1629"
+1,"F0.5",400,"MAT06","Betula nana","Inflor",NA
+1,"F0.5",400,"MAT06","Betula nana","BelowStem","1630"
+1,"F0.5",400,"MAT06","Salix pulchra","NewLeaves","1930"
+1,"F0.5",400,"MAT06","Salix pulchra","NewStems","1931"
+1,"F0.5",400,"MAT06","Salix pulchra","OldStems","1932"
+1,"F0.5",400,"MAT06","Salix pulchra","Inflor",NA
+1,"F0.5",400,"MAT06","Salix pulchra","BelowStem","1933"
+1,"F0.5",400,"MAT06","Vaccinium uliginosum","NewLeaves","1637"
+1,"F0.5",400,"MAT06","Vaccinium uliginosum","NewStems","1638"
+1,"F0.5",400,"MAT06","Vaccinium uliginosum","OldStems","1639"
+1,"F0.5",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+1,"F0.5",400,"MAT06","Vaccinium uliginosum","BelowStem","1640"
+1,"F0.5",400,"MAT06","Other Deciduous","NewLeaves",NA
+1,"F0.5",400,"MAT06","Other Deciduous","NewStems",NA
+1,"F0.5",400,"MAT06","Other Deciduous","OldStems",NA
+1,"F0.5",400,"MAT06","Other Deciduous","Inflor",NA
+1,"F0.5",400,"MAT06","Other Deciduous","BelowStem",NA
+1,"F0.5",400,"MAT06","Ledum palustre","NewLeaves","1631"
+1,"F0.5",400,"MAT06","Ledum palustre","NewStems","1632"
+1,"F0.5",400,"MAT06","Ledum palustre","OldLeaves","1633"
+1,"F0.5",400,"MAT06","Ledum palustre","OldStems","1634"
+1,"F0.5",400,"MAT06","Ledum palustre","Inflor","1635"
+1,"F0.5",400,"MAT06","Ledum palustre","BelowStem","1636"
+1,"F0.5",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","1641"
+1,"F0.5",400,"MAT06","Vaccinium vitis-idaea","NewStems","1642"
+1,"F0.5",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","1643"
+1,"F0.5",400,"MAT06","Vaccinium vitis-idaea","OldStems","1644"
+1,"F0.5",400,"MAT06","Vaccinium vitis-idaea","Inflor","1670"
+1,"F0.5",400,"MAT06","Vaccinium vitis-idaea","BelowStem","1645"
+1,"F0.5",400,"MAT06","Cassiope tetragona","NewStems",NA
+1,"F0.5",400,"MAT06","Cassiope tetragona","OldStems",NA
+1,"F0.5",400,"MAT06","Cassiope tetragona","Inflor",NA
+1,"F0.5",400,"MAT06","Cassiope tetragona","BelowStem",NA
+1,"F0.5",400,"MAT06","Other Evergreen","NewLeaves","1652"
+1,"F0.5",400,"MAT06","Other Evergreen","NewStems","1653"
+1,"F0.5",400,"MAT06","Other Evergreen","OldLeaves","1654"
+1,"F0.5",400,"MAT06","Other Evergreen","OldStems","1655"
+1,"F0.5",400,"MAT06","Other Evergreen","Inflor",NA
+1,"F0.5",400,"MAT06","Other Evergreen","BelowStem","1656"
+1,"F0.5",400,"MAT06","Rubus chamaemorus","LeavesStems","1699"
+1,"F0.5",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+1,"F0.5",400,"MAT06","Rubus chamaemorus","BelowStem","1701"
+1,"F0.5",400,"MAT06","Petasites frigidus","LeavesStems",NA
+1,"F0.5",400,"MAT06","Petasites frigidus","InflorStalks",NA
+1,"F0.5",400,"MAT06","Petasites frigidus","BelowStem",NA
+1,"F0.5",400,"MAT06","Other Forb","LeavesStems","1704"
+1,"F0.5",400,"MAT06","Other Forb","InflorStalks","1705"
+1,"F0.5",400,"MAT06","Other Forb","BelowStem","1723"
 1,"F0.5",400,"MAT06","Sphagnum","Green","1707"
-1,"F0.5",400,"MAT06","OtherMoss","Green","1646"
-1,"F0.5",400,"MAT06","Lichen","Live","1647"
-1,"F0.5",400,"MAT06","Attached","Wood",NA
-1,"F0.5",400,"MAT06","Attached","Litter","1739"
+1,"F0.5",400,"MAT06","Other Mosses","Green","1646"
+1,"F0.5",400,"MAT06","Mixed Lichen","Live","1647"
+1,"F0.5",400,"MAT06","Litter","Wood",NA
+1,"F0.5",400,"MAT06","Litter","Litter","1739"
 1,"F0.5",400,"MAT06","Loose","Litter",NA
-1,"F1",400,"MAT06","Erivag","BladeSheathInflCulm","233"
-1,"F1",400,"MAT06","Erivag","Rhizome","234"
-1,"F1",400,"MAT06","Carbig","BladeSheathInflCulm","308"
-1,"F1",400,"MAT06","Carbig","Rhizome","316"
-1,"F1",400,"MAT06","OtherGraminoid","BladeSheathInflCulm",NA
-1,"F1",400,"MAT06","OtherGraminoid","Rhizome",NA
-1,"F1",400,"MAT06","Betnan","NewLeaves","235"
-1,"F1",400,"MAT06","Betnan","NewStems","236"
-1,"F1",400,"MAT06","Betnan","OldStems","237"
-1,"F1",400,"MAT06","Betnan","Inflor","238"
-1,"F1",400,"MAT06","Betnan","BelowStem","239"
-1,"F1",400,"MAT06","Salpul","NewLeaves",NA
-1,"F1",400,"MAT06","Salpul","NewStems",NA
-1,"F1",400,"MAT06","Salpul","OldStems",NA
-1,"F1",400,"MAT06","Salpul","Inflor",NA
-1,"F1",400,"MAT06","Salpul","BelowStem",NA
-1,"F1",400,"MAT06","Vaculi","NewLeaves","317"
-1,"F1",400,"MAT06","Vaculi","NewStems","318"
-1,"F1",400,"MAT06","Vaculi","OldStems","319"
-1,"F1",400,"MAT06","Vaculi","Inflor",NA
-1,"F1",400,"MAT06","Vaculi","BelowStem","320"
-1,"F1",400,"MAT06","OtherDeciduous","NewLeaves",NA
-1,"F1",400,"MAT06","OtherDeciduous","NewStems",NA
-1,"F1",400,"MAT06","OtherDeciduous","OldStems",NA
-1,"F1",400,"MAT06","OtherDeciduous","Inflor",NA
-1,"F1",400,"MAT06","OtherDeciduous","BelowStem",NA
-1,"F1",400,"MAT06","Ledpal","NewLeaves","240"
-1,"F1",400,"MAT06","Ledpal","NewStems","301"
-1,"F1",400,"MAT06","Ledpal","OldLeaves","302"
-1,"F1",400,"MAT06","Ledpal","OldStems","303"
-1,"F1",400,"MAT06","Ledpal","Inflor","304"
-1,"F1",400,"MAT06","Ledpal","BelowStem","305"
-1,"F1",400,"MAT06","Vacvit","NewLeaves","310"
-1,"F1",400,"MAT06","Vacvit","NewStems","311"
-1,"F1",400,"MAT06","Vacvit","OldLeaves","312"
-1,"F1",400,"MAT06","Vacvit","OldStems","313"
-1,"F1",400,"MAT06","Vacvit","Inflor","314"
-1,"F1",400,"MAT06","Vacvit","BelowStem","315"
-1,"F1",400,"MAT06","Castet","NewStems","392"
-1,"F1",400,"MAT06","Castet","OldStems","393"
-1,"F1",400,"MAT06","Castet","Inflor",NA
-1,"F1",400,"MAT06","Castet","BelowStem","394"
-1,"F1",400,"MAT06","OtherEvergreen","NewLeaves",NA
-1,"F1",400,"MAT06","OtherEvergreen","NewStems",NA
-1,"F1",400,"MAT06","OtherEvergreen","OldLeaves",NA
-1,"F1",400,"MAT06","OtherEvergreen","OldStems",NA
-1,"F1",400,"MAT06","OtherEvergreen","Inflor",NA
-1,"F1",400,"MAT06","OtherEvergreen","BelowStem",NA
-1,"F1",400,"MAT06","Rubcha","LeavesStems","395"
-1,"F1",400,"MAT06","Rubcha","InflorStalks",NA
-1,"F1",400,"MAT06","Rubcha","BelowStem","321"
-1,"F1",400,"MAT06","Petfri","LeavesStems",NA
-1,"F1",400,"MAT06","Petfri","InflorStalks",NA
-1,"F1",400,"MAT06","Petfri","BelowStem",NA
-1,"F1",400,"MAT06","OtherForb","LeavesStems","306"
-1,"F1",400,"MAT06","OtherForb","InflorStalks",NA
-1,"F1",400,"MAT06","OtherForb","BelowStem",NA
+1,"F1",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","233"
+1,"F1",400,"MAT06","Eriophorum vaginatum","Rhizome","234"
+1,"F1",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","308"
+1,"F1",400,"MAT06","Carex bigelowii","Rhizome","316"
+1,"F1",400,"MAT06","Other Graminoid","BladeSheathInflCulm",NA
+1,"F1",400,"MAT06","Other Graminoid","Rhizome",NA
+1,"F1",400,"MAT06","Betula nana","NewLeaves","235"
+1,"F1",400,"MAT06","Betula nana","NewStems","236"
+1,"F1",400,"MAT06","Betula nana","OldStems","237"
+1,"F1",400,"MAT06","Betula nana","Inflor","238"
+1,"F1",400,"MAT06","Betula nana","BelowStem","239"
+1,"F1",400,"MAT06","Salix pulchra","NewLeaves",NA
+1,"F1",400,"MAT06","Salix pulchra","NewStems",NA
+1,"F1",400,"MAT06","Salix pulchra","OldStems",NA
+1,"F1",400,"MAT06","Salix pulchra","Inflor",NA
+1,"F1",400,"MAT06","Salix pulchra","BelowStem",NA
+1,"F1",400,"MAT06","Vaccinium uliginosum","NewLeaves","317"
+1,"F1",400,"MAT06","Vaccinium uliginosum","NewStems","318"
+1,"F1",400,"MAT06","Vaccinium uliginosum","OldStems","319"
+1,"F1",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+1,"F1",400,"MAT06","Vaccinium uliginosum","BelowStem","320"
+1,"F1",400,"MAT06","Other Deciduous","NewLeaves",NA
+1,"F1",400,"MAT06","Other Deciduous","NewStems",NA
+1,"F1",400,"MAT06","Other Deciduous","OldStems",NA
+1,"F1",400,"MAT06","Other Deciduous","Inflor",NA
+1,"F1",400,"MAT06","Other Deciduous","BelowStem",NA
+1,"F1",400,"MAT06","Ledum palustre","NewLeaves","240"
+1,"F1",400,"MAT06","Ledum palustre","NewStems","301"
+1,"F1",400,"MAT06","Ledum palustre","OldLeaves","302"
+1,"F1",400,"MAT06","Ledum palustre","OldStems","303"
+1,"F1",400,"MAT06","Ledum palustre","Inflor","304"
+1,"F1",400,"MAT06","Ledum palustre","BelowStem","305"
+1,"F1",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","310"
+1,"F1",400,"MAT06","Vaccinium vitis-idaea","NewStems","311"
+1,"F1",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","312"
+1,"F1",400,"MAT06","Vaccinium vitis-idaea","OldStems","313"
+1,"F1",400,"MAT06","Vaccinium vitis-idaea","Inflor","314"
+1,"F1",400,"MAT06","Vaccinium vitis-idaea","BelowStem","315"
+1,"F1",400,"MAT06","Cassiope tetragona","NewStems","392"
+1,"F1",400,"MAT06","Cassiope tetragona","OldStems","393"
+1,"F1",400,"MAT06","Cassiope tetragona","Inflor",NA
+1,"F1",400,"MAT06","Cassiope tetragona","BelowStem","394"
+1,"F1",400,"MAT06","Other Evergreen","NewLeaves",NA
+1,"F1",400,"MAT06","Other Evergreen","NewStems",NA
+1,"F1",400,"MAT06","Other Evergreen","OldLeaves",NA
+1,"F1",400,"MAT06","Other Evergreen","OldStems",NA
+1,"F1",400,"MAT06","Other Evergreen","Inflor",NA
+1,"F1",400,"MAT06","Other Evergreen","BelowStem",NA
+1,"F1",400,"MAT06","Rubus chamaemorus","LeavesStems","395"
+1,"F1",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+1,"F1",400,"MAT06","Rubus chamaemorus","BelowStem","321"
+1,"F1",400,"MAT06","Petasites frigidus","LeavesStems",NA
+1,"F1",400,"MAT06","Petasites frigidus","InflorStalks",NA
+1,"F1",400,"MAT06","Petasites frigidus","BelowStem",NA
+1,"F1",400,"MAT06","Other Forb","LeavesStems","306"
+1,"F1",400,"MAT06","Other Forb","InflorStalks",NA
+1,"F1",400,"MAT06","Other Forb","BelowStem",NA
 1,"F1",400,"MAT06","Sphagnum","Green",NA
-1,"F1",400,"MAT06","OtherMoss","Green","232"
-1,"F1",400,"MAT06","Lichen","Live","231"
-1,"F1",400,"MAT06","Attached","Wood",NA
-1,"F1",400,"MAT06","Attached","Litter","307"
+1,"F1",400,"MAT06","Other Mosses","Green","232"
+1,"F1",400,"MAT06","Mixed Lichen","Live","231"
+1,"F1",400,"MAT06","Litter","Wood",NA
+1,"F1",400,"MAT06","Litter","Litter","307"
 1,"F1",400,"MAT06","Loose","Litter","287"
-1,"F2",400,"MAT06","Erivag","BladeSheathInflCulm","88"
-1,"F2",400,"MAT06","Erivag","Rhizome","68"
-1,"F2",400,"MAT06","Carbig","BladeSheathInflCulm","86"
-1,"F2",400,"MAT06","Carbig","Rhizome","482"
-1,"F2",400,"MAT06","OtherGraminoid","BladeSheathInflCulm","483"
-1,"F2",400,"MAT06","OtherGraminoid","Rhizome","484"
-1,"F2",400,"MAT06","Betnan","NewLeaves","89"
-1,"F2",400,"MAT06","Betnan","NewStems","69"
-1,"F2",400,"MAT06","Betnan","OldStems","72"
-1,"F2",400,"MAT06","Betnan","Inflor","75"
-1,"F2",400,"MAT06","Betnan","BelowStem","415"
-1,"F2",400,"MAT06","Salpul","NewLeaves",NA
-1,"F2",400,"MAT06","Salpul","NewStems",NA
-1,"F2",400,"MAT06","Salpul","OldStems",NA
-1,"F2",400,"MAT06","Salpul","Inflor",NA
-1,"F2",400,"MAT06","Salpul","BelowStem",NA
-1,"F2",400,"MAT06","Vaculi","NewLeaves",NA
-1,"F2",400,"MAT06","Vaculi","NewStems",NA
-1,"F2",400,"MAT06","Vaculi","OldStems",NA
-1,"F2",400,"MAT06","Vaculi","Inflor",NA
-1,"F2",400,"MAT06","Vaculi","BelowStem",NA
-1,"F2",400,"MAT06","OtherDeciduous","NewLeaves",NA
-1,"F2",400,"MAT06","OtherDeciduous","NewStems",NA
-1,"F2",400,"MAT06","OtherDeciduous","OldStems",NA
-1,"F2",400,"MAT06","OtherDeciduous","Inflor",NA
-1,"F2",400,"MAT06","OtherDeciduous","BelowStem",NA
-1,"F2",400,"MAT06","Ledpal","NewLeaves","70"
-1,"F2",400,"MAT06","Ledpal","NewStems","73"
-1,"F2",400,"MAT06","Ledpal","OldLeaves","76"
-1,"F2",400,"MAT06","Ledpal","OldStems","79"
-1,"F2",400,"MAT06","Ledpal","Inflor","85"
-1,"F2",400,"MAT06","Ledpal","BelowStem","82"
-1,"F2",400,"MAT06","Vacvit","NewLeaves","78"
-1,"F2",400,"MAT06","Vacvit","NewStems","81"
-1,"F2",400,"MAT06","Vacvit","OldLeaves","84"
-1,"F2",400,"MAT06","Vacvit","OldStems","87"
-1,"F2",400,"MAT06","Vacvit","Inflor",NA
-1,"F2",400,"MAT06","Vacvit","BelowStem","495"
-1,"F2",400,"MAT06","Castet","NewStems",NA
-1,"F2",400,"MAT06","Castet","OldStems",NA
-1,"F2",400,"MAT06","Castet","Inflor",NA
-1,"F2",400,"MAT06","Castet","BelowStem",NA
-1,"F2",400,"MAT06","OtherEvergreen","NewLeaves",NA
-1,"F2",400,"MAT06","OtherEvergreen","NewStems",NA
-1,"F2",400,"MAT06","OtherEvergreen","OldLeaves",NA
-1,"F2",400,"MAT06","OtherEvergreen","OldStems",NA
-1,"F2",400,"MAT06","OtherEvergreen","Inflor",NA
-1,"F2",400,"MAT06","OtherEvergreen","BelowStem",NA
-1,"F2",400,"MAT06","Rubcha","LeavesStems","77"
-1,"F2",400,"MAT06","Rubcha","InflorStalks","80"
-1,"F2",400,"MAT06","Rubcha","BelowStem","83"
-1,"F2",400,"MAT06","Petfri","LeavesStems",NA
-1,"F2",400,"MAT06","Petfri","InflorStalks",NA
-1,"F2",400,"MAT06","Petfri","BelowStem",NA
-1,"F2",400,"MAT06","OtherForb","LeavesStems",NA
-1,"F2",400,"MAT06","OtherForb","InflorStalks",NA
-1,"F2",400,"MAT06","OtherForb","BelowStem",NA
+1,"F2",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","88"
+1,"F2",400,"MAT06","Eriophorum vaginatum","Rhizome","68"
+1,"F2",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","86"
+1,"F2",400,"MAT06","Carex bigelowii","Rhizome","482"
+1,"F2",400,"MAT06","Other Graminoid","BladeSheathInflCulm","483"
+1,"F2",400,"MAT06","Other Graminoid","Rhizome","484"
+1,"F2",400,"MAT06","Betula nana","NewLeaves","89"
+1,"F2",400,"MAT06","Betula nana","NewStems","69"
+1,"F2",400,"MAT06","Betula nana","OldStems","72"
+1,"F2",400,"MAT06","Betula nana","Inflor","75"
+1,"F2",400,"MAT06","Betula nana","BelowStem","415"
+1,"F2",400,"MAT06","Salix pulchra","NewLeaves",NA
+1,"F2",400,"MAT06","Salix pulchra","NewStems",NA
+1,"F2",400,"MAT06","Salix pulchra","OldStems",NA
+1,"F2",400,"MAT06","Salix pulchra","Inflor",NA
+1,"F2",400,"MAT06","Salix pulchra","BelowStem",NA
+1,"F2",400,"MAT06","Vaccinium uliginosum","NewLeaves",NA
+1,"F2",400,"MAT06","Vaccinium uliginosum","NewStems",NA
+1,"F2",400,"MAT06","Vaccinium uliginosum","OldStems",NA
+1,"F2",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+1,"F2",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+1,"F2",400,"MAT06","Other Deciduous","NewLeaves",NA
+1,"F2",400,"MAT06","Other Deciduous","NewStems",NA
+1,"F2",400,"MAT06","Other Deciduous","OldStems",NA
+1,"F2",400,"MAT06","Other Deciduous","Inflor",NA
+1,"F2",400,"MAT06","Other Deciduous","BelowStem",NA
+1,"F2",400,"MAT06","Ledum palustre","NewLeaves","70"
+1,"F2",400,"MAT06","Ledum palustre","NewStems","73"
+1,"F2",400,"MAT06","Ledum palustre","OldLeaves","76"
+1,"F2",400,"MAT06","Ledum palustre","OldStems","79"
+1,"F2",400,"MAT06","Ledum palustre","Inflor","85"
+1,"F2",400,"MAT06","Ledum palustre","BelowStem","82"
+1,"F2",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","78"
+1,"F2",400,"MAT06","Vaccinium vitis-idaea","NewStems","81"
+1,"F2",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","84"
+1,"F2",400,"MAT06","Vaccinium vitis-idaea","OldStems","87"
+1,"F2",400,"MAT06","Vaccinium vitis-idaea","Inflor",NA
+1,"F2",400,"MAT06","Vaccinium vitis-idaea","BelowStem","495"
+1,"F2",400,"MAT06","Cassiope tetragona","NewStems",NA
+1,"F2",400,"MAT06","Cassiope tetragona","OldStems",NA
+1,"F2",400,"MAT06","Cassiope tetragona","Inflor",NA
+1,"F2",400,"MAT06","Cassiope tetragona","BelowStem",NA
+1,"F2",400,"MAT06","Other Evergreen","NewLeaves",NA
+1,"F2",400,"MAT06","Other Evergreen","NewStems",NA
+1,"F2",400,"MAT06","Other Evergreen","OldLeaves",NA
+1,"F2",400,"MAT06","Other Evergreen","OldStems",NA
+1,"F2",400,"MAT06","Other Evergreen","Inflor",NA
+1,"F2",400,"MAT06","Other Evergreen","BelowStem",NA
+1,"F2",400,"MAT06","Rubus chamaemorus","LeavesStems","77"
+1,"F2",400,"MAT06","Rubus chamaemorus","InflorStalks","80"
+1,"F2",400,"MAT06","Rubus chamaemorus","BelowStem","83"
+1,"F2",400,"MAT06","Petasites frigidus","LeavesStems",NA
+1,"F2",400,"MAT06","Petasites frigidus","InflorStalks",NA
+1,"F2",400,"MAT06","Petasites frigidus","BelowStem",NA
+1,"F2",400,"MAT06","Other Forb","LeavesStems",NA
+1,"F2",400,"MAT06","Other Forb","InflorStalks",NA
+1,"F2",400,"MAT06","Other Forb","BelowStem",NA
 1,"F2",400,"MAT06","Sphagnum","Green","74"
-1,"F2",400,"MAT06","OtherMoss","Green","498"
-1,"F2",400,"MAT06","Lichen","Live","71"
-1,"F2",400,"MAT06","Attached","Wood",NA
-1,"F2",400,"MAT06","Attached","Litter","90"
+1,"F2",400,"MAT06","Other Mosses","Green","498"
+1,"F2",400,"MAT06","Mixed Lichen","Live","71"
+1,"F2",400,"MAT06","Litter","Wood",NA
+1,"F2",400,"MAT06","Litter","Litter","90"
 1,"F2",400,"MAT06","Loose","Litter",NA
-1,"F5",400,"MAT06","Erivag","BladeSheathInflCulm","93"
-1,"F5",400,"MAT06","Erivag","Rhizome",NA
-1,"F5",400,"MAT06","Carbig","BladeSheathInflCulm","337"
-1,"F5",400,"MAT06","Carbig","Rhizome","338"
-1,"F5",400,"MAT06","OtherGraminoid","BladeSheathInflCulm","119"
-1,"F5",400,"MAT06","OtherGraminoid","Rhizome","96"
-1,"F5",400,"MAT06","Betnan","NewLeaves","108"
-1,"F5",400,"MAT06","Betnan","NewStems","105"
-1,"F5",400,"MAT06","Betnan","OldStems","111"
-1,"F5",400,"MAT06","Betnan","Inflor","348"
-1,"F5",400,"MAT06","Betnan","BelowStem","114"
-1,"F5",400,"MAT06","Salpul","NewLeaves",NA
-1,"F5",400,"MAT06","Salpul","NewStems",NA
-1,"F5",400,"MAT06","Salpul","OldStems",NA
-1,"F5",400,"MAT06","Salpul","Inflor",NA
-1,"F5",400,"MAT06","Salpul","BelowStem",NA
-1,"F5",400,"MAT06","Vaculi","NewLeaves",NA
-1,"F5",400,"MAT06","Vaculi","NewStems",NA
-1,"F5",400,"MAT06","Vaculi","OldStems",NA
-1,"F5",400,"MAT06","Vaculi","Inflor",NA
-1,"F5",400,"MAT06","Vaculi","BelowStem",NA
-1,"F5",400,"MAT06","OtherDeciduous","NewLeaves","135"
-1,"F5",400,"MAT06","OtherDeciduous","NewStems","136"
-1,"F5",400,"MAT06","OtherDeciduous","OldStems",NA
-1,"F5",400,"MAT06","OtherDeciduous","Inflor",NA
-1,"F5",400,"MAT06","OtherDeciduous","BelowStem",NA
-1,"F5",400,"MAT06","Ledpal","NewLeaves","118"
-1,"F5",400,"MAT06","Ledpal","NewStems","115"
-1,"F5",400,"MAT06","Ledpal","OldLeaves","92"
-1,"F5",400,"MAT06","Ledpal","OldStems","95"
-1,"F5",400,"MAT06","Ledpal","Inflor","98"
-1,"F5",400,"MAT06","Ledpal","BelowStem","101"
-1,"F5",400,"MAT06","Vacvit","NewLeaves","104"
-1,"F5",400,"MAT06","Vacvit","NewStems","107"
-1,"F5",400,"MAT06","Vacvit","OldLeaves","110"
-1,"F5",400,"MAT06","Vacvit","OldStems","113"
-1,"F5",400,"MAT06","Vacvit","Inflor",NA
-1,"F5",400,"MAT06","Vacvit","BelowStem","116"
-1,"F5",400,"MAT06","Castet","NewStems",NA
-1,"F5",400,"MAT06","Castet","OldStems",NA
-1,"F5",400,"MAT06","Castet","Inflor",NA
-1,"F5",400,"MAT06","Castet","BelowStem",NA
-1,"F5",400,"MAT06","OtherEvergreen","NewLeaves",NA
-1,"F5",400,"MAT06","OtherEvergreen","NewStems",NA
-1,"F5",400,"MAT06","OtherEvergreen","OldLeaves",NA
-1,"F5",400,"MAT06","OtherEvergreen","OldStems",NA
-1,"F5",400,"MAT06","OtherEvergreen","Inflor",NA
-1,"F5",400,"MAT06","OtherEvergreen","BelowStem",NA
-1,"F5",400,"MAT06","Rubcha","LeavesStems","109"
-1,"F5",400,"MAT06","Rubcha","InflorStalks",NA
-1,"F5",400,"MAT06","Rubcha","BelowStem","112"
-1,"F5",400,"MAT06","Petfri","LeavesStems",NA
-1,"F5",400,"MAT06","Petfri","InflorStalks",NA
-1,"F5",400,"MAT06","Petfri","BelowStem",NA
-1,"F5",400,"MAT06","OtherForb","LeavesStems",NA
-1,"F5",400,"MAT06","OtherForb","InflorStalks",NA
-1,"F5",400,"MAT06","OtherForb","BelowStem",NA
+1,"F5",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","93"
+1,"F5",400,"MAT06","Eriophorum vaginatum","Rhizome",NA
+1,"F5",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","337"
+1,"F5",400,"MAT06","Carex bigelowii","Rhizome","338"
+1,"F5",400,"MAT06","Other Graminoid","BladeSheathInflCulm","119"
+1,"F5",400,"MAT06","Other Graminoid","Rhizome","96"
+1,"F5",400,"MAT06","Betula nana","NewLeaves","108"
+1,"F5",400,"MAT06","Betula nana","NewStems","105"
+1,"F5",400,"MAT06","Betula nana","OldStems","111"
+1,"F5",400,"MAT06","Betula nana","Inflor","348"
+1,"F5",400,"MAT06","Betula nana","BelowStem","114"
+1,"F5",400,"MAT06","Salix pulchra","NewLeaves",NA
+1,"F5",400,"MAT06","Salix pulchra","NewStems",NA
+1,"F5",400,"MAT06","Salix pulchra","OldStems",NA
+1,"F5",400,"MAT06","Salix pulchra","Inflor",NA
+1,"F5",400,"MAT06","Salix pulchra","BelowStem",NA
+1,"F5",400,"MAT06","Vaccinium uliginosum","NewLeaves",NA
+1,"F5",400,"MAT06","Vaccinium uliginosum","NewStems",NA
+1,"F5",400,"MAT06","Vaccinium uliginosum","OldStems",NA
+1,"F5",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+1,"F5",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+1,"F5",400,"MAT06","Other Deciduous","NewLeaves","135"
+1,"F5",400,"MAT06","Other Deciduous","NewStems","136"
+1,"F5",400,"MAT06","Other Deciduous","OldStems",NA
+1,"F5",400,"MAT06","Other Deciduous","Inflor",NA
+1,"F5",400,"MAT06","Other Deciduous","BelowStem",NA
+1,"F5",400,"MAT06","Ledum palustre","NewLeaves","118"
+1,"F5",400,"MAT06","Ledum palustre","NewStems","115"
+1,"F5",400,"MAT06","Ledum palustre","OldLeaves","92"
+1,"F5",400,"MAT06","Ledum palustre","OldStems","95"
+1,"F5",400,"MAT06","Ledum palustre","Inflor","98"
+1,"F5",400,"MAT06","Ledum palustre","BelowStem","101"
+1,"F5",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","104"
+1,"F5",400,"MAT06","Vaccinium vitis-idaea","NewStems","107"
+1,"F5",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","110"
+1,"F5",400,"MAT06","Vaccinium vitis-idaea","OldStems","113"
+1,"F5",400,"MAT06","Vaccinium vitis-idaea","Inflor",NA
+1,"F5",400,"MAT06","Vaccinium vitis-idaea","BelowStem","116"
+1,"F5",400,"MAT06","Cassiope tetragona","NewStems",NA
+1,"F5",400,"MAT06","Cassiope tetragona","OldStems",NA
+1,"F5",400,"MAT06","Cassiope tetragona","Inflor",NA
+1,"F5",400,"MAT06","Cassiope tetragona","BelowStem",NA
+1,"F5",400,"MAT06","Other Evergreen","NewLeaves",NA
+1,"F5",400,"MAT06","Other Evergreen","NewStems",NA
+1,"F5",400,"MAT06","Other Evergreen","OldLeaves",NA
+1,"F5",400,"MAT06","Other Evergreen","OldStems",NA
+1,"F5",400,"MAT06","Other Evergreen","Inflor",NA
+1,"F5",400,"MAT06","Other Evergreen","BelowStem",NA
+1,"F5",400,"MAT06","Rubus chamaemorus","LeavesStems","109"
+1,"F5",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+1,"F5",400,"MAT06","Rubus chamaemorus","BelowStem","112"
+1,"F5",400,"MAT06","Petasites frigidus","LeavesStems",NA
+1,"F5",400,"MAT06","Petasites frigidus","InflorStalks",NA
+1,"F5",400,"MAT06","Petasites frigidus","BelowStem",NA
+1,"F5",400,"MAT06","Other Forb","LeavesStems",NA
+1,"F5",400,"MAT06","Other Forb","InflorStalks",NA
+1,"F5",400,"MAT06","Other Forb","BelowStem",NA
 1,"F5",400,"MAT06","Sphagnum","Green",NA
-1,"F5",400,"MAT06","OtherMoss","Green","102"
-1,"F5",400,"MAT06","Lichen","Live","339"
-1,"F5",400,"MAT06","Attached","Wood","349"
-1,"F5",400,"MAT06","Attached","Litter","99"
+1,"F5",400,"MAT06","Other Mosses","Green","102"
+1,"F5",400,"MAT06","Mixed Lichen","Live","339"
+1,"F5",400,"MAT06","Litter","Wood","349"
+1,"F5",400,"MAT06","Litter","Litter","99"
 1,"F5",400,"MAT06","Loose","Litter",NA
-1,"F10",400,"MAT06","Erivag","BladeSheathInflCulm","31"
-1,"F10",400,"MAT06","Erivag","Rhizome","45"
-1,"F10",400,"MAT06","Carbig","BladeSheathInflCulm",NA
-1,"F10",400,"MAT06","Carbig","Rhizome",NA
-1,"F10",400,"MAT06","OtherGraminoid","BladeSheathInflCulm","32"
-1,"F10",400,"MAT06","OtherGraminoid","Rhizome","46"
-1,"F10",400,"MAT06","Betnan","NewLeaves","33"
-1,"F10",400,"MAT06","Betnan","NewStems","34"
-1,"F10",400,"MAT06","Betnan","OldStems","35"
-1,"F10",400,"MAT06","Betnan","Inflor","9"
-1,"F10",400,"MAT06","Betnan","BelowStem","36"
-1,"F10",400,"MAT06","Salpul","NewLeaves",NA
-1,"F10",400,"MAT06","Salpul","NewStems",NA
-1,"F10",400,"MAT06","Salpul","OldStems",NA
-1,"F10",400,"MAT06","Salpul","Inflor",NA
-1,"F10",400,"MAT06","Salpul","BelowStem",NA
-1,"F10",400,"MAT06","Vaculi","NewLeaves",NA
-1,"F10",400,"MAT06","Vaculi","NewStems",NA
-1,"F10",400,"MAT06","Vaculi","OldStems",NA
-1,"F10",400,"MAT06","Vaculi","Inflor",NA
-1,"F10",400,"MAT06","Vaculi","BelowStem",NA
-1,"F10",400,"MAT06","OtherDeciduous","NewLeaves",NA
-1,"F10",400,"MAT06","OtherDeciduous","NewStems",NA
-1,"F10",400,"MAT06","OtherDeciduous","OldStems",NA
-1,"F10",400,"MAT06","OtherDeciduous","Inflor",NA
-1,"F10",400,"MAT06","OtherDeciduous","BelowStem",NA
-1,"F10",400,"MAT06","Ledpal","NewLeaves","37"
-1,"F10",400,"MAT06","Ledpal","NewStems","38"
-1,"F10",400,"MAT06","Ledpal","OldLeaves","160"
-1,"F10",400,"MAT06","Ledpal","OldStems","39"
-1,"F10",400,"MAT06","Ledpal","Inflor","162"
-1,"F10",400,"MAT06","Ledpal","BelowStem","16"
-1,"F10",400,"MAT06","Vacvit","NewLeaves",NA
-1,"F10",400,"MAT06","Vacvit","NewStems",NA
-1,"F10",400,"MAT06","Vacvit","OldLeaves",NA
-1,"F10",400,"MAT06","Vacvit","OldStems",NA
-1,"F10",400,"MAT06","Vacvit","Inflor",NA
-1,"F10",400,"MAT06","Vacvit","BelowStem",NA
-1,"F10",400,"MAT06","Castet","NewStems",NA
-1,"F10",400,"MAT06","Castet","OldStems",NA
-1,"F10",400,"MAT06","Castet","Inflor",NA
-1,"F10",400,"MAT06","Castet","BelowStem",NA
-1,"F10",400,"MAT06","OtherEvergreen","NewLeaves",NA
-1,"F10",400,"MAT06","OtherEvergreen","NewStems",NA
-1,"F10",400,"MAT06","OtherEvergreen","OldLeaves",NA
-1,"F10",400,"MAT06","OtherEvergreen","OldStems",NA
-1,"F10",400,"MAT06","OtherEvergreen","Inflor",NA
-1,"F10",400,"MAT06","OtherEvergreen","BelowStem",NA
-1,"F10",400,"MAT06","Rubcha","LeavesStems","40"
-1,"F10",400,"MAT06","Rubcha","InflorStalks","12"
-1,"F10",400,"MAT06","Rubcha","BelowStem","41"
-1,"F10",400,"MAT06","Petfri","LeavesStems",NA
-1,"F10",400,"MAT06","Petfri","InflorStalks",NA
-1,"F10",400,"MAT06","Petfri","BelowStem",NA
-1,"F10",400,"MAT06","OtherForb","LeavesStems",NA
-1,"F10",400,"MAT06","OtherForb","InflorStalks",NA
-1,"F10",400,"MAT06","OtherForb","BelowStem",NA
+1,"F10",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","31"
+1,"F10",400,"MAT06","Eriophorum vaginatum","Rhizome","45"
+1,"F10",400,"MAT06","Carex bigelowii","BladeSheathInflCulm",NA
+1,"F10",400,"MAT06","Carex bigelowii","Rhizome",NA
+1,"F10",400,"MAT06","Other Graminoid","BladeSheathInflCulm","32"
+1,"F10",400,"MAT06","Other Graminoid","Rhizome","46"
+1,"F10",400,"MAT06","Betula nana","NewLeaves","33"
+1,"F10",400,"MAT06","Betula nana","NewStems","34"
+1,"F10",400,"MAT06","Betula nana","OldStems","35"
+1,"F10",400,"MAT06","Betula nana","Inflor","9"
+1,"F10",400,"MAT06","Betula nana","BelowStem","36"
+1,"F10",400,"MAT06","Salix pulchra","NewLeaves",NA
+1,"F10",400,"MAT06","Salix pulchra","NewStems",NA
+1,"F10",400,"MAT06","Salix pulchra","OldStems",NA
+1,"F10",400,"MAT06","Salix pulchra","Inflor",NA
+1,"F10",400,"MAT06","Salix pulchra","BelowStem",NA
+1,"F10",400,"MAT06","Vaccinium uliginosum","NewLeaves",NA
+1,"F10",400,"MAT06","Vaccinium uliginosum","NewStems",NA
+1,"F10",400,"MAT06","Vaccinium uliginosum","OldStems",NA
+1,"F10",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+1,"F10",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+1,"F10",400,"MAT06","Other Deciduous","NewLeaves",NA
+1,"F10",400,"MAT06","Other Deciduous","NewStems",NA
+1,"F10",400,"MAT06","Other Deciduous","OldStems",NA
+1,"F10",400,"MAT06","Other Deciduous","Inflor",NA
+1,"F10",400,"MAT06","Other Deciduous","BelowStem",NA
+1,"F10",400,"MAT06","Ledum palustre","NewLeaves","37"
+1,"F10",400,"MAT06","Ledum palustre","NewStems","38"
+1,"F10",400,"MAT06","Ledum palustre","OldLeaves","160"
+1,"F10",400,"MAT06","Ledum palustre","OldStems","39"
+1,"F10",400,"MAT06","Ledum palustre","Inflor","162"
+1,"F10",400,"MAT06","Ledum palustre","BelowStem","16"
+1,"F10",400,"MAT06","Vaccinium vitis-idaea","NewLeaves",NA
+1,"F10",400,"MAT06","Vaccinium vitis-idaea","NewStems",NA
+1,"F10",400,"MAT06","Vaccinium vitis-idaea","OldLeaves",NA
+1,"F10",400,"MAT06","Vaccinium vitis-idaea","OldStems",NA
+1,"F10",400,"MAT06","Vaccinium vitis-idaea","Inflor",NA
+1,"F10",400,"MAT06","Vaccinium vitis-idaea","BelowStem",NA
+1,"F10",400,"MAT06","Cassiope tetragona","NewStems",NA
+1,"F10",400,"MAT06","Cassiope tetragona","OldStems",NA
+1,"F10",400,"MAT06","Cassiope tetragona","Inflor",NA
+1,"F10",400,"MAT06","Cassiope tetragona","BelowStem",NA
+1,"F10",400,"MAT06","Other Evergreen","NewLeaves",NA
+1,"F10",400,"MAT06","Other Evergreen","NewStems",NA
+1,"F10",400,"MAT06","Other Evergreen","OldLeaves",NA
+1,"F10",400,"MAT06","Other Evergreen","OldStems",NA
+1,"F10",400,"MAT06","Other Evergreen","Inflor",NA
+1,"F10",400,"MAT06","Other Evergreen","BelowStem",NA
+1,"F10",400,"MAT06","Rubus chamaemorus","LeavesStems","40"
+1,"F10",400,"MAT06","Rubus chamaemorus","InflorStalks","12"
+1,"F10",400,"MAT06","Rubus chamaemorus","BelowStem","41"
+1,"F10",400,"MAT06","Petasites frigidus","LeavesStems",NA
+1,"F10",400,"MAT06","Petasites frigidus","InflorStalks",NA
+1,"F10",400,"MAT06","Petasites frigidus","BelowStem",NA
+1,"F10",400,"MAT06","Other Forb","LeavesStems",NA
+1,"F10",400,"MAT06","Other Forb","InflorStalks",NA
+1,"F10",400,"MAT06","Other Forb","BelowStem",NA
 1,"F10",400,"MAT06","Sphagnum","Green",NA
-1,"F10",400,"MAT06","OtherMoss","Green",NA
-1,"F10",400,"MAT06","Lichen","Live",NA
-1,"F10",400,"MAT06","Attached","Wood","42"
-1,"F10",400,"MAT06","Attached","Litter","43"
+1,"F10",400,"MAT06","Other Mosses","Green",NA
+1,"F10",400,"MAT06","Mixed Lichen","Live",NA
+1,"F10",400,"MAT06","Litter","Wood","42"
+1,"F10",400,"MAT06","Litter","Litter","43"
 1,"F10",400,"MAT06","Loose","Litter","44"
-2,"CT",400,"MAT06","Erivag","BladeSheathInflCulm","765"
-2,"CT",400,"MAT06","Erivag","Rhizome","762"
-2,"CT",400,"MAT06","Carbig","BladeSheathInflCulm","860"
-2,"CT",400,"MAT06","Carbig","Rhizome","863"
-2,"CT",400,"MAT06","OtherGraminoid","BladeSheathInflCulm","768"
-2,"CT",400,"MAT06","OtherGraminoid","Rhizome","771"
-2,"CT",400,"MAT06","Betnan","NewLeaves","585"
-2,"CT",400,"MAT06","Betnan","NewStems","820"
-2,"CT",400,"MAT06","Betnan","OldStems","586"
-2,"CT",400,"MAT06","Betnan","Inflor","587"
-2,"CT",400,"MAT06","Betnan","BelowStem","857"
-2,"CT",400,"MAT06","Salpul","NewLeaves","770"
-2,"CT",400,"MAT06","Salpul","NewStems",NA
-2,"CT",400,"MAT06","Salpul","OldStems","773"
-2,"CT",400,"MAT06","Salpul","Inflor",NA
-2,"CT",400,"MAT06","Salpul","BelowStem",NA
-2,"CT",400,"MAT06","Vaculi","NewLeaves",NA
-2,"CT",400,"MAT06","Vaculi","NewStems",NA
-2,"CT",400,"MAT06","Vaculi","OldStems",NA
-2,"CT",400,"MAT06","Vaculi","Inflor",NA
-2,"CT",400,"MAT06","Vaculi","BelowStem",NA
-2,"CT",400,"MAT06","OtherDeciduous","NewLeaves",NA
-2,"CT",400,"MAT06","OtherDeciduous","NewStems",NA
-2,"CT",400,"MAT06","OtherDeciduous","OldStems",NA
-2,"CT",400,"MAT06","OtherDeciduous","Inflor",NA
-2,"CT",400,"MAT06","OtherDeciduous","BelowStem",NA
-2,"CT",400,"MAT06","Ledpal","NewLeaves","842"
-2,"CT",400,"MAT06","Ledpal","NewStems","845"
-2,"CT",400,"MAT06","Ledpal","OldLeaves","848"
-2,"CT",400,"MAT06","Ledpal","OldStems","851"
-2,"CT",400,"MAT06","Ledpal","Inflor","854"
-2,"CT",400,"MAT06","Ledpal","BelowStem","584"
-2,"CT",400,"MAT06","Vacvit","NewLeaves","869"
-2,"CT",400,"MAT06","Vacvit","NewStems","843"
-2,"CT",400,"MAT06","Vacvit","OldLeaves","846"
-2,"CT",400,"MAT06","Vacvit","OldStems","849"
-2,"CT",400,"MAT06","Vacvit","Inflor","870"
-2,"CT",400,"MAT06","Vacvit","BelowStem","852"
-2,"CT",400,"MAT06","Castet","NewStems",NA
-2,"CT",400,"MAT06","Castet","OldStems",NA
-2,"CT",400,"MAT06","Castet","Inflor",NA
-2,"CT",400,"MAT06","Castet","BelowStem",NA
-2,"CT",400,"MAT06","OtherEvergreen","NewLeaves","858"
-2,"CT",400,"MAT06","OtherEvergreen","NewStems","861"
-2,"CT",400,"MAT06","OtherEvergreen","OldLeaves","864"
-2,"CT",400,"MAT06","OtherEvergreen","OldStems","867"
-2,"CT",400,"MAT06","OtherEvergreen","Inflor","426"
-2,"CT",400,"MAT06","OtherEvergreen","BelowStem","441"
-2,"CT",400,"MAT06","Rubcha","LeavesStems",NA
-2,"CT",400,"MAT06","Rubcha","InflorStalks",NA
-2,"CT",400,"MAT06","Rubcha","BelowStem","855"
-2,"CT",400,"MAT06","Petfri","LeavesStems",NA
-2,"CT",400,"MAT06","Petfri","InflorStalks",NA
-2,"CT",400,"MAT06","Petfri","BelowStem",NA
-2,"CT",400,"MAT06","OtherForb","LeavesStems","436"
-2,"CT",400,"MAT06","OtherForb","InflorStalks",NA
-2,"CT",400,"MAT06","OtherForb","BelowStem","439"
+2,"CT",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","765"
+2,"CT",400,"MAT06","Eriophorum vaginatum","Rhizome","762"
+2,"CT",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","860"
+2,"CT",400,"MAT06","Carex bigelowii","Rhizome","863"
+2,"CT",400,"MAT06","Other Graminoid","BladeSheathInflCulm","768"
+2,"CT",400,"MAT06","Other Graminoid","Rhizome","771"
+2,"CT",400,"MAT06","Betula nana","NewLeaves","585"
+2,"CT",400,"MAT06","Betula nana","NewStems","820"
+2,"CT",400,"MAT06","Betula nana","OldStems","586"
+2,"CT",400,"MAT06","Betula nana","Inflor","587"
+2,"CT",400,"MAT06","Betula nana","BelowStem","857"
+2,"CT",400,"MAT06","Salix pulchra","NewLeaves","770"
+2,"CT",400,"MAT06","Salix pulchra","NewStems",NA
+2,"CT",400,"MAT06","Salix pulchra","OldStems","773"
+2,"CT",400,"MAT06","Salix pulchra","Inflor",NA
+2,"CT",400,"MAT06","Salix pulchra","BelowStem",NA
+2,"CT",400,"MAT06","Vaccinium uliginosum","NewLeaves",NA
+2,"CT",400,"MAT06","Vaccinium uliginosum","NewStems",NA
+2,"CT",400,"MAT06","Vaccinium uliginosum","OldStems",NA
+2,"CT",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+2,"CT",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+2,"CT",400,"MAT06","Other Deciduous","NewLeaves",NA
+2,"CT",400,"MAT06","Other Deciduous","NewStems",NA
+2,"CT",400,"MAT06","Other Deciduous","OldStems",NA
+2,"CT",400,"MAT06","Other Deciduous","Inflor",NA
+2,"CT",400,"MAT06","Other Deciduous","BelowStem",NA
+2,"CT",400,"MAT06","Ledum palustre","NewLeaves","842"
+2,"CT",400,"MAT06","Ledum palustre","NewStems","845"
+2,"CT",400,"MAT06","Ledum palustre","OldLeaves","848"
+2,"CT",400,"MAT06","Ledum palustre","OldStems","851"
+2,"CT",400,"MAT06","Ledum palustre","Inflor","854"
+2,"CT",400,"MAT06","Ledum palustre","BelowStem","584"
+2,"CT",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","869"
+2,"CT",400,"MAT06","Vaccinium vitis-idaea","NewStems","843"
+2,"CT",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","846"
+2,"CT",400,"MAT06","Vaccinium vitis-idaea","OldStems","849"
+2,"CT",400,"MAT06","Vaccinium vitis-idaea","Inflor","870"
+2,"CT",400,"MAT06","Vaccinium vitis-idaea","BelowStem","852"
+2,"CT",400,"MAT06","Cassiope tetragona","NewStems",NA
+2,"CT",400,"MAT06","Cassiope tetragona","OldStems",NA
+2,"CT",400,"MAT06","Cassiope tetragona","Inflor",NA
+2,"CT",400,"MAT06","Cassiope tetragona","BelowStem",NA
+2,"CT",400,"MAT06","Other Evergreen","NewLeaves","858"
+2,"CT",400,"MAT06","Other Evergreen","NewStems","861"
+2,"CT",400,"MAT06","Other Evergreen","OldLeaves","864"
+2,"CT",400,"MAT06","Other Evergreen","OldStems","867"
+2,"CT",400,"MAT06","Other Evergreen","Inflor","426"
+2,"CT",400,"MAT06","Other Evergreen","BelowStem","441"
+2,"CT",400,"MAT06","Rubus chamaemorus","LeavesStems",NA
+2,"CT",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+2,"CT",400,"MAT06","Rubus chamaemorus","BelowStem","855"
+2,"CT",400,"MAT06","Petasites frigidus","LeavesStems",NA
+2,"CT",400,"MAT06","Petasites frigidus","InflorStalks",NA
+2,"CT",400,"MAT06","Petasites frigidus","BelowStem",NA
+2,"CT",400,"MAT06","Other Forb","LeavesStems","436"
+2,"CT",400,"MAT06","Other Forb","InflorStalks",NA
+2,"CT",400,"MAT06","Other Forb","BelowStem","439"
 2,"CT",400,"MAT06","Sphagnum","Green","428"
-2,"CT",400,"MAT06","OtherMoss","Green","868"
-2,"CT",400,"MAT06","Lichen","Live","865"
-2,"CT",400,"MAT06","Attached","Wood","447"
-2,"CT",400,"MAT06","Attached","Litter","594"
+2,"CT",400,"MAT06","Other Mosses","Green","868"
+2,"CT",400,"MAT06","Mixed Lichen","Live","865"
+2,"CT",400,"MAT06","Litter","Wood","447"
+2,"CT",400,"MAT06","Litter","Litter","594"
 2,"CT",400,"MAT06","Loose","Litter",NA
-2,"F0.5",400,"MAT06","Erivag","BladeSheathInflCulm","2008"
-2,"F0.5",400,"MAT06","Erivag","Rhizome","2009"
-2,"F0.5",400,"MAT06","Carbig","BladeSheathInflCulm","1951"
-2,"F0.5",400,"MAT06","Carbig","Rhizome","1952"
-2,"F0.5",400,"MAT06","OtherGraminoid","BladeSheathInflCulm",NA
-2,"F0.5",400,"MAT06","OtherGraminoid","Rhizome",NA
-2,"F0.5",400,"MAT06","Betnan","NewLeaves","1996"
-2,"F0.5",400,"MAT06","Betnan","NewStems","1995"
-2,"F0.5",400,"MAT06","Betnan","OldStems","1997"
-2,"F0.5",400,"MAT06","Betnan","Inflor",NA
-2,"F0.5",400,"MAT06","Betnan","BelowStem","2002"
-2,"F0.5",400,"MAT06","Salpul","NewLeaves","669"
-2,"F0.5",400,"MAT06","Salpul","NewStems","670"
-2,"F0.5",400,"MAT06","Salpul","OldStems","671"
-2,"F0.5",400,"MAT06","Salpul","Inflor",NA
-2,"F0.5",400,"MAT06","Salpul","BelowStem",NA
-2,"F0.5",400,"MAT06","Vaculi","NewLeaves",NA
-2,"F0.5",400,"MAT06","Vaculi","NewStems",NA
-2,"F0.5",400,"MAT06","Vaculi","OldStems",NA
-2,"F0.5",400,"MAT06","Vaculi","Inflor",NA
-2,"F0.5",400,"MAT06","Vaculi","BelowStem",NA
-2,"F0.5",400,"MAT06","OtherDeciduous","NewLeaves",NA
-2,"F0.5",400,"MAT06","OtherDeciduous","NewStems",NA
-2,"F0.5",400,"MAT06","OtherDeciduous","OldStems",NA
-2,"F0.5",400,"MAT06","OtherDeciduous","Inflor",NA
-2,"F0.5",400,"MAT06","OtherDeciduous","BelowStem",NA
-2,"F0.5",400,"MAT06","Ledpal","NewLeaves","1987"
-2,"F0.5",400,"MAT06","Ledpal","NewStems","1988"
-2,"F0.5",400,"MAT06","Ledpal","OldLeaves","1989"
-2,"F0.5",400,"MAT06","Ledpal","OldStems","1990"
-2,"F0.5",400,"MAT06","Ledpal","Inflor","1991"
-2,"F0.5",400,"MAT06","Ledpal","BelowStem","1992"
-2,"F0.5",400,"MAT06","Vacvit","NewLeaves","1981"
-2,"F0.5",400,"MAT06","Vacvit","NewStems","1982"
-2,"F0.5",400,"MAT06","Vacvit","OldLeaves","1983"
-2,"F0.5",400,"MAT06","Vacvit","OldStems","1984"
-2,"F0.5",400,"MAT06","Vacvit","Inflor","1985"
-2,"F0.5",400,"MAT06","Vacvit","BelowStem","1986"
-2,"F0.5",400,"MAT06","Castet","NewStems","796"
-2,"F0.5",400,"MAT06","Castet","OldStems","799"
-2,"F0.5",400,"MAT06","Castet","Inflor","802"
-2,"F0.5",400,"MAT06","Castet","BelowStem",NA
-2,"F0.5",400,"MAT06","OtherEvergreen","NewLeaves","2003"
-2,"F0.5",400,"MAT06","OtherEvergreen","NewStems","2004"
-2,"F0.5",400,"MAT06","OtherEvergreen","OldLeaves","2005"
-2,"F0.5",400,"MAT06","OtherEvergreen","OldStems","2006"
-2,"F0.5",400,"MAT06","OtherEvergreen","Inflor","676"
-2,"F0.5",400,"MAT06","OtherEvergreen","BelowStem","2007"
-2,"F0.5",400,"MAT06","Rubcha","LeavesStems","1998"
-2,"F0.5",400,"MAT06","Rubcha","InflorStalks",NA
-2,"F0.5",400,"MAT06","Rubcha","BelowStem","1999"
-2,"F0.5",400,"MAT06","Petfri","LeavesStems","2000"
-2,"F0.5",400,"MAT06","Petfri","InflorStalks",NA
-2,"F0.5",400,"MAT06","Petfri","BelowStem",NA
-2,"F0.5",400,"MAT06","OtherForb","LeavesStems","786"
-2,"F0.5",400,"MAT06","OtherForb","InflorStalks",NA
-2,"F0.5",400,"MAT06","OtherForb","BelowStem","800"
+2,"F0.5",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","2008"
+2,"F0.5",400,"MAT06","Eriophorum vaginatum","Rhizome","2009"
+2,"F0.5",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","1951"
+2,"F0.5",400,"MAT06","Carex bigelowii","Rhizome","1952"
+2,"F0.5",400,"MAT06","Other Graminoid","BladeSheathInflCulm",NA
+2,"F0.5",400,"MAT06","Other Graminoid","Rhizome",NA
+2,"F0.5",400,"MAT06","Betula nana","NewLeaves","1996"
+2,"F0.5",400,"MAT06","Betula nana","NewStems","1995"
+2,"F0.5",400,"MAT06","Betula nana","OldStems","1997"
+2,"F0.5",400,"MAT06","Betula nana","Inflor",NA
+2,"F0.5",400,"MAT06","Betula nana","BelowStem","2002"
+2,"F0.5",400,"MAT06","Salix pulchra","NewLeaves","669"
+2,"F0.5",400,"MAT06","Salix pulchra","NewStems","670"
+2,"F0.5",400,"MAT06","Salix pulchra","OldStems","671"
+2,"F0.5",400,"MAT06","Salix pulchra","Inflor",NA
+2,"F0.5",400,"MAT06","Salix pulchra","BelowStem",NA
+2,"F0.5",400,"MAT06","Vaccinium uliginosum","NewLeaves",NA
+2,"F0.5",400,"MAT06","Vaccinium uliginosum","NewStems",NA
+2,"F0.5",400,"MAT06","Vaccinium uliginosum","OldStems",NA
+2,"F0.5",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+2,"F0.5",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+2,"F0.5",400,"MAT06","Other Deciduous","NewLeaves",NA
+2,"F0.5",400,"MAT06","Other Deciduous","NewStems",NA
+2,"F0.5",400,"MAT06","Other Deciduous","OldStems",NA
+2,"F0.5",400,"MAT06","Other Deciduous","Inflor",NA
+2,"F0.5",400,"MAT06","Other Deciduous","BelowStem",NA
+2,"F0.5",400,"MAT06","Ledum palustre","NewLeaves","1987"
+2,"F0.5",400,"MAT06","Ledum palustre","NewStems","1988"
+2,"F0.5",400,"MAT06","Ledum palustre","OldLeaves","1989"
+2,"F0.5",400,"MAT06","Ledum palustre","OldStems","1990"
+2,"F0.5",400,"MAT06","Ledum palustre","Inflor","1991"
+2,"F0.5",400,"MAT06","Ledum palustre","BelowStem","1992"
+2,"F0.5",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","1981"
+2,"F0.5",400,"MAT06","Vaccinium vitis-idaea","NewStems","1982"
+2,"F0.5",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","1983"
+2,"F0.5",400,"MAT06","Vaccinium vitis-idaea","OldStems","1984"
+2,"F0.5",400,"MAT06","Vaccinium vitis-idaea","Inflor","1985"
+2,"F0.5",400,"MAT06","Vaccinium vitis-idaea","BelowStem","1986"
+2,"F0.5",400,"MAT06","Cassiope tetragona","NewStems","796"
+2,"F0.5",400,"MAT06","Cassiope tetragona","OldStems","799"
+2,"F0.5",400,"MAT06","Cassiope tetragona","Inflor","802"
+2,"F0.5",400,"MAT06","Cassiope tetragona","BelowStem",NA
+2,"F0.5",400,"MAT06","Other Evergreen","NewLeaves","2003"
+2,"F0.5",400,"MAT06","Other Evergreen","NewStems","2004"
+2,"F0.5",400,"MAT06","Other Evergreen","OldLeaves","2005"
+2,"F0.5",400,"MAT06","Other Evergreen","OldStems","2006"
+2,"F0.5",400,"MAT06","Other Evergreen","Inflor","676"
+2,"F0.5",400,"MAT06","Other Evergreen","BelowStem","2007"
+2,"F0.5",400,"MAT06","Rubus chamaemorus","LeavesStems","1998"
+2,"F0.5",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+2,"F0.5",400,"MAT06","Rubus chamaemorus","BelowStem","1999"
+2,"F0.5",400,"MAT06","Petasites frigidus","LeavesStems","2000"
+2,"F0.5",400,"MAT06","Petasites frigidus","InflorStalks",NA
+2,"F0.5",400,"MAT06","Petasites frigidus","BelowStem",NA
+2,"F0.5",400,"MAT06","Other Forb","LeavesStems","786"
+2,"F0.5",400,"MAT06","Other Forb","InflorStalks",NA
+2,"F0.5",400,"MAT06","Other Forb","BelowStem","800"
 2,"F0.5",400,"MAT06","Sphagnum","Green","872"
-2,"F0.5",400,"MAT06","OtherMoss","Green","1993"
-2,"F0.5",400,"MAT06","Lichen","Live","1994"
-2,"F0.5",400,"MAT06","Attached","Wood",NA
-2,"F0.5",400,"MAT06","Attached","Litter","2010"
+2,"F0.5",400,"MAT06","Other Mosses","Green","1993"
+2,"F0.5",400,"MAT06","Mixed Lichen","Live","1994"
+2,"F0.5",400,"MAT06","Litter","Wood",NA
+2,"F0.5",400,"MAT06","Litter","Litter","2010"
 2,"F0.5",400,"MAT06","Loose","Litter",NA
-2,"F1",400,"MAT06","Erivag","BladeSheathInflCulm","934"
-2,"F1",400,"MAT06","Erivag","Rhizome","992"
-2,"F1",400,"MAT06","Carbig","BladeSheathInflCulm","477"
-2,"F1",400,"MAT06","Carbig","Rhizome","480"
-2,"F1",400,"MAT06","OtherGraminoid","BladeSheathInflCulm",NA
-2,"F1",400,"MAT06","OtherGraminoid","Rhizome","728"
-2,"F1",400,"MAT06","Betnan","NewLeaves","644"
-2,"F1",400,"MAT06","Betnan","NewStems","645"
-2,"F1",400,"MAT06","Betnan","OldStems","646"
-2,"F1",400,"MAT06","Betnan","Inflor","708"
-2,"F1",400,"MAT06","Betnan","BelowStem","647"
-2,"F1",400,"MAT06","Salpul","NewLeaves","635"
-2,"F1",400,"MAT06","Salpul","NewStems","636"
-2,"F1",400,"MAT06","Salpul","OldStems","637"
-2,"F1",400,"MAT06","Salpul","Inflor",NA
-2,"F1",400,"MAT06","Salpul","BelowStem",NA
-2,"F1",400,"MAT06","Vaculi","NewLeaves","631"
-2,"F1",400,"MAT06","Vaculi","NewStems","632"
-2,"F1",400,"MAT06","Vaculi","OldStems","633"
-2,"F1",400,"MAT06","Vaculi","Inflor",NA
-2,"F1",400,"MAT06","Vaculi","BelowStem","634"
-2,"F1",400,"MAT06","OtherDeciduous","NewLeaves",NA
-2,"F1",400,"MAT06","OtherDeciduous","NewStems",NA
-2,"F1",400,"MAT06","OtherDeciduous","OldStems",NA
-2,"F1",400,"MAT06","OtherDeciduous","Inflor",NA
-2,"F1",400,"MAT06","OtherDeciduous","BelowStem",NA
-2,"F1",400,"MAT06","Ledpal","NewLeaves","653"
-2,"F1",400,"MAT06","Ledpal","NewStems","654"
-2,"F1",400,"MAT06","Ledpal","OldLeaves","655"
-2,"F1",400,"MAT06","Ledpal","OldStems","656"
-2,"F1",400,"MAT06","Ledpal","Inflor","657"
-2,"F1",400,"MAT06","Ledpal","BelowStem","638"
-2,"F1",400,"MAT06","Vacvit","NewLeaves","648"
-2,"F1",400,"MAT06","Vacvit","NewStems","649"
-2,"F1",400,"MAT06","Vacvit","OldLeaves","950"
-2,"F1",400,"MAT06","Vacvit","OldStems","650"
-2,"F1",400,"MAT06","Vacvit","Inflor","651"
-2,"F1",400,"MAT06","Vacvit","BelowStem","652"
-2,"F1",400,"MAT06","Castet","NewStems",NA
-2,"F1",400,"MAT06","Castet","OldStems",NA
-2,"F1",400,"MAT06","Castet","Inflor",NA
-2,"F1",400,"MAT06","Castet","BelowStem",NA
-2,"F1",400,"MAT06","OtherEvergreen","NewLeaves","658"
-2,"F1",400,"MAT06","OtherEvergreen","NewStems","659"
-2,"F1",400,"MAT06","OtherEvergreen","OldLeaves","660"
-2,"F1",400,"MAT06","OtherEvergreen","OldStems","661"
-2,"F1",400,"MAT06","OtherEvergreen","Inflor","662"
-2,"F1",400,"MAT06","OtherEvergreen","BelowStem","663"
-2,"F1",400,"MAT06","Rubcha","LeavesStems","640"
-2,"F1",400,"MAT06","Rubcha","InflorStalks","957"
-2,"F1",400,"MAT06","Rubcha","BelowStem","641"
-2,"F1",400,"MAT06","Petfri","LeavesStems",NA
-2,"F1",400,"MAT06","Petfri","InflorStalks",NA
-2,"F1",400,"MAT06","Petfri","BelowStem",NA
-2,"F1",400,"MAT06","OtherForb","LeavesStems","639"
-2,"F1",400,"MAT06","OtherForb","InflorStalks",NA
-2,"F1",400,"MAT06","OtherForb","BelowStem","696"
+2,"F1",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","934"
+2,"F1",400,"MAT06","Eriophorum vaginatum","Rhizome","992"
+2,"F1",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","477"
+2,"F1",400,"MAT06","Carex bigelowii","Rhizome","480"
+2,"F1",400,"MAT06","Other Graminoid","BladeSheathInflCulm",NA
+2,"F1",400,"MAT06","Other Graminoid","Rhizome","728"
+2,"F1",400,"MAT06","Betula nana","NewLeaves","644"
+2,"F1",400,"MAT06","Betula nana","NewStems","645"
+2,"F1",400,"MAT06","Betula nana","OldStems","646"
+2,"F1",400,"MAT06","Betula nana","Inflor","708"
+2,"F1",400,"MAT06","Betula nana","BelowStem","647"
+2,"F1",400,"MAT06","Salix pulchra","NewLeaves","635"
+2,"F1",400,"MAT06","Salix pulchra","NewStems","636"
+2,"F1",400,"MAT06","Salix pulchra","OldStems","637"
+2,"F1",400,"MAT06","Salix pulchra","Inflor",NA
+2,"F1",400,"MAT06","Salix pulchra","BelowStem",NA
+2,"F1",400,"MAT06","Vaccinium uliginosum","NewLeaves","631"
+2,"F1",400,"MAT06","Vaccinium uliginosum","NewStems","632"
+2,"F1",400,"MAT06","Vaccinium uliginosum","OldStems","633"
+2,"F1",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+2,"F1",400,"MAT06","Vaccinium uliginosum","BelowStem","634"
+2,"F1",400,"MAT06","Other Deciduous","NewLeaves",NA
+2,"F1",400,"MAT06","Other Deciduous","NewStems",NA
+2,"F1",400,"MAT06","Other Deciduous","OldStems",NA
+2,"F1",400,"MAT06","Other Deciduous","Inflor",NA
+2,"F1",400,"MAT06","Other Deciduous","BelowStem",NA
+2,"F1",400,"MAT06","Ledum palustre","NewLeaves","653"
+2,"F1",400,"MAT06","Ledum palustre","NewStems","654"
+2,"F1",400,"MAT06","Ledum palustre","OldLeaves","655"
+2,"F1",400,"MAT06","Ledum palustre","OldStems","656"
+2,"F1",400,"MAT06","Ledum palustre","Inflor","657"
+2,"F1",400,"MAT06","Ledum palustre","BelowStem","638"
+2,"F1",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","648"
+2,"F1",400,"MAT06","Vaccinium vitis-idaea","NewStems","649"
+2,"F1",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","950"
+2,"F1",400,"MAT06","Vaccinium vitis-idaea","OldStems","650"
+2,"F1",400,"MAT06","Vaccinium vitis-idaea","Inflor","651"
+2,"F1",400,"MAT06","Vaccinium vitis-idaea","BelowStem","652"
+2,"F1",400,"MAT06","Cassiope tetragona","NewStems",NA
+2,"F1",400,"MAT06","Cassiope tetragona","OldStems",NA
+2,"F1",400,"MAT06","Cassiope tetragona","Inflor",NA
+2,"F1",400,"MAT06","Cassiope tetragona","BelowStem",NA
+2,"F1",400,"MAT06","Other Evergreen","NewLeaves","658"
+2,"F1",400,"MAT06","Other Evergreen","NewStems","659"
+2,"F1",400,"MAT06","Other Evergreen","OldLeaves","660"
+2,"F1",400,"MAT06","Other Evergreen","OldStems","661"
+2,"F1",400,"MAT06","Other Evergreen","Inflor","662"
+2,"F1",400,"MAT06","Other Evergreen","BelowStem","663"
+2,"F1",400,"MAT06","Rubus chamaemorus","LeavesStems","640"
+2,"F1",400,"MAT06","Rubus chamaemorus","InflorStalks","957"
+2,"F1",400,"MAT06","Rubus chamaemorus","BelowStem","641"
+2,"F1",400,"MAT06","Petasites frigidus","LeavesStems",NA
+2,"F1",400,"MAT06","Petasites frigidus","InflorStalks",NA
+2,"F1",400,"MAT06","Petasites frigidus","BelowStem",NA
+2,"F1",400,"MAT06","Other Forb","LeavesStems","639"
+2,"F1",400,"MAT06","Other Forb","InflorStalks",NA
+2,"F1",400,"MAT06","Other Forb","BelowStem","696"
 2,"F1",400,"MAT06","Sphagnum","Green","642"
-2,"F1",400,"MAT06","OtherMoss","Green","643"
-2,"F1",400,"MAT06","Lichen","Live","940"
-2,"F1",400,"MAT06","Attached","Wood",NA
-2,"F1",400,"MAT06","Attached","Litter","1016"
+2,"F1",400,"MAT06","Other Mosses","Green","643"
+2,"F1",400,"MAT06","Mixed Lichen","Live","940"
+2,"F1",400,"MAT06","Litter","Wood",NA
+2,"F1",400,"MAT06","Litter","Litter","1016"
 2,"F1",400,"MAT06","Loose","Litter",NA
-2,"F2",400,"MAT06","Erivag","BladeSheathInflCulm","1112"
-2,"F2",400,"MAT06","Erivag","Rhizome","1113"
-2,"F2",400,"MAT06","Carbig","BladeSheathInflCulm","458"
-2,"F2",400,"MAT06","Carbig","Rhizome",NA
-2,"F2",400,"MAT06","OtherGraminoid","BladeSheathInflCulm",NA
-2,"F2",400,"MAT06","OtherGraminoid","Rhizome",NA
-2,"F2",400,"MAT06","Betnan","NewLeaves","1082"
-2,"F2",400,"MAT06","Betnan","NewStems","1195"
-2,"F2",400,"MAT06","Betnan","OldStems","1083"
-2,"F2",400,"MAT06","Betnan","Inflor","1197"
-2,"F2",400,"MAT06","Betnan","BelowStem","1085"
-2,"F2",400,"MAT06","Salpul","NewLeaves","1173"
-2,"F2",400,"MAT06","Salpul","NewStems","1178"
-2,"F2",400,"MAT06","Salpul","OldStems","1176"
-2,"F2",400,"MAT06","Salpul","Inflor",NA
-2,"F2",400,"MAT06","Salpul","BelowStem","1179"
-2,"F2",400,"MAT06","Vaculi","NewLeaves","1086"
-2,"F2",400,"MAT06","Vaculi","NewStems","1184"
-2,"F2",400,"MAT06","Vaculi","OldStems","1088"
-2,"F2",400,"MAT06","Vaculi","Inflor",NA
-2,"F2",400,"MAT06","Vaculi","BelowStem","1089"
-2,"F2",400,"MAT06","OtherDeciduous","NewLeaves","454"
-2,"F2",400,"MAT06","OtherDeciduous","NewStems","457"
-2,"F2",400,"MAT06","OtherDeciduous","OldStems","460"
-2,"F2",400,"MAT06","OtherDeciduous","Inflor",NA
-2,"F2",400,"MAT06","OtherDeciduous","BelowStem","463"
-2,"F2",400,"MAT06","Ledpal","NewLeaves","1091"
-2,"F2",400,"MAT06","Ledpal","NewStems","1092"
-2,"F2",400,"MAT06","Ledpal","OldLeaves","1094"
-2,"F2",400,"MAT06","Ledpal","OldStems","1095"
-2,"F2",400,"MAT06","Ledpal","Inflor","1097"
-2,"F2",400,"MAT06","Ledpal","BelowStem","1098"
-2,"F2",400,"MAT06","Vacvit","NewLeaves","1100"
-2,"F2",400,"MAT06","Vacvit","NewStems","1101"
-2,"F2",400,"MAT06","Vacvit","OldLeaves","1103"
-2,"F2",400,"MAT06","Vacvit","OldStems","1104"
-2,"F2",400,"MAT06","Vacvit","Inflor","1106"
-2,"F2",400,"MAT06","Vacvit","BelowStem","1107"
-2,"F2",400,"MAT06","Castet","NewStems",NA
-2,"F2",400,"MAT06","Castet","OldStems",NA
-2,"F2",400,"MAT06","Castet","Inflor",NA
-2,"F2",400,"MAT06","Castet","BelowStem",NA
-2,"F2",400,"MAT06","OtherEvergreen","NewLeaves","1115"
-2,"F2",400,"MAT06","OtherEvergreen","NewStems","1116"
-2,"F2",400,"MAT06","OtherEvergreen","OldLeaves","1117"
-2,"F2",400,"MAT06","OtherEvergreen","OldStems","1118"
-2,"F2",400,"MAT06","OtherEvergreen","Inflor","1119"
-2,"F2",400,"MAT06","OtherEvergreen","BelowStem","1120"
-2,"F2",400,"MAT06","Rubcha","LeavesStems","1109"
-2,"F2",400,"MAT06","Rubcha","InflorStalks",NA
-2,"F2",400,"MAT06","Rubcha","BelowStem","1110"
-2,"F2",400,"MAT06","Petfri","LeavesStems",NA
-2,"F2",400,"MAT06","Petfri","InflorStalks",NA
-2,"F2",400,"MAT06","Petfri","BelowStem",NA
-2,"F2",400,"MAT06","OtherForb","LeavesStems","1148"
-2,"F2",400,"MAT06","OtherForb","InflorStalks",NA
-2,"F2",400,"MAT06","OtherForb","BelowStem",NA
+2,"F2",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","1112"
+2,"F2",400,"MAT06","Eriophorum vaginatum","Rhizome","1113"
+2,"F2",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","458"
+2,"F2",400,"MAT06","Carex bigelowii","Rhizome",NA
+2,"F2",400,"MAT06","Other Graminoid","BladeSheathInflCulm",NA
+2,"F2",400,"MAT06","Other Graminoid","Rhizome",NA
+2,"F2",400,"MAT06","Betula nana","NewLeaves","1082"
+2,"F2",400,"MAT06","Betula nana","NewStems","1195"
+2,"F2",400,"MAT06","Betula nana","OldStems","1083"
+2,"F2",400,"MAT06","Betula nana","Inflor","1197"
+2,"F2",400,"MAT06","Betula nana","BelowStem","1085"
+2,"F2",400,"MAT06","Salix pulchra","NewLeaves","1173"
+2,"F2",400,"MAT06","Salix pulchra","NewStems","1178"
+2,"F2",400,"MAT06","Salix pulchra","OldStems","1176"
+2,"F2",400,"MAT06","Salix pulchra","Inflor",NA
+2,"F2",400,"MAT06","Salix pulchra","BelowStem","1179"
+2,"F2",400,"MAT06","Vaccinium uliginosum","NewLeaves","1086"
+2,"F2",400,"MAT06","Vaccinium uliginosum","NewStems","1184"
+2,"F2",400,"MAT06","Vaccinium uliginosum","OldStems","1088"
+2,"F2",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+2,"F2",400,"MAT06","Vaccinium uliginosum","BelowStem","1089"
+2,"F2",400,"MAT06","Other Deciduous","NewLeaves","454"
+2,"F2",400,"MAT06","Other Deciduous","NewStems","457"
+2,"F2",400,"MAT06","Other Deciduous","OldStems","460"
+2,"F2",400,"MAT06","Other Deciduous","Inflor",NA
+2,"F2",400,"MAT06","Other Deciduous","BelowStem","463"
+2,"F2",400,"MAT06","Ledum palustre","NewLeaves","1091"
+2,"F2",400,"MAT06","Ledum palustre","NewStems","1092"
+2,"F2",400,"MAT06","Ledum palustre","OldLeaves","1094"
+2,"F2",400,"MAT06","Ledum palustre","OldStems","1095"
+2,"F2",400,"MAT06","Ledum palustre","Inflor","1097"
+2,"F2",400,"MAT06","Ledum palustre","BelowStem","1098"
+2,"F2",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","1100"
+2,"F2",400,"MAT06","Vaccinium vitis-idaea","NewStems","1101"
+2,"F2",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","1103"
+2,"F2",400,"MAT06","Vaccinium vitis-idaea","OldStems","1104"
+2,"F2",400,"MAT06","Vaccinium vitis-idaea","Inflor","1106"
+2,"F2",400,"MAT06","Vaccinium vitis-idaea","BelowStem","1107"
+2,"F2",400,"MAT06","Cassiope tetragona","NewStems",NA
+2,"F2",400,"MAT06","Cassiope tetragona","OldStems",NA
+2,"F2",400,"MAT06","Cassiope tetragona","Inflor",NA
+2,"F2",400,"MAT06","Cassiope tetragona","BelowStem",NA
+2,"F2",400,"MAT06","Other Evergreen","NewLeaves","1115"
+2,"F2",400,"MAT06","Other Evergreen","NewStems","1116"
+2,"F2",400,"MAT06","Other Evergreen","OldLeaves","1117"
+2,"F2",400,"MAT06","Other Evergreen","OldStems","1118"
+2,"F2",400,"MAT06","Other Evergreen","Inflor","1119"
+2,"F2",400,"MAT06","Other Evergreen","BelowStem","1120"
+2,"F2",400,"MAT06","Rubus chamaemorus","LeavesStems","1109"
+2,"F2",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+2,"F2",400,"MAT06","Rubus chamaemorus","BelowStem","1110"
+2,"F2",400,"MAT06","Petasites frigidus","LeavesStems",NA
+2,"F2",400,"MAT06","Petasites frigidus","InflorStalks",NA
+2,"F2",400,"MAT06","Petasites frigidus","BelowStem",NA
+2,"F2",400,"MAT06","Other Forb","LeavesStems","1148"
+2,"F2",400,"MAT06","Other Forb","InflorStalks",NA
+2,"F2",400,"MAT06","Other Forb","BelowStem",NA
 2,"F2",400,"MAT06","Sphagnum","Green","1177"
-2,"F2",400,"MAT06","OtherMoss","Green","1108"
-2,"F2",400,"MAT06","Lichen","Live","1111"
-2,"F2",400,"MAT06","Attached","Wood",NA
-2,"F2",400,"MAT06","Attached","Litter","1114"
+2,"F2",400,"MAT06","Other Mosses","Green","1108"
+2,"F2",400,"MAT06","Mixed Lichen","Live","1111"
+2,"F2",400,"MAT06","Litter","Wood",NA
+2,"F2",400,"MAT06","Litter","Litter","1114"
 2,"F2",400,"MAT06","Loose","Litter",NA
-2,"F5",400,"MAT06","Erivag","BladeSheathInflCulm","928"
-2,"F5",400,"MAT06","Erivag","Rhizome","929"
-2,"F5",400,"MAT06","Carbig","BladeSheathInflCulm","1022"
-2,"F5",400,"MAT06","Carbig","Rhizome","503"
-2,"F5",400,"MAT06","OtherGraminoid","BladeSheathInflCulm","504"
-2,"F5",400,"MAT06","OtherGraminoid","Rhizome","505"
-2,"F5",400,"MAT06","Betnan","NewLeaves","911"
-2,"F5",400,"MAT06","Betnan","NewStems","912"
-2,"F5",400,"MAT06","Betnan","OldStems","913"
-2,"F5",400,"MAT06","Betnan","Inflor","914"
-2,"F5",400,"MAT06","Betnan","BelowStem","915"
-2,"F5",400,"MAT06","Salpul","NewLeaves","510"
-2,"F5",400,"MAT06","Salpul","NewStems",NA
-2,"F5",400,"MAT06","Salpul","OldStems","528"
-2,"F5",400,"MAT06","Salpul","Inflor",NA
-2,"F5",400,"MAT06","Salpul","BelowStem",NA
-2,"F5",400,"MAT06","Vaculi","NewLeaves","927"
-2,"F5",400,"MAT06","Vaculi","NewStems","533"
-2,"F5",400,"MAT06","Vaculi","OldStems","534"
-2,"F5",400,"MAT06","Vaculi","Inflor",NA
-2,"F5",400,"MAT06","Vaculi","BelowStem",NA
-2,"F5",400,"MAT06","OtherDeciduous","NewLeaves",NA
-2,"F5",400,"MAT06","OtherDeciduous","NewStems",NA
-2,"F5",400,"MAT06","OtherDeciduous","OldStems",NA
-2,"F5",400,"MAT06","OtherDeciduous","Inflor",NA
-2,"F5",400,"MAT06","OtherDeciduous","BelowStem",NA
-2,"F5",400,"MAT06","Ledpal","NewLeaves","905"
-2,"F5",400,"MAT06","Ledpal","NewStems","906"
-2,"F5",400,"MAT06","Ledpal","OldLeaves","907"
-2,"F5",400,"MAT06","Ledpal","OldStems","908"
-2,"F5",400,"MAT06","Ledpal","Inflor","909"
-2,"F5",400,"MAT06","Ledpal","BelowStem","910"
-2,"F5",400,"MAT06","Vacvit","NewLeaves","922"
-2,"F5",400,"MAT06","Vacvit","NewStems","923"
-2,"F5",400,"MAT06","Vacvit","OldLeaves","924"
-2,"F5",400,"MAT06","Vacvit","OldStems","925"
-2,"F5",400,"MAT06","Vacvit","Inflor",NA
-2,"F5",400,"MAT06","Vacvit","BelowStem","607"
-2,"F5",400,"MAT06","Castet","NewStems",NA
-2,"F5",400,"MAT06","Castet","OldStems",NA
-2,"F5",400,"MAT06","Castet","Inflor",NA
-2,"F5",400,"MAT06","Castet","BelowStem",NA
-2,"F5",400,"MAT06","OtherEvergreen","NewLeaves","916"
-2,"F5",400,"MAT06","OtherEvergreen","NewStems","917"
-2,"F5",400,"MAT06","OtherEvergreen","OldLeaves","918"
-2,"F5",400,"MAT06","OtherEvergreen","OldStems","919"
-2,"F5",400,"MAT06","OtherEvergreen","Inflor",NA
-2,"F5",400,"MAT06","OtherEvergreen","BelowStem","921"
-2,"F5",400,"MAT06","Rubcha","LeavesStems",NA
-2,"F5",400,"MAT06","Rubcha","InflorStalks",NA
-2,"F5",400,"MAT06","Rubcha","BelowStem","926"
-2,"F5",400,"MAT06","Petfri","LeavesStems",NA
-2,"F5",400,"MAT06","Petfri","InflorStalks",NA
-2,"F5",400,"MAT06","Petfri","BelowStem",NA
-2,"F5",400,"MAT06","OtherForb","LeavesStems","930"
-2,"F5",400,"MAT06","OtherForb","InflorStalks",NA
-2,"F5",400,"MAT06","OtherForb","BelowStem","1021"
+2,"F5",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","928"
+2,"F5",400,"MAT06","Eriophorum vaginatum","Rhizome","929"
+2,"F5",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","1022"
+2,"F5",400,"MAT06","Carex bigelowii","Rhizome","503"
+2,"F5",400,"MAT06","Other Graminoid","BladeSheathInflCulm","504"
+2,"F5",400,"MAT06","Other Graminoid","Rhizome","505"
+2,"F5",400,"MAT06","Betula nana","NewLeaves","911"
+2,"F5",400,"MAT06","Betula nana","NewStems","912"
+2,"F5",400,"MAT06","Betula nana","OldStems","913"
+2,"F5",400,"MAT06","Betula nana","Inflor","914"
+2,"F5",400,"MAT06","Betula nana","BelowStem","915"
+2,"F5",400,"MAT06","Salix pulchra","NewLeaves","510"
+2,"F5",400,"MAT06","Salix pulchra","NewStems",NA
+2,"F5",400,"MAT06","Salix pulchra","OldStems","528"
+2,"F5",400,"MAT06","Salix pulchra","Inflor",NA
+2,"F5",400,"MAT06","Salix pulchra","BelowStem",NA
+2,"F5",400,"MAT06","Vaccinium uliginosum","NewLeaves","927"
+2,"F5",400,"MAT06","Vaccinium uliginosum","NewStems","533"
+2,"F5",400,"MAT06","Vaccinium uliginosum","OldStems","534"
+2,"F5",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+2,"F5",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+2,"F5",400,"MAT06","Other Deciduous","NewLeaves",NA
+2,"F5",400,"MAT06","Other Deciduous","NewStems",NA
+2,"F5",400,"MAT06","Other Deciduous","OldStems",NA
+2,"F5",400,"MAT06","Other Deciduous","Inflor",NA
+2,"F5",400,"MAT06","Other Deciduous","BelowStem",NA
+2,"F5",400,"MAT06","Ledum palustre","NewLeaves","905"
+2,"F5",400,"MAT06","Ledum palustre","NewStems","906"
+2,"F5",400,"MAT06","Ledum palustre","OldLeaves","907"
+2,"F5",400,"MAT06","Ledum palustre","OldStems","908"
+2,"F5",400,"MAT06","Ledum palustre","Inflor","909"
+2,"F5",400,"MAT06","Ledum palustre","BelowStem","910"
+2,"F5",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","922"
+2,"F5",400,"MAT06","Vaccinium vitis-idaea","NewStems","923"
+2,"F5",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","924"
+2,"F5",400,"MAT06","Vaccinium vitis-idaea","OldStems","925"
+2,"F5",400,"MAT06","Vaccinium vitis-idaea","Inflor",NA
+2,"F5",400,"MAT06","Vaccinium vitis-idaea","BelowStem","607"
+2,"F5",400,"MAT06","Cassiope tetragona","NewStems",NA
+2,"F5",400,"MAT06","Cassiope tetragona","OldStems",NA
+2,"F5",400,"MAT06","Cassiope tetragona","Inflor",NA
+2,"F5",400,"MAT06","Cassiope tetragona","BelowStem",NA
+2,"F5",400,"MAT06","Other Evergreen","NewLeaves","916"
+2,"F5",400,"MAT06","Other Evergreen","NewStems","917"
+2,"F5",400,"MAT06","Other Evergreen","OldLeaves","918"
+2,"F5",400,"MAT06","Other Evergreen","OldStems","919"
+2,"F5",400,"MAT06","Other Evergreen","Inflor",NA
+2,"F5",400,"MAT06","Other Evergreen","BelowStem","921"
+2,"F5",400,"MAT06","Rubus chamaemorus","LeavesStems",NA
+2,"F5",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+2,"F5",400,"MAT06","Rubus chamaemorus","BelowStem","926"
+2,"F5",400,"MAT06","Petasites frigidus","LeavesStems",NA
+2,"F5",400,"MAT06","Petasites frigidus","InflorStalks",NA
+2,"F5",400,"MAT06","Petasites frigidus","BelowStem",NA
+2,"F5",400,"MAT06","Other Forb","LeavesStems","930"
+2,"F5",400,"MAT06","Other Forb","InflorStalks",NA
+2,"F5",400,"MAT06","Other Forb","BelowStem","1021"
 2,"F5",400,"MAT06","Sphagnum","Green",NA
-2,"F5",400,"MAT06","OtherMoss","Green","904"
-2,"F5",400,"MAT06","Lichen","Live","608"
-2,"F5",400,"MAT06","Attached","Wood","611"
-2,"F5",400,"MAT06","Attached","Litter","610"
+2,"F5",400,"MAT06","Other Mosses","Green","904"
+2,"F5",400,"MAT06","Mixed Lichen","Live","608"
+2,"F5",400,"MAT06","Litter","Wood","611"
+2,"F5",400,"MAT06","Litter","Litter","610"
 2,"F5",400,"MAT06","Loose","Litter",NA
-2,"F10",400,"MAT06","Erivag","BladeSheathInflCulm",NA
-2,"F10",400,"MAT06","Erivag","Rhizome",NA
-2,"F10",400,"MAT06","Carbig","BladeSheathInflCulm","735"
-2,"F10",400,"MAT06","Carbig","Rhizome","738"
-2,"F10",400,"MAT06","OtherGraminoid","BladeSheathInflCulm",NA
-2,"F10",400,"MAT06","OtherGraminoid","Rhizome","744"
-2,"F10",400,"MAT06","Betnan","NewLeaves","730"
-2,"F10",400,"MAT06","Betnan","NewStems","731"
-2,"F10",400,"MAT06","Betnan","OldStems","732"
-2,"F10",400,"MAT06","Betnan","Inflor","733"
-2,"F10",400,"MAT06","Betnan","BelowStem","734"
-2,"F10",400,"MAT06","Salpul","NewLeaves",NA
-2,"F10",400,"MAT06","Salpul","NewStems",NA
-2,"F10",400,"MAT06","Salpul","OldStems",NA
-2,"F10",400,"MAT06","Salpul","Inflor",NA
-2,"F10",400,"MAT06","Salpul","BelowStem",NA
-2,"F10",400,"MAT06","Vaculi","NewLeaves",NA
-2,"F10",400,"MAT06","Vaculi","NewStems",NA
-2,"F10",400,"MAT06","Vaculi","OldStems",NA
-2,"F10",400,"MAT06","Vaculi","Inflor",NA
-2,"F10",400,"MAT06","Vaculi","BelowStem",NA
-2,"F10",400,"MAT06","OtherDeciduous","NewLeaves",NA
-2,"F10",400,"MAT06","OtherDeciduous","NewStems",NA
-2,"F10",400,"MAT06","OtherDeciduous","OldStems",NA
-2,"F10",400,"MAT06","OtherDeciduous","Inflor",NA
-2,"F10",400,"MAT06","OtherDeciduous","BelowStem",NA
-2,"F10",400,"MAT06","Ledpal","NewLeaves","739"
-2,"F10",400,"MAT06","Ledpal","NewStems","740"
-2,"F10",400,"MAT06","Ledpal","OldLeaves",NA
-2,"F10",400,"MAT06","Ledpal","OldStems","741"
-2,"F10",400,"MAT06","Ledpal","Inflor",NA
-2,"F10",400,"MAT06","Ledpal","BelowStem","742"
-2,"F10",400,"MAT06","Vacvit","NewLeaves",NA
-2,"F10",400,"MAT06","Vacvit","NewStems",NA
-2,"F10",400,"MAT06","Vacvit","OldLeaves",NA
-2,"F10",400,"MAT06","Vacvit","OldStems",NA
-2,"F10",400,"MAT06","Vacvit","Inflor",NA
-2,"F10",400,"MAT06","Vacvit","BelowStem",NA
-2,"F10",400,"MAT06","Castet","NewStems",NA
-2,"F10",400,"MAT06","Castet","OldStems",NA
-2,"F10",400,"MAT06","Castet","Inflor",NA
-2,"F10",400,"MAT06","Castet","BelowStem",NA
-2,"F10",400,"MAT06","OtherEvergreen","NewLeaves",NA
-2,"F10",400,"MAT06","OtherEvergreen","NewStems",NA
-2,"F10",400,"MAT06","OtherEvergreen","OldLeaves",NA
-2,"F10",400,"MAT06","OtherEvergreen","OldStems",NA
-2,"F10",400,"MAT06","OtherEvergreen","Inflor",NA
-2,"F10",400,"MAT06","OtherEvergreen","BelowStem",NA
-2,"F10",400,"MAT06","Rubcha","LeavesStems","736"
-2,"F10",400,"MAT06","Rubcha","InflorStalks",NA
-2,"F10",400,"MAT06","Rubcha","BelowStem","737"
-2,"F10",400,"MAT06","Petfri","LeavesStems",NA
-2,"F10",400,"MAT06","Petfri","InflorStalks",NA
-2,"F10",400,"MAT06","Petfri","BelowStem",NA
-2,"F10",400,"MAT06","OtherForb","LeavesStems",NA
-2,"F10",400,"MAT06","OtherForb","InflorStalks",NA
-2,"F10",400,"MAT06","OtherForb","BelowStem",NA
+2,"F10",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm",NA
+2,"F10",400,"MAT06","Eriophorum vaginatum","Rhizome",NA
+2,"F10",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","735"
+2,"F10",400,"MAT06","Carex bigelowii","Rhizome","738"
+2,"F10",400,"MAT06","Other Graminoid","BladeSheathInflCulm",NA
+2,"F10",400,"MAT06","Other Graminoid","Rhizome","744"
+2,"F10",400,"MAT06","Betula nana","NewLeaves","730"
+2,"F10",400,"MAT06","Betula nana","NewStems","731"
+2,"F10",400,"MAT06","Betula nana","OldStems","732"
+2,"F10",400,"MAT06","Betula nana","Inflor","733"
+2,"F10",400,"MAT06","Betula nana","BelowStem","734"
+2,"F10",400,"MAT06","Salix pulchra","NewLeaves",NA
+2,"F10",400,"MAT06","Salix pulchra","NewStems",NA
+2,"F10",400,"MAT06","Salix pulchra","OldStems",NA
+2,"F10",400,"MAT06","Salix pulchra","Inflor",NA
+2,"F10",400,"MAT06","Salix pulchra","BelowStem",NA
+2,"F10",400,"MAT06","Vaccinium uliginosum","NewLeaves",NA
+2,"F10",400,"MAT06","Vaccinium uliginosum","NewStems",NA
+2,"F10",400,"MAT06","Vaccinium uliginosum","OldStems",NA
+2,"F10",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+2,"F10",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+2,"F10",400,"MAT06","Other Deciduous","NewLeaves",NA
+2,"F10",400,"MAT06","Other Deciduous","NewStems",NA
+2,"F10",400,"MAT06","Other Deciduous","OldStems",NA
+2,"F10",400,"MAT06","Other Deciduous","Inflor",NA
+2,"F10",400,"MAT06","Other Deciduous","BelowStem",NA
+2,"F10",400,"MAT06","Ledum palustre","NewLeaves","739"
+2,"F10",400,"MAT06","Ledum palustre","NewStems","740"
+2,"F10",400,"MAT06","Ledum palustre","OldLeaves",NA
+2,"F10",400,"MAT06","Ledum palustre","OldStems","741"
+2,"F10",400,"MAT06","Ledum palustre","Inflor",NA
+2,"F10",400,"MAT06","Ledum palustre","BelowStem","742"
+2,"F10",400,"MAT06","Vaccinium vitis-idaea","NewLeaves",NA
+2,"F10",400,"MAT06","Vaccinium vitis-idaea","NewStems",NA
+2,"F10",400,"MAT06","Vaccinium vitis-idaea","OldLeaves",NA
+2,"F10",400,"MAT06","Vaccinium vitis-idaea","OldStems",NA
+2,"F10",400,"MAT06","Vaccinium vitis-idaea","Inflor",NA
+2,"F10",400,"MAT06","Vaccinium vitis-idaea","BelowStem",NA
+2,"F10",400,"MAT06","Cassiope tetragona","NewStems",NA
+2,"F10",400,"MAT06","Cassiope tetragona","OldStems",NA
+2,"F10",400,"MAT06","Cassiope tetragona","Inflor",NA
+2,"F10",400,"MAT06","Cassiope tetragona","BelowStem",NA
+2,"F10",400,"MAT06","Other Evergreen","NewLeaves",NA
+2,"F10",400,"MAT06","Other Evergreen","NewStems",NA
+2,"F10",400,"MAT06","Other Evergreen","OldLeaves",NA
+2,"F10",400,"MAT06","Other Evergreen","OldStems",NA
+2,"F10",400,"MAT06","Other Evergreen","Inflor",NA
+2,"F10",400,"MAT06","Other Evergreen","BelowStem",NA
+2,"F10",400,"MAT06","Rubus chamaemorus","LeavesStems","736"
+2,"F10",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+2,"F10",400,"MAT06","Rubus chamaemorus","BelowStem","737"
+2,"F10",400,"MAT06","Petasites frigidus","LeavesStems",NA
+2,"F10",400,"MAT06","Petasites frigidus","InflorStalks",NA
+2,"F10",400,"MAT06","Petasites frigidus","BelowStem",NA
+2,"F10",400,"MAT06","Other Forb","LeavesStems",NA
+2,"F10",400,"MAT06","Other Forb","InflorStalks",NA
+2,"F10",400,"MAT06","Other Forb","BelowStem",NA
 2,"F10",400,"MAT06","Sphagnum","Green",NA
-2,"F10",400,"MAT06","OtherMoss","Green","479"
-2,"F10",400,"MAT06","Lichen","Live","743"
-2,"F10",400,"MAT06","Attached","Wood",NA
-2,"F10",400,"MAT06","Attached","Litter","474"
+2,"F10",400,"MAT06","Other Mosses","Green","479"
+2,"F10",400,"MAT06","Mixed Lichen","Live","743"
+2,"F10",400,"MAT06","Litter","Wood",NA
+2,"F10",400,"MAT06","Litter","Litter","474"
 2,"F10",400,"MAT06","Loose","Litter",NA
-3,"CT",400,"MAT06","Erivag","BladeSheathInflCulm","1045"
-3,"CT",400,"MAT06","Erivag","Rhizome","1048"
-3,"CT",400,"MAT06","Carbig","BladeSheathInflCulm","1152"
-3,"CT",400,"MAT06","Carbig","Rhizome","1160"
-3,"CT",400,"MAT06","OtherGraminoid","BladeSheathInflCulm","982"
-3,"CT",400,"MAT06","OtherGraminoid","Rhizome","985"
-3,"CT",400,"MAT06","Betnan","NewLeaves","986"
-3,"CT",400,"MAT06","Betnan","NewStems","989"
-3,"CT",400,"MAT06","Betnan","OldStems","966"
-3,"CT",400,"MAT06","Betnan","Inflor","1156"
-3,"CT",400,"MAT06","Betnan","BelowStem","983"
-3,"CT",400,"MAT06","Salpul","NewLeaves","1025"
-3,"CT",400,"MAT06","Salpul","NewStems","1028"
-3,"CT",400,"MAT06","Salpul","OldStems","1031"
-3,"CT",400,"MAT06","Salpul","Inflor",NA
-3,"CT",400,"MAT06","Salpul","BelowStem",NA
-3,"CT",400,"MAT06","Vaculi","NewLeaves","988"
-3,"CT",400,"MAT06","Vaculi","NewStems","962"
-3,"CT",400,"MAT06","Vaculi","OldStems","965"
-3,"CT",400,"MAT06","Vaculi","Inflor","968"
-3,"CT",400,"MAT06","Vaculi","BelowStem","971"
-3,"CT",400,"MAT06","OtherDeciduous","NewLeaves",NA
-3,"CT",400,"MAT06","OtherDeciduous","NewStems",NA
-3,"CT",400,"MAT06","OtherDeciduous","OldStems",NA
-3,"CT",400,"MAT06","OtherDeciduous","Inflor",NA
-3,"CT",400,"MAT06","OtherDeciduous","BelowStem",NA
-3,"CT",400,"MAT06","Ledpal","NewLeaves","1043"
-3,"CT",400,"MAT06","Ledpal","NewStems","1049"
-3,"CT",400,"MAT06","Ledpal","OldLeaves","1046"
-3,"CT",400,"MAT06","Ledpal","OldStems","1023"
-3,"CT",400,"MAT06","Ledpal","Inflor","1164"
-3,"CT",400,"MAT06","Ledpal","BelowStem","1026"
-3,"CT",400,"MAT06","Vacvit","NewLeaves","1024"
-3,"CT",400,"MAT06","Vacvit","NewStems","1030"
-3,"CT",400,"MAT06","Vacvit","OldLeaves","1027"
-3,"CT",400,"MAT06","Vacvit","OldStems","1033"
-3,"CT",400,"MAT06","Vacvit","Inflor","1036"
-3,"CT",400,"MAT06","Vacvit","BelowStem","1039"
-3,"CT",400,"MAT06","Castet","NewStems","1032"
-3,"CT",400,"MAT06","Castet","OldStems","1038"
-3,"CT",400,"MAT06","Castet","Inflor","1600"
-3,"CT",400,"MAT06","Castet","BelowStem","1044"
-3,"CT",400,"MAT06","OtherEvergreen","NewLeaves","1041"
-3,"CT",400,"MAT06","OtherEvergreen","NewStems","1050"
-3,"CT",400,"MAT06","OtherEvergreen","OldLeaves","973"
-3,"CT",400,"MAT06","OtherEvergreen","OldStems","976"
-3,"CT",400,"MAT06","OtherEvergreen","Inflor","979"
-3,"CT",400,"MAT06","OtherEvergreen","BelowStem","1594"
-3,"CT",400,"MAT06","Rubcha","LeavesStems",NA
-3,"CT",400,"MAT06","Rubcha","InflorStalks",NA
-3,"CT",400,"MAT06","Rubcha","BelowStem",NA
-3,"CT",400,"MAT06","Petfri","LeavesStems","974"
-3,"CT",400,"MAT06","Petfri","InflorStalks",NA
-3,"CT",400,"MAT06","Petfri","BelowStem","1379"
-3,"CT",400,"MAT06","OtherForb","LeavesStems","977"
-3,"CT",400,"MAT06","OtherForb","InflorStalks","1167"
-3,"CT",400,"MAT06","OtherForb","BelowStem","980"
+3,"CT",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","1045"
+3,"CT",400,"MAT06","Eriophorum vaginatum","Rhizome","1048"
+3,"CT",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","1152"
+3,"CT",400,"MAT06","Carex bigelowii","Rhizome","1160"
+3,"CT",400,"MAT06","Other Graminoid","BladeSheathInflCulm","982"
+3,"CT",400,"MAT06","Other Graminoid","Rhizome","985"
+3,"CT",400,"MAT06","Betula nana","NewLeaves","986"
+3,"CT",400,"MAT06","Betula nana","NewStems","989"
+3,"CT",400,"MAT06","Betula nana","OldStems","966"
+3,"CT",400,"MAT06","Betula nana","Inflor","1156"
+3,"CT",400,"MAT06","Betula nana","BelowStem","983"
+3,"CT",400,"MAT06","Salix pulchra","NewLeaves","1025"
+3,"CT",400,"MAT06","Salix pulchra","NewStems","1028"
+3,"CT",400,"MAT06","Salix pulchra","OldStems","1031"
+3,"CT",400,"MAT06","Salix pulchra","Inflor",NA
+3,"CT",400,"MAT06","Salix pulchra","BelowStem",NA
+3,"CT",400,"MAT06","Vaccinium uliginosum","NewLeaves","988"
+3,"CT",400,"MAT06","Vaccinium uliginosum","NewStems","962"
+3,"CT",400,"MAT06","Vaccinium uliginosum","OldStems","965"
+3,"CT",400,"MAT06","Vaccinium uliginosum","Inflor","968"
+3,"CT",400,"MAT06","Vaccinium uliginosum","BelowStem","971"
+3,"CT",400,"MAT06","Other Deciduous","NewLeaves",NA
+3,"CT",400,"MAT06","Other Deciduous","NewStems",NA
+3,"CT",400,"MAT06","Other Deciduous","OldStems",NA
+3,"CT",400,"MAT06","Other Deciduous","Inflor",NA
+3,"CT",400,"MAT06","Other Deciduous","BelowStem",NA
+3,"CT",400,"MAT06","Ledum palustre","NewLeaves","1043"
+3,"CT",400,"MAT06","Ledum palustre","NewStems","1049"
+3,"CT",400,"MAT06","Ledum palustre","OldLeaves","1046"
+3,"CT",400,"MAT06","Ledum palustre","OldStems","1023"
+3,"CT",400,"MAT06","Ledum palustre","Inflor","1164"
+3,"CT",400,"MAT06","Ledum palustre","BelowStem","1026"
+3,"CT",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","1024"
+3,"CT",400,"MAT06","Vaccinium vitis-idaea","NewStems","1030"
+3,"CT",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","1027"
+3,"CT",400,"MAT06","Vaccinium vitis-idaea","OldStems","1033"
+3,"CT",400,"MAT06","Vaccinium vitis-idaea","Inflor","1036"
+3,"CT",400,"MAT06","Vaccinium vitis-idaea","BelowStem","1039"
+3,"CT",400,"MAT06","Cassiope tetragona","NewStems","1032"
+3,"CT",400,"MAT06","Cassiope tetragona","OldStems","1038"
+3,"CT",400,"MAT06","Cassiope tetragona","Inflor","1600"
+3,"CT",400,"MAT06","Cassiope tetragona","BelowStem","1044"
+3,"CT",400,"MAT06","Other Evergreen","NewLeaves","1041"
+3,"CT",400,"MAT06","Other Evergreen","NewStems","1050"
+3,"CT",400,"MAT06","Other Evergreen","OldLeaves","973"
+3,"CT",400,"MAT06","Other Evergreen","OldStems","976"
+3,"CT",400,"MAT06","Other Evergreen","Inflor","979"
+3,"CT",400,"MAT06","Other Evergreen","BelowStem","1594"
+3,"CT",400,"MAT06","Rubus chamaemorus","LeavesStems",NA
+3,"CT",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+3,"CT",400,"MAT06","Rubus chamaemorus","BelowStem",NA
+3,"CT",400,"MAT06","Petasites frigidus","LeavesStems","974"
+3,"CT",400,"MAT06","Petasites frigidus","InflorStalks",NA
+3,"CT",400,"MAT06","Petasites frigidus","BelowStem","1379"
+3,"CT",400,"MAT06","Other Forb","LeavesStems","977"
+3,"CT",400,"MAT06","Other Forb","InflorStalks","1167"
+3,"CT",400,"MAT06","Other Forb","BelowStem","980"
 3,"CT",400,"MAT06","Sphagnum","Green","1047"
-3,"CT",400,"MAT06","OtherMoss","Green","1037"
-3,"CT",400,"MAT06","Lichen","Live","1040"
-3,"CT",400,"MAT06","Attached","Wood",NA
-3,"CT",400,"MAT06","Attached","Litter","1042"
+3,"CT",400,"MAT06","Other Mosses","Green","1037"
+3,"CT",400,"MAT06","Mixed Lichen","Live","1040"
+3,"CT",400,"MAT06","Litter","Wood",NA
+3,"CT",400,"MAT06","Litter","Litter","1042"
 3,"CT",400,"MAT06","Loose","Litter",NA
-3,"F0.5",400,"MAT06","Erivag","BladeSheathInflCulm","1957"
-3,"F0.5",400,"MAT06","Erivag","Rhizome","1774"
-3,"F0.5",400,"MAT06","Carbig","BladeSheathInflCulm","1917"
-3,"F0.5",400,"MAT06","Carbig","Rhizome","1920"
-3,"F0.5",400,"MAT06","OtherGraminoid","BladeSheathInflCulm","1891"
-3,"F0.5",400,"MAT06","OtherGraminoid","Rhizome","1892"
-3,"F0.5",400,"MAT06","Betnan","NewLeaves","1893"
-3,"F0.5",400,"MAT06","Betnan","NewStems","1894"
-3,"F0.5",400,"MAT06","Betnan","OldStems","1895"
-3,"F0.5",400,"MAT06","Betnan","Inflor","1828"
-3,"F0.5",400,"MAT06","Betnan","BelowStem","1896"
-3,"F0.5",400,"MAT06","Salpul","NewLeaves","1761"
-3,"F0.5",400,"MAT06","Salpul","NewStems","1762"
-3,"F0.5",400,"MAT06","Salpul","OldStems","1763"
-3,"F0.5",400,"MAT06","Salpul","Inflor",NA
-3,"F0.5",400,"MAT06","Salpul","BelowStem","1766"
-3,"F0.5",400,"MAT06","Vaculi","NewLeaves",NA
-3,"F0.5",400,"MAT06","Vaculi","NewStems",NA
-3,"F0.5",400,"MAT06","Vaculi","OldStems",NA
-3,"F0.5",400,"MAT06","Vaculi","Inflor",NA
-3,"F0.5",400,"MAT06","Vaculi","BelowStem",NA
-3,"F0.5",400,"MAT06","OtherDeciduous","NewLeaves",NA
-3,"F0.5",400,"MAT06","OtherDeciduous","NewStems",NA
-3,"F0.5",400,"MAT06","OtherDeciduous","OldStems",NA
-3,"F0.5",400,"MAT06","OtherDeciduous","Inflor",NA
-3,"F0.5",400,"MAT06","OtherDeciduous","BelowStem",NA
-3,"F0.5",400,"MAT06","Ledpal","NewLeaves","1897"
-3,"F0.5",400,"MAT06","Ledpal","NewStems","1898"
-3,"F0.5",400,"MAT06","Ledpal","OldLeaves","1899"
-3,"F0.5",400,"MAT06","Ledpal","OldStems","1900"
-3,"F0.5",400,"MAT06","Ledpal","Inflor","1953"
-3,"F0.5",400,"MAT06","Ledpal","BelowStem","1901"
-3,"F0.5",400,"MAT06","Vacvit","NewLeaves","1902"
-3,"F0.5",400,"MAT06","Vacvit","NewStems","1903"
-3,"F0.5",400,"MAT06","Vacvit","OldLeaves","1904"
-3,"F0.5",400,"MAT06","Vacvit","OldStems","1905"
-3,"F0.5",400,"MAT06","Vacvit","Inflor","1906"
-3,"F0.5",400,"MAT06","Vacvit","BelowStem","1907"
-3,"F0.5",400,"MAT06","Castet","NewStems","1913"
-3,"F0.5",400,"MAT06","Castet","OldStems","1914"
-3,"F0.5",400,"MAT06","Castet","Inflor","1528"
-3,"F0.5",400,"MAT06","Castet","BelowStem","1915"
-3,"F0.5",400,"MAT06","OtherEvergreen","NewLeaves","1671"
-3,"F0.5",400,"MAT06","OtherEvergreen","NewStems","1672"
-3,"F0.5",400,"MAT06","OtherEvergreen","OldLeaves","1673"
-3,"F0.5",400,"MAT06","OtherEvergreen","OldStems","1674"
-3,"F0.5",400,"MAT06","OtherEvergreen","Inflor",NA
-3,"F0.5",400,"MAT06","OtherEvergreen","BelowStem","1675"
-3,"F0.5",400,"MAT06","Rubcha","LeavesStems",NA
-3,"F0.5",400,"MAT06","Rubcha","InflorStalks",NA
-3,"F0.5",400,"MAT06","Rubcha","BelowStem",NA
-3,"F0.5",400,"MAT06","Petfri","LeavesStems","1908"
-3,"F0.5",400,"MAT06","Petfri","InflorStalks",NA
-3,"F0.5",400,"MAT06","Petfri","BelowStem","1916"
-3,"F0.5",400,"MAT06","OtherForb","LeavesStems","1911"
-3,"F0.5",400,"MAT06","OtherForb","InflorStalks","1954"
-3,"F0.5",400,"MAT06","OtherForb","BelowStem","1912"
+3,"F0.5",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","1957"
+3,"F0.5",400,"MAT06","Eriophorum vaginatum","Rhizome","1774"
+3,"F0.5",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","1917"
+3,"F0.5",400,"MAT06","Carex bigelowii","Rhizome","1920"
+3,"F0.5",400,"MAT06","Other Graminoid","BladeSheathInflCulm","1891"
+3,"F0.5",400,"MAT06","Other Graminoid","Rhizome","1892"
+3,"F0.5",400,"MAT06","Betula nana","NewLeaves","1893"
+3,"F0.5",400,"MAT06","Betula nana","NewStems","1894"
+3,"F0.5",400,"MAT06","Betula nana","OldStems","1895"
+3,"F0.5",400,"MAT06","Betula nana","Inflor","1828"
+3,"F0.5",400,"MAT06","Betula nana","BelowStem","1896"
+3,"F0.5",400,"MAT06","Salix pulchra","NewLeaves","1761"
+3,"F0.5",400,"MAT06","Salix pulchra","NewStems","1762"
+3,"F0.5",400,"MAT06","Salix pulchra","OldStems","1763"
+3,"F0.5",400,"MAT06","Salix pulchra","Inflor",NA
+3,"F0.5",400,"MAT06","Salix pulchra","BelowStem","1766"
+3,"F0.5",400,"MAT06","Vaccinium uliginosum","NewLeaves",NA
+3,"F0.5",400,"MAT06","Vaccinium uliginosum","NewStems",NA
+3,"F0.5",400,"MAT06","Vaccinium uliginosum","OldStems",NA
+3,"F0.5",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+3,"F0.5",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+3,"F0.5",400,"MAT06","Other Deciduous","NewLeaves",NA
+3,"F0.5",400,"MAT06","Other Deciduous","NewStems",NA
+3,"F0.5",400,"MAT06","Other Deciduous","OldStems",NA
+3,"F0.5",400,"MAT06","Other Deciduous","Inflor",NA
+3,"F0.5",400,"MAT06","Other Deciduous","BelowStem",NA
+3,"F0.5",400,"MAT06","Ledum palustre","NewLeaves","1897"
+3,"F0.5",400,"MAT06","Ledum palustre","NewStems","1898"
+3,"F0.5",400,"MAT06","Ledum palustre","OldLeaves","1899"
+3,"F0.5",400,"MAT06","Ledum palustre","OldStems","1900"
+3,"F0.5",400,"MAT06","Ledum palustre","Inflor","1953"
+3,"F0.5",400,"MAT06","Ledum palustre","BelowStem","1901"
+3,"F0.5",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","1902"
+3,"F0.5",400,"MAT06","Vaccinium vitis-idaea","NewStems","1903"
+3,"F0.5",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","1904"
+3,"F0.5",400,"MAT06","Vaccinium vitis-idaea","OldStems","1905"
+3,"F0.5",400,"MAT06","Vaccinium vitis-idaea","Inflor","1906"
+3,"F0.5",400,"MAT06","Vaccinium vitis-idaea","BelowStem","1907"
+3,"F0.5",400,"MAT06","Cassiope tetragona","NewStems","1913"
+3,"F0.5",400,"MAT06","Cassiope tetragona","OldStems","1914"
+3,"F0.5",400,"MAT06","Cassiope tetragona","Inflor","1528"
+3,"F0.5",400,"MAT06","Cassiope tetragona","BelowStem","1915"
+3,"F0.5",400,"MAT06","Other Evergreen","NewLeaves","1671"
+3,"F0.5",400,"MAT06","Other Evergreen","NewStems","1672"
+3,"F0.5",400,"MAT06","Other Evergreen","OldLeaves","1673"
+3,"F0.5",400,"MAT06","Other Evergreen","OldStems","1674"
+3,"F0.5",400,"MAT06","Other Evergreen","Inflor",NA
+3,"F0.5",400,"MAT06","Other Evergreen","BelowStem","1675"
+3,"F0.5",400,"MAT06","Rubus chamaemorus","LeavesStems",NA
+3,"F0.5",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+3,"F0.5",400,"MAT06","Rubus chamaemorus","BelowStem",NA
+3,"F0.5",400,"MAT06","Petasites frigidus","LeavesStems","1908"
+3,"F0.5",400,"MAT06","Petasites frigidus","InflorStalks",NA
+3,"F0.5",400,"MAT06","Petasites frigidus","BelowStem","1916"
+3,"F0.5",400,"MAT06","Other Forb","LeavesStems","1911"
+3,"F0.5",400,"MAT06","Other Forb","InflorStalks","1954"
+3,"F0.5",400,"MAT06","Other Forb","BelowStem","1912"
 3,"F0.5",400,"MAT06","Sphagnum","Green","1918"
-3,"F0.5",400,"MAT06","OtherMoss","Green","1909"
-3,"F0.5",400,"MAT06","Lichen","Live","1910"
-3,"F0.5",400,"MAT06","Attached","Wood","1919"
-3,"F0.5",400,"MAT06","Attached","Litter","1770"
+3,"F0.5",400,"MAT06","Other Mosses","Green","1909"
+3,"F0.5",400,"MAT06","Mixed Lichen","Live","1910"
+3,"F0.5",400,"MAT06","Litter","Wood","1919"
+3,"F0.5",400,"MAT06","Litter","Litter","1770"
 3,"F0.5",400,"MAT06","Loose","Litter",NA
-3,"F1",400,"MAT06","Erivag","BladeSheathInflCulm",NA
-3,"F1",400,"MAT06","Erivag","Rhizome",NA
-3,"F1",400,"MAT06","Carbig","BladeSheathInflCulm","774"
-3,"F1",400,"MAT06","Carbig","Rhizome","780"
-3,"F1",400,"MAT06","OtherGraminoid","BladeSheathInflCulm",NA
-3,"F1",400,"MAT06","OtherGraminoid","Rhizome",NA
-3,"F1",400,"MAT06","Betnan","NewLeaves","777"
-3,"F1",400,"MAT06","Betnan","NewStems","803"
-3,"F1",400,"MAT06","Betnan","OldStems","806"
-3,"F1",400,"MAT06","Betnan","Inflor","1304"
-3,"F1",400,"MAT06","Betnan","BelowStem","809"
-3,"F1",400,"MAT06","Salpul","NewLeaves","801"
-3,"F1",400,"MAT06","Salpul","NewStems","804"
-3,"F1",400,"MAT06","Salpul","OldStems","807"
-3,"F1",400,"MAT06","Salpul","Inflor",NA
-3,"F1",400,"MAT06","Salpul","BelowStem",NA
-3,"F1",400,"MAT06","Vaculi","NewLeaves","1206"
-3,"F1",400,"MAT06","Vaculi","NewStems","1207"
-3,"F1",400,"MAT06","Vaculi","OldStems","1208"
-3,"F1",400,"MAT06","Vaculi","Inflor",NA
-3,"F1",400,"MAT06","Vaculi","BelowStem",NA
-3,"F1",400,"MAT06","OtherDeciduous","NewLeaves",NA
-3,"F1",400,"MAT06","OtherDeciduous","NewStems",NA
-3,"F1",400,"MAT06","OtherDeciduous","OldStems",NA
-3,"F1",400,"MAT06","OtherDeciduous","Inflor",NA
-3,"F1",400,"MAT06","OtherDeciduous","BelowStem",NA
-3,"F1",400,"MAT06","Ledpal","NewLeaves","1054"
-3,"F1",400,"MAT06","Ledpal","NewStems","1051"
-3,"F1",400,"MAT06","Ledpal","OldLeaves","1057"
-3,"F1",400,"MAT06","Ledpal","OldStems","1060"
-3,"F1",400,"MAT06","Ledpal","Inflor","1066"
-3,"F1",400,"MAT06","Ledpal","BelowStem","1063"
-3,"F1",400,"MAT06","Vacvit","NewLeaves","1069"
-3,"F1",400,"MAT06","Vacvit","NewStems","1072"
-3,"F1",400,"MAT06","Vacvit","OldLeaves","1075"
-3,"F1",400,"MAT06","Vacvit","OldStems","1078"
-3,"F1",400,"MAT06","Vacvit","Inflor",NA
-3,"F1",400,"MAT06","Vacvit","BelowStem","1052"
-3,"F1",400,"MAT06","Castet","NewStems",NA
-3,"F1",400,"MAT06","Castet","OldStems",NA
-3,"F1",400,"MAT06","Castet","Inflor",NA
-3,"F1",400,"MAT06","Castet","BelowStem",NA
-3,"F1",400,"MAT06","OtherEvergreen","NewLeaves","1055"
-3,"F1",400,"MAT06","OtherEvergreen","NewStems","1058"
-3,"F1",400,"MAT06","OtherEvergreen","OldLeaves","1061"
-3,"F1",400,"MAT06","OtherEvergreen","OldStems","1064"
-3,"F1",400,"MAT06","OtherEvergreen","Inflor","1070"
-3,"F1",400,"MAT06","OtherEvergreen","BelowStem","1067"
-3,"F1",400,"MAT06","Rubcha","LeavesStems",NA
-3,"F1",400,"MAT06","Rubcha","InflorStalks",NA
-3,"F1",400,"MAT06","Rubcha","BelowStem",NA
-3,"F1",400,"MAT06","Petfri","LeavesStems",NA
-3,"F1",400,"MAT06","Petfri","InflorStalks",NA
-3,"F1",400,"MAT06","Petfri","BelowStem",NA
-3,"F1",400,"MAT06","OtherForb","LeavesStems","1073"
-3,"F1",400,"MAT06","OtherForb","InflorStalks",NA
-3,"F1",400,"MAT06","OtherForb","BelowStem","1310"
+3,"F1",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm",NA
+3,"F1",400,"MAT06","Eriophorum vaginatum","Rhizome",NA
+3,"F1",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","774"
+3,"F1",400,"MAT06","Carex bigelowii","Rhizome","780"
+3,"F1",400,"MAT06","Other Graminoid","BladeSheathInflCulm",NA
+3,"F1",400,"MAT06","Other Graminoid","Rhizome",NA
+3,"F1",400,"MAT06","Betula nana","NewLeaves","777"
+3,"F1",400,"MAT06","Betula nana","NewStems","803"
+3,"F1",400,"MAT06","Betula nana","OldStems","806"
+3,"F1",400,"MAT06","Betula nana","Inflor","1304"
+3,"F1",400,"MAT06","Betula nana","BelowStem","809"
+3,"F1",400,"MAT06","Salix pulchra","NewLeaves","801"
+3,"F1",400,"MAT06","Salix pulchra","NewStems","804"
+3,"F1",400,"MAT06","Salix pulchra","OldStems","807"
+3,"F1",400,"MAT06","Salix pulchra","Inflor",NA
+3,"F1",400,"MAT06","Salix pulchra","BelowStem",NA
+3,"F1",400,"MAT06","Vaccinium uliginosum","NewLeaves","1206"
+3,"F1",400,"MAT06","Vaccinium uliginosum","NewStems","1207"
+3,"F1",400,"MAT06","Vaccinium uliginosum","OldStems","1208"
+3,"F1",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+3,"F1",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+3,"F1",400,"MAT06","Other Deciduous","NewLeaves",NA
+3,"F1",400,"MAT06","Other Deciduous","NewStems",NA
+3,"F1",400,"MAT06","Other Deciduous","OldStems",NA
+3,"F1",400,"MAT06","Other Deciduous","Inflor",NA
+3,"F1",400,"MAT06","Other Deciduous","BelowStem",NA
+3,"F1",400,"MAT06","Ledum palustre","NewLeaves","1054"
+3,"F1",400,"MAT06","Ledum palustre","NewStems","1051"
+3,"F1",400,"MAT06","Ledum palustre","OldLeaves","1057"
+3,"F1",400,"MAT06","Ledum palustre","OldStems","1060"
+3,"F1",400,"MAT06","Ledum palustre","Inflor","1066"
+3,"F1",400,"MAT06","Ledum palustre","BelowStem","1063"
+3,"F1",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","1069"
+3,"F1",400,"MAT06","Vaccinium vitis-idaea","NewStems","1072"
+3,"F1",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","1075"
+3,"F1",400,"MAT06","Vaccinium vitis-idaea","OldStems","1078"
+3,"F1",400,"MAT06","Vaccinium vitis-idaea","Inflor",NA
+3,"F1",400,"MAT06","Vaccinium vitis-idaea","BelowStem","1052"
+3,"F1",400,"MAT06","Cassiope tetragona","NewStems",NA
+3,"F1",400,"MAT06","Cassiope tetragona","OldStems",NA
+3,"F1",400,"MAT06","Cassiope tetragona","Inflor",NA
+3,"F1",400,"MAT06","Cassiope tetragona","BelowStem",NA
+3,"F1",400,"MAT06","Other Evergreen","NewLeaves","1055"
+3,"F1",400,"MAT06","Other Evergreen","NewStems","1058"
+3,"F1",400,"MAT06","Other Evergreen","OldLeaves","1061"
+3,"F1",400,"MAT06","Other Evergreen","OldStems","1064"
+3,"F1",400,"MAT06","Other Evergreen","Inflor","1070"
+3,"F1",400,"MAT06","Other Evergreen","BelowStem","1067"
+3,"F1",400,"MAT06","Rubus chamaemorus","LeavesStems",NA
+3,"F1",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+3,"F1",400,"MAT06","Rubus chamaemorus","BelowStem",NA
+3,"F1",400,"MAT06","Petasites frigidus","LeavesStems",NA
+3,"F1",400,"MAT06","Petasites frigidus","InflorStalks",NA
+3,"F1",400,"MAT06","Petasites frigidus","BelowStem",NA
+3,"F1",400,"MAT06","Other Forb","LeavesStems","1073"
+3,"F1",400,"MAT06","Other Forb","InflorStalks",NA
+3,"F1",400,"MAT06","Other Forb","BelowStem","1310"
 3,"F1",400,"MAT06","Sphagnum","Green","1076"
-3,"F1",400,"MAT06","OtherMoss","Green","1079"
-3,"F1",400,"MAT06","Lichen","Live","1053"
-3,"F1",400,"MAT06","Attached","Wood",NA
-3,"F1",400,"MAT06","Attached","Litter",NA
+3,"F1",400,"MAT06","Other Mosses","Green","1079"
+3,"F1",400,"MAT06","Mixed Lichen","Live","1053"
+3,"F1",400,"MAT06","Litter","Wood",NA
+3,"F1",400,"MAT06","Litter","Litter",NA
 3,"F1",400,"MAT06","Loose","Litter",NA
-3,"F2",400,"MAT06","Erivag","BladeSheathInflCulm","835"
-3,"F2",400,"MAT06","Erivag","Rhizome",NA
-3,"F2",400,"MAT06","Carbig","BladeSheathInflCulm","812"
-3,"F2",400,"MAT06","Carbig","Rhizome","815"
-3,"F2",400,"MAT06","OtherGraminoid","BladeSheathInflCulm","818"
-3,"F2",400,"MAT06","OtherGraminoid","Rhizome","821"
-3,"F2",400,"MAT06","Betnan","NewLeaves","824"
-3,"F2",400,"MAT06","Betnan","NewStems","827"
-3,"F2",400,"MAT06","Betnan","OldStems","850"
-3,"F2",400,"MAT06","Betnan","Inflor","833"
-3,"F2",400,"MAT06","Betnan","BelowStem","836"
-3,"F2",400,"MAT06","Salpul","NewLeaves",NA
-3,"F2",400,"MAT06","Salpul","NewStems",NA
-3,"F2",400,"MAT06","Salpul","OldStems",NA
-3,"F2",400,"MAT06","Salpul","Inflor",NA
-3,"F2",400,"MAT06","Salpul","BelowStem",NA
-3,"F2",400,"MAT06","Vaculi","NewLeaves","1266"
-3,"F2",400,"MAT06","Vaculi","NewStems","1267"
-3,"F2",400,"MAT06","Vaculi","OldStems","1268"
-3,"F2",400,"MAT06","Vaculi","Inflor","1289"
-3,"F2",400,"MAT06","Vaculi","BelowStem","1290"
-3,"F2",400,"MAT06","OtherDeciduous","NewLeaves","1328"
-3,"F2",400,"MAT06","OtherDeciduous","NewStems","1270"
-3,"F2",400,"MAT06","OtherDeciduous","OldStems","1330"
-3,"F2",400,"MAT06","OtherDeciduous","Inflor","1329"
-3,"F2",400,"MAT06","OtherDeciduous","BelowStem","1331"
-3,"F2",400,"MAT06","Ledpal","NewLeaves","839"
-3,"F2",400,"MAT06","Ledpal","NewStems","813"
-3,"F2",400,"MAT06","Ledpal","OldLeaves","816"
-3,"F2",400,"MAT06","Ledpal","OldStems","819"
-3,"F2",400,"MAT06","Ledpal","Inflor","822"
-3,"F2",400,"MAT06","Ledpal","BelowStem","825"
-3,"F2",400,"MAT06","Vacvit","NewLeaves","828"
-3,"F2",400,"MAT06","Vacvit","NewStems","831"
-3,"F2",400,"MAT06","Vacvit","OldLeaves","834"
-3,"F2",400,"MAT06","Vacvit","OldStems","837"
-3,"F2",400,"MAT06","Vacvit","Inflor","1624"
-3,"F2",400,"MAT06","Vacvit","BelowStem","844"
-3,"F2",400,"MAT06","Castet","NewStems",NA
-3,"F2",400,"MAT06","Castet","OldStems",NA
-3,"F2",400,"MAT06","Castet","Inflor",NA
-3,"F2",400,"MAT06","Castet","BelowStem",NA
-3,"F2",400,"MAT06","OtherEvergreen","NewLeaves",NA
-3,"F2",400,"MAT06","OtherEvergreen","NewStems",NA
-3,"F2",400,"MAT06","OtherEvergreen","OldLeaves",NA
-3,"F2",400,"MAT06","OtherEvergreen","OldStems",NA
-3,"F2",400,"MAT06","OtherEvergreen","Inflor",NA
-3,"F2",400,"MAT06","OtherEvergreen","BelowStem",NA
-3,"F2",400,"MAT06","Rubcha","LeavesStems","841"
-3,"F2",400,"MAT06","Rubcha","InflorStalks",NA
-3,"F2",400,"MAT06","Rubcha","BelowStem","847"
-3,"F2",400,"MAT06","Petfri","LeavesStems",NA
-3,"F2",400,"MAT06","Petfri","InflorStalks",NA
-3,"F2",400,"MAT06","Petfri","BelowStem",NA
-3,"F2",400,"MAT06","OtherForb","LeavesStems","1349"
-3,"F2",400,"MAT06","OtherForb","InflorStalks",NA
-3,"F2",400,"MAT06","OtherForb","BelowStem",NA
+3,"F2",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","835"
+3,"F2",400,"MAT06","Eriophorum vaginatum","Rhizome",NA
+3,"F2",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","812"
+3,"F2",400,"MAT06","Carex bigelowii","Rhizome","815"
+3,"F2",400,"MAT06","Other Graminoid","BladeSheathInflCulm","818"
+3,"F2",400,"MAT06","Other Graminoid","Rhizome","821"
+3,"F2",400,"MAT06","Betula nana","NewLeaves","824"
+3,"F2",400,"MAT06","Betula nana","NewStems","827"
+3,"F2",400,"MAT06","Betula nana","OldStems","850"
+3,"F2",400,"MAT06","Betula nana","Inflor","833"
+3,"F2",400,"MAT06","Betula nana","BelowStem","836"
+3,"F2",400,"MAT06","Salix pulchra","NewLeaves",NA
+3,"F2",400,"MAT06","Salix pulchra","NewStems",NA
+3,"F2",400,"MAT06","Salix pulchra","OldStems",NA
+3,"F2",400,"MAT06","Salix pulchra","Inflor",NA
+3,"F2",400,"MAT06","Salix pulchra","BelowStem",NA
+3,"F2",400,"MAT06","Vaccinium uliginosum","NewLeaves","1266"
+3,"F2",400,"MAT06","Vaccinium uliginosum","NewStems","1267"
+3,"F2",400,"MAT06","Vaccinium uliginosum","OldStems","1268"
+3,"F2",400,"MAT06","Vaccinium uliginosum","Inflor","1289"
+3,"F2",400,"MAT06","Vaccinium uliginosum","BelowStem","1290"
+3,"F2",400,"MAT06","Other Deciduous","NewLeaves","1328"
+3,"F2",400,"MAT06","Other Deciduous","NewStems","1270"
+3,"F2",400,"MAT06","Other Deciduous","OldStems","1330"
+3,"F2",400,"MAT06","Other Deciduous","Inflor","1329"
+3,"F2",400,"MAT06","Other Deciduous","BelowStem","1331"
+3,"F2",400,"MAT06","Ledum palustre","NewLeaves","839"
+3,"F2",400,"MAT06","Ledum palustre","NewStems","813"
+3,"F2",400,"MAT06","Ledum palustre","OldLeaves","816"
+3,"F2",400,"MAT06","Ledum palustre","OldStems","819"
+3,"F2",400,"MAT06","Ledum palustre","Inflor","822"
+3,"F2",400,"MAT06","Ledum palustre","BelowStem","825"
+3,"F2",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","828"
+3,"F2",400,"MAT06","Vaccinium vitis-idaea","NewStems","831"
+3,"F2",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","834"
+3,"F2",400,"MAT06","Vaccinium vitis-idaea","OldStems","837"
+3,"F2",400,"MAT06","Vaccinium vitis-idaea","Inflor","1624"
+3,"F2",400,"MAT06","Vaccinium vitis-idaea","BelowStem","844"
+3,"F2",400,"MAT06","Cassiope tetragona","NewStems",NA
+3,"F2",400,"MAT06","Cassiope tetragona","OldStems",NA
+3,"F2",400,"MAT06","Cassiope tetragona","Inflor",NA
+3,"F2",400,"MAT06","Cassiope tetragona","BelowStem",NA
+3,"F2",400,"MAT06","Other Evergreen","NewLeaves",NA
+3,"F2",400,"MAT06","Other Evergreen","NewStems",NA
+3,"F2",400,"MAT06","Other Evergreen","OldLeaves",NA
+3,"F2",400,"MAT06","Other Evergreen","OldStems",NA
+3,"F2",400,"MAT06","Other Evergreen","Inflor",NA
+3,"F2",400,"MAT06","Other Evergreen","BelowStem",NA
+3,"F2",400,"MAT06","Rubus chamaemorus","LeavesStems","841"
+3,"F2",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+3,"F2",400,"MAT06","Rubus chamaemorus","BelowStem","847"
+3,"F2",400,"MAT06","Petasites frigidus","LeavesStems",NA
+3,"F2",400,"MAT06","Petasites frigidus","InflorStalks",NA
+3,"F2",400,"MAT06","Petasites frigidus","BelowStem",NA
+3,"F2",400,"MAT06","Other Forb","LeavesStems","1349"
+3,"F2",400,"MAT06","Other Forb","InflorStalks",NA
+3,"F2",400,"MAT06","Other Forb","BelowStem",NA
 3,"F2",400,"MAT06","Sphagnum","Green","859"
-3,"F2",400,"MAT06","OtherMoss","Green","856"
-3,"F2",400,"MAT06","Lichen","Live","853"
-3,"F2",400,"MAT06","Attached","Wood",NA
-3,"F2",400,"MAT06","Attached","Litter","862"
+3,"F2",400,"MAT06","Other Mosses","Green","856"
+3,"F2",400,"MAT06","Mixed Lichen","Live","853"
+3,"F2",400,"MAT06","Litter","Wood",NA
+3,"F2",400,"MAT06","Litter","Litter","862"
 3,"F2",400,"MAT06","Loose","Litter",NA
-3,"F5",400,"MAT06","Erivag","BladeSheathInflCulm","1601"
-3,"F5",400,"MAT06","Erivag","Rhizome","1156"
-3,"F5",400,"MAT06","Carbig","BladeSheathInflCulm","1471"
-3,"F5",400,"MAT06","Carbig","Rhizome",NA
-3,"F5",400,"MAT06","OtherGraminoid","BladeSheathInflCulm","1520"
-3,"F5",400,"MAT06","OtherGraminoid","Rhizome","1521"
-3,"F5",400,"MAT06","Betnan","NewLeaves","1506"
-3,"F5",400,"MAT06","Betnan","NewStems","1507"
-3,"F5",400,"MAT06","Betnan","OldStems","1509"
-3,"F5",400,"MAT06","Betnan","Inflor","1508"
-3,"F5",400,"MAT06","Betnan","BelowStem","1510"
-3,"F5",400,"MAT06","Salpul","NewLeaves",NA
-3,"F5",400,"MAT06","Salpul","NewStems",NA
-3,"F5",400,"MAT06","Salpul","OldStems",NA
-3,"F5",400,"MAT06","Salpul","Inflor",NA
-3,"F5",400,"MAT06","Salpul","BelowStem",NA
-3,"F5",400,"MAT06","Vaculi","NewLeaves",NA
-3,"F5",400,"MAT06","Vaculi","NewStems",NA
-3,"F5",400,"MAT06","Vaculi","OldStems",NA
-3,"F5",400,"MAT06","Vaculi","Inflor",NA
-3,"F5",400,"MAT06","Vaculi","BelowStem",NA
-3,"F5",400,"MAT06","OtherDeciduous","NewLeaves",NA
-3,"F5",400,"MAT06","OtherDeciduous","NewStems",NA
-3,"F5",400,"MAT06","OtherDeciduous","OldStems",NA
-3,"F5",400,"MAT06","OtherDeciduous","Inflor",NA
-3,"F5",400,"MAT06","OtherDeciduous","BelowStem",NA
-3,"F5",400,"MAT06","Ledpal","NewLeaves","1511"
-3,"F5",400,"MAT06","Ledpal","NewStems","1512"
-3,"F5",400,"MAT06","Ledpal","OldLeaves","1513"
-3,"F5",400,"MAT06","Ledpal","OldStems","1514"
-3,"F5",400,"MAT06","Ledpal","Inflor","1515"
-3,"F5",400,"MAT06","Ledpal","BelowStem","1566"
-3,"F5",400,"MAT06","Vacvit","NewLeaves","1567"
-3,"F5",400,"MAT06","Vacvit","NewStems","1568"
-3,"F5",400,"MAT06","Vacvit","OldLeaves","1522"
-3,"F5",400,"MAT06","Vacvit","OldStems","1523"
-3,"F5",400,"MAT06","Vacvit","Inflor","1571"
-3,"F5",400,"MAT06","Vacvit","BelowStem","1572"
-3,"F5",400,"MAT06","Castet","NewStems","1519"
-3,"F5",400,"MAT06","Castet","OldStems","1517"
-3,"F5",400,"MAT06","Castet","Inflor","1475"
-3,"F5",400,"MAT06","Castet","BelowStem","1518"
-3,"F5",400,"MAT06","OtherEvergreen","NewLeaves",NA
-3,"F5",400,"MAT06","OtherEvergreen","NewStems",NA
-3,"F5",400,"MAT06","OtherEvergreen","OldLeaves",NA
-3,"F5",400,"MAT06","OtherEvergreen","OldStems",NA
-3,"F5",400,"MAT06","OtherEvergreen","Inflor",NA
-3,"F5",400,"MAT06","OtherEvergreen","BelowStem",NA
-3,"F5",400,"MAT06","Rubcha","LeavesStems",NA
-3,"F5",400,"MAT06","Rubcha","InflorStalks",NA
-3,"F5",400,"MAT06","Rubcha","BelowStem",NA
-3,"F5",400,"MAT06","Petfri","LeavesStems","1625"
-3,"F5",400,"MAT06","Petfri","InflorStalks",NA
-3,"F5",400,"MAT06","Petfri","BelowStem","1626"
-3,"F5",400,"MAT06","OtherForb","LeavesStems","1408"
-3,"F5",400,"MAT06","OtherForb","InflorStalks","1409"
-3,"F5",400,"MAT06","OtherForb","BelowStem","1410"
+3,"F5",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","1601"
+3,"F5",400,"MAT06","Eriophorum vaginatum","Rhizome","1156"
+3,"F5",400,"MAT06","Carex bigelowii","BladeSheathInflCulm","1471"
+3,"F5",400,"MAT06","Carex bigelowii","Rhizome",NA
+3,"F5",400,"MAT06","Other Graminoid","BladeSheathInflCulm","1520"
+3,"F5",400,"MAT06","Other Graminoid","Rhizome","1521"
+3,"F5",400,"MAT06","Betula nana","NewLeaves","1506"
+3,"F5",400,"MAT06","Betula nana","NewStems","1507"
+3,"F5",400,"MAT06","Betula nana","OldStems","1509"
+3,"F5",400,"MAT06","Betula nana","Inflor","1508"
+3,"F5",400,"MAT06","Betula nana","BelowStem","1510"
+3,"F5",400,"MAT06","Salix pulchra","NewLeaves",NA
+3,"F5",400,"MAT06","Salix pulchra","NewStems",NA
+3,"F5",400,"MAT06","Salix pulchra","OldStems",NA
+3,"F5",400,"MAT06","Salix pulchra","Inflor",NA
+3,"F5",400,"MAT06","Salix pulchra","BelowStem",NA
+3,"F5",400,"MAT06","Vaccinium uliginosum","NewLeaves",NA
+3,"F5",400,"MAT06","Vaccinium uliginosum","NewStems",NA
+3,"F5",400,"MAT06","Vaccinium uliginosum","OldStems",NA
+3,"F5",400,"MAT06","Vaccinium uliginosum","Inflor",NA
+3,"F5",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+3,"F5",400,"MAT06","Other Deciduous","NewLeaves",NA
+3,"F5",400,"MAT06","Other Deciduous","NewStems",NA
+3,"F5",400,"MAT06","Other Deciduous","OldStems",NA
+3,"F5",400,"MAT06","Other Deciduous","Inflor",NA
+3,"F5",400,"MAT06","Other Deciduous","BelowStem",NA
+3,"F5",400,"MAT06","Ledum palustre","NewLeaves","1511"
+3,"F5",400,"MAT06","Ledum palustre","NewStems","1512"
+3,"F5",400,"MAT06","Ledum palustre","OldLeaves","1513"
+3,"F5",400,"MAT06","Ledum palustre","OldStems","1514"
+3,"F5",400,"MAT06","Ledum palustre","Inflor","1515"
+3,"F5",400,"MAT06","Ledum palustre","BelowStem","1566"
+3,"F5",400,"MAT06","Vaccinium vitis-idaea","NewLeaves","1567"
+3,"F5",400,"MAT06","Vaccinium vitis-idaea","NewStems","1568"
+3,"F5",400,"MAT06","Vaccinium vitis-idaea","OldLeaves","1522"
+3,"F5",400,"MAT06","Vaccinium vitis-idaea","OldStems","1523"
+3,"F5",400,"MAT06","Vaccinium vitis-idaea","Inflor","1571"
+3,"F5",400,"MAT06","Vaccinium vitis-idaea","BelowStem","1572"
+3,"F5",400,"MAT06","Cassiope tetragona","NewStems","1519"
+3,"F5",400,"MAT06","Cassiope tetragona","OldStems","1517"
+3,"F5",400,"MAT06","Cassiope tetragona","Inflor","1475"
+3,"F5",400,"MAT06","Cassiope tetragona","BelowStem","1518"
+3,"F5",400,"MAT06","Other Evergreen","NewLeaves",NA
+3,"F5",400,"MAT06","Other Evergreen","NewStems",NA
+3,"F5",400,"MAT06","Other Evergreen","OldLeaves",NA
+3,"F5",400,"MAT06","Other Evergreen","OldStems",NA
+3,"F5",400,"MAT06","Other Evergreen","Inflor",NA
+3,"F5",400,"MAT06","Other Evergreen","BelowStem",NA
+3,"F5",400,"MAT06","Rubus chamaemorus","LeavesStems",NA
+3,"F5",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+3,"F5",400,"MAT06","Rubus chamaemorus","BelowStem",NA
+3,"F5",400,"MAT06","Petasites frigidus","LeavesStems","1625"
+3,"F5",400,"MAT06","Petasites frigidus","InflorStalks",NA
+3,"F5",400,"MAT06","Petasites frigidus","BelowStem","1626"
+3,"F5",400,"MAT06","Other Forb","LeavesStems","1408"
+3,"F5",400,"MAT06","Other Forb","InflorStalks","1409"
+3,"F5",400,"MAT06","Other Forb","BelowStem","1410"
 3,"F5",400,"MAT06","Sphagnum","Green",NA
-3,"F5",400,"MAT06","OtherMoss","Green","1619"
-3,"F5",400,"MAT06","Lichen","Live","1489"
-3,"F5",400,"MAT06","Attached","Wood",NA
-3,"F5",400,"MAT06","Attached","Litter","1516"
+3,"F5",400,"MAT06","Other Mosses","Green","1619"
+3,"F5",400,"MAT06","Mixed Lichen","Live","1489"
+3,"F5",400,"MAT06","Litter","Wood",NA
+3,"F5",400,"MAT06","Litter","Litter","1516"
 3,"F5",400,"MAT06","Loose","Litter",NA
-3,"F10",400,"MAT06","Erivag","BladeSheathInflCulm","1588"
-3,"F10",400,"MAT06","Erivag","Rhizome","1589"
-3,"F10",400,"MAT06","Carbig","BladeSheathInflCulm",NA
-3,"F10",400,"MAT06","Carbig","Rhizome",NA
-3,"F10",400,"MAT06","OtherGraminoid","BladeSheathInflCulm","1399"
-3,"F10",400,"MAT06","OtherGraminoid","Rhizome","1400"
-3,"F10",400,"MAT06","Betnan","NewLeaves","1447"
-3,"F10",400,"MAT06","Betnan","NewStems","1448"
-3,"F10",400,"MAT06","Betnan","OldStems","1449"
-3,"F10",400,"MAT06","Betnan","Inflor","1450"
-3,"F10",400,"MAT06","Betnan","BelowStem","1392"
-3,"F10",400,"MAT06","Salpul","NewLeaves","1452"
-3,"F10",400,"MAT06","Salpul","NewStems","1453"
-3,"F10",400,"MAT06","Salpul","OldStems","1454"
-3,"F10",400,"MAT06","Salpul","Inflor",NA
-3,"F10",400,"MAT06","Salpul","BelowStem",NA
-3,"F10",400,"MAT06","Vaculi","NewLeaves","1296"
-3,"F10",400,"MAT06","Vaculi","NewStems","1297"
-3,"F10",400,"MAT06","Vaculi","OldStems","1298"
-3,"F10",400,"MAT06","Vaculi","Inflor","1299"
-3,"F10",400,"MAT06","Vaculi","BelowStem",NA
-3,"F10",400,"MAT06","OtherDeciduous","NewLeaves",NA
-3,"F10",400,"MAT06","OtherDeciduous","NewStems",NA
-3,"F10",400,"MAT06","OtherDeciduous","OldStems",NA
-3,"F10",400,"MAT06","OtherDeciduous","Inflor",NA
-3,"F10",400,"MAT06","OtherDeciduous","BelowStem",NA
-3,"F10",400,"MAT06","Ledpal","NewLeaves","1582"
-3,"F10",400,"MAT06","Ledpal","NewStems","1583"
-3,"F10",400,"MAT06","Ledpal","OldLeaves","1584"
-3,"F10",400,"MAT06","Ledpal","OldStems","1585"
-3,"F10",400,"MAT06","Ledpal","Inflor","1586"
-3,"F10",400,"MAT06","Ledpal","BelowStem","1587"
-3,"F10",400,"MAT06","Vacvit","NewLeaves",NA
-3,"F10",400,"MAT06","Vacvit","NewStems",NA
-3,"F10",400,"MAT06","Vacvit","OldLeaves",NA
-3,"F10",400,"MAT06","Vacvit","OldStems",NA
-3,"F10",400,"MAT06","Vacvit","Inflor",NA
-3,"F10",400,"MAT06","Vacvit","BelowStem",NA
-3,"F10",400,"MAT06","Castet","NewStems",NA
-3,"F10",400,"MAT06","Castet","OldStems",NA
-3,"F10",400,"MAT06","Castet","Inflor",NA
-3,"F10",400,"MAT06","Castet","BelowStem",NA
-3,"F10",400,"MAT06","OtherEvergreen","NewLeaves","1393"
-3,"F10",400,"MAT06","OtherEvergreen","NewStems","1394"
-3,"F10",400,"MAT06","OtherEvergreen","OldLeaves","1395"
-3,"F10",400,"MAT06","OtherEvergreen","OldStems","1396"
-3,"F10",400,"MAT06","OtherEvergreen","Inflor",NA
-3,"F10",400,"MAT06","OtherEvergreen","BelowStem","1446"
-3,"F10",400,"MAT06","Rubcha","LeavesStems",NA
-3,"F10",400,"MAT06","Rubcha","InflorStalks",NA
-3,"F10",400,"MAT06","Rubcha","BelowStem",NA
-3,"F10",400,"MAT06","Petfri","LeavesStems",NA
-3,"F10",400,"MAT06","Petfri","InflorStalks",NA
-3,"F10",400,"MAT06","Petfri","BelowStem",NA
-3,"F10",400,"MAT06","OtherForb","LeavesStems",NA
-3,"F10",400,"MAT06","OtherForb","InflorStalks",NA
-3,"F10",400,"MAT06","OtherForb","BelowStem",NA
+3,"F10",400,"MAT06","Eriophorum vaginatum","BladeSheathInflCulm","1588"
+3,"F10",400,"MAT06","Eriophorum vaginatum","Rhizome","1589"
+3,"F10",400,"MAT06","Carex bigelowii","BladeSheathInflCulm",NA
+3,"F10",400,"MAT06","Carex bigelowii","Rhizome",NA
+3,"F10",400,"MAT06","Other Graminoid","BladeSheathInflCulm","1399"
+3,"F10",400,"MAT06","Other Graminoid","Rhizome","1400"
+3,"F10",400,"MAT06","Betula nana","NewLeaves","1447"
+3,"F10",400,"MAT06","Betula nana","NewStems","1448"
+3,"F10",400,"MAT06","Betula nana","OldStems","1449"
+3,"F10",400,"MAT06","Betula nana","Inflor","1450"
+3,"F10",400,"MAT06","Betula nana","BelowStem","1392"
+3,"F10",400,"MAT06","Salix pulchra","NewLeaves","1452"
+3,"F10",400,"MAT06","Salix pulchra","NewStems","1453"
+3,"F10",400,"MAT06","Salix pulchra","OldStems","1454"
+3,"F10",400,"MAT06","Salix pulchra","Inflor",NA
+3,"F10",400,"MAT06","Salix pulchra","BelowStem",NA
+3,"F10",400,"MAT06","Vaccinium uliginosum","NewLeaves","1296"
+3,"F10",400,"MAT06","Vaccinium uliginosum","NewStems","1297"
+3,"F10",400,"MAT06","Vaccinium uliginosum","OldStems","1298"
+3,"F10",400,"MAT06","Vaccinium uliginosum","Inflor","1299"
+3,"F10",400,"MAT06","Vaccinium uliginosum","BelowStem",NA
+3,"F10",400,"MAT06","Other Deciduous","NewLeaves",NA
+3,"F10",400,"MAT06","Other Deciduous","NewStems",NA
+3,"F10",400,"MAT06","Other Deciduous","OldStems",NA
+3,"F10",400,"MAT06","Other Deciduous","Inflor",NA
+3,"F10",400,"MAT06","Other Deciduous","BelowStem",NA
+3,"F10",400,"MAT06","Ledum palustre","NewLeaves","1582"
+3,"F10",400,"MAT06","Ledum palustre","NewStems","1583"
+3,"F10",400,"MAT06","Ledum palustre","OldLeaves","1584"
+3,"F10",400,"MAT06","Ledum palustre","OldStems","1585"
+3,"F10",400,"MAT06","Ledum palustre","Inflor","1586"
+3,"F10",400,"MAT06","Ledum palustre","BelowStem","1587"
+3,"F10",400,"MAT06","Vaccinium vitis-idaea","NewLeaves",NA
+3,"F10",400,"MAT06","Vaccinium vitis-idaea","NewStems",NA
+3,"F10",400,"MAT06","Vaccinium vitis-idaea","OldLeaves",NA
+3,"F10",400,"MAT06","Vaccinium vitis-idaea","OldStems",NA
+3,"F10",400,"MAT06","Vaccinium vitis-idaea","Inflor",NA
+3,"F10",400,"MAT06","Vaccinium vitis-idaea","BelowStem",NA
+3,"F10",400,"MAT06","Cassiope tetragona","NewStems",NA
+3,"F10",400,"MAT06","Cassiope tetragona","OldStems",NA
+3,"F10",400,"MAT06","Cassiope tetragona","Inflor",NA
+3,"F10",400,"MAT06","Cassiope tetragona","BelowStem",NA
+3,"F10",400,"MAT06","Other Evergreen","NewLeaves","1393"
+3,"F10",400,"MAT06","Other Evergreen","NewStems","1394"
+3,"F10",400,"MAT06","Other Evergreen","OldLeaves","1395"
+3,"F10",400,"MAT06","Other Evergreen","OldStems","1396"
+3,"F10",400,"MAT06","Other Evergreen","Inflor",NA
+3,"F10",400,"MAT06","Other Evergreen","BelowStem","1446"
+3,"F10",400,"MAT06","Rubus chamaemorus","LeavesStems",NA
+3,"F10",400,"MAT06","Rubus chamaemorus","InflorStalks",NA
+3,"F10",400,"MAT06","Rubus chamaemorus","BelowStem",NA
+3,"F10",400,"MAT06","Petasites frigidus","LeavesStems",NA
+3,"F10",400,"MAT06","Petasites frigidus","InflorStalks",NA
+3,"F10",400,"MAT06","Petasites frigidus","BelowStem",NA
+3,"F10",400,"MAT06","Other Forb","LeavesStems",NA
+3,"F10",400,"MAT06","Other Forb","InflorStalks",NA
+3,"F10",400,"MAT06","Other Forb","BelowStem",NA
 3,"F10",400,"MAT06","Sphagnum","Green",NA
-3,"F10",400,"MAT06","OtherMoss","Green","1255"
-3,"F10",400,"MAT06","Lichen","Live","1590"
-3,"F10",400,"MAT06","Attached","Wood","1668"
-3,"F10",400,"MAT06","Attached","Litter","1403"
+3,"F10",400,"MAT06","Other Mosses","Green","1255"
+3,"F10",400,"MAT06","Mixed Lichen","Live","1590"
+3,"F10",400,"MAT06","Litter","Wood","1668"
+3,"F10",400,"MAT06","Litter","Litter","1403"
 3,"F10",400,"MAT06","Loose","Litter",NA

@@ -1,604 +1,604 @@
 "site","block","treatment","species","tissue","growth_form","plot_tissue_id","nitrogen_percent","carbon_percent","notes"
-"MAT06",1,"F1","Betnan","NewStems","Deciduous","236",1.78133177757263,54.9655838012695,NA
-"MAT06",1,"F1","Vacvit","NewLeaves","Evergreen","310",1.40160632133484,52.9956665039062,NA
-"MAT06",1,"F1","OtherMoss","Green","Moss","232",1.37621569633484,48.5056762695312,NA
-"MAT06",1,"F1","Vacvit","BelowStem","Evergreen","315",1.08083820343018,53.628849029541,NA
-"MAT06",1,"F1","Ledpal","BelowStem","Evergreen","305",0.749906122684479,59.0938568115234,NA
-"MAT06",1,"F1","Betnan","NewLeaves","Deciduous","235",2.0358772277832,52.8916091918945,NA
-"MAT06",1,"F1","Vacvit","Inflor","Evergreen","314",0.962691247463226,53.1415634155273,NA
-"MAT06",1,"F1","Vacvit","OldStems","Evergreen","313",0.982878565788269,54.0674629211426,NA
-"MAT06",1,"F1","Rubcha","BelowStem","Forb","321",0.849592328071594,51.2238540649414,NA
-"MAT06",1,"F1","Ledpal","Inflor","Evergreen","304",1.7019567489624,53.8217468261719,NA
-"MAT06",1,"F1","Ledpal","Inflor","Evergreen","304",1.66307938098907,53.691349029541,NA
-"MAT06",1,"F1","Vacvit","OldLeaves","Evergreen","312",1.03812718391418,54.4153518676758,NA
-"MAT06",1,"F1","Rubcha","LeavesStems","Forb","395",2.18873381614685,50.8035316467285,NA
-"MAT06",1,"F1","Vaculi","BelowStem","Deciduous","320",0.594020843505859,54.0390777587891,NA
-"MAT06",1,"F1","Castet","BelowStem","Evergreen","394",0.941909670829773,57.5672225952148,NA
-"MAT06",1,"F1","Lichen","Live","Lichen","231",0.914544999599457,47.5662040710449,NA
-"MAT06",1,"F1","Castet","OldStems","Evergreen","393",1.13092494010925,59.1272773742676,NA
-"MAT06",1,"F1","Vacvit","NewStems","Evergreen","311",1.32852041721344,54.8926200866699,NA
-"MAT06",1,"F1","Ledpal","NewStems","Evergreen","301",1.45908176898956,55.8852043151855,NA
-"MAT06",1,"F1","Ledpal","OldLeaves","Evergreen","302",1.71575367450714,57.582706451416,NA
-"MAT06",1,"F1","Vaculi","NewLeaves","Deciduous","317",1.55414986610413,53.9367141723633,NA
-"MAT06",1,"F1","Vaculi","NewLeaves","Deciduous","317",1.36726868152618,52.9264106750488,NA
-"MAT06",1,"F1","Betnan","BelowStem","Deciduous","239",0.831188797950745,55.8429069519043,NA
-"MAT06",1,"F1","Ledpal","NewLeaves","Evergreen","240",1.89313876628876,54.5762481689453,NA
-"MAT06",1,"F1","Erivag","Rhizome","Graminoid","234",NA,NA,NA
-"MAT06",1,"F1","Castet","NewStems","Evergreen","392",NA,NA,NA
-"MAT06",1,"F1","Erivag","BladeSheathInflCulm","Graminoid","233",NA,NA,NA
-"MAT06",1,"F1","Betnan","OldStems","Deciduous","237",0.624212205410004,55.7473602294922,NA
-"MAT06",1,"F1","Carbig","BladeSheathInflCulm","Graminoid","308",1.9615330696106,50.7164344787598,NA
-"MAT06",1,"F1","OtherForb","LeavesStems","Forb","306",2.36505961418152,49.7127075195312,NA
-"MAT06",1,"F1","Betnan","Inflor","Deciduous","238",1.12386763095856,55.9574584960938,NA
-"MAT06",1,"F1","Carbig","Rhizome","Graminoid","316",1.00892233848572,52.6301498413086,NA
-"MAT06",1,"F1","Carbig","Rhizome","Graminoid","316",0.980866253376007,52.0934906005859,NA
-"MAT06",1,"F5","Rubcha","LeavesStems","Forb","109",2.51995706558228,46.1323738098145,NA
-"MAT06",1,"F5","Vacvit","BelowStem","Evergreen","116",1.18512201309204,51.1078567504883,NA
-"MAT06",1,"F5","Ledpal","OldStems","Evergreen","95",0.878164947032928,54.8503341674805,NA
-"MAT06",1,"F5","OtherMoss","Green","Moss","102",1.72003710269928,45.9254837036133,NA
-"MAT06",1,"F5","Ledpal","BelowStem","Evergreen","101",0.885150551795959,54.4275093078613,NA
-"MAT06",1,"F5","Ledpal","NewLeaves","Evergreen","118",3.15176892280579,51.4311408996582,NA
-"MAT06",1,"F5","Ledpal","Inflor","Evergreen","98",1.79750227928162,50.2194023132324,NA
-"MAT06",1,"F5","Betnan","NewLeaves","Deciduous","108",2.95845437049866,49.8424873352051,NA
-"MAT06",1,"F5","Vacvit","OldLeaves","Evergreen","110",1.67893707752228,49.7313194274902,NA
-"MAT06",1,"F5","Vacvit","NewLeaves","Evergreen","104",1.99056673049927,49.4499397277832,NA
-"MAT06",1,"F5","Vacvit","NewLeaves","Evergreen","104",1.97907257080078,49.2275085449219,NA
-"MAT06",1,"F5","Betnan","BelowStem","Deciduous","114",1.16646659374237,51.8055953979492,NA
-"MAT06",1,"F5","OtherGraminoid","BladeSheathInflCulm","Graminoid","119",1.56823182106018,46.061767578125,NA
-"MAT06",1,"F5","Vacvit","OldStems","Evergreen","113",1.06704592704773,50.0327186584473,"duplicate ID, possible misidentification"
-"MAT06",1,"F5","Ledpal","OldLeaves","Evergreen","92",1.95859920978546,52.7373428344727,NA
-"MAT06",1,"F5","Betnan","NewStems","Deciduous","105",1.55628538131714,57.4085235595703,NA
-"MAT06",1,"F5","Carbig","BladeSheathInflCulm","Graminoid","337",1.97421729564667,45.9138565063477,NA
-"MAT06",1,"F5","Betnan","OldStems","Deciduous","111",1.06884825229645,53.2899703979492,NA
-"MAT06",1,"F5","Betnan","OldStems","Deciduous","111",1.15082955360413,54.7716979980469,NA
-"MAT06",1,"F5","Ledpal","NewStems","Evergreen","115",1.78738927841187,49.7669258117676,NA
-"MAT06",1,"F5","Lichen","Live","Lichen","339",1.07015609741211,44.8758430480957,NA
-"MAT06",1,"F5","Erivag","BladeSheathInflCulm","Graminoid","93",2.03185129165649,44.8714065551758,NA
-"MAT06",1,"F5","OtherGraminoid","Rhizome","Graminoid","96",1.41580891609192,45.8958320617676,NA
-"MAT06",1,"F10","Attached","Litter","Litter","43",1.31598114967346,47.0957298278809,NA
-"MAT06",1,"F10","Rubcha","BelowStem","Forb","41",1.70897150039673,49.0940780639648,NA
-"MAT06",1,"F10","Rubcha","LeavesStems","Forb","40",2.82561039924622,45.3298149108887,NA
-"MAT06",1,"F10","Ledpal","OldLeaves","Evergreen","160",2.29744696617126,52.579273223877,NA
-"MAT06",1,"F10","Ledpal","NewStems","Evergreen","38",2.18765139579773,50.4049263000488,NA
-"MAT06",1,"F10","Ledpal","NewStems","Evergreen","38",2.17891693115234,50.1937789916992,NA
-"MAT06",1,"F10","Ledpal","BelowStem","Evergreen","16",1.18378913402557,53.9362602233887,NA
-"MAT06",1,"F10","Betnan","NewLeaves","Deciduous","33",3.89348316192627,49.173267364502,NA
-"MAT06",1,"F10","Ledpal","NewLeaves","Evergreen","37",2.92638158798218,52.930980682373,NA
-"MAT06",1,"F10","OtherGraminoid","Rhizome","Graminoid","46",1.48870468139648,45.6533088684082,NA
-"MAT06",1,"F10","OtherGraminoid","BladeSheathInflCulm","Graminoid","32",2.39340424537659,44.5097618103027,NA
-"MAT06",1,"F10","Betnan","BelowStem","Deciduous","36",1.43682253360748,52.4874076843262,NA
-"MAT06",1,"F10","Betnan","Inflor","Deciduous","9",1.90502858161926,52.7811088562012,NA
-"MAT06",1,"F10","Ledpal","Inflor","Evergreen","162",1.3666011095047,50.3298873901367,NA
-"MAT06",1,"F10","Erivag","BladeSheathInflCulm","Graminoid","31",2.492516040802,46.5523262023926,NA
-"MAT06",1,"F10","Erivag","BladeSheathInflCulm","Graminoid","31",2.59431219100952,46.1716003417969,NA
-"MAT06",1,"F10","Erivag","Rhizome","Graminoid","45",2.45381259918213,47.1459007263184,NA
-"MAT06",1,"F10","Betnan","OldStems","Deciduous","35",1.13488614559174,55.726879119873,NA
-"MAT06",1,"F5","Vacvit","NewStems","Evergreen","107",1.66946589946747,49.5486602783203,NA
-"MAT06",2,"F10","Carbig","BladeSheathInflCulm","Graminoid","735",2.72697401046753,44.1592788696289,NA
-"MAT06",2,"F10","Carbig","Rhizome","Graminoid","738",1.2669506072998,43.7418632507324,NA
-"MAT06",2,"F10","OtherGraminoid","Rhizome","Graminoid","744",1.3820778131485,44.532413482666,"duplicate ID, possible misidentification"
-"MAT06",2,"F10","Betnan","NewStems","Deciduous","731",1.38545489311218,55.8919486999512,NA
-"MAT06",2,"F10","Betnan","NewLeaves","Deciduous","730",2.76678919792175,49.4457969665527,NA
-"MAT06",2,"F10","Betnan","OldStems","Deciduous","732",0.963075757026672,51.3371810913086,NA
-"MAT06",2,"F10","Betnan","Inflor","Deciduous","733",1.80611550807953,50.409252166748,NA
-"MAT06",2,"F10","Betnan","BelowStem","Deciduous","734",1.04120326042175,50.8249435424805,NA
-"MAT06",2,"F10","Ledpal","NewLeaves","Evergreen","739",2.29603624343872,50.4534149169922,NA
-"MAT06",2,"F10","Ledpal","NewStems","Evergreen","740",1.24209761619568,50.8037147521973,NA
-"MAT06",2,"F10","Ledpal","NewStems","Evergreen","740",1.24744713306427,50.8893241882324,NA
-"MAT06",2,"F10","Ledpal","OldStems","Evergreen","741",0.881965100765228,52.1239891052246,NA
-"MAT06",2,"F10","Ledpal","BelowStem","Evergreen","742",1.48770880699158,45.7841453552246,NA
-"MAT06",2,"F10","Rubcha","LeavesStems","Forb","736",3.02038097381592,45.4082450866699,NA
-"MAT06",2,"F10","Rubcha","BelowStem","Forb","737",1.89339816570282,48.6240005493164,NA
-"MAT06",2,"F10","OtherMoss","Green","Moss","479",1.60997664928436,44.9550018310547,NA
-"MAT06",2,"F10","Attached","Litter","Litter","474",1.65469884872437,42.3409385681152,NA
-"MAT06",3,"CT","Erivag","BladeSheathInflCulm","Graminoid","1045",1.19366562366486,47.3740997314453,NA
-"MAT06",3,"CT","Erivag","Rhizome","Graminoid","1048",0.978498697280884,45.2638168334961,NA
-"MAT06",3,"CT","Carbig","BladeSheathInflCulm","Graminoid","1152",1.89855682849884,47.6469116210938,NA
-"MAT06",3,"CT","Carbig","Rhizome","Graminoid","1160",0.632497668266296,48.402961730957,NA
-"MAT06",3,"CT","Carbig","Rhizome","Graminoid","1160",0.605483055114746,48.5243873596191,NA
-"MAT06",3,"CT","OtherGraminoid","BladeSheathInflCulm","Graminoid","982",1.46202027797699,44.6880187988281,NA
-"MAT06",3,"CT","OtherGraminoid","Rhizome","Graminoid","985",0.80978000164032,47.4216384887695,NA
-"MAT06",3,"CT","Betnan","NewLeaves","Deciduous","986",1.91779839992523,51.3054046630859,NA
-"MAT06",3,"CT","Betnan","NewStems","Deciduous","989",1.30805432796478,56.423282623291,NA
-"MAT06",3,"CT","Betnan","OldStems","Deciduous","966",0.781226873397827,51.6970100402832,NA
-"MAT06",3,"CT","Betnan","BelowStem","Deciduous","983",0.721822142601013,51.0522766113281,NA
-"MAT06",3,"CT","Salpul","NewLeaves","Deciduous","1025",2.04111623764038,48.932991027832,NA
-"MAT06",3,"CT","Vaculi","NewLeaves","Deciduous","988",1.89350092411041,52.2270317077637,NA
-"MAT06",3,"CT","Vaculi","NewStems","Deciduous","962",0.955111145973206,52.1909484863281,NA
-"MAT06",3,"CT","Vaculi","OldStems","Deciduous","965",1.08853459358215,53.0512275695801,NA
-"MAT06",3,"CT","Vaculi","OldStems","Deciduous","965",0.930762112140656,52.8203926086426,NA
-"MAT06",3,"CT","Vaculi","BelowStem","Deciduous","971",0.887787103652954,53.4028053283691,NA
-"MAT06",3,"CT","Ledpal","NewLeaves","Evergreen","1043",1.97892260551453,54.9521141052246,NA
-"MAT06",3,"CT","Ledpal","NewStems","Evergreen","1049",1.13462936878204,52.0117416381836,NA
-"MAT06",3,"CT","Salpul","OldStems","Deciduous","1031",0.837459981441498,56.0600547790527,NA
-"MAT06",3,"CT","Ledpal","OldLeaves","Evergreen","1046",1.41600489616394,54.6504287719727,NA
-"MAT06",3,"CT","Ledpal","OldStems","Evergreen","1023",0.813194632530212,55.0631370544434,NA
-"MAT06",3,"CT","Ledpal","BelowStem","Evergreen","1026",0.802828907966614,53.9638710021973,NA
-"MAT06",3,"CT","Vacvit","NewLeaves","Evergreen","1024",1.30925893783569,51.919563293457,NA
-"MAT06",3,"CT","Vacvit","NewStems","Evergreen","1030",0.979728221893311,52.2440185546875,NA
-"MAT06",3,"CT","Vacvit","OldLeaves","Evergreen","1027",0.973273813724518,52.9015922546387,NA
-"MAT06",3,"CT","Vacvit","OldLeaves","Evergreen","1027",1.07236337661743,57.4373092651367,NA
-"MAT06",3,"CT","Vacvit","OldStems","Evergreen","1033",0.75385057926178,53.1717987060547,NA
-"MAT06",3,"CT","Vacvit","Inflor","Evergreen","1036",0.949938058853149,51.0349922180176,NA
-"MAT06",3,"CT","Vacvit","BelowStem","Evergreen","1039",0.716825604438782,43.4748077392578,NA
-"MAT06",3,"CT","Castet","NewStems","Evergreen","1032",1.52811002731323,57.903491973877,NA
-"MAT06",3,"CT","Castet","OldStems","Evergreen","1038",0.863199710845947,56.5590171813965,NA
-"MAT06",3,"CT","Castet","BelowStem","Evergreen","1044",0.794148445129395,53.6647911071777,NA
-"MAT06",3,"CT","Petfri","LeavesStems","Forb","974",2.84909248352051,46.3446235656738,NA
-"MAT06",3,"CT","Petfri","BelowStem","Forb","1379",1.42526853084564,46.7784538269043,NA
+"MAT06",1,"F1","Betula nana","NewStems","Deciduous","236",1.78133177757263,54.9655838012695,NA
+"MAT06",1,"F1","Vaccinium vitis-idaea","NewLeaves","Evergreen","310",1.40160632133484,52.9956665039062,NA
+"MAT06",1,"F1","Other Mosses","Green","Moss","232",1.37621569633484,48.5056762695312,NA
+"MAT06",1,"F1","Vaccinium vitis-idaea","BelowStem","Evergreen","315",1.08083820343018,53.628849029541,NA
+"MAT06",1,"F1","Ledum palustre","BelowStem","Evergreen","305",0.749906122684479,59.0938568115234,NA
+"MAT06",1,"F1","Betula nana","NewLeaves","Deciduous","235",2.0358772277832,52.8916091918945,NA
+"MAT06",1,"F1","Vaccinium vitis-idaea","Inflor","Evergreen","314",0.962691247463226,53.1415634155273,NA
+"MAT06",1,"F1","Vaccinium vitis-idaea","OldStems","Evergreen","313",0.982878565788269,54.0674629211426,NA
+"MAT06",1,"F1","Rubus chamaemorus","BelowStem","Forb","321",0.849592328071594,51.2238540649414,NA
+"MAT06",1,"F1","Ledum palustre","Inflor","Evergreen","304",1.7019567489624,53.8217468261719,NA
+"MAT06",1,"F1","Ledum palustre","Inflor","Evergreen","304",1.66307938098907,53.691349029541,NA
+"MAT06",1,"F1","Vaccinium vitis-idaea","OldLeaves","Evergreen","312",1.03812718391418,54.4153518676758,NA
+"MAT06",1,"F1","Rubus chamaemorus","LeavesStems","Forb","395",2.18873381614685,50.8035316467285,NA
+"MAT06",1,"F1","Vaccinium uliginosum","BelowStem","Deciduous","320",0.594020843505859,54.0390777587891,NA
+"MAT06",1,"F1","Cassiope tetragona","BelowStem","Evergreen","394",0.941909670829773,57.5672225952148,NA
+"MAT06",1,"F1","Mixed Lichen","Live","Lichen","231",0.914544999599457,47.5662040710449,NA
+"MAT06",1,"F1","Cassiope tetragona","OldStems","Evergreen","393",1.13092494010925,59.1272773742676,NA
+"MAT06",1,"F1","Vaccinium vitis-idaea","NewStems","Evergreen","311",1.32852041721344,54.8926200866699,NA
+"MAT06",1,"F1","Ledum palustre","NewStems","Evergreen","301",1.45908176898956,55.8852043151855,NA
+"MAT06",1,"F1","Ledum palustre","OldLeaves","Evergreen","302",1.71575367450714,57.582706451416,NA
+"MAT06",1,"F1","Vaccinium uliginosum","NewLeaves","Deciduous","317",1.55414986610413,53.9367141723633,NA
+"MAT06",1,"F1","Vaccinium uliginosum","NewLeaves","Deciduous","317",1.36726868152618,52.9264106750488,NA
+"MAT06",1,"F1","Betula nana","BelowStem","Deciduous","239",0.831188797950745,55.8429069519043,NA
+"MAT06",1,"F1","Ledum palustre","NewLeaves","Evergreen","240",1.89313876628876,54.5762481689453,NA
+"MAT06",1,"F1","Eriophorum vaginatum","Rhizome","Graminoid","234",NA,NA,NA
+"MAT06",1,"F1","Cassiope tetragona","NewStems","Evergreen","392",NA,NA,NA
+"MAT06",1,"F1","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","233",NA,NA,NA
+"MAT06",1,"F1","Betula nana","OldStems","Deciduous","237",0.624212205410004,55.7473602294922,NA
+"MAT06",1,"F1","Carex bigelowii","BladeSheathInflCulm","Graminoid","308",1.9615330696106,50.7164344787598,NA
+"MAT06",1,"F1","Other Forb","LeavesStems","Forb","306",2.36505961418152,49.7127075195312,NA
+"MAT06",1,"F1","Betula nana","Inflor","Deciduous","238",1.12386763095856,55.9574584960938,NA
+"MAT06",1,"F1","Carex bigelowii","Rhizome","Graminoid","316",1.00892233848572,52.6301498413086,NA
+"MAT06",1,"F1","Carex bigelowii","Rhizome","Graminoid","316",0.980866253376007,52.0934906005859,NA
+"MAT06",1,"F5","Rubus chamaemorus","LeavesStems","Forb","109",2.51995706558228,46.1323738098145,NA
+"MAT06",1,"F5","Vaccinium vitis-idaea","BelowStem","Evergreen","116",1.18512201309204,51.1078567504883,NA
+"MAT06",1,"F5","Ledum palustre","OldStems","Evergreen","95",0.878164947032928,54.8503341674805,NA
+"MAT06",1,"F5","Other Mosses","Green","Moss","102",1.72003710269928,45.9254837036133,NA
+"MAT06",1,"F5","Ledum palustre","BelowStem","Evergreen","101",0.885150551795959,54.4275093078613,NA
+"MAT06",1,"F5","Ledum palustre","NewLeaves","Evergreen","118",3.15176892280579,51.4311408996582,NA
+"MAT06",1,"F5","Ledum palustre","Inflor","Evergreen","98",1.79750227928162,50.2194023132324,NA
+"MAT06",1,"F5","Betula nana","NewLeaves","Deciduous","108",2.95845437049866,49.8424873352051,NA
+"MAT06",1,"F5","Vaccinium vitis-idaea","OldLeaves","Evergreen","110",1.67893707752228,49.7313194274902,NA
+"MAT06",1,"F5","Vaccinium vitis-idaea","NewLeaves","Evergreen","104",1.99056673049927,49.4499397277832,NA
+"MAT06",1,"F5","Vaccinium vitis-idaea","NewLeaves","Evergreen","104",1.97907257080078,49.2275085449219,NA
+"MAT06",1,"F5","Betula nana","BelowStem","Deciduous","114",1.16646659374237,51.8055953979492,NA
+"MAT06",1,"F5","Other Graminoid","BladeSheathInflCulm","Graminoid","119",1.56823182106018,46.061767578125,NA
+"MAT06",1,"F5","Vaccinium vitis-idaea","OldStems","Evergreen","113",1.06704592704773,50.0327186584473,"duplicate ID, possible misidentification"
+"MAT06",1,"F5","Ledum palustre","OldLeaves","Evergreen","92",1.95859920978546,52.7373428344727,NA
+"MAT06",1,"F5","Betula nana","NewStems","Deciduous","105",1.55628538131714,57.4085235595703,NA
+"MAT06",1,"F5","Carex bigelowii","BladeSheathInflCulm","Graminoid","337",1.97421729564667,45.9138565063477,NA
+"MAT06",1,"F5","Betula nana","OldStems","Deciduous","111",1.06884825229645,53.2899703979492,NA
+"MAT06",1,"F5","Betula nana","OldStems","Deciduous","111",1.15082955360413,54.7716979980469,NA
+"MAT06",1,"F5","Ledum palustre","NewStems","Evergreen","115",1.78738927841187,49.7669258117676,NA
+"MAT06",1,"F5","Mixed Lichen","Live","Lichen","339",1.07015609741211,44.8758430480957,NA
+"MAT06",1,"F5","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","93",2.03185129165649,44.8714065551758,NA
+"MAT06",1,"F5","Other Graminoid","Rhizome","Graminoid","96",1.41580891609192,45.8958320617676,NA
+"MAT06",1,"F10","Litter","Litter","Litter","43",1.31598114967346,47.0957298278809,NA
+"MAT06",1,"F10","Rubus chamaemorus","BelowStem","Forb","41",1.70897150039673,49.0940780639648,NA
+"MAT06",1,"F10","Rubus chamaemorus","LeavesStems","Forb","40",2.82561039924622,45.3298149108887,NA
+"MAT06",1,"F10","Ledum palustre","OldLeaves","Evergreen","160",2.29744696617126,52.579273223877,NA
+"MAT06",1,"F10","Ledum palustre","NewStems","Evergreen","38",2.18765139579773,50.4049263000488,NA
+"MAT06",1,"F10","Ledum palustre","NewStems","Evergreen","38",2.17891693115234,50.1937789916992,NA
+"MAT06",1,"F10","Ledum palustre","BelowStem","Evergreen","16",1.18378913402557,53.9362602233887,NA
+"MAT06",1,"F10","Betula nana","NewLeaves","Deciduous","33",3.89348316192627,49.173267364502,NA
+"MAT06",1,"F10","Ledum palustre","NewLeaves","Evergreen","37",2.92638158798218,52.930980682373,NA
+"MAT06",1,"F10","Other Graminoid","Rhizome","Graminoid","46",1.48870468139648,45.6533088684082,NA
+"MAT06",1,"F10","Other Graminoid","BladeSheathInflCulm","Graminoid","32",2.39340424537659,44.5097618103027,NA
+"MAT06",1,"F10","Betula nana","BelowStem","Deciduous","36",1.43682253360748,52.4874076843262,NA
+"MAT06",1,"F10","Betula nana","Inflor","Deciduous","9",1.90502858161926,52.7811088562012,NA
+"MAT06",1,"F10","Ledum palustre","Inflor","Evergreen","162",1.3666011095047,50.3298873901367,NA
+"MAT06",1,"F10","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","31",2.492516040802,46.5523262023926,NA
+"MAT06",1,"F10","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","31",2.59431219100952,46.1716003417969,NA
+"MAT06",1,"F10","Eriophorum vaginatum","Rhizome","Graminoid","45",2.45381259918213,47.1459007263184,NA
+"MAT06",1,"F10","Betula nana","OldStems","Deciduous","35",1.13488614559174,55.726879119873,NA
+"MAT06",1,"F5","Vaccinium vitis-idaea","NewStems","Evergreen","107",1.66946589946747,49.5486602783203,NA
+"MAT06",2,"F10","Carex bigelowii","BladeSheathInflCulm","Graminoid","735",2.72697401046753,44.1592788696289,NA
+"MAT06",2,"F10","Carex bigelowii","Rhizome","Graminoid","738",1.2669506072998,43.7418632507324,NA
+"MAT06",2,"F10","Other Graminoid","Rhizome","Graminoid","744",1.3820778131485,44.532413482666,"duplicate ID, possible misidentification"
+"MAT06",2,"F10","Betula nana","NewStems","Deciduous","731",1.38545489311218,55.8919486999512,NA
+"MAT06",2,"F10","Betula nana","NewLeaves","Deciduous","730",2.76678919792175,49.4457969665527,NA
+"MAT06",2,"F10","Betula nana","OldStems","Deciduous","732",0.963075757026672,51.3371810913086,NA
+"MAT06",2,"F10","Betula nana","Inflor","Deciduous","733",1.80611550807953,50.409252166748,NA
+"MAT06",2,"F10","Betula nana","BelowStem","Deciduous","734",1.04120326042175,50.8249435424805,NA
+"MAT06",2,"F10","Ledum palustre","NewLeaves","Evergreen","739",2.29603624343872,50.4534149169922,NA
+"MAT06",2,"F10","Ledum palustre","NewStems","Evergreen","740",1.24209761619568,50.8037147521973,NA
+"MAT06",2,"F10","Ledum palustre","NewStems","Evergreen","740",1.24744713306427,50.8893241882324,NA
+"MAT06",2,"F10","Ledum palustre","OldStems","Evergreen","741",0.881965100765228,52.1239891052246,NA
+"MAT06",2,"F10","Ledum palustre","BelowStem","Evergreen","742",1.48770880699158,45.7841453552246,NA
+"MAT06",2,"F10","Rubus chamaemorus","LeavesStems","Forb","736",3.02038097381592,45.4082450866699,NA
+"MAT06",2,"F10","Rubus chamaemorus","BelowStem","Forb","737",1.89339816570282,48.6240005493164,NA
+"MAT06",2,"F10","Other Mosses","Green","Moss","479",1.60997664928436,44.9550018310547,NA
+"MAT06",2,"F10","Litter","Litter","Litter","474",1.65469884872437,42.3409385681152,NA
+"MAT06",3,"CT","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","1045",1.19366562366486,47.3740997314453,NA
+"MAT06",3,"CT","Eriophorum vaginatum","Rhizome","Graminoid","1048",0.978498697280884,45.2638168334961,NA
+"MAT06",3,"CT","Carex bigelowii","BladeSheathInflCulm","Graminoid","1152",1.89855682849884,47.6469116210938,NA
+"MAT06",3,"CT","Carex bigelowii","Rhizome","Graminoid","1160",0.632497668266296,48.402961730957,NA
+"MAT06",3,"CT","Carex bigelowii","Rhizome","Graminoid","1160",0.605483055114746,48.5243873596191,NA
+"MAT06",3,"CT","Other Graminoid","BladeSheathInflCulm","Graminoid","982",1.46202027797699,44.6880187988281,NA
+"MAT06",3,"CT","Other Graminoid","Rhizome","Graminoid","985",0.80978000164032,47.4216384887695,NA
+"MAT06",3,"CT","Betula nana","NewLeaves","Deciduous","986",1.91779839992523,51.3054046630859,NA
+"MAT06",3,"CT","Betula nana","NewStems","Deciduous","989",1.30805432796478,56.423282623291,NA
+"MAT06",3,"CT","Betula nana","OldStems","Deciduous","966",0.781226873397827,51.6970100402832,NA
+"MAT06",3,"CT","Betula nana","BelowStem","Deciduous","983",0.721822142601013,51.0522766113281,NA
+"MAT06",3,"CT","Salix pulchra","NewLeaves","Deciduous","1025",2.04111623764038,48.932991027832,NA
+"MAT06",3,"CT","Vaccinium uliginosum","NewLeaves","Deciduous","988",1.89350092411041,52.2270317077637,NA
+"MAT06",3,"CT","Vaccinium uliginosum","NewStems","Deciduous","962",0.955111145973206,52.1909484863281,NA
+"MAT06",3,"CT","Vaccinium uliginosum","OldStems","Deciduous","965",1.08853459358215,53.0512275695801,NA
+"MAT06",3,"CT","Vaccinium uliginosum","OldStems","Deciduous","965",0.930762112140656,52.8203926086426,NA
+"MAT06",3,"CT","Vaccinium uliginosum","BelowStem","Deciduous","971",0.887787103652954,53.4028053283691,NA
+"MAT06",3,"CT","Ledum palustre","NewLeaves","Evergreen","1043",1.97892260551453,54.9521141052246,NA
+"MAT06",3,"CT","Ledum palustre","NewStems","Evergreen","1049",1.13462936878204,52.0117416381836,NA
+"MAT06",3,"CT","Salix pulchra","OldStems","Deciduous","1031",0.837459981441498,56.0600547790527,NA
+"MAT06",3,"CT","Ledum palustre","OldLeaves","Evergreen","1046",1.41600489616394,54.6504287719727,NA
+"MAT06",3,"CT","Ledum palustre","OldStems","Evergreen","1023",0.813194632530212,55.0631370544434,NA
+"MAT06",3,"CT","Ledum palustre","BelowStem","Evergreen","1026",0.802828907966614,53.9638710021973,NA
+"MAT06",3,"CT","Vaccinium vitis-idaea","NewLeaves","Evergreen","1024",1.30925893783569,51.919563293457,NA
+"MAT06",3,"CT","Vaccinium vitis-idaea","NewStems","Evergreen","1030",0.979728221893311,52.2440185546875,NA
+"MAT06",3,"CT","Vaccinium vitis-idaea","OldLeaves","Evergreen","1027",0.973273813724518,52.9015922546387,NA
+"MAT06",3,"CT","Vaccinium vitis-idaea","OldLeaves","Evergreen","1027",1.07236337661743,57.4373092651367,NA
+"MAT06",3,"CT","Vaccinium vitis-idaea","OldStems","Evergreen","1033",0.75385057926178,53.1717987060547,NA
+"MAT06",3,"CT","Vaccinium vitis-idaea","Inflor","Evergreen","1036",0.949938058853149,51.0349922180176,NA
+"MAT06",3,"CT","Vaccinium vitis-idaea","BelowStem","Evergreen","1039",0.716825604438782,43.4748077392578,NA
+"MAT06",3,"CT","Cassiope tetragona","NewStems","Evergreen","1032",1.52811002731323,57.903491973877,NA
+"MAT06",3,"CT","Cassiope tetragona","OldStems","Evergreen","1038",0.863199710845947,56.5590171813965,NA
+"MAT06",3,"CT","Cassiope tetragona","BelowStem","Evergreen","1044",0.794148445129395,53.6647911071777,NA
+"MAT06",3,"CT","Petasites frigidus","LeavesStems","Forb","974",2.84909248352051,46.3446235656738,NA
+"MAT06",3,"CT","Petasites frigidus","BelowStem","Forb","1379",1.42526853084564,46.7784538269043,NA
 "MAT06",3,"CT","Sphagnum","Green","Moss","1047",0.915110468864441,46.6403350830078,NA
-"MAT06",3,"CT","Lichen","Live","Lichen","1040",1.23325824737549,46.7777976989746,NA
-"MAT06",3,"CT","Lichen","Live","Lichen","1040",1.25973904132843,46.6439666748047,NA
-"MAT06",3,"CT","OtherForb","LeavesStems","Forb","977",2.41044044494629,47.4587860107422,NA
-"MAT06",3,"CT","OtherForb","BelowStem","Forb","980",1.10474717617035,46.6330947875977,NA
-"MAT06",3,"CT","OtherMoss","Green","Moss","1037",0.925299823284149,47.296215057373,NA
-"MAT06",2,"F2","Betnan","NewStems","Deciduous","1195",0.994651138782501,57.6515312194824,NA
-"MAT06",2,"F2","Betnan","NewLeaves","Deciduous","1082",1.98003888130188,51.2506904602051,NA
-"MAT06",2,"F2","Carbig","BladeSheathInflCulm","Graminoid","458",1.52277612686157,47.1122627258301,NA
-"MAT06",2,"F2","Salpul","OldStems","Deciduous","1176",1.627317070961,51.8501167297363,NA
-"MAT06",2,"F2","Salpul","NewStems","Deciduous","1178",1.88229930400848,51.7824325561523,NA
-"MAT06",2,"F2","Salpul","NewLeaves","Deciduous","1173",3.66858267784119,49.9097785949707,NA
-"MAT06",2,"F2","Betnan","BelowStem","Deciduous","1085",NA,NA,NA
-"MAT06",2,"F2","Betnan","Inflor","Deciduous","1197",1.07260036468506,57.862678527832,NA
-"MAT06",2,"F2","Betnan","Inflor","Deciduous","1197",1.1096910238266,56.1523056030273,NA
-"MAT06",2,"F2","OtherDeciduous","BelowStem","Deciduous","463",0.887799382209778,50.8511352539062,NA
-"MAT06",2,"F2","OtherDeciduous","OldStems","Deciduous","460",0.79349011182785,50.1768913269043,NA
-"MAT06",2,"F2","Vaculi","OldStems","Deciduous","1088",1.08180403709412,53.6211166381836,NA
-"MAT06",2,"F2","Ledpal","BelowStem","Evergreen","1098",0.722296118736267,55.7260131835938,NA
-"MAT06",2,"F2","Ledpal","Inflor","Evergreen","1097",1.47481596469879,52.4763031005859,NA
-"MAT06",2,"F2","Ledpal","OldStems","Evergreen","1095",0.775581061840057,57.5251998901367,NA
-"MAT06",2,"F2","Ledpal","OldLeaves","Evergreen","1094",1.43258094787598,54.3751258850098,NA
-"MAT06",2,"F2","Ledpal","NewStems","Evergreen","1092",1.15538382530212,52.8269577026367,NA
-"MAT06",2,"F2","Ledpal","NewLeaves","Evergreen","1091",0.833569407463074,37.0636405944824,NA
-"MAT06",2,"F2","Ledpal","NewLeaves","Evergreen","1091",1.99287593364716,55.2253532409668,NA
-"MAT06",2,"F2","OtherEvergreen","OldLeaves","Evergreen","1117",0.949413359165192,53.3016700744629,NA
-"MAT06",2,"F2","OtherEvergreen","NewLeaves","Evergreen","1115",1.38823330402374,53.2252769470215,NA
-"MAT06",2,"F2","OtherMoss","Green","Moss","1108",1.55185520648956,47.1726036071777,NA
-"MAT06",2,"F2","OtherForb","LeavesStems","Forb","1148",2.69198298454285,45.2361602783203,NA
-"MAT06",2,"F2","Vacvit","OldStems","Evergreen","1104",0.901801586151123,52.2794532775879,NA
-"MAT06",2,"F2","Vacvit","OldLeaves","Evergreen","1103",0.948178112506866,52.0594902038574,NA
-"MAT06",2,"F2","Vacvit","NewStems","Evergreen","1101",1.2688090801239,53.0852928161621,NA
-"MAT06",2,"F2","Rubcha","BelowStem","Forb","1110",0.919716536998749,52.8781509399414,NA
-"MAT06",2,"F2","Vacvit","NewLeaves","Evergreen","1100",1.37620377540588,53.4293594360352,NA
-"MAT06",2,"F2","Rubcha","LeavesStems","Forb","1109",2.27680444717407,50.7531890869141,NA
-"MAT06",2,"F2","Rubcha","LeavesStems","Forb","1109",2.33056998252869,50.424015045166,NA
-"MAT06",2,"F2","Vacvit","BelowStem","Evergreen","1107",1.08874559402466,55.2017593383789,NA
-"MAT06",2,"F2","OtherEvergreen","OldStems","Evergreen","1118",0.641993939876556,58.7100791931152,NA
-"MAT06",2,"F2","Vaculi","NewLeaves","Deciduous","1086",1.73573064804077,52.800048828125,NA
-"MAT06",2,"F2","OtherDeciduous","NewLeaves","Deciduous","454",1.6567291021347,51.0925941467285,NA
-"MAT06",2,"F2","OtherDeciduous","NewStems","Deciduous","457",0.924746453762054,50.7789535522461,NA
-"MAT06",2,"F2","Vacvit","Inflor","Evergreen","1106",1.11807763576508,50.744556427002,NA
-"MAT06",2,"F2","Attached","Litter","Litter","1114",0.788929045200348,49.8395233154297,NA
-"MAT06",2,"F2","Attached","Litter","Litter","1114",0.660810589790344,41.9713363647461,NA
-"MAT06",2,"F2","OtherEvergreen","NewStems","Evergreen","1116",1.18491280078888,55.1643104553223,NA
-"MAT06",2,"F2","OtherEvergreen","Inflor","Evergreen","1119",1.01802933216095,63.0093116760254,NA
+"MAT06",3,"CT","Mixed Lichen","Live","Lichen","1040",1.23325824737549,46.7777976989746,NA
+"MAT06",3,"CT","Mixed Lichen","Live","Lichen","1040",1.25973904132843,46.6439666748047,NA
+"MAT06",3,"CT","Other Forb","LeavesStems","Forb","977",2.41044044494629,47.4587860107422,NA
+"MAT06",3,"CT","Other Forb","BelowStem","Forb","980",1.10474717617035,46.6330947875977,NA
+"MAT06",3,"CT","Other Mosses","Green","Moss","1037",0.925299823284149,47.296215057373,NA
+"MAT06",2,"F2","Betula nana","NewStems","Deciduous","1195",0.994651138782501,57.6515312194824,NA
+"MAT06",2,"F2","Betula nana","NewLeaves","Deciduous","1082",1.98003888130188,51.2506904602051,NA
+"MAT06",2,"F2","Carex bigelowii","BladeSheathInflCulm","Graminoid","458",1.52277612686157,47.1122627258301,NA
+"MAT06",2,"F2","Salix pulchra","OldStems","Deciduous","1176",1.627317070961,51.8501167297363,NA
+"MAT06",2,"F2","Salix pulchra","NewStems","Deciduous","1178",1.88229930400848,51.7824325561523,NA
+"MAT06",2,"F2","Salix pulchra","NewLeaves","Deciduous","1173",3.66858267784119,49.9097785949707,NA
+"MAT06",2,"F2","Betula nana","BelowStem","Deciduous","1085",NA,NA,NA
+"MAT06",2,"F2","Betula nana","Inflor","Deciduous","1197",1.07260036468506,57.862678527832,NA
+"MAT06",2,"F2","Betula nana","Inflor","Deciduous","1197",1.1096910238266,56.1523056030273,NA
+"MAT06",2,"F2","Other Deciduous","BelowStem","Deciduous","463",0.887799382209778,50.8511352539062,NA
+"MAT06",2,"F2","Other Deciduous","OldStems","Deciduous","460",0.79349011182785,50.1768913269043,NA
+"MAT06",2,"F2","Vaccinium uliginosum","OldStems","Deciduous","1088",1.08180403709412,53.6211166381836,NA
+"MAT06",2,"F2","Ledum palustre","BelowStem","Evergreen","1098",0.722296118736267,55.7260131835938,NA
+"MAT06",2,"F2","Ledum palustre","Inflor","Evergreen","1097",1.47481596469879,52.4763031005859,NA
+"MAT06",2,"F2","Ledum palustre","OldStems","Evergreen","1095",0.775581061840057,57.5251998901367,NA
+"MAT06",2,"F2","Ledum palustre","OldLeaves","Evergreen","1094",1.43258094787598,54.3751258850098,NA
+"MAT06",2,"F2","Ledum palustre","NewStems","Evergreen","1092",1.15538382530212,52.8269577026367,NA
+"MAT06",2,"F2","Ledum palustre","NewLeaves","Evergreen","1091",0.833569407463074,37.0636405944824,NA
+"MAT06",2,"F2","Ledum palustre","NewLeaves","Evergreen","1091",1.99287593364716,55.2253532409668,NA
+"MAT06",2,"F2","Other Evergreen","OldLeaves","Evergreen","1117",0.949413359165192,53.3016700744629,NA
+"MAT06",2,"F2","Other Evergreen","NewLeaves","Evergreen","1115",1.38823330402374,53.2252769470215,NA
+"MAT06",2,"F2","Other Mosses","Green","Moss","1108",1.55185520648956,47.1726036071777,NA
+"MAT06",2,"F2","Other Forb","LeavesStems","Forb","1148",2.69198298454285,45.2361602783203,NA
+"MAT06",2,"F2","Vaccinium vitis-idaea","OldStems","Evergreen","1104",0.901801586151123,52.2794532775879,NA
+"MAT06",2,"F2","Vaccinium vitis-idaea","OldLeaves","Evergreen","1103",0.948178112506866,52.0594902038574,NA
+"MAT06",2,"F2","Vaccinium vitis-idaea","NewStems","Evergreen","1101",1.2688090801239,53.0852928161621,NA
+"MAT06",2,"F2","Rubus chamaemorus","BelowStem","Forb","1110",0.919716536998749,52.8781509399414,NA
+"MAT06",2,"F2","Vaccinium vitis-idaea","NewLeaves","Evergreen","1100",1.37620377540588,53.4293594360352,NA
+"MAT06",2,"F2","Rubus chamaemorus","LeavesStems","Forb","1109",2.27680444717407,50.7531890869141,NA
+"MAT06",2,"F2","Rubus chamaemorus","LeavesStems","Forb","1109",2.33056998252869,50.424015045166,NA
+"MAT06",2,"F2","Vaccinium vitis-idaea","BelowStem","Evergreen","1107",1.08874559402466,55.2017593383789,NA
+"MAT06",2,"F2","Other Evergreen","OldStems","Evergreen","1118",0.641993939876556,58.7100791931152,NA
+"MAT06",2,"F2","Vaccinium uliginosum","NewLeaves","Deciduous","1086",1.73573064804077,52.800048828125,NA
+"MAT06",2,"F2","Other Deciduous","NewLeaves","Deciduous","454",1.6567291021347,51.0925941467285,NA
+"MAT06",2,"F2","Other Deciduous","NewStems","Deciduous","457",0.924746453762054,50.7789535522461,NA
+"MAT06",2,"F2","Vaccinium vitis-idaea","Inflor","Evergreen","1106",1.11807763576508,50.744556427002,NA
+"MAT06",2,"F2","Litter","Litter","Litter","1114",0.788929045200348,49.8395233154297,NA
+"MAT06",2,"F2","Litter","Litter","Litter","1114",0.660810589790344,41.9713363647461,NA
+"MAT06",2,"F2","Other Evergreen","NewStems","Evergreen","1116",1.18491280078888,55.1643104553223,NA
+"MAT06",2,"F2","Other Evergreen","Inflor","Evergreen","1119",1.01802933216095,63.0093116760254,NA
 "MAT06",2,"F2","Sphagnum","Green","Moss","1177",NA,NA,NA
-"MAT06",3,"F1","Carbig","Rhizome","Graminoid","780",0.88243579864502,47.8731575012207,NA
-"MAT06",3,"F1","Betnan","NewLeaves","Deciduous","777",2.47844481468201,50.466911315918,NA
-"MAT06",3,"F1","Betnan","NewStems","Deciduous","803",1.14197373390198,56.6109352111816,NA
-"MAT06",3,"F1","Betnan","OldStems","Deciduous","806",0.921206951141357,53.6490516662598,NA
-"MAT06",3,"F1","Betnan","Inflor","Deciduous","1304",1.77171921730042,52.5419654846191,NA
-"MAT06",3,"F1","Ledpal","NewStems","Evergreen","1051",1.1551148891449,51.3724174499512,NA
-"MAT06",3,"F1","Salpul","NewLeaves","Deciduous","801",1.98238337039948,50.8644180297852,NA
-"MAT06",3,"F1","Salpul","NewStems","Deciduous","804",0.942643046379089,51.6085205078125,NA
-"MAT06",3,"F1","Salpul","OldStems","Deciduous","807",0.699550092220306,49.7912826538086,NA
-"MAT06",3,"F1","Salpul","OldStems","Deciduous","807",0.706505298614502,49.8678588867188,NA
-"MAT06",3,"F1","Vaculi","NewLeaves","Deciduous","1206",2.44001412391663,49.7281036376953,NA
-"MAT06",3,"F1","Ledpal","NewLeaves","Evergreen","1054",2.07362818717957,53.2539672851562,NA
-"MAT06",3,"F1","Ledpal","OldLeaves","Evergreen","1057",1.48953628540039,52.6093368530273,NA
-"MAT06",3,"F1","Ledpal","OldStems","Evergreen","1060",0.792380928993225,54.9165000915527,NA
-"MAT06",3,"F1","Ledpal","Inflor","Evergreen","1066",1.12192285060883,50.5675964355469,NA
-"MAT06",3,"F1","Ledpal","BelowStem","Evergreen","1063",0.945430099964142,54.4205474853516,NA
-"MAT06",3,"F1","Vacvit","NewStems","Evergreen","1072",1.01969826221466,51.7262573242188,NA
-"MAT06",3,"F1","OtherEvergreen","OldStems","Evergreen","1064",0.630645513534546,56.7793998718262,NA
-"MAT06",3,"F1","Vacvit","OldLeaves","Evergreen","1075",0.927678942680359,51.2510070800781,NA
-"MAT06",3,"F1","Vacvit","OldStems","Evergreen","1078",0.96251767873764,51.014575958252,NA
-"MAT06",3,"F1","Vacvit","OldStems","Evergreen","1078",0.96767121553421,51.1155776977539,NA
-"MAT06",3,"F1","Vacvit","BelowStem","Evergreen","1052",0.99816220998764,50.0537414550781,NA
-"MAT06",3,"F1","Vaculi","OldStems","Deciduous","1208",1.04559004306793,52.9531021118164,NA
-"MAT06",3,"F1","Vacvit","NewLeaves","Evergreen","1069",1.28585410118103,50.5084991455078,NA
-"MAT06",3,"F1","OtherEvergreen","OldLeaves","Evergreen","1061",0.973127067089081,53.6500816345215,"duplicate ID, possible misidentification"
+"MAT06",3,"F1","Carex bigelowii","Rhizome","Graminoid","780",0.88243579864502,47.8731575012207,NA
+"MAT06",3,"F1","Betula nana","NewLeaves","Deciduous","777",2.47844481468201,50.466911315918,NA
+"MAT06",3,"F1","Betula nana","NewStems","Deciduous","803",1.14197373390198,56.6109352111816,NA
+"MAT06",3,"F1","Betula nana","OldStems","Deciduous","806",0.921206951141357,53.6490516662598,NA
+"MAT06",3,"F1","Betula nana","Inflor","Deciduous","1304",1.77171921730042,52.5419654846191,NA
+"MAT06",3,"F1","Ledum palustre","NewStems","Evergreen","1051",1.1551148891449,51.3724174499512,NA
+"MAT06",3,"F1","Salix pulchra","NewLeaves","Deciduous","801",1.98238337039948,50.8644180297852,NA
+"MAT06",3,"F1","Salix pulchra","NewStems","Deciduous","804",0.942643046379089,51.6085205078125,NA
+"MAT06",3,"F1","Salix pulchra","OldStems","Deciduous","807",0.699550092220306,49.7912826538086,NA
+"MAT06",3,"F1","Salix pulchra","OldStems","Deciduous","807",0.706505298614502,49.8678588867188,NA
+"MAT06",3,"F1","Vaccinium uliginosum","NewLeaves","Deciduous","1206",2.44001412391663,49.7281036376953,NA
+"MAT06",3,"F1","Ledum palustre","NewLeaves","Evergreen","1054",2.07362818717957,53.2539672851562,NA
+"MAT06",3,"F1","Ledum palustre","OldLeaves","Evergreen","1057",1.48953628540039,52.6093368530273,NA
+"MAT06",3,"F1","Ledum palustre","OldStems","Evergreen","1060",0.792380928993225,54.9165000915527,NA
+"MAT06",3,"F1","Ledum palustre","Inflor","Evergreen","1066",1.12192285060883,50.5675964355469,NA
+"MAT06",3,"F1","Ledum palustre","BelowStem","Evergreen","1063",0.945430099964142,54.4205474853516,NA
+"MAT06",3,"F1","Vaccinium vitis-idaea","NewStems","Evergreen","1072",1.01969826221466,51.7262573242188,NA
+"MAT06",3,"F1","Other Evergreen","OldStems","Evergreen","1064",0.630645513534546,56.7793998718262,NA
+"MAT06",3,"F1","Vaccinium vitis-idaea","OldLeaves","Evergreen","1075",0.927678942680359,51.2510070800781,NA
+"MAT06",3,"F1","Vaccinium vitis-idaea","OldStems","Evergreen","1078",0.96251767873764,51.014575958252,NA
+"MAT06",3,"F1","Vaccinium vitis-idaea","OldStems","Evergreen","1078",0.96767121553421,51.1155776977539,NA
+"MAT06",3,"F1","Vaccinium vitis-idaea","BelowStem","Evergreen","1052",0.99816220998764,50.0537414550781,NA
+"MAT06",3,"F1","Vaccinium uliginosum","OldStems","Deciduous","1208",1.04559004306793,52.9531021118164,NA
+"MAT06",3,"F1","Vaccinium vitis-idaea","NewLeaves","Evergreen","1069",1.28585410118103,50.5084991455078,NA
+"MAT06",3,"F1","Other Evergreen","OldLeaves","Evergreen","1061",0.973127067089081,53.6500816345215,"duplicate ID, possible misidentification"
 "MAT06",3,"F1","Sphagnum","Green","Moss","1076",1.44079422950745,45.5482711791992,NA
-"MAT06",3,"F1","OtherEvergreen","Inflor","Evergreen","1070",0.975975751876831,50.1291465759277,NA
-"MAT06",3,"F1","Lichen","Live","Lichen","1053",0.794368982315063,44.8342018127441,NA
-"MAT06",3,"F1","OtherEvergreen","NewLeaves","Evergreen","1055",1.50941872596741,53.304744720459,NA
-"MAT06",3,"F1","OtherEvergreen","NewStems","Evergreen","1058",0.909820556640625,53.3156204223633,NA
-"MAT06",3,"F1","OtherForb","BelowStem","Forb","1310",2.09529447555542,44.820484161377,NA
-"MAT06",3,"F1","OtherForb","BelowStem","Forb","1310",2.38857293128967,51.251392364502,NA
-"MAT06",3,"F1","OtherMoss","Green","Moss","1079",1.28788614273071,45.8865051269531,NA
-"MAT06",3,"F1","OtherForb","LeavesStems","Forb","1073",2.17732715606689,45.4410057067871,NA
-"MAT06",3,"F1","OtherEvergreen","BelowStem","Evergreen","1067",0.770727694034576,50.5433349609375,NA
-"MAT06",1,"CT","Erivag","BladeSheathInflCulm","Graminoid","264",1.49460351467133,43.5566825866699,NA
-"MAT06",1,"CT","Erivag","BladeSheathInflCulm","Graminoid","264",0.725220382213593,21.3876705169678,NA
-"MAT06",1,"CT","Erivag","Rhizome","Graminoid","268",0.81545615196228,41.8189659118652,NA
-"MAT06",1,"CT","Betnan","NewLeaves","Deciduous","17",1.92290711402893,50.1389770507812,NA
-"MAT06",1,"CT","Betnan","NewStems","Deciduous","18",1.16100633144379,57.6896629333496,NA
-"MAT06",1,"CT","Ledpal","Inflor","Evergreen","212",0.695299029350281,50.6790351867676,NA
-"MAT06",1,"CT","Betnan","BelowStem","Deciduous","230",1.20268130302429,50.5506591796875,NA
-"MAT06",1,"CT","Betnan","Inflor","Deciduous","20",1.21702349185944,50.8155708312988,NA
-"MAT06",1,"CT","Ledpal","NewLeaves","Evergreen","281",1.42916643619537,43.039478302002,NA
-"MAT06",1,"CT","Ledpal","OldLeaves","Evergreen","283",1.13772928714752,51.1407585144043,NA
-"MAT06",1,"CT","Ledpal","OldStems","Evergreen","284",0.776545643806458,53.7971992492676,NA
-"MAT06",1,"CT","Ledpal","BelowStem","Evergreen","213",0.741377592086792,49.6504440307617,NA
-"MAT06",1,"CT","Ledpal","BelowStem","Evergreen","213",0.728114724159241,52.0607414245605,NA
-"MAT06",1,"CT","Vacvit","NewLeaves","Evergreen","277",1.46626472473145,64.7627944946289,NA
-"MAT06",1,"CT","OtherEvergreen","NewStems","Evergreen","265",0.937733829021454,52.7890167236328,NA
-"MAT06",1,"CT","Vacvit","NewStems","Evergreen","278",0.92738538980484,51.6553802490234,NA
-"MAT06",1,"CT","Vacvit","OldLeaves","Evergreen","222",0.885497629642487,50.6841278076172,"likely 222"
-"MAT06",1,"CT","Vacvit","OldStems","Evergreen","279",0.81337296962738,52.6939849853516,NA
-"MAT06",1,"CT","Vacvit","Inflor","Evergreen","276",0.87010383605957,39.2545967102051,NA
-"MAT06",1,"CT","Vacvit","BelowStem","Evergreen","280",0.892601847648621,51.1211814880371,NA
-"MAT06",1,"CT","OtherEvergreen","NewLeaves","Evergreen","261",1.57591843605042,53.817813873291,NA
-"MAT06",1,"CT","OtherEvergreen","OldLeaves","Evergreen","266",1.0592223405838,54.8019371032715,NA
-"MAT06",1,"CT","OtherEvergreen","BelowStem","Evergreen","26",1.00071346759796,56.0137710571289,NA
-"MAT06",1,"CT","OtherEvergreen","BelowStem","Evergreen","26",1.06769394874573,56.8749809265137,NA
-"MAT06",1,"CT","Rubcha","LeavesStems","Forb","274",2.47022008895874,42.1566772460938,"may have been swapped with 113"
-"MAT06",1,"CT","Rubcha","BelowStem","Forb","275",0.829280078411102,49.2697143554688,NA
+"MAT06",3,"F1","Other Evergreen","Inflor","Evergreen","1070",0.975975751876831,50.1291465759277,NA
+"MAT06",3,"F1","Mixed Lichen","Live","Lichen","1053",0.794368982315063,44.8342018127441,NA
+"MAT06",3,"F1","Other Evergreen","NewLeaves","Evergreen","1055",1.50941872596741,53.304744720459,NA
+"MAT06",3,"F1","Other Evergreen","NewStems","Evergreen","1058",0.909820556640625,53.3156204223633,NA
+"MAT06",3,"F1","Other Forb","BelowStem","Forb","1310",2.09529447555542,44.820484161377,NA
+"MAT06",3,"F1","Other Forb","BelowStem","Forb","1310",2.38857293128967,51.251392364502,NA
+"MAT06",3,"F1","Other Mosses","Green","Moss","1079",1.28788614273071,45.8865051269531,NA
+"MAT06",3,"F1","Other Forb","LeavesStems","Forb","1073",2.17732715606689,45.4410057067871,NA
+"MAT06",3,"F1","Other Evergreen","BelowStem","Evergreen","1067",0.770727694034576,50.5433349609375,NA
+"MAT06",1,"CT","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","264",1.49460351467133,43.5566825866699,NA
+"MAT06",1,"CT","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","264",0.725220382213593,21.3876705169678,NA
+"MAT06",1,"CT","Eriophorum vaginatum","Rhizome","Graminoid","268",0.81545615196228,41.8189659118652,NA
+"MAT06",1,"CT","Betula nana","NewLeaves","Deciduous","17",1.92290711402893,50.1389770507812,NA
+"MAT06",1,"CT","Betula nana","NewStems","Deciduous","18",1.16100633144379,57.6896629333496,NA
+"MAT06",1,"CT","Ledum palustre","Inflor","Evergreen","212",0.695299029350281,50.6790351867676,NA
+"MAT06",1,"CT","Betula nana","BelowStem","Deciduous","230",1.20268130302429,50.5506591796875,NA
+"MAT06",1,"CT","Betula nana","Inflor","Deciduous","20",1.21702349185944,50.8155708312988,NA
+"MAT06",1,"CT","Ledum palustre","NewLeaves","Evergreen","281",1.42916643619537,43.039478302002,NA
+"MAT06",1,"CT","Ledum palustre","OldLeaves","Evergreen","283",1.13772928714752,51.1407585144043,NA
+"MAT06",1,"CT","Ledum palustre","OldStems","Evergreen","284",0.776545643806458,53.7971992492676,NA
+"MAT06",1,"CT","Ledum palustre","BelowStem","Evergreen","213",0.741377592086792,49.6504440307617,NA
+"MAT06",1,"CT","Ledum palustre","BelowStem","Evergreen","213",0.728114724159241,52.0607414245605,NA
+"MAT06",1,"CT","Vaccinium vitis-idaea","NewLeaves","Evergreen","277",1.46626472473145,64.7627944946289,NA
+"MAT06",1,"CT","Other Evergreen","NewStems","Evergreen","265",0.937733829021454,52.7890167236328,NA
+"MAT06",1,"CT","Vaccinium vitis-idaea","NewStems","Evergreen","278",0.92738538980484,51.6553802490234,NA
+"MAT06",1,"CT","Vaccinium vitis-idaea","OldLeaves","Evergreen","222",0.885497629642487,50.6841278076172,"likely 222"
+"MAT06",1,"CT","Vaccinium vitis-idaea","OldStems","Evergreen","279",0.81337296962738,52.6939849853516,NA
+"MAT06",1,"CT","Vaccinium vitis-idaea","Inflor","Evergreen","276",0.87010383605957,39.2545967102051,NA
+"MAT06",1,"CT","Vaccinium vitis-idaea","BelowStem","Evergreen","280",0.892601847648621,51.1211814880371,NA
+"MAT06",1,"CT","Other Evergreen","NewLeaves","Evergreen","261",1.57591843605042,53.817813873291,NA
+"MAT06",1,"CT","Other Evergreen","OldLeaves","Evergreen","266",1.0592223405838,54.8019371032715,NA
+"MAT06",1,"CT","Other Evergreen","BelowStem","Evergreen","26",1.00071346759796,56.0137710571289,NA
+"MAT06",1,"CT","Other Evergreen","BelowStem","Evergreen","26",1.06769394874573,56.8749809265137,NA
+"MAT06",1,"CT","Rubus chamaemorus","LeavesStems","Forb","274",2.47022008895874,42.1566772460938,"may have been swapped with 113"
+"MAT06",1,"CT","Rubus chamaemorus","BelowStem","Forb","275",0.829280078411102,49.2697143554688,NA
 "MAT06",1,"CT","Sphagnum","Green","Moss","273",0.986797332763672,45.91748046875,NA
-"MAT06",1,"CT","OtherMoss","Green","Moss","269",1.0923570394516,48.0567817687988,NA
-"MAT06",1,"CT","Lichen","Live","Lichen","270",0.585963129997253,45.5729217529297,NA
-"MAT06",1,"CT","Attached","Litter","Litter","272",0.565297305583954,48.7396125793457,NA
-"MAT06",1,"CT","Attached","Wood","Litter","226",1.28185033798218,58.6620025634766,NA
-"MAT06",1,"CT","OtherForb","LeavesStems","Forb","229",2.69026112556458,48.8450012207031,NA
-"MAT06",2,"F1","Erivag","BladeSheathInflCulm","Graminoid","934",0.614208281040192,44.2282638549805,NA
-"MAT06",2,"F1","Erivag","Rhizome","Graminoid","992",1.04975354671478,46.7416572570801,NA
-"MAT06",2,"F1","Carbig","BladeSheathInflCulm","Graminoid","477",1.24265921115875,45.9305229187012,NA
-"MAT06",2,"F1","Carbig","Rhizome","Graminoid","480",0.625108301639557,47.8947105407715,NA
-"MAT06",2,"F1","OtherGraminoid","Rhizome","Graminoid","728",0.504840791225433,46.2289772033691,NA
-"MAT06",2,"F1","Salpul","OldStems","Deciduous","637",1.03104650974274,52.1088638305664,NA
-"MAT06",2,"F1","Betnan","NewStems","Deciduous","645",0.806032240390778,59.6315498352051,NA
-"MAT06",2,"F1","Betnan","OldStems","Deciduous","646",0.66447901725769,52.1678009033203,NA
-"MAT06",2,"F1","Betnan","Inflor","Deciduous","708",0.986258685588837,52.227912902832,NA
-"MAT06",2,"F1","Betnan","BelowStem","Deciduous","647",0.644661009311676,53.9719047546387,NA
-"MAT06",2,"F1","Betnan","BelowStem","Deciduous","647",0.684432208538055,53.7027816772461,NA
-"MAT06",2,"F1","Salpul","NewLeaves","Deciduous","635",2.40331983566284,49.4614677429199,NA
-"MAT06",2,"F1","Salpul","NewStems","Deciduous","636",1.33198308944702,51.7643356323242,NA
-"MAT06",2,"F1","Vaculi","NewLeaves","Deciduous","631",1.81367802619934,50.0605773925781,NA
-"MAT06",2,"F1","Vaculi","OldStems","Deciduous","633",0.695511937141418,52.5836563110352,NA
-"MAT06",2,"F1","Ledpal","NewStems","Evergreen","654",1.22004115581512,53.5698165893555,NA
-"MAT06",2,"F1","Ledpal","OldStems","Evergreen","656",0.430707007646561,45.7861976623535,NA
-"MAT06",2,"F1","Ledpal","Inflor","Evergreen","657",1.16834914684296,50.9648094177246,NA
-"MAT06",2,"F1","Ledpal","BelowStem","Evergreen","638",0.688922107219696,53.1841697692871,NA
-"MAT06",2,"F1","Vacvit","NewLeaves","Evergreen","648",1.32418406009674,50.8749351501465,NA
-"MAT06",2,"F1","Vacvit","NewStems","Evergreen","649",1.17635893821716,52.3277740478516,NA
-"MAT06",2,"F1","Vacvit","NewStems","Evergreen","649",1.20621061325073,52.0753898620605,NA
-"MAT06",2,"F1","Vacvit","OldLeaves","Evergreen","950",0.949079394340515,51.5062599182129,NA
-"MAT06",2,"F1","Vacvit","BelowStem","Evergreen","652",0.731293380260468,51.4178581237793,NA
-"MAT06",2,"F1","Vacvit","Inflor","Evergreen","651",1.3038432598114,53.9562377929688,NA
-"MAT06",2,"F1","OtherEvergreen","NewStems","Evergreen","659",1.15688991546631,55.2709045410156,NA
-"MAT06",2,"F1","OtherEvergreen","OldLeaves","Evergreen","660",1.19284129142761,57.3215446472168,NA
-"MAT06",2,"F1","OtherEvergreen","NewLeaves","Evergreen","658",1.72237730026245,56.8791046142578,NA
-"MAT06",2,"F1","OtherEvergreen","OldStems","Evergreen","661",0.702568769454956,60.0718688964844,NA
-"MAT06",2,"F1","OtherEvergreen","Inflor","Evergreen","662",0.498278647661209,54.7952766418457,NA
-"MAT06",2,"F1","OtherEvergreen","BelowStem","Evergreen","663",0.812850773334503,59.0724830627441,NA
-"MAT06",2,"F1","Rubcha","LeavesStems","Forb","640",2.24771881103516,52.9150428771973,NA
-"MAT06",2,"F1","Rubcha","LeavesStems","Forb","640",2.29252958297729,52.2227096557617,NA
-"MAT06",2,"F1","Rubcha","BelowStem","Forb","641",0.999239087104797,53.6560859680176,NA
-"MAT06",2,"F1","OtherForb","LeavesStems","Forb","639",2.18110871315002,49.8501663208008,NA
-"MAT06",2,"F1","OtherForb","BelowStem","Forb","696",0.706108152866364,49.6345367431641,NA
+"MAT06",1,"CT","Other Mosses","Green","Moss","269",1.0923570394516,48.0567817687988,NA
+"MAT06",1,"CT","Mixed Lichen","Live","Lichen","270",0.585963129997253,45.5729217529297,NA
+"MAT06",1,"CT","Litter","Litter","Litter","272",0.565297305583954,48.7396125793457,NA
+"MAT06",1,"CT","Litter","Wood","Litter","226",1.28185033798218,58.6620025634766,NA
+"MAT06",1,"CT","Other Forb","LeavesStems","Forb","229",2.69026112556458,48.8450012207031,NA
+"MAT06",2,"F1","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","934",0.614208281040192,44.2282638549805,NA
+"MAT06",2,"F1","Eriophorum vaginatum","Rhizome","Graminoid","992",1.04975354671478,46.7416572570801,NA
+"MAT06",2,"F1","Carex bigelowii","BladeSheathInflCulm","Graminoid","477",1.24265921115875,45.9305229187012,NA
+"MAT06",2,"F1","Carex bigelowii","Rhizome","Graminoid","480",0.625108301639557,47.8947105407715,NA
+"MAT06",2,"F1","Other Graminoid","Rhizome","Graminoid","728",0.504840791225433,46.2289772033691,NA
+"MAT06",2,"F1","Salix pulchra","OldStems","Deciduous","637",1.03104650974274,52.1088638305664,NA
+"MAT06",2,"F1","Betula nana","NewStems","Deciduous","645",0.806032240390778,59.6315498352051,NA
+"MAT06",2,"F1","Betula nana","OldStems","Deciduous","646",0.66447901725769,52.1678009033203,NA
+"MAT06",2,"F1","Betula nana","Inflor","Deciduous","708",0.986258685588837,52.227912902832,NA
+"MAT06",2,"F1","Betula nana","BelowStem","Deciduous","647",0.644661009311676,53.9719047546387,NA
+"MAT06",2,"F1","Betula nana","BelowStem","Deciduous","647",0.684432208538055,53.7027816772461,NA
+"MAT06",2,"F1","Salix pulchra","NewLeaves","Deciduous","635",2.40331983566284,49.4614677429199,NA
+"MAT06",2,"F1","Salix pulchra","NewStems","Deciduous","636",1.33198308944702,51.7643356323242,NA
+"MAT06",2,"F1","Vaccinium uliginosum","NewLeaves","Deciduous","631",1.81367802619934,50.0605773925781,NA
+"MAT06",2,"F1","Vaccinium uliginosum","OldStems","Deciduous","633",0.695511937141418,52.5836563110352,NA
+"MAT06",2,"F1","Ledum palustre","NewStems","Evergreen","654",1.22004115581512,53.5698165893555,NA
+"MAT06",2,"F1","Ledum palustre","OldStems","Evergreen","656",0.430707007646561,45.7861976623535,NA
+"MAT06",2,"F1","Ledum palustre","Inflor","Evergreen","657",1.16834914684296,50.9648094177246,NA
+"MAT06",2,"F1","Ledum palustre","BelowStem","Evergreen","638",0.688922107219696,53.1841697692871,NA
+"MAT06",2,"F1","Vaccinium vitis-idaea","NewLeaves","Evergreen","648",1.32418406009674,50.8749351501465,NA
+"MAT06",2,"F1","Vaccinium vitis-idaea","NewStems","Evergreen","649",1.17635893821716,52.3277740478516,NA
+"MAT06",2,"F1","Vaccinium vitis-idaea","NewStems","Evergreen","649",1.20621061325073,52.0753898620605,NA
+"MAT06",2,"F1","Vaccinium vitis-idaea","OldLeaves","Evergreen","950",0.949079394340515,51.5062599182129,NA
+"MAT06",2,"F1","Vaccinium vitis-idaea","BelowStem","Evergreen","652",0.731293380260468,51.4178581237793,NA
+"MAT06",2,"F1","Vaccinium vitis-idaea","Inflor","Evergreen","651",1.3038432598114,53.9562377929688,NA
+"MAT06",2,"F1","Other Evergreen","NewStems","Evergreen","659",1.15688991546631,55.2709045410156,NA
+"MAT06",2,"F1","Other Evergreen","OldLeaves","Evergreen","660",1.19284129142761,57.3215446472168,NA
+"MAT06",2,"F1","Other Evergreen","NewLeaves","Evergreen","658",1.72237730026245,56.8791046142578,NA
+"MAT06",2,"F1","Other Evergreen","OldStems","Evergreen","661",0.702568769454956,60.0718688964844,NA
+"MAT06",2,"F1","Other Evergreen","Inflor","Evergreen","662",0.498278647661209,54.7952766418457,NA
+"MAT06",2,"F1","Other Evergreen","BelowStem","Evergreen","663",0.812850773334503,59.0724830627441,NA
+"MAT06",2,"F1","Rubus chamaemorus","LeavesStems","Forb","640",2.24771881103516,52.9150428771973,NA
+"MAT06",2,"F1","Rubus chamaemorus","LeavesStems","Forb","640",2.29252958297729,52.2227096557617,NA
+"MAT06",2,"F1","Rubus chamaemorus","BelowStem","Forb","641",0.999239087104797,53.6560859680176,NA
+"MAT06",2,"F1","Other Forb","LeavesStems","Forb","639",2.18110871315002,49.8501663208008,NA
+"MAT06",2,"F1","Other Forb","BelowStem","Forb","696",0.706108152866364,49.6345367431641,NA
 "MAT06",2,"F1","Sphagnum","Green","Moss","642",1.06816756725311,51.0879173278809,NA
-"MAT06",2,"F1","OtherMoss","Green","Moss","643",1.67972266674042,51.2215538024902,NA
-"MAT06",2,"F1","Rubcha","InflorStalks","Forb","957",1.94164776802063,54.19091796875,NA
-"MAT06",2,"F1","Lichen","Live","Lichen","940",1.35017740726471,50.4365577697754,NA
-"MAT06",2,"F5","Erivag","BladeSheathInflCulm","Graminoid","928",1.82727134227753,55.5303421020508,NA
-"MAT06",2,"F5","Erivag","Rhizome","Graminoid","929",2.95650172233582,56.1791877746582,NA
-"MAT06",2,"F5","Erivag","Rhizome","Graminoid","929",2.60869765281677,57.7962112426758,NA
-"MAT06",2,"F5","Carbig","BladeSheathInflCulm","Graminoid","1022",2.33058738708496,56.0032653808594,NA
-"MAT06",2,"F5","Carbig","Rhizome","Graminoid","503",1.51778888702393,57.5718612670898,NA
-"MAT06",2,"F5","OtherGraminoid","BladeSheathInflCulm","Graminoid","504",2.83538675308228,53.8817329406738,NA
-"MAT06",2,"F5","OtherGraminoid","Rhizome","Graminoid","505",1.72980487346649,54.1328010559082,NA
-"MAT06",2,"F5","Betnan","NewLeaves","Deciduous","911",3.5858154296875,60.1573715209961,NA
-"MAT06",2,"F5","Betnan","NewStems","Deciduous","912",2.22517943382263,64.7384643554688,NA
-"MAT06",2,"F5","Betnan","OldStems","Deciduous","913",1.34655773639679,65.1211471557617,NA
-"MAT06",2,"F5","Betnan","Inflor","Deciduous","914",2.20497608184814,62.8576278686523,NA
-"MAT06",2,"F5","Betnan","BelowStem","Deciduous","915",1.34897494316101,58.4916610717773,NA
-"MAT06",2,"F5","Salpul","NewLeaves","Deciduous","510",2.43677234649658,59.9425086975098,NA
-"MAT06",2,"F5","Salpul","NewLeaves","Deciduous","510",2.4969048500061,59.4845771789551,NA
-"MAT06",2,"F5","Salpul","OldStems","Deciduous","528",1.42343187332153,59.529541015625,NA
-"MAT06",2,"F5","Vaculi","NewLeaves","Deciduous","927",2.55996465682983,56.6598510742188,NA
-"MAT06",2,"F5","Vaculi","OldStems","Deciduous","534",1.13048493862152,61.4683647155762,NA
-"MAT06",2,"F5","Vaculi","NewStems","Deciduous","533",NA,1.73594915866852,NA
-"MAT06",2,"F5","Ledpal","NewLeaves","Evergreen","905",NA,66.0314559936523,NA
-"MAT06",2,"F5","Ledpal","NewStems","Evergreen","906",1.48630630970001,62.2419509887695,NA
-"MAT06",2,"F5","Ledpal","OldLeaves","Evergreen","907",2.09543514251709,65.5886917114258,NA
-"MAT06",2,"F5","Ledpal","OldStems","Evergreen","908",1.39764511585236,70.2719802856445,NA
-"MAT06",2,"F5","Ledpal","Inflor","Evergreen","909",1.88308596611023,64.8542251586914,NA
-"MAT06",2,"F5","Ledpal","BelowStem","Evergreen","910",1.37050545215607,64.5007553100586,NA
-"MAT06",2,"F5","Ledpal","BelowStem","Evergreen","910",1.27327382564545,67.1291809082031,NA
-"MAT06",2,"F5","Vacvit","NewLeaves","Evergreen","922",2.12809014320374,64.0864944458008,NA
-"MAT06",2,"F5","Vacvit","BelowStem","Evergreen","607",1.16404974460602,63.3013648986816,NA
-"MAT06",2,"F5","OtherForb","LeavesStems","Forb","930",2.45533847808838,57.3493957519531,NA
-"MAT06",2,"F5","Vacvit","OldLeaves","Evergreen","924",1.41218447685242,63.5061416625977,NA
-"MAT06",2,"F5","OtherEvergreen","NewLeaves","Evergreen","916",2.54893326759338,63.9971923828125,NA
-"MAT06",2,"F5","Attached","Wood","Litter","611",1.42420971393585,65.2590789794922,NA
-"MAT06",2,"F5","OtherForb","BelowStem","Forb","1021",0.893095552921295,53.6641960144043,NA
-"MAT06",2,"F5","OtherMoss","Green","Moss","904",2.85703539848328,59.2665481567383,NA
-"MAT06",2,"F5","OtherMoss","Green","Moss","904",2.83979678153992,59.3786354064941,NA
-"MAT06",3,"F2","Erivag","BladeSheathInflCulm","Graminoid","835",1.65838408470154,44.1282157897949,NA
-"MAT06",3,"F2","Carbig","BladeSheathInflCulm","Graminoid","812",2.09000563621521,47.8153915405273,NA
-"MAT06",3,"F2","Carbig","Rhizome","Graminoid","815",0.724248230457306,44.1911659240723,NA
-"MAT06",3,"F2","OtherGraminoid","BladeSheathInflCulm","Graminoid","818",1.59377753734589,45.1538391113281,NA
-"MAT06",3,"F2","Betnan","NewLeaves","Deciduous","824",2.66588521003723,50.9159698486328,NA
-"MAT06",3,"F2","Betnan","NewStems","Deciduous","827",1.22692096233368,53.0289840698242,NA
-"MAT06",3,"F2","Betnan","OldStems","Deciduous","850",0.879198014736176,50.5835418701172,NA
-"MAT06",3,"F2","OtherGraminoid","Rhizome","Graminoid","821",1.12250912189484,41.6332893371582,NA
-"MAT06",3,"F2","Betnan","Inflor","Deciduous","833",1.63974165916443,53.3493499755859,NA
-"MAT06",3,"F2","Betnan","BelowStem","Deciduous","836",0.949230253696442,48.3502464294434,NA
-"MAT06",3,"F2","Betnan","BelowStem","Deciduous","836",0.919058442115784,49.4116516113281,NA
-"MAT06",3,"F2","Vaculi","NewLeaves","Deciduous","1266",1.85934281349182,49.7931060791016,NA
-"MAT06",3,"F2","Vaculi","NewStems","Deciduous","1267",0.856963932514191,51.705436706543,NA
-"MAT06",3,"F2","Vaculi","Inflor","Deciduous","1289",0.972930669784546,50.7702941894531,NA
-"MAT06",3,"F2","Vaculi","BelowStem","Deciduous","1290",0.636638104915619,49.2574920654297,NA
-"MAT06",3,"F2","OtherDeciduous","NewLeaves","Deciduous","1328",1.7800030708313,49.3761787414551,NA
-"MAT06",3,"F2","OtherDeciduous","NewStems","Deciduous","1270",0.927492022514343,49.0719451904297,NA
-"MAT06",3,"F2","OtherDeciduous","OldStems","Deciduous","1330",0.833402454853058,49.5972518920898,NA
-"MAT06",3,"F2","OtherDeciduous","Inflor","Deciduous","1329",0.740069031715393,42.8111572265625,NA
-"MAT06",3,"F2","OtherDeciduous","BelowStem","Deciduous","1331",0.782739102840424,50.1742782592773,NA
-"MAT06",3,"F2","Ledpal","NewLeaves","Evergreen","839",1.86329936981201,54.1637001037598,NA
-"MAT06",3,"F2","Ledpal","NewLeaves","Evergreen","839",1.76084864139557,54.2305221557617,NA
-"MAT06",3,"F2","Ledpal","NewStems","Evergreen","813",1.53224503993988,51.077808380127,NA
-"MAT06",3,"F2","Ledpal","OldLeaves","Evergreen","816",1.75498747825623,50.6726837158203,NA
-"MAT06",3,"F2","Vaculi","OldStems","Deciduous","1268",0.828519463539124,52.0018653869629,NA
-"MAT06",3,"F2","Ledpal","OldStems","Evergreen","819",0.870784521102905,53.2187576293945,NA
-"MAT06",3,"F2","Ledpal","Inflor","Evergreen","822",1.56262791156769,50.8760795593262,NA
-"MAT06",3,"F2","Ledpal","BelowStem","Evergreen","825",0.852731943130493,49.4184494018555,NA
-"MAT06",3,"F2","Vacvit","NewLeaves","Evergreen","828",1.56543266773224,50.2702140808105,NA
-"MAT06",3,"F2","Vacvit","NewStems","Evergreen","831",1.57848417758942,51.0113487243652,NA
-"MAT06",3,"F2","Vacvit","OldLeaves","Evergreen","834",1.17055511474609,50.6028861999512,NA
-"MAT06",3,"F2","Vacvit","BelowStem","Evergreen","844",1.09569072723389,47.2914848327637,NA
-"MAT06",3,"F2","Vacvit","BelowStem","Evergreen","844",1.12156426906586,47.0032768249512,NA
-"MAT06",3,"F2","OtherForb","LeavesStems","Forb","1349",3.07219243049622,43.7666473388672,NA
-"MAT06",3,"F2","Rubcha","LeavesStems","Forb","841",2.00029945373535,46.7442436218262,NA
-"MAT06",3,"F2","Rubcha","BelowStem","Forb","847",0.829894185066223,43.3710975646973,NA
-"MAT06",3,"F2","OtherMoss","Green","Moss","856",1.19486963748932,44.5586051940918,NA
-"MAT06",3,"F2","Lichen","Live","Lichen","853",1.12191259860992,44.4749450683594,NA
-"MAT06",3,"F2","Attached","Litter","Litter","862",1.24756503105164,43.6671943664551,NA
-"MAT06",3,"F2","Vacvit","OldStems","Evergreen","837",1.32095897197723,49.8081474304199,NA
-"MAT06",1,"F2","Erivag","BladeSheathInflCulm","Graminoid","88",1.39308333396912,46.4189338684082,NA
-"MAT06",1,"F2","Erivag","Rhizome","Graminoid","68",1.99190700054169,45.2745475769043,NA
-"MAT06",1,"F2","Carbig","BladeSheathInflCulm","Graminoid","86",2.05125212669373,46.3352088928223,NA
-"MAT06",1,"F2","Carbig","Rhizome","Graminoid","482",1.57279002666473,46.6257705688477,NA
-"MAT06",1,"F2","OtherGraminoid","BladeSheathInflCulm","Graminoid","483",1.74666142463684,45.236198425293,NA
-"MAT06",1,"F2","OtherGraminoid","Rhizome","Graminoid","484",1.57697474956512,40.2492942810059,NA
-"MAT06",1,"F2","Betnan","NewLeaves","Deciduous","89",3.08926749229431,48.8137474060059,NA
-"MAT06",1,"F2","Betnan","NewStems","Deciduous","69",1.53773140907288,57.9380035400391,NA
-"MAT06",1,"F2","Betnan","OldStems","Deciduous","72",1.14458870887756,53.8526420593262,NA
-"MAT06",1,"F2","Vacvit","NewLeaves","Evergreen","78",1.69826674461365,50.5471572875977,NA
-"MAT06",1,"F2","Vacvit","NewLeaves","Evergreen","78",1.73744511604309,50.6094017028809,NA
-"MAT06",1,"F2","Betnan","BelowStem","Deciduous","415",1.33485746383667,52.5268898010254,NA
-"MAT06",1,"F2","Ledpal","NewLeaves","Evergreen","70",2.69125318527222,52.5189819335938,NA
-"MAT06",1,"F2","Ledpal","NewStems","Evergreen","73",1.74266934394836,51.0870742797852,NA
-"MAT06",1,"F2","Ledpal","OldLeaves","Evergreen","76",2.2985851764679,51.8413162231445,NA
-"MAT06",1,"F2","Ledpal","OldStems","Evergreen","79",0.976016998291016,53.9870414733887,NA
-"MAT06",1,"F2","Ledpal","Inflor","Evergreen","85",1.68455517292023,49.8966217041016,NA
-"MAT06",1,"F2","Ledpal","BelowStem","Evergreen","82",0.899398326873779,53.7161445617676,NA
-"MAT06",1,"F2","Rubcha","BelowStem","Forb","83",1.71065771579742,49.4650764465332,NA
-"MAT06",1,"F2","Vacvit","NewStems","Evergreen","81",1.12938904762268,30.8246669769287,NA
-"MAT06",1,"F2","Vacvit","OldLeaves","Evergreen","84",1.41807556152344,50.869197845459,NA
-"MAT06",1,"F2","Vacvit","OldLeaves","Evergreen","84",1.42286264896393,51.0581092834473,NA
-"MAT06",1,"F2","Vacvit","BelowStem","Evergreen","495",1.44137835502625,52.5203094482422,NA
-"MAT06",1,"F2","Rubcha","LeavesStems","Forb","77",2.52607870101929,45.9726867675781,NA
+"MAT06",2,"F1","Other Mosses","Green","Moss","643",1.67972266674042,51.2215538024902,NA
+"MAT06",2,"F1","Rubus chamaemorus","InflorStalks","Forb","957",1.94164776802063,54.19091796875,NA
+"MAT06",2,"F1","Mixed Lichen","Live","Lichen","940",1.35017740726471,50.4365577697754,NA
+"MAT06",2,"F5","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","928",1.82727134227753,55.5303421020508,NA
+"MAT06",2,"F5","Eriophorum vaginatum","Rhizome","Graminoid","929",2.95650172233582,56.1791877746582,NA
+"MAT06",2,"F5","Eriophorum vaginatum","Rhizome","Graminoid","929",2.60869765281677,57.7962112426758,NA
+"MAT06",2,"F5","Carex bigelowii","BladeSheathInflCulm","Graminoid","1022",2.33058738708496,56.0032653808594,NA
+"MAT06",2,"F5","Carex bigelowii","Rhizome","Graminoid","503",1.51778888702393,57.5718612670898,NA
+"MAT06",2,"F5","Other Graminoid","BladeSheathInflCulm","Graminoid","504",2.83538675308228,53.8817329406738,NA
+"MAT06",2,"F5","Other Graminoid","Rhizome","Graminoid","505",1.72980487346649,54.1328010559082,NA
+"MAT06",2,"F5","Betula nana","NewLeaves","Deciduous","911",3.5858154296875,60.1573715209961,NA
+"MAT06",2,"F5","Betula nana","NewStems","Deciduous","912",2.22517943382263,64.7384643554688,NA
+"MAT06",2,"F5","Betula nana","OldStems","Deciduous","913",1.34655773639679,65.1211471557617,NA
+"MAT06",2,"F5","Betula nana","Inflor","Deciduous","914",2.20497608184814,62.8576278686523,NA
+"MAT06",2,"F5","Betula nana","BelowStem","Deciduous","915",1.34897494316101,58.4916610717773,NA
+"MAT06",2,"F5","Salix pulchra","NewLeaves","Deciduous","510",2.43677234649658,59.9425086975098,NA
+"MAT06",2,"F5","Salix pulchra","NewLeaves","Deciduous","510",2.4969048500061,59.4845771789551,NA
+"MAT06",2,"F5","Salix pulchra","OldStems","Deciduous","528",1.42343187332153,59.529541015625,NA
+"MAT06",2,"F5","Vaccinium uliginosum","NewLeaves","Deciduous","927",2.55996465682983,56.6598510742188,NA
+"MAT06",2,"F5","Vaccinium uliginosum","OldStems","Deciduous","534",1.13048493862152,61.4683647155762,NA
+"MAT06",2,"F5","Vaccinium uliginosum","NewStems","Deciduous","533",NA,1.73594915866852,NA
+"MAT06",2,"F5","Ledum palustre","NewLeaves","Evergreen","905",NA,66.0314559936523,NA
+"MAT06",2,"F5","Ledum palustre","NewStems","Evergreen","906",1.48630630970001,62.2419509887695,NA
+"MAT06",2,"F5","Ledum palustre","OldLeaves","Evergreen","907",2.09543514251709,65.5886917114258,NA
+"MAT06",2,"F5","Ledum palustre","OldStems","Evergreen","908",1.39764511585236,70.2719802856445,NA
+"MAT06",2,"F5","Ledum palustre","Inflor","Evergreen","909",1.88308596611023,64.8542251586914,NA
+"MAT06",2,"F5","Ledum palustre","BelowStem","Evergreen","910",1.37050545215607,64.5007553100586,NA
+"MAT06",2,"F5","Ledum palustre","BelowStem","Evergreen","910",1.27327382564545,67.1291809082031,NA
+"MAT06",2,"F5","Vaccinium vitis-idaea","NewLeaves","Evergreen","922",2.12809014320374,64.0864944458008,NA
+"MAT06",2,"F5","Vaccinium vitis-idaea","BelowStem","Evergreen","607",1.16404974460602,63.3013648986816,NA
+"MAT06",2,"F5","Other Forb","LeavesStems","Forb","930",2.45533847808838,57.3493957519531,NA
+"MAT06",2,"F5","Vaccinium vitis-idaea","OldLeaves","Evergreen","924",1.41218447685242,63.5061416625977,NA
+"MAT06",2,"F5","Other Evergreen","NewLeaves","Evergreen","916",2.54893326759338,63.9971923828125,NA
+"MAT06",2,"F5","Litter","Wood","Litter","611",1.42420971393585,65.2590789794922,NA
+"MAT06",2,"F5","Other Forb","BelowStem","Forb","1021",0.893095552921295,53.6641960144043,NA
+"MAT06",2,"F5","Other Mosses","Green","Moss","904",2.85703539848328,59.2665481567383,NA
+"MAT06",2,"F5","Other Mosses","Green","Moss","904",2.83979678153992,59.3786354064941,NA
+"MAT06",3,"F2","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","835",1.65838408470154,44.1282157897949,NA
+"MAT06",3,"F2","Carex bigelowii","BladeSheathInflCulm","Graminoid","812",2.09000563621521,47.8153915405273,NA
+"MAT06",3,"F2","Carex bigelowii","Rhizome","Graminoid","815",0.724248230457306,44.1911659240723,NA
+"MAT06",3,"F2","Other Graminoid","BladeSheathInflCulm","Graminoid","818",1.59377753734589,45.1538391113281,NA
+"MAT06",3,"F2","Betula nana","NewLeaves","Deciduous","824",2.66588521003723,50.9159698486328,NA
+"MAT06",3,"F2","Betula nana","NewStems","Deciduous","827",1.22692096233368,53.0289840698242,NA
+"MAT06",3,"F2","Betula nana","OldStems","Deciduous","850",0.879198014736176,50.5835418701172,NA
+"MAT06",3,"F2","Other Graminoid","Rhizome","Graminoid","821",1.12250912189484,41.6332893371582,NA
+"MAT06",3,"F2","Betula nana","Inflor","Deciduous","833",1.63974165916443,53.3493499755859,NA
+"MAT06",3,"F2","Betula nana","BelowStem","Deciduous","836",0.949230253696442,48.3502464294434,NA
+"MAT06",3,"F2","Betula nana","BelowStem","Deciduous","836",0.919058442115784,49.4116516113281,NA
+"MAT06",3,"F2","Vaccinium uliginosum","NewLeaves","Deciduous","1266",1.85934281349182,49.7931060791016,NA
+"MAT06",3,"F2","Vaccinium uliginosum","NewStems","Deciduous","1267",0.856963932514191,51.705436706543,NA
+"MAT06",3,"F2","Vaccinium uliginosum","Inflor","Deciduous","1289",0.972930669784546,50.7702941894531,NA
+"MAT06",3,"F2","Vaccinium uliginosum","BelowStem","Deciduous","1290",0.636638104915619,49.2574920654297,NA
+"MAT06",3,"F2","Other Deciduous","NewLeaves","Deciduous","1328",1.7800030708313,49.3761787414551,NA
+"MAT06",3,"F2","Other Deciduous","NewStems","Deciduous","1270",0.927492022514343,49.0719451904297,NA
+"MAT06",3,"F2","Other Deciduous","OldStems","Deciduous","1330",0.833402454853058,49.5972518920898,NA
+"MAT06",3,"F2","Other Deciduous","Inflor","Deciduous","1329",0.740069031715393,42.8111572265625,NA
+"MAT06",3,"F2","Other Deciduous","BelowStem","Deciduous","1331",0.782739102840424,50.1742782592773,NA
+"MAT06",3,"F2","Ledum palustre","NewLeaves","Evergreen","839",1.86329936981201,54.1637001037598,NA
+"MAT06",3,"F2","Ledum palustre","NewLeaves","Evergreen","839",1.76084864139557,54.2305221557617,NA
+"MAT06",3,"F2","Ledum palustre","NewStems","Evergreen","813",1.53224503993988,51.077808380127,NA
+"MAT06",3,"F2","Ledum palustre","OldLeaves","Evergreen","816",1.75498747825623,50.6726837158203,NA
+"MAT06",3,"F2","Vaccinium uliginosum","OldStems","Deciduous","1268",0.828519463539124,52.0018653869629,NA
+"MAT06",3,"F2","Ledum palustre","OldStems","Evergreen","819",0.870784521102905,53.2187576293945,NA
+"MAT06",3,"F2","Ledum palustre","Inflor","Evergreen","822",1.56262791156769,50.8760795593262,NA
+"MAT06",3,"F2","Ledum palustre","BelowStem","Evergreen","825",0.852731943130493,49.4184494018555,NA
+"MAT06",3,"F2","Vaccinium vitis-idaea","NewLeaves","Evergreen","828",1.56543266773224,50.2702140808105,NA
+"MAT06",3,"F2","Vaccinium vitis-idaea","NewStems","Evergreen","831",1.57848417758942,51.0113487243652,NA
+"MAT06",3,"F2","Vaccinium vitis-idaea","OldLeaves","Evergreen","834",1.17055511474609,50.6028861999512,NA
+"MAT06",3,"F2","Vaccinium vitis-idaea","BelowStem","Evergreen","844",1.09569072723389,47.2914848327637,NA
+"MAT06",3,"F2","Vaccinium vitis-idaea","BelowStem","Evergreen","844",1.12156426906586,47.0032768249512,NA
+"MAT06",3,"F2","Other Forb","LeavesStems","Forb","1349",3.07219243049622,43.7666473388672,NA
+"MAT06",3,"F2","Rubus chamaemorus","LeavesStems","Forb","841",2.00029945373535,46.7442436218262,NA
+"MAT06",3,"F2","Rubus chamaemorus","BelowStem","Forb","847",0.829894185066223,43.3710975646973,NA
+"MAT06",3,"F2","Other Mosses","Green","Moss","856",1.19486963748932,44.5586051940918,NA
+"MAT06",3,"F2","Mixed Lichen","Live","Lichen","853",1.12191259860992,44.4749450683594,NA
+"MAT06",3,"F2","Litter","Litter","Litter","862",1.24756503105164,43.6671943664551,NA
+"MAT06",3,"F2","Vaccinium vitis-idaea","OldStems","Evergreen","837",1.32095897197723,49.8081474304199,NA
+"MAT06",1,"F2","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","88",1.39308333396912,46.4189338684082,NA
+"MAT06",1,"F2","Eriophorum vaginatum","Rhizome","Graminoid","68",1.99190700054169,45.2745475769043,NA
+"MAT06",1,"F2","Carex bigelowii","BladeSheathInflCulm","Graminoid","86",2.05125212669373,46.3352088928223,NA
+"MAT06",1,"F2","Carex bigelowii","Rhizome","Graminoid","482",1.57279002666473,46.6257705688477,NA
+"MAT06",1,"F2","Other Graminoid","BladeSheathInflCulm","Graminoid","483",1.74666142463684,45.236198425293,NA
+"MAT06",1,"F2","Other Graminoid","Rhizome","Graminoid","484",1.57697474956512,40.2492942810059,NA
+"MAT06",1,"F2","Betula nana","NewLeaves","Deciduous","89",3.08926749229431,48.8137474060059,NA
+"MAT06",1,"F2","Betula nana","NewStems","Deciduous","69",1.53773140907288,57.9380035400391,NA
+"MAT06",1,"F2","Betula nana","OldStems","Deciduous","72",1.14458870887756,53.8526420593262,NA
+"MAT06",1,"F2","Vaccinium vitis-idaea","NewLeaves","Evergreen","78",1.69826674461365,50.5471572875977,NA
+"MAT06",1,"F2","Vaccinium vitis-idaea","NewLeaves","Evergreen","78",1.73744511604309,50.6094017028809,NA
+"MAT06",1,"F2","Betula nana","BelowStem","Deciduous","415",1.33485746383667,52.5268898010254,NA
+"MAT06",1,"F2","Ledum palustre","NewLeaves","Evergreen","70",2.69125318527222,52.5189819335938,NA
+"MAT06",1,"F2","Ledum palustre","NewStems","Evergreen","73",1.74266934394836,51.0870742797852,NA
+"MAT06",1,"F2","Ledum palustre","OldLeaves","Evergreen","76",2.2985851764679,51.8413162231445,NA
+"MAT06",1,"F2","Ledum palustre","OldStems","Evergreen","79",0.976016998291016,53.9870414733887,NA
+"MAT06",1,"F2","Ledum palustre","Inflor","Evergreen","85",1.68455517292023,49.8966217041016,NA
+"MAT06",1,"F2","Ledum palustre","BelowStem","Evergreen","82",0.899398326873779,53.7161445617676,NA
+"MAT06",1,"F2","Rubus chamaemorus","BelowStem","Forb","83",1.71065771579742,49.4650764465332,NA
+"MAT06",1,"F2","Vaccinium vitis-idaea","NewStems","Evergreen","81",1.12938904762268,30.8246669769287,NA
+"MAT06",1,"F2","Vaccinium vitis-idaea","OldLeaves","Evergreen","84",1.41807556152344,50.869197845459,NA
+"MAT06",1,"F2","Vaccinium vitis-idaea","OldLeaves","Evergreen","84",1.42286264896393,51.0581092834473,NA
+"MAT06",1,"F2","Vaccinium vitis-idaea","BelowStem","Evergreen","495",1.44137835502625,52.5203094482422,NA
+"MAT06",1,"F2","Rubus chamaemorus","LeavesStems","Forb","77",2.52607870101929,45.9726867675781,NA
 "MAT06",1,"F2","Sphagnum","Green","Moss","74",1.94343638420105,45.3013954162598,NA
-"MAT06",1,"F2","OtherMoss","Green","Moss","498",1.79382479190826,47.8624420166016,NA
-"MAT06",1,"F2","Lichen","Live","Lichen","71",1.44755268096924,44.6000862121582,NA
-"MAT06",1,"F2","Attached","Litter","Litter","90",1.19245612621307,47.5117149353027,NA
-"MAT06",3,"F5","Erivag","BladeSheathInflCulm","Graminoid","1601",1.99211287498474,46.5252685546875,NA
-"MAT06",3,"F5","Carbig","BladeSheathInflCulm","Graminoid","1471",2.40404200553894,44.9473838806152,NA
-"MAT06",3,"F5","OtherGraminoid","BladeSheathInflCulm","Graminoid","1520",2.35340857505798,45.1520195007324,NA
-"MAT06",3,"F5","OtherGraminoid","Rhizome","Graminoid","1521",1.51786851882935,41.1967239379883,NA
-"MAT06",3,"F5","Betnan","NewLeaves","Deciduous","1506",3.29446291923523,49.0159873962402,NA
-"MAT06",3,"F5","Betnan","NewStems","Deciduous","1507",1.84251618385315,53.6037483215332,NA
-"MAT06",3,"F5","Betnan","OldStems","Deciduous","1509",NA,NA,NA
-"MAT06",3,"F5","Betnan","Inflor","Deciduous","1508",1.09346807003021,49.9423637390137,NA
-"MAT06",3,"F5","Betnan","BelowStem","Deciduous","1510",1.47374784946442,48.869083404541,NA
-"MAT06",3,"F5","Ledpal","NewLeaves","Evergreen","1511",2.63188886642456,52.0869407653809,NA
-"MAT06",3,"F5","Ledpal","NewLeaves","Evergreen","1511",2.61951112747192,51.7733879089355,NA
-"MAT06",3,"F5","Ledpal","NewStems","Evergreen","1512",1.36644411087036,49.7135887145996,NA
-"MAT06",3,"F5","Ledpal","OldLeaves","Evergreen","1513",2.31931495666504,52.6058044433594,NA
-"MAT06",3,"F5","Vacvit","NewStems","Evergreen","1568",1.2644727230072,50.9083824157715,NA
-"MAT06",3,"F5","Vacvit","NewLeaves","Evergreen","1567",1.61369252204895,51.2500495910645,NA
-"MAT06",3,"F5","Ledpal","BelowStem","Evergreen","1566",1.49796104431152,49.7867431640625,NA
-"MAT06",3,"F5","Ledpal","Inflor","Evergreen","1515",1.79236698150635,50.1870727539062,NA
-"MAT06",3,"F5","Ledpal","OldStems","Evergreen","1514",1.03310990333557,51.1344566345215,NA
-"MAT06",3,"F5","OtherForb","LeavesStems","Forb","1408",3.86325693130493,46.5184478759766,NA
-"MAT06",3,"F5","OtherMoss","Green","Moss","1619",2.04679203033447,44.0664749145508,NA
-"MAT06",3,"F5","Petfri","LeavesStems","Forb","1625",3.33830451965332,41.485897064209,NA
-"MAT06",3,"F5","Petfri","LeavesStems","Forb","1625",3.32687735557556,41.3786315917969,NA
-"MAT06",3,"F5","Castet","OldStems","Evergreen","1517",1.71396112442017,53.6017379760742,NA
-"MAT06",3,"F5","Vacvit","OldLeaves","Evergreen","1522",1.3423547744751,51.6234130859375,NA
-"MAT06",3,"F5","Attached","Litter","Litter","1516",1.7805073261261,47.6321640014648,NA
-"MAT06",3,"F5","Lichen","Live","Lichen","1489",0.664925396442413,14.6232671737671,NA
-"MAT06",3,"F5","Vacvit","OldStems","Evergreen","1523",1.07309377193451,51.1495895385742,NA
-"MAT06",3,"F5","Castet","BelowStem","Evergreen","1518",1.34582555294037,51.7985420227051,NA
-"MAT06",3,"F5","Castet","NewStems","Evergreen","1519",2.84458565711975,49.2568664550781,NA
-"MAT06",3,"F5","Vacvit","Inflor","Evergreen","1571",2.08566045761108,49.8010482788086,NA
-"MAT06",3,"F10","OtherGraminoid","BladeSheathInflCulm","Graminoid","1399",2.80696105957031,46.0119361877441,NA
-"MAT06",3,"F10","OtherGraminoid","Rhizome","Graminoid","1400",1.64140391349792,45.603084564209,NA
-"MAT06",3,"F10","Betnan","NewLeaves","Deciduous","1447",3.14748167991638,50.494083404541,NA
-"MAT06",3,"F10","Betnan","NewStems","Deciduous","1448",1.23028993606567,59.5079116821289,NA
-"MAT06",3,"F10","Betnan","OldStems","Deciduous","1449",1.04190039634705,52.6381950378418,NA
-"MAT06",3,"F10","Betnan","Inflor","Deciduous","1450",1.93839800357819,52.2564697265625,NA
-"MAT06",3,"F10","Ledpal","BelowStem","Evergreen","1587",1.17504739761353,51.5793952941895,NA
-"MAT06",3,"F10","Ledpal","Inflor","Evergreen","1586",1.69474363327026,50.3835258483887,NA
-"MAT06",3,"F10","Ledpal","OldStems","Evergreen","1585",1.18022632598877,53.4191436767578,NA
-"MAT06",3,"F10","Vaculi","NewLeaves","Deciduous","1296",2.09187293052673,50.9269142150879,NA
-"MAT06",3,"F10","Vaculi","NewLeaves","Deciduous","1296",1.83946013450623,50.9998207092285,NA
-"MAT06",3,"F10","Salpul","NewLeaves","Deciduous","1452",3.19346070289612,49.2597770690918,NA
-"MAT06",3,"F10","Betnan","BelowStem","Deciduous","1392",1.08646786212921,50.1456260681152,NA
-"MAT06",3,"F10","Ledpal","NewLeaves","Evergreen","1582",2.76373267173767,50.5261726379395,NA
-"MAT06",3,"F10","Salpul","NewStems","Deciduous","1453",1.1934700012207,50.5290336608887,NA
-"MAT06",3,"F10","Salpul","OldStems","Deciduous","1454",1.1723780632019,50.9679908752441,NA
-"MAT06",3,"F10","Ledpal","OldLeaves","Evergreen","1584",2.34918856620789,49.3120346069336,NA
-"MAT06",3,"F10","OtherMoss","Green","Moss","1255",2.5609438419342,48.1028099060059,NA
-"MAT06",3,"F10","Lichen","Live","Lichen","1590",1.78134500980377,46.1173706054688,NA
-"MAT06",3,"F10","OtherEvergreen","BelowStem","Evergreen","1446",1.29581773281097,50.6467590332031,NA
-"MAT06",3,"F10","Ledpal","NewStems","Evergreen","1583",1.65414452552795,50.0537910461426,NA
-"MAT06",3,"F10","Ledpal","NewStems","Evergreen","1583",1.72007584571838,49.9433212280273,NA
-"MAT06",3,"F10","OtherEvergreen","NewLeaves","Evergreen","1393",3.07346367835999,53.1988182067871,NA
-"MAT06",3,"F10","Attached","Wood","Litter","1668",1.35756802558899,55.8162651062012,NA
-"MAT06",3,"F10","OtherEvergreen","OldLeaves","Evergreen","1395",2.35857725143433,53.6400375366211,NA
-"MAT06",3,"F10","OtherEvergreen","OldStems","Evergreen","1396",0.917433500289917,53.5168304443359,NA
-"MAT06",3,"F10","Attached","Litter","Litter","1403",1.9410742521286,45.8472213745117,NA
-"MAT06",3,"F10","Vaculi","NewStems","Deciduous","1297",1.23557341098785,51.3089981079102,NA
-"MAT06",3,"F10","Erivag","Rhizome","Graminoid","1589",3.74900650978088,45.0321502685547,NA
-"MAT06",3,"F10","OtherEvergreen","NewStems","Evergreen","1394",1.8466249704361,50.4097290039062,NA
-"MAT06",3,"F0.5","Erivag","BladeSheathInflCulm","Graminoid","1957",1.60991728305817,47.2505416870117,NA
-"MAT06",3,"F0.5","Erivag","Rhizome","Graminoid","1774",1.2235335111618,45.7112350463867,NA
-"MAT06",3,"F0.5","Carbig","BladeSheathInflCulm","Graminoid","1917",1.80887830257416,47.3579292297363,NA
-"MAT06",3,"F0.5","Carbig","Rhizome","Graminoid","1920",1.04617118835449,47.2876319885254,NA
-"MAT06",3,"F0.5","OtherGraminoid","BladeSheathInflCulm","Graminoid","1891",1.45368206501007,44.6607246398926,NA
-"MAT06",3,"F0.5","OtherGraminoid","Rhizome","Graminoid","1892",0.994935214519501,44.9501647949219,NA
-"MAT06",3,"F0.5","Betnan","NewLeaves","Deciduous","1893",2.26372575759888,51.3787269592285,NA
-"MAT06",3,"F0.5","Betnan","OldStems","Deciduous","1895",0.937347650527954,53.5205039978027,NA
-"MAT06",3,"F0.5","Betnan","Inflor","Deciduous","1828",1.38933825492859,52.6631889343262,NA
-"MAT06",3,"F0.5","Betnan","BelowStem","Deciduous","1896",0.780991017818451,51.5592308044434,NA
-"MAT06",3,"F0.5","Betnan","BelowStem","Deciduous","1896",0.706092596054077,51.1213684082031,NA
-"MAT06",3,"F0.5","Salpul","NewLeaves","Deciduous","1761",2.61384892463684,51.3162803649902,NA
-"MAT06",3,"F0.5","Salpul","NewStems","Deciduous","1762",1.2566123008728,51.9944076538086,NA
-"MAT06",3,"F0.5","Salpul","OldStems","Deciduous","1763",0.886252522468567,50.558162689209,NA
-"MAT06",3,"F0.5","Salpul","BelowStem","Deciduous","1766",1.02321124076843,48.4065895080566,NA
-"MAT06",3,"F0.5","Ledpal","NewLeaves","Evergreen","1897",1.92563557624817,54.5968856811523,NA
-"MAT06",3,"F0.5","Ledpal","NewStems","Evergreen","1898",1.19641637802124,51.631160736084,NA
-"MAT06",3,"F0.5","Ledpal","OldLeaves","Evergreen","1899",1.44503259658813,54.8039665222168,NA
-"MAT06",3,"F0.5","Ledpal","OldStems","Evergreen","1900",0.805643141269684,55.966682434082,NA
-"MAT06",3,"F0.5","Ledpal","Inflor","Evergreen","1953",0.993502199649811,51.4647026062012,NA
-"MAT06",3,"F0.5","Ledpal","BelowStem","Evergreen","1901",0.975951969623566,54.5008735656738,NA
-"MAT06",3,"F0.5","Ledpal","BelowStem","Evergreen","1901",1.11118030548096,54.1116828918457,NA
-"MAT06",3,"F0.5","Vacvit","NewLeaves","Evergreen","1902",1.44506990909576,51.4382362365723,NA
-"MAT06",3,"F0.5","Vacvit","NewStems","Evergreen","1903",1.01764404773712,52.404369354248,NA
-"MAT06",3,"F0.5","Vacvit","OldLeaves","Evergreen","1904",0.950432300567627,51.6219711303711,NA
-"MAT06",3,"F0.5","Vacvit","OldStems","Evergreen","1905",0.776727676391602,52.3505973815918,NA
-"MAT06",3,"F0.5","Vacvit","Inflor","Evergreen","1906",1.17976784706116,48.4173927307129,NA
-"MAT06",3,"F0.5","Castet","NewStems","Evergreen","1913",1.49796497821808,56.3892822265625,NA
-"MAT06",3,"F0.5","Castet","OldStems","Evergreen","1914",0.966055810451508,55.195858001709,NA
-"MAT06",3,"F0.5","Castet","Inflor","Evergreen","1528",0.694409489631653,52.8553695678711,NA
-"MAT06",3,"F0.5","Castet","BelowStem","Evergreen","1915",0.921512246131897,55.4883995056152,NA
-"MAT06",3,"F0.5","Petfri","LeavesStems","Forb","1908",2.1494767665863,45.9522933959961,NA
-"MAT06",3,"F0.5","Petfri","LeavesStems","Forb","1908",2.1951470375061,45.9281425476074,NA
-"MAT06",3,"F0.5","OtherForb","LeavesStems","Forb","1911",3.57505464553833,47.993595123291,NA
-"MAT06",3,"F0.5","OtherEvergreen","BelowStem","Evergreen","1675",0.961378216743469,56.148754119873,NA
-"MAT06",3,"F0.5","Lichen","Live","Lichen","1910",0.825569570064545,45.9157867431641,NA
-"MAT06",3,"F0.5","Attached","Litter","Litter","1770",1.07274496555328,46.9073371887207,NA
-"MAT06",3,"F0.5","OtherEvergreen","NewLeaves","Evergreen","1671",1.1694610118866,54.5441627502441,NA
-"MAT06",3,"F0.5","OtherForb","InflorStalks","Forb","1954",1.62345767021179,48.1451683044434,NA
-"MAT06",3,"F0.5","OtherForb","BelowStem","Forb","1912",0.934653401374817,45.4632415771484,NA
+"MAT06",1,"F2","Other Mosses","Green","Moss","498",1.79382479190826,47.8624420166016,NA
+"MAT06",1,"F2","Mixed Lichen","Live","Lichen","71",1.44755268096924,44.6000862121582,NA
+"MAT06",1,"F2","Litter","Litter","Litter","90",1.19245612621307,47.5117149353027,NA
+"MAT06",3,"F5","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","1601",1.99211287498474,46.5252685546875,NA
+"MAT06",3,"F5","Carex bigelowii","BladeSheathInflCulm","Graminoid","1471",2.40404200553894,44.9473838806152,NA
+"MAT06",3,"F5","Other Graminoid","BladeSheathInflCulm","Graminoid","1520",2.35340857505798,45.1520195007324,NA
+"MAT06",3,"F5","Other Graminoid","Rhizome","Graminoid","1521",1.51786851882935,41.1967239379883,NA
+"MAT06",3,"F5","Betula nana","NewLeaves","Deciduous","1506",3.29446291923523,49.0159873962402,NA
+"MAT06",3,"F5","Betula nana","NewStems","Deciduous","1507",1.84251618385315,53.6037483215332,NA
+"MAT06",3,"F5","Betula nana","OldStems","Deciduous","1509",NA,NA,NA
+"MAT06",3,"F5","Betula nana","Inflor","Deciduous","1508",1.09346807003021,49.9423637390137,NA
+"MAT06",3,"F5","Betula nana","BelowStem","Deciduous","1510",1.47374784946442,48.869083404541,NA
+"MAT06",3,"F5","Ledum palustre","NewLeaves","Evergreen","1511",2.63188886642456,52.0869407653809,NA
+"MAT06",3,"F5","Ledum palustre","NewLeaves","Evergreen","1511",2.61951112747192,51.7733879089355,NA
+"MAT06",3,"F5","Ledum palustre","NewStems","Evergreen","1512",1.36644411087036,49.7135887145996,NA
+"MAT06",3,"F5","Ledum palustre","OldLeaves","Evergreen","1513",2.31931495666504,52.6058044433594,NA
+"MAT06",3,"F5","Vaccinium vitis-idaea","NewStems","Evergreen","1568",1.2644727230072,50.9083824157715,NA
+"MAT06",3,"F5","Vaccinium vitis-idaea","NewLeaves","Evergreen","1567",1.61369252204895,51.2500495910645,NA
+"MAT06",3,"F5","Ledum palustre","BelowStem","Evergreen","1566",1.49796104431152,49.7867431640625,NA
+"MAT06",3,"F5","Ledum palustre","Inflor","Evergreen","1515",1.79236698150635,50.1870727539062,NA
+"MAT06",3,"F5","Ledum palustre","OldStems","Evergreen","1514",1.03310990333557,51.1344566345215,NA
+"MAT06",3,"F5","Other Forb","LeavesStems","Forb","1408",3.86325693130493,46.5184478759766,NA
+"MAT06",3,"F5","Other Mosses","Green","Moss","1619",2.04679203033447,44.0664749145508,NA
+"MAT06",3,"F5","Petasites frigidus","LeavesStems","Forb","1625",3.33830451965332,41.485897064209,NA
+"MAT06",3,"F5","Petasites frigidus","LeavesStems","Forb","1625",3.32687735557556,41.3786315917969,NA
+"MAT06",3,"F5","Cassiope tetragona","OldStems","Evergreen","1517",1.71396112442017,53.6017379760742,NA
+"MAT06",3,"F5","Vaccinium vitis-idaea","OldLeaves","Evergreen","1522",1.3423547744751,51.6234130859375,NA
+"MAT06",3,"F5","Litter","Litter","Litter","1516",1.7805073261261,47.6321640014648,NA
+"MAT06",3,"F5","Mixed Lichen","Live","Lichen","1489",0.664925396442413,14.6232671737671,NA
+"MAT06",3,"F5","Vaccinium vitis-idaea","OldStems","Evergreen","1523",1.07309377193451,51.1495895385742,NA
+"MAT06",3,"F5","Cassiope tetragona","BelowStem","Evergreen","1518",1.34582555294037,51.7985420227051,NA
+"MAT06",3,"F5","Cassiope tetragona","NewStems","Evergreen","1519",2.84458565711975,49.2568664550781,NA
+"MAT06",3,"F5","Vaccinium vitis-idaea","Inflor","Evergreen","1571",2.08566045761108,49.8010482788086,NA
+"MAT06",3,"F10","Other Graminoid","BladeSheathInflCulm","Graminoid","1399",2.80696105957031,46.0119361877441,NA
+"MAT06",3,"F10","Other Graminoid","Rhizome","Graminoid","1400",1.64140391349792,45.603084564209,NA
+"MAT06",3,"F10","Betula nana","NewLeaves","Deciduous","1447",3.14748167991638,50.494083404541,NA
+"MAT06",3,"F10","Betula nana","NewStems","Deciduous","1448",1.23028993606567,59.5079116821289,NA
+"MAT06",3,"F10","Betula nana","OldStems","Deciduous","1449",1.04190039634705,52.6381950378418,NA
+"MAT06",3,"F10","Betula nana","Inflor","Deciduous","1450",1.93839800357819,52.2564697265625,NA
+"MAT06",3,"F10","Ledum palustre","BelowStem","Evergreen","1587",1.17504739761353,51.5793952941895,NA
+"MAT06",3,"F10","Ledum palustre","Inflor","Evergreen","1586",1.69474363327026,50.3835258483887,NA
+"MAT06",3,"F10","Ledum palustre","OldStems","Evergreen","1585",1.18022632598877,53.4191436767578,NA
+"MAT06",3,"F10","Vaccinium uliginosum","NewLeaves","Deciduous","1296",2.09187293052673,50.9269142150879,NA
+"MAT06",3,"F10","Vaccinium uliginosum","NewLeaves","Deciduous","1296",1.83946013450623,50.9998207092285,NA
+"MAT06",3,"F10","Salix pulchra","NewLeaves","Deciduous","1452",3.19346070289612,49.2597770690918,NA
+"MAT06",3,"F10","Betula nana","BelowStem","Deciduous","1392",1.08646786212921,50.1456260681152,NA
+"MAT06",3,"F10","Ledum palustre","NewLeaves","Evergreen","1582",2.76373267173767,50.5261726379395,NA
+"MAT06",3,"F10","Salix pulchra","NewStems","Deciduous","1453",1.1934700012207,50.5290336608887,NA
+"MAT06",3,"F10","Salix pulchra","OldStems","Deciduous","1454",1.1723780632019,50.9679908752441,NA
+"MAT06",3,"F10","Ledum palustre","OldLeaves","Evergreen","1584",2.34918856620789,49.3120346069336,NA
+"MAT06",3,"F10","Other Mosses","Green","Moss","1255",2.5609438419342,48.1028099060059,NA
+"MAT06",3,"F10","Mixed Lichen","Live","Lichen","1590",1.78134500980377,46.1173706054688,NA
+"MAT06",3,"F10","Other Evergreen","BelowStem","Evergreen","1446",1.29581773281097,50.6467590332031,NA
+"MAT06",3,"F10","Ledum palustre","NewStems","Evergreen","1583",1.65414452552795,50.0537910461426,NA
+"MAT06",3,"F10","Ledum palustre","NewStems","Evergreen","1583",1.72007584571838,49.9433212280273,NA
+"MAT06",3,"F10","Other Evergreen","NewLeaves","Evergreen","1393",3.07346367835999,53.1988182067871,NA
+"MAT06",3,"F10","Litter","Wood","Litter","1668",1.35756802558899,55.8162651062012,NA
+"MAT06",3,"F10","Other Evergreen","OldLeaves","Evergreen","1395",2.35857725143433,53.6400375366211,NA
+"MAT06",3,"F10","Other Evergreen","OldStems","Evergreen","1396",0.917433500289917,53.5168304443359,NA
+"MAT06",3,"F10","Litter","Litter","Litter","1403",1.9410742521286,45.8472213745117,NA
+"MAT06",3,"F10","Vaccinium uliginosum","NewStems","Deciduous","1297",1.23557341098785,51.3089981079102,NA
+"MAT06",3,"F10","Eriophorum vaginatum","Rhizome","Graminoid","1589",3.74900650978088,45.0321502685547,NA
+"MAT06",3,"F10","Other Evergreen","NewStems","Evergreen","1394",1.8466249704361,50.4097290039062,NA
+"MAT06",3,"F0.5","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","1957",1.60991728305817,47.2505416870117,NA
+"MAT06",3,"F0.5","Eriophorum vaginatum","Rhizome","Graminoid","1774",1.2235335111618,45.7112350463867,NA
+"MAT06",3,"F0.5","Carex bigelowii","BladeSheathInflCulm","Graminoid","1917",1.80887830257416,47.3579292297363,NA
+"MAT06",3,"F0.5","Carex bigelowii","Rhizome","Graminoid","1920",1.04617118835449,47.2876319885254,NA
+"MAT06",3,"F0.5","Other Graminoid","BladeSheathInflCulm","Graminoid","1891",1.45368206501007,44.6607246398926,NA
+"MAT06",3,"F0.5","Other Graminoid","Rhizome","Graminoid","1892",0.994935214519501,44.9501647949219,NA
+"MAT06",3,"F0.5","Betula nana","NewLeaves","Deciduous","1893",2.26372575759888,51.3787269592285,NA
+"MAT06",3,"F0.5","Betula nana","OldStems","Deciduous","1895",0.937347650527954,53.5205039978027,NA
+"MAT06",3,"F0.5","Betula nana","Inflor","Deciduous","1828",1.38933825492859,52.6631889343262,NA
+"MAT06",3,"F0.5","Betula nana","BelowStem","Deciduous","1896",0.780991017818451,51.5592308044434,NA
+"MAT06",3,"F0.5","Betula nana","BelowStem","Deciduous","1896",0.706092596054077,51.1213684082031,NA
+"MAT06",3,"F0.5","Salix pulchra","NewLeaves","Deciduous","1761",2.61384892463684,51.3162803649902,NA
+"MAT06",3,"F0.5","Salix pulchra","NewStems","Deciduous","1762",1.2566123008728,51.9944076538086,NA
+"MAT06",3,"F0.5","Salix pulchra","OldStems","Deciduous","1763",0.886252522468567,50.558162689209,NA
+"MAT06",3,"F0.5","Salix pulchra","BelowStem","Deciduous","1766",1.02321124076843,48.4065895080566,NA
+"MAT06",3,"F0.5","Ledum palustre","NewLeaves","Evergreen","1897",1.92563557624817,54.5968856811523,NA
+"MAT06",3,"F0.5","Ledum palustre","NewStems","Evergreen","1898",1.19641637802124,51.631160736084,NA
+"MAT06",3,"F0.5","Ledum palustre","OldLeaves","Evergreen","1899",1.44503259658813,54.8039665222168,NA
+"MAT06",3,"F0.5","Ledum palustre","OldStems","Evergreen","1900",0.805643141269684,55.966682434082,NA
+"MAT06",3,"F0.5","Ledum palustre","Inflor","Evergreen","1953",0.993502199649811,51.4647026062012,NA
+"MAT06",3,"F0.5","Ledum palustre","BelowStem","Evergreen","1901",0.975951969623566,54.5008735656738,NA
+"MAT06",3,"F0.5","Ledum palustre","BelowStem","Evergreen","1901",1.11118030548096,54.1116828918457,NA
+"MAT06",3,"F0.5","Vaccinium vitis-idaea","NewLeaves","Evergreen","1902",1.44506990909576,51.4382362365723,NA
+"MAT06",3,"F0.5","Vaccinium vitis-idaea","NewStems","Evergreen","1903",1.01764404773712,52.404369354248,NA
+"MAT06",3,"F0.5","Vaccinium vitis-idaea","OldLeaves","Evergreen","1904",0.950432300567627,51.6219711303711,NA
+"MAT06",3,"F0.5","Vaccinium vitis-idaea","OldStems","Evergreen","1905",0.776727676391602,52.3505973815918,NA
+"MAT06",3,"F0.5","Vaccinium vitis-idaea","Inflor","Evergreen","1906",1.17976784706116,48.4173927307129,NA
+"MAT06",3,"F0.5","Cassiope tetragona","NewStems","Evergreen","1913",1.49796497821808,56.3892822265625,NA
+"MAT06",3,"F0.5","Cassiope tetragona","OldStems","Evergreen","1914",0.966055810451508,55.195858001709,NA
+"MAT06",3,"F0.5","Cassiope tetragona","Inflor","Evergreen","1528",0.694409489631653,52.8553695678711,NA
+"MAT06",3,"F0.5","Cassiope tetragona","BelowStem","Evergreen","1915",0.921512246131897,55.4883995056152,NA
+"MAT06",3,"F0.5","Petasites frigidus","LeavesStems","Forb","1908",2.1494767665863,45.9522933959961,NA
+"MAT06",3,"F0.5","Petasites frigidus","LeavesStems","Forb","1908",2.1951470375061,45.9281425476074,NA
+"MAT06",3,"F0.5","Other Forb","LeavesStems","Forb","1911",3.57505464553833,47.993595123291,NA
+"MAT06",3,"F0.5","Other Evergreen","BelowStem","Evergreen","1675",0.961378216743469,56.148754119873,NA
+"MAT06",3,"F0.5","Mixed Lichen","Live","Lichen","1910",0.825569570064545,45.9157867431641,NA
+"MAT06",3,"F0.5","Litter","Litter","Litter","1770",1.07274496555328,46.9073371887207,NA
+"MAT06",3,"F0.5","Other Evergreen","NewLeaves","Evergreen","1671",1.1694610118866,54.5441627502441,NA
+"MAT06",3,"F0.5","Other Forb","InflorStalks","Forb","1954",1.62345767021179,48.1451683044434,NA
+"MAT06",3,"F0.5","Other Forb","BelowStem","Forb","1912",0.934653401374817,45.4632415771484,NA
 "MAT06",3,"F0.5","Sphagnum","Green","Moss","1918",1.13284659385681,46.2665214538574,NA
-"MAT06",3,"F0.5","OtherMoss","Green","Moss","1909",0.997196137905121,47.1519813537598,NA
-"MAT06",3,"F0.5","OtherMoss","Green","Moss","1909",0.938946485519409,47.149486541748,NA
-"MAT06",2,"F0.5","Erivag","BladeSheathInflCulm","Graminoid","2008",0.858846485614777,46.4629364013672,NA
-"MAT06",2,"F0.5","Erivag","Rhizome","Graminoid","2009",1.03972589969635,46.0354042053223,NA
-"MAT06",2,"F0.5","Carbig","BladeSheathInflCulm","Graminoid","1951",1.75578784942627,46.9940223693848,NA
-"MAT06",2,"F0.5","Carbig","Rhizome","Graminoid","1952",0.694942355155945,45.6831436157227,NA
-"MAT06",2,"F0.5","Betnan","NewLeaves","Deciduous","1996",1.9815788269043,52.0679893493652,NA
-"MAT06",2,"F0.5","Betnan","NewStems","Deciduous","1995",1.26973748207092,62.520076751709,NA
-"MAT06",2,"F0.5","Ledpal","OldLeaves","Evergreen","1989",1.137127161026,58.2407379150391,NA
-"MAT06",2,"F0.5","Ledpal","NewStems","Evergreen","1988",1.17543947696686,56.1483306884766,NA
-"MAT06",2,"F0.5","Ledpal","NewLeaves","Evergreen","1987",1.69899833202362,57.2656936645508,NA
-"MAT06",2,"F0.5","Salpul","OldStems","Deciduous","671",0.969272911548615,54.5142555236816,NA
-"MAT06",2,"F0.5","Salpul","OldStems","Deciduous","671",1.08800089359283,56.4560928344727,NA
-"MAT06",2,"F0.5","Salpul","NewLeaves","Deciduous","669",2.54018449783325,57.2392425537109,NA
-"MAT06",2,"F0.5","Betnan","BelowStem","Deciduous","2002",0.852008163928986,59.8646583557129,NA
-"MAT06",2,"F0.5","Ledpal","OldStems","Evergreen","1990",0.661521434783936,63.4526634216309,NA
-"MAT06",2,"F0.5","Vacvit","OldStems","Evergreen","1984",0.92495983839035,59.0720176696777,NA
-"MAT06",2,"F0.5","Ledpal","Inflor","Evergreen","1991",1.20406997203827,54.8928527832031,NA
-"MAT06",2,"F0.5","Ledpal","BelowStem","Evergreen","1992",0.722148299217224,58.3432693481445,NA
-"MAT06",2,"F0.5","OtherEvergreen","NewLeaves","Evergreen","2003",1.06297898292542,57.1651458740234,NA
-"MAT06",2,"F0.5","Vacvit","Inflor","Evergreen","1985",0.905731678009033,52.7043304443359,NA
-"MAT06",2,"F0.5","OtherEvergreen","OldLeaves","Evergreen","2005",0.951416730880737,59.5921325683594,NA
-"MAT06",2,"F0.5","Vacvit","NewLeaves","Evergreen","1981",1.08027148246765,57.1435394287109,NA
-"MAT06",2,"F0.5","Vacvit","NewLeaves","Evergreen","1981",1.07131123542786,57.2655487060547,NA
-"MAT06",2,"F0.5","Vacvit","NewStems","Evergreen","1982",1.00649559497833,57.8725395202637,NA
-"MAT06",2,"F0.5","Vacvit","OldLeaves","Evergreen","1983",0.857071876525879,56.9555511474609,NA
-"MAT06",2,"F0.5","Castet","Inflor","Evergreen","802",0.821467876434326,63.4842071533203,NA
-"MAT06",2,"F0.5","Castet","OldStems","Evergreen","799",0.910992860794067,61.9940795898438,NA
-"MAT06",2,"F0.5","Castet","NewStems","Evergreen","796",1.13975632190704,64.3194580078125,NA
-"MAT06",2,"F0.5","Vacvit","BelowStem","Evergreen","1986",1.04151964187622,58.3571090698242,NA
-"MAT06",2,"F0.5","OtherEvergreen","NewStems","Evergreen","2004",0.902123987674713,60.9349060058594,NA
-"MAT06",2,"F0.5","OtherEvergreen","OldStems","Evergreen","2006",0.866019904613495,66.2078475952148,NA
+"MAT06",3,"F0.5","Other Mosses","Green","Moss","1909",0.997196137905121,47.1519813537598,NA
+"MAT06",3,"F0.5","Other Mosses","Green","Moss","1909",0.938946485519409,47.149486541748,NA
+"MAT06",2,"F0.5","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","2008",0.858846485614777,46.4629364013672,NA
+"MAT06",2,"F0.5","Eriophorum vaginatum","Rhizome","Graminoid","2009",1.03972589969635,46.0354042053223,NA
+"MAT06",2,"F0.5","Carex bigelowii","BladeSheathInflCulm","Graminoid","1951",1.75578784942627,46.9940223693848,NA
+"MAT06",2,"F0.5","Carex bigelowii","Rhizome","Graminoid","1952",0.694942355155945,45.6831436157227,NA
+"MAT06",2,"F0.5","Betula nana","NewLeaves","Deciduous","1996",1.9815788269043,52.0679893493652,NA
+"MAT06",2,"F0.5","Betula nana","NewStems","Deciduous","1995",1.26973748207092,62.520076751709,NA
+"MAT06",2,"F0.5","Ledum palustre","OldLeaves","Evergreen","1989",1.137127161026,58.2407379150391,NA
+"MAT06",2,"F0.5","Ledum palustre","NewStems","Evergreen","1988",1.17543947696686,56.1483306884766,NA
+"MAT06",2,"F0.5","Ledum palustre","NewLeaves","Evergreen","1987",1.69899833202362,57.2656936645508,NA
+"MAT06",2,"F0.5","Salix pulchra","OldStems","Deciduous","671",0.969272911548615,54.5142555236816,NA
+"MAT06",2,"F0.5","Salix pulchra","OldStems","Deciduous","671",1.08800089359283,56.4560928344727,NA
+"MAT06",2,"F0.5","Salix pulchra","NewLeaves","Deciduous","669",2.54018449783325,57.2392425537109,NA
+"MAT06",2,"F0.5","Betula nana","BelowStem","Deciduous","2002",0.852008163928986,59.8646583557129,NA
+"MAT06",2,"F0.5","Ledum palustre","OldStems","Evergreen","1990",0.661521434783936,63.4526634216309,NA
+"MAT06",2,"F0.5","Vaccinium vitis-idaea","OldStems","Evergreen","1984",0.92495983839035,59.0720176696777,NA
+"MAT06",2,"F0.5","Ledum palustre","Inflor","Evergreen","1991",1.20406997203827,54.8928527832031,NA
+"MAT06",2,"F0.5","Ledum palustre","BelowStem","Evergreen","1992",0.722148299217224,58.3432693481445,NA
+"MAT06",2,"F0.5","Other Evergreen","NewLeaves","Evergreen","2003",1.06297898292542,57.1651458740234,NA
+"MAT06",2,"F0.5","Vaccinium vitis-idaea","Inflor","Evergreen","1985",0.905731678009033,52.7043304443359,NA
+"MAT06",2,"F0.5","Other Evergreen","OldLeaves","Evergreen","2005",0.951416730880737,59.5921325683594,NA
+"MAT06",2,"F0.5","Vaccinium vitis-idaea","NewLeaves","Evergreen","1981",1.08027148246765,57.1435394287109,NA
+"MAT06",2,"F0.5","Vaccinium vitis-idaea","NewLeaves","Evergreen","1981",1.07131123542786,57.2655487060547,NA
+"MAT06",2,"F0.5","Vaccinium vitis-idaea","NewStems","Evergreen","1982",1.00649559497833,57.8725395202637,NA
+"MAT06",2,"F0.5","Vaccinium vitis-idaea","OldLeaves","Evergreen","1983",0.857071876525879,56.9555511474609,NA
+"MAT06",2,"F0.5","Cassiope tetragona","Inflor","Evergreen","802",0.821467876434326,63.4842071533203,NA
+"MAT06",2,"F0.5","Cassiope tetragona","OldStems","Evergreen","799",0.910992860794067,61.9940795898438,NA
+"MAT06",2,"F0.5","Cassiope tetragona","NewStems","Evergreen","796",1.13975632190704,64.3194580078125,NA
+"MAT06",2,"F0.5","Vaccinium vitis-idaea","BelowStem","Evergreen","1986",1.04151964187622,58.3571090698242,NA
+"MAT06",2,"F0.5","Other Evergreen","NewStems","Evergreen","2004",0.902123987674713,60.9349060058594,NA
+"MAT06",2,"F0.5","Other Evergreen","OldStems","Evergreen","2006",0.866019904613495,66.2078475952148,NA
 "MAT06",2,"F0.5","Sphagnum","Green","Moss","872",1.10156559944153,51.7499885559082,NA
-"MAT06",2,"F0.5","OtherMoss","Green","Moss","1993",1.04171001911163,53.1098747253418,NA
-"MAT06",2,"F0.5","OtherMoss","Green","Moss","1993",1.0124990940094,51.994701385498,NA
-"MAT06",2,"F0.5","Rubcha","BelowStem","Forb","1999",1.00501608848572,55.1626281738281,NA
-"MAT06",2,"F0.5","Lichen","Live","Lichen","1994",1.54361236095428,52.5394592285156,NA
-"MAT06",2,"F0.5","Rubcha","LeavesStems","Forb","1998",2.51326036453247,52.523567199707,NA
-"MAT06",2,"F0.5","Attached","Litter","Litter","2010",0.614477097988129,53.4349212646484,NA
-"MAT06",2,"CT","Erivag","BladeSheathInflCulm","Graminoid","765",1.38823258876801,52.3727378845215,NA
-"MAT06",2,"CT","Erivag","Rhizome","Graminoid","762",1.64096355438232,49.818790435791,NA
-"MAT06",2,"CT","Carbig","BladeSheathInflCulm","Graminoid","860",2.23801684379578,51.364673614502,NA
-"MAT06",2,"CT","Carbig","Rhizome","Graminoid","863",0.668175756931305,49.727165222168,NA
-"MAT06",2,"CT","OtherGraminoid","BladeSheathInflCulm","Graminoid","768",0.893956780433655,49.587646484375,NA
-"MAT06",2,"CT","Betnan","NewStems","Deciduous","820",1.22350585460663,63.4726448059082,NA
-"MAT06",2,"CT","Betnan","NewStems","Deciduous","820",1.20744585990906,62.6337356567383,NA
-"MAT06",2,"CT","Betnan","NewLeaves","Deciduous","585",2.20525050163269,56.4908065795898,NA
-"MAT06",2,"CT","Ledpal","OldStems","Evergreen","851",0.617503821849823,59.7670974731445,NA
-"MAT06",2,"CT","Salpul","OldStems","Deciduous","773",1.41971099376678,56.6817283630371,NA
-"MAT06",2,"CT","Ledpal","NewLeaves","Evergreen","842",1.68395936489105,59.5040740966797,NA
-"MAT06",2,"CT","Ledpal","OldLeaves","Evergreen","848",1.20153427124023,59.274730682373,NA
-"MAT06",2,"CT","Betnan","OldStems","Deciduous","586",0.724614024162292,58.5749969482422,NA
-"MAT06",2,"CT","Betnan","BelowStem","Deciduous","857",0.643870711326599,56.6252670288086,NA
-"MAT06",2,"CT","Vacvit","NewLeaves","Evergreen","869",1.14093375205994,57.2460250854492,NA
-"MAT06",2,"CT","Ledpal","NewStems","Evergreen","845",1.34136784076691,58.0661392211914,NA
-"MAT06",2,"CT","Vacvit","OldLeaves","Evergreen","846",0.896876692771912,56.8147010803223,NA
-"MAT06",2,"CT","Vacvit","OldLeaves","Evergreen","846",0.881239831447601,57.1808280944824,NA
-"MAT06",2,"CT","Vacvit","OldStems","Evergreen","849",0.940230906009674,56.5422630310059,NA
-"MAT06",2,"CT","Ledpal","Inflor","Evergreen","854",1.1627950668335,55.9182662963867,NA
-"MAT06",2,"CT","Ledpal","BelowStem","Evergreen","584",0.738686680793762,57.8658905029297,NA
-"MAT06",2,"CT","Vacvit","NewStems","Evergreen","843",0.889926910400391,57.9960517883301,NA
-"MAT06",2,"CT","OtherEvergreen","NewStems","Evergreen","861",1.22851073741913,58.5279693603516,NA
-"MAT06",2,"CT","OtherEvergreen","OldLeaves","Evergreen","864",0.891465127468109,59.3438377380371,NA
-"MAT06",2,"CT","Vacvit","BelowStem","Evergreen","852",0.841085076332092,58.5818710327148,NA
-"MAT06",2,"CT","Vacvit","Inflor","Evergreen","870",1.0719963312149,51.6922302246094,NA
-"MAT06",2,"CT","Attached","Wood","Litter","447",0.691539525985718,62.1484413146973,NA
-"MAT06",2,"CT","OtherEvergreen","BelowStem","Evergreen","441",0.743038952350616,62.3234443664551,NA
-"MAT06",2,"CT","OtherEvergreen","BelowStem","Evergreen","441",0.686471402645111,62.1148300170898,NA
-"MAT06",2,"CT","OtherEvergreen","NewLeaves","Evergreen","858",1.54044091701508,60.5765914916992,NA
-"MAT06",2,"CT","OtherForb","LeavesStems","Forb","436",2.1353702545166,50.5696830749512,NA
-"MAT06",2,"CT","OtherMoss","Green","Moss","868",0.740439057350159,43.5012359619141,NA
-"MAT06",2,"CT","Betnan","Inflor","Deciduous","587",1.27097690105438,66.2667388916016,NA
-"MAT06",2,"CT","OtherGraminoid","Rhizome","Graminoid","771",0.71781599521637,NA,NA
+"MAT06",2,"F0.5","Other Mosses","Green","Moss","1993",1.04171001911163,53.1098747253418,NA
+"MAT06",2,"F0.5","Other Mosses","Green","Moss","1993",1.0124990940094,51.994701385498,NA
+"MAT06",2,"F0.5","Rubus chamaemorus","BelowStem","Forb","1999",1.00501608848572,55.1626281738281,NA
+"MAT06",2,"F0.5","Mixed Lichen","Live","Lichen","1994",1.54361236095428,52.5394592285156,NA
+"MAT06",2,"F0.5","Rubus chamaemorus","LeavesStems","Forb","1998",2.51326036453247,52.523567199707,NA
+"MAT06",2,"F0.5","Litter","Litter","Litter","2010",0.614477097988129,53.4349212646484,NA
+"MAT06",2,"CT","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","765",1.38823258876801,52.3727378845215,NA
+"MAT06",2,"CT","Eriophorum vaginatum","Rhizome","Graminoid","762",1.64096355438232,49.818790435791,NA
+"MAT06",2,"CT","Carex bigelowii","BladeSheathInflCulm","Graminoid","860",2.23801684379578,51.364673614502,NA
+"MAT06",2,"CT","Carex bigelowii","Rhizome","Graminoid","863",0.668175756931305,49.727165222168,NA
+"MAT06",2,"CT","Other Graminoid","BladeSheathInflCulm","Graminoid","768",0.893956780433655,49.587646484375,NA
+"MAT06",2,"CT","Betula nana","NewStems","Deciduous","820",1.22350585460663,63.4726448059082,NA
+"MAT06",2,"CT","Betula nana","NewStems","Deciduous","820",1.20744585990906,62.6337356567383,NA
+"MAT06",2,"CT","Betula nana","NewLeaves","Deciduous","585",2.20525050163269,56.4908065795898,NA
+"MAT06",2,"CT","Ledum palustre","OldStems","Evergreen","851",0.617503821849823,59.7670974731445,NA
+"MAT06",2,"CT","Salix pulchra","OldStems","Deciduous","773",1.41971099376678,56.6817283630371,NA
+"MAT06",2,"CT","Ledum palustre","NewLeaves","Evergreen","842",1.68395936489105,59.5040740966797,NA
+"MAT06",2,"CT","Ledum palustre","OldLeaves","Evergreen","848",1.20153427124023,59.274730682373,NA
+"MAT06",2,"CT","Betula nana","OldStems","Deciduous","586",0.724614024162292,58.5749969482422,NA
+"MAT06",2,"CT","Betula nana","BelowStem","Deciduous","857",0.643870711326599,56.6252670288086,NA
+"MAT06",2,"CT","Vaccinium vitis-idaea","NewLeaves","Evergreen","869",1.14093375205994,57.2460250854492,NA
+"MAT06",2,"CT","Ledum palustre","NewStems","Evergreen","845",1.34136784076691,58.0661392211914,NA
+"MAT06",2,"CT","Vaccinium vitis-idaea","OldLeaves","Evergreen","846",0.896876692771912,56.8147010803223,NA
+"MAT06",2,"CT","Vaccinium vitis-idaea","OldLeaves","Evergreen","846",0.881239831447601,57.1808280944824,NA
+"MAT06",2,"CT","Vaccinium vitis-idaea","OldStems","Evergreen","849",0.940230906009674,56.5422630310059,NA
+"MAT06",2,"CT","Ledum palustre","Inflor","Evergreen","854",1.1627950668335,55.9182662963867,NA
+"MAT06",2,"CT","Ledum palustre","BelowStem","Evergreen","584",0.738686680793762,57.8658905029297,NA
+"MAT06",2,"CT","Vaccinium vitis-idaea","NewStems","Evergreen","843",0.889926910400391,57.9960517883301,NA
+"MAT06",2,"CT","Other Evergreen","NewStems","Evergreen","861",1.22851073741913,58.5279693603516,NA
+"MAT06",2,"CT","Other Evergreen","OldLeaves","Evergreen","864",0.891465127468109,59.3438377380371,NA
+"MAT06",2,"CT","Vaccinium vitis-idaea","BelowStem","Evergreen","852",0.841085076332092,58.5818710327148,NA
+"MAT06",2,"CT","Vaccinium vitis-idaea","Inflor","Evergreen","870",1.0719963312149,51.6922302246094,NA
+"MAT06",2,"CT","Litter","Wood","Litter","447",0.691539525985718,62.1484413146973,NA
+"MAT06",2,"CT","Other Evergreen","BelowStem","Evergreen","441",0.743038952350616,62.3234443664551,NA
+"MAT06",2,"CT","Other Evergreen","BelowStem","Evergreen","441",0.686471402645111,62.1148300170898,NA
+"MAT06",2,"CT","Other Evergreen","NewLeaves","Evergreen","858",1.54044091701508,60.5765914916992,NA
+"MAT06",2,"CT","Other Forb","LeavesStems","Forb","436",2.1353702545166,50.5696830749512,NA
+"MAT06",2,"CT","Other Mosses","Green","Moss","868",0.740439057350159,43.5012359619141,NA
+"MAT06",2,"CT","Betula nana","Inflor","Deciduous","587",1.27097690105438,66.2667388916016,NA
+"MAT06",2,"CT","Other Graminoid","Rhizome","Graminoid","771",0.71781599521637,NA,NA
 "MAT06",2,"CT","Sphagnum","Green","Moss","428",1.03601467609406,51.7564811706543,NA
-"MAT06",2,"CT","Lichen","Live","Lichen","865",0.913423120975494,46.9193801879883,NA
-"MAT06",2,"CT","Lichen","Live","Lichen","865",0.801988482475281,46.5032234191895,NA
-"MAT06",1,"F10","Rubcha","InflorStalks","Forb","12",1.91696059703827,41.3287391662598,NA
-"MAT06",2,"F0.5","Salpul","NewStems","Deciduous","670",1.01398277282715,48.8711967468262,NA
-"MAT06",3,"F0.5","Vacvit","BelowStem","Evergreen","1907",0.687659621238708,48.3607711791992,NA
-"MAT06",1,"F5","Attached","Wood","Litter","349",1.3171021938324,49.3857879638672,NA
-"MAT06",2,"F2","Lichen","Live","Lichen","1111",0.85650646686554,40.6141967773438,NA
-"MAT06",2,"F0.5","Betnan","OldStems","Deciduous","1997",0.507168889045715,50.3961982727051,NA
-"MAT06",2,"F1","Ledpal","OldLeaves","Evergreen","655",0.932279050350189,49.4900779724121,NA
-"MAT06",2,"F1","Vaculi","BelowStem","Deciduous","634",0.58594810962677,46.6905097961426,NA
-"MAT06",2,"F2","Salpul","BelowStem","Deciduous","1179",1.4040641784668,45.6226425170898,NA
-"MAT06",3,"F1","Betnan","BelowStem","Deciduous","809",0.599562525749207,46.0353393554688,NA
-"MAT06",2,"F2","Salpul","BelowStem","Deciduous","1179",1.38599824905396,45.6888084411621,NA
-"MAT06",2,"CT","Attached","Litter","Litter","594",0.429539680480957,46.6272773742676,NA
-"MAT06",2,"F2","Betnan","OldStems","Deciduous","1083",0.797821760177612,48.9931411743164,NA
-"MAT06",2,"F5","Lichen","Live","Lichen","608",1.49570214748383,40.5902557373047,NA
-"MAT06",2,"F5","Attached","Litter","Litter","610",1.4745579957962,41.4356079101562,NA
-"MAT06",2,"F1","Vaculi","NewStems","Deciduous","632",0.765661537647247,47.2398338317871,NA
-"MAT06",2,"F5","OtherEvergreen","OldLeaves","Evergreen","918",1.44818043708801,47.6313209533691,NA
-"MAT06",1,"F0.5","Rubcha","LeavesStems","Forb","1699",1.81377923488617,44.4353294372559,NA
-"MAT06",1,"CT","Betnan","OldStems","Deciduous","19",0.773583889007568,48.9156188964844,NA
-"MAT06",2,"CT","Attached","Litter","Litter","594",0.408680200576782,46.7290649414062,NA
-"MAT06",1,"F5","Attached","Litter","Litter","99",0.879214882850647,40.7700843811035,NA
-"MAT06",3,"F0.5","Petfri","BelowStem","Forb","1916",1.04653978347778,41.3313789367676,NA
-"MAT06",1,"CT","OtherEvergreen","OldStems","Evergreen","267",0.427117854356766,46.7636070251465,NA
-"MAT06",2,"F1","Ledpal","NewLeaves","Evergreen","653",1.47179484367371,50.6281356811523,NA
-"MAT06",2,"F5","Vacvit","NewStems","Evergreen","923",1.07439589500427,46.6613464355469,NA
-"MAT06",3,"F0.5","Betnan","NewStems","Deciduous","1894",0.743444502353668,52.614372253418,NA
-"MAT06",3,"F0.5","Betnan","NewStems","Deciduous","1894",0.734411776065826,52.5157699584961,NA
-"MAT06",1,"F1","Erivag","Rhizome","Graminoid","234",0.686174273490906,43.382926940918,NA
-"MAT06",1,"F1","Castet","NewStems","Evergreen","392",1.52696478366852,52.6304969787598,NA
-"MAT06",1,"F1","Erivag","BladeSheathInflCulm","Graminoid","233",1.30669152736664,43.2732315063477,NA
-"MAT06",2,"F2","Betnan","BelowStem","Deciduous","1085",0.507808923721313,46.5526237487793,NA
-"MAT06",3,"F5","Betnan","OldStems","Deciduous","1509",1.16235637664795,49.4987449645996,NA
-"MAT06",2,"F5","Vaculi","NewStems","Deciduous","533",1.36218321323395,47.6149635314941,NA
-"MAT06",2,"F5","Ledpal","NewLeaves","Evergreen","905",1.92905139923096,49.256275177002,NA
-"MAT06",2,"CT","OtherGraminoid","Rhizome","Graminoid","771",0.419720411300659,39.2030181884766,NA
-"MAT06",3,"F5","Betnan","OldStems","Deciduous","1509",1.10146760940552,50.2193641662598,NA
-"MAT06",3,"CT","Ledpal","Inflor","Evergreen","1164",2.20590591430664,48.3447952270508,NA
-"MAT06",3,"CT","Castet","Inflor","Evergreen","1600",0.543901562690735,47.5810585021973,NA
-"MAT06",3,"CT","Attached","Litter","Litter","1042",0.326315611600876,43.9863548278809,NA
-"MAT06",3,"CT","Salpul","NewStems","Deciduous","1028",1.06669914722443,49.1262550354004,NA
-"MAT06",3,"CT","OtherEvergreen","OldLeaves","Evergreen","973",0.625971972942352,50.0515098571777,NA
-"MAT06",3,"CT","OtherEvergreen","OldStems","Evergreen","976",0.36312860250473,49.1396102905273,NA
-"MAT06",3,"CT","OtherEvergreen","OldLeaves","Evergreen","973",0.633353590965271,50.0201873779297,NA
+"MAT06",2,"CT","Mixed Lichen","Live","Lichen","865",0.913423120975494,46.9193801879883,NA
+"MAT06",2,"CT","Mixed Lichen","Live","Lichen","865",0.801988482475281,46.5032234191895,NA
+"MAT06",1,"F10","Rubus chamaemorus","InflorStalks","Forb","12",1.91696059703827,41.3287391662598,NA
+"MAT06",2,"F0.5","Salix pulchra","NewStems","Deciduous","670",1.01398277282715,48.8711967468262,NA
+"MAT06",3,"F0.5","Vaccinium vitis-idaea","BelowStem","Evergreen","1907",0.687659621238708,48.3607711791992,NA
+"MAT06",1,"F5","Litter","Wood","Litter","349",1.3171021938324,49.3857879638672,NA
+"MAT06",2,"F2","Mixed Lichen","Live","Lichen","1111",0.85650646686554,40.6141967773438,NA
+"MAT06",2,"F0.5","Betula nana","OldStems","Deciduous","1997",0.507168889045715,50.3961982727051,NA
+"MAT06",2,"F1","Ledum palustre","OldLeaves","Evergreen","655",0.932279050350189,49.4900779724121,NA
+"MAT06",2,"F1","Vaccinium uliginosum","BelowStem","Deciduous","634",0.58594810962677,46.6905097961426,NA
+"MAT06",2,"F2","Salix pulchra","BelowStem","Deciduous","1179",1.4040641784668,45.6226425170898,NA
+"MAT06",3,"F1","Betula nana","BelowStem","Deciduous","809",0.599562525749207,46.0353393554688,NA
+"MAT06",2,"F2","Salix pulchra","BelowStem","Deciduous","1179",1.38599824905396,45.6888084411621,NA
+"MAT06",2,"CT","Litter","Litter","Litter","594",0.429539680480957,46.6272773742676,NA
+"MAT06",2,"F2","Betula nana","OldStems","Deciduous","1083",0.797821760177612,48.9931411743164,NA
+"MAT06",2,"F5","Mixed Lichen","Live","Lichen","608",1.49570214748383,40.5902557373047,NA
+"MAT06",2,"F5","Litter","Litter","Litter","610",1.4745579957962,41.4356079101562,NA
+"MAT06",2,"F1","Vaccinium uliginosum","NewStems","Deciduous","632",0.765661537647247,47.2398338317871,NA
+"MAT06",2,"F5","Other Evergreen","OldLeaves","Evergreen","918",1.44818043708801,47.6313209533691,NA
+"MAT06",1,"F0.5","Rubus chamaemorus","LeavesStems","Forb","1699",1.81377923488617,44.4353294372559,NA
+"MAT06",1,"CT","Betula nana","OldStems","Deciduous","19",0.773583889007568,48.9156188964844,NA
+"MAT06",2,"CT","Litter","Litter","Litter","594",0.408680200576782,46.7290649414062,NA
+"MAT06",1,"F5","Litter","Litter","Litter","99",0.879214882850647,40.7700843811035,NA
+"MAT06",3,"F0.5","Petasites frigidus","BelowStem","Forb","1916",1.04653978347778,41.3313789367676,NA
+"MAT06",1,"CT","Other Evergreen","OldStems","Evergreen","267",0.427117854356766,46.7636070251465,NA
+"MAT06",2,"F1","Ledum palustre","NewLeaves","Evergreen","653",1.47179484367371,50.6281356811523,NA
+"MAT06",2,"F5","Vaccinium vitis-idaea","NewStems","Evergreen","923",1.07439589500427,46.6613464355469,NA
+"MAT06",3,"F0.5","Betula nana","NewStems","Deciduous","1894",0.743444502353668,52.614372253418,NA
+"MAT06",3,"F0.5","Betula nana","NewStems","Deciduous","1894",0.734411776065826,52.5157699584961,NA
+"MAT06",1,"F1","Eriophorum vaginatum","Rhizome","Graminoid","234",0.686174273490906,43.382926940918,NA
+"MAT06",1,"F1","Cassiope tetragona","NewStems","Evergreen","392",1.52696478366852,52.6304969787598,NA
+"MAT06",1,"F1","Eriophorum vaginatum","BladeSheathInflCulm","Graminoid","233",1.30669152736664,43.2732315063477,NA
+"MAT06",2,"F2","Betula nana","BelowStem","Deciduous","1085",0.507808923721313,46.5526237487793,NA
+"MAT06",3,"F5","Betula nana","OldStems","Deciduous","1509",1.16235637664795,49.4987449645996,NA
+"MAT06",2,"F5","Vaccinium uliginosum","NewStems","Deciduous","533",1.36218321323395,47.6149635314941,NA
+"MAT06",2,"F5","Ledum palustre","NewLeaves","Evergreen","905",1.92905139923096,49.256275177002,NA
+"MAT06",2,"CT","Other Graminoid","Rhizome","Graminoid","771",0.419720411300659,39.2030181884766,NA
+"MAT06",3,"F5","Betula nana","OldStems","Deciduous","1509",1.10146760940552,50.2193641662598,NA
+"MAT06",3,"CT","Ledum palustre","Inflor","Evergreen","1164",2.20590591430664,48.3447952270508,NA
+"MAT06",3,"CT","Cassiope tetragona","Inflor","Evergreen","1600",0.543901562690735,47.5810585021973,NA
+"MAT06",3,"CT","Litter","Litter","Litter","1042",0.326315611600876,43.9863548278809,NA
+"MAT06",3,"CT","Salix pulchra","NewStems","Deciduous","1028",1.06669914722443,49.1262550354004,NA
+"MAT06",3,"CT","Other Evergreen","OldLeaves","Evergreen","973",0.625971972942352,50.0515098571777,NA
+"MAT06",3,"CT","Other Evergreen","OldStems","Evergreen","976",0.36312860250473,49.1396102905273,NA
+"MAT06",3,"CT","Other Evergreen","OldLeaves","Evergreen","973",0.633353590965271,50.0201873779297,NA

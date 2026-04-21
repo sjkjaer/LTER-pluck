@@ -162,6 +162,56 @@ mass_id6 <- clean_names(mass_id6)
 mass_g3 <- clean_names(mass_g3)
 ```
 
+### expand species
+
+```{r}
+# from species code to full species name, also matches 2012 data
+
+unique(mass_g3$species)
+
+mass_g3$species <- mass_g3$species %>% 
+  recode(
+   "Erivag" = "Eriophorum vaginatum",
+     "OtherGraminoid" = "Other Graminoid",
+     "Carbig" = "Carex bigelowii",
+     "Betnan" = "Betula nana",
+     "Salpul" = "Salix pulchra",
+     "Vaculi" = "Vaccinium uliginosum",
+     "OtherDeciduous" = "Other Deciduous",
+     "Ledpal" = "Ledum palustre",
+     "Vacvit" = "Vaccinium vitis-idaea",
+     "Castet" = "Cassiope tetragona",
+     "OtherEvergreen" = "Other Evergreen",
+     "Rubcha" = "Rubus chamaemorus",
+     "Petfri" = "Petasites frigidus",
+     "OtherForb" = "Other Forb",
+     "OtherMoss" = "Other Mosses",
+     "Lichen" = "Mixed Lichen",
+     "Attached" = "Litter"
+    )
+
+mass_id6$species <- mass_id6$species %>% 
+  recode(
+   "Erivag" = "Eriophorum vaginatum",
+     "OtherGraminoid" = "Other Graminoid",
+     "Carbig" = "Carex bigelowii",
+     "Betnan" = "Betula nana",
+     "Salpul" = "Salix pulchra",
+     "Vaculi" = "Vaccinium uliginosum",
+     "OtherDeciduous" = "Other Deciduous",
+     "Ledpal" = "Ledum palustre",
+     "Vacvit" = "Vaccinium vitis-idaea",
+     "Castet" = "Cassiope tetragona",
+     "OtherEvergreen" = "Other Evergreen",
+     "Rubcha" = "Rubus chamaemorus",
+     "Petfri" = "Petasites frigidus",
+     "OtherForb" = "Other Forb",
+     "OtherMoss" = "Other Mosses",
+     "Lichen" = "Mixed Lichen",
+     "Attached" = "Litter"
+    )
+```
+
 ### create ID list
 
 ```{r}
@@ -195,25 +245,26 @@ mass4 <- mass3[!(mass3$species %in% "Loose"),]
 #4464 of 10
 
 # create Growth_form column
-mass5 <- mass4 %>% mutate(growth_form = case_when(
-    startsWith(species, "Erivag") ~ "Graminoid",
-    startsWith(species, "OtherGraminoid") ~ "Graminoid",
-    startsWith(species, "Carbig") ~ "Graminoid",
-    startsWith(species, "Betnan") ~ "Deciduous",
-    startsWith(species, "Salpul") ~ "Deciduous",
-    startsWith(species, "Vaculi") ~ "Deciduous",
-    startsWith(species, "OtherDeciduous") ~ "Deciduous",
-    startsWith(species, "Ledpal") ~ "Evergreen",
-    startsWith(species, "Vacvit") ~ "Evergreen",
-    startsWith(species, "Castet") ~ "Evergreen",
-    startsWith(species, "OtherEvergreen") ~ "Evergreen",
-    startsWith(species, "Rubcha") ~ "Forb",
-    startsWith(species, "Petfri") ~ "Forb",
-    startsWith(species, "OtherForb") ~ "Forb",
+mass5 <- mass4 %>% 
+  mutate(growth_form = case_when(
+    startsWith(species, "Eriophorum vaginatum") ~ "Graminoid",
+    startsWith(species, "Other Graminoid") ~ "Graminoid",
+    startsWith(species, "Carex bigelowii") ~ "Graminoid",
+    startsWith(species, "Betula nana") ~ "Deciduous",
+    startsWith(species, "Salix pulchra") ~ "Deciduous",
+    startsWith(species, "Vaccinium uliginosum") ~ "Deciduous",
+    startsWith(species, "Other Deciduous") ~ "Deciduous",
+    startsWith(species, "Ledum palustre") ~ "Evergreen",
+    startsWith(species, "Vaccinium vitis-idaea") ~ "Evergreen",
+    startsWith(species, "Cassiope tetragona") ~ "Evergreen",
+    startsWith(species, "Other Evergreen") ~ "Evergreen",
+    startsWith(species, "Rubus chamaemorus") ~ "Forb",
+    startsWith(species, "Petasites frigidus") ~ "Forb",
+    startsWith(species, "Other Forb") ~ "Forb",
     startsWith(species, "Sphagnum") ~ "Moss",
-    startsWith(species, "OtherMoss") ~ "Moss",
-    startsWith(species, "Lichen") ~ "Lichen",
-    startsWith(species, "Attached") ~ "Litter"
+    startsWith(species, "Other Mosses") ~ "Moss",
+    startsWith(species, "Mixed Lichen") ~ "Lichen",
+    startsWith(species, "Litter") ~ "Litter"
     ))
 #of 11
 ```
@@ -387,7 +438,7 @@ bg4 <- bg4[, col_order]
 
 ```{r}
 view(bg4)
-#432 of 11
+#432 of 12
 
 write.csv(bg4, "~/LTER-pluck/2024_pluck/processed_data/final_data/bg_mass.csv", row.names=FALSE)
 ```
@@ -399,7 +450,7 @@ write.csv(bg4, "~/LTER-pluck/2024_pluck/processed_data/final_data/bg_mass.csv", 
 
 ```{r, message=FALSE, warning=FALSE}
 # read in files from /raw_data/ folder
-tc <- read_excel("~/LTER-pluck/2024_pluck/raw_data/soil_data_total_cores_jm.xlsx")
+tc <- read_excel("~/LTER-pluck/2024_pluck/raw_data/soil_data_total_cores_jm.xlsx", col_types = c("numeric", "text", "numeric", "text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "date", "date", "numeric", "numeric", "numeric", "text"))
 #83 obs, 16 variables
 head(tc)
 ```
@@ -455,7 +506,7 @@ tc3 <- transform(tc3, soil_notes = replace(soil_notes, startsWith(soil_notes, "T
 ```{r}
 # reorder columns
 colnames(tc3)
-col_order <- c("date_collected", "site", "block", "treatment", "quad", "core_surface_area_cm2", "organic_core_depth_cm", "mineral_core_depth_cm", "depth_from_mineral_to_permafrost_cm", "depth_of_core_to_permafrost_cm", "ice_depth_accidentally_cored_cm", "date_collected", "dry_mass_aboveground_g", "dry_mass_organic_horizon_g", "dry_mass_mineral_horizon_g", "soil_notes")
+col_order <- c("date_collected", "site", "block", "treatment", "quad", "core_surface_area_cm2", "organic_core_depth_cm", "mineral_core_depth_cm", "depth_from_mineral_to_permafrost_cm", "depth_of_core_to_permafrost_cm", "ice_depth_accidentally_cored_cm", "dry_mass_aboveground_g", "dry_mass_organic_horizon_g", "dry_mass_mineral_horizon_g", "soil_notes")
 tc3 <- tc3[, col_order]
 ```
 
@@ -463,7 +514,7 @@ tc3 <- tc3[, col_order]
 
 ```{r}
 view(tc3)
-#72 of 16
+#72 of 15
 
 write.csv(tc3, "~/LTER-pluck/2024_pluck/processed_data/final_data/tc_mass.csv", row.names = FALSE)
 ```

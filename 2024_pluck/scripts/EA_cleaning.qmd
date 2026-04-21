@@ -161,25 +161,26 @@ view(cn5)
 
 ```{r}
 #create Growth_form column
-cn6 <- cn5 %>% mutate(growth_form = case_when(
-    startsWith(species, "Erivag") ~ "Graminoid",
-    startsWith(species, "OtherGraminoid") ~ "Graminoid",
-    startsWith(species, "Carbig") ~ "Graminoid",
-    startsWith(species, "Betnan") ~ "Deciduous",
-    startsWith(species, "Salpul") ~ "Deciduous",
-    startsWith(species, "Vaculi") ~ "Deciduous",
-    startsWith(species, "OtherDeciduous") ~ "Deciduous",
-    startsWith(species, "Ledpal") ~ "Evergreen",
-    startsWith(species, "Vacvit") ~ "Evergreen",
-    startsWith(species, "Castet") ~ "Evergreen",
-    startsWith(species, "OtherEvergreen") ~ "Evergreen",
-    startsWith(species, "Rubcha") ~ "Forb",
-    startsWith(species, "Petfri") ~ "Forb",
-    startsWith(species, "OtherForb") ~ "Forb",
+cn6 <- cn5 %>% 
+  mutate(growth_form = case_when(
+    startsWith(species, "Eriophorum vaginatum") ~ "Graminoid",
+    startsWith(species, "Other Graminoid") ~ "Graminoid",
+    startsWith(species, "Carex bigelowii") ~ "Graminoid",
+    startsWith(species, "Betula nana") ~ "Deciduous",
+    startsWith(species, "Salix pulchra") ~ "Deciduous",
+    startsWith(species, "Vaccinium uliginosum") ~ "Deciduous",
+    startsWith(species, "Other Deciduous") ~ "Deciduous",
+    startsWith(species, "Ledum palustre") ~ "Evergreen",
+    startsWith(species, "Vaccinium vitis-idaea") ~ "Evergreen",
+    startsWith(species, "Cassiope tetragona") ~ "Evergreen",
+    startsWith(species, "Other Evergreen") ~ "Evergreen",
+    startsWith(species, "Rubus chamaemorus") ~ "Forb",
+    startsWith(species, "Petasites frigidus") ~ "Forb",
+    startsWith(species, "Other Forb") ~ "Forb",
     startsWith(species, "Sphagnum") ~ "Moss",
-    startsWith(species, "OtherMoss") ~ "Moss",
-    startsWith(species, "Lichen") ~ "Lichen",
-    startsWith(species, "Attached") ~ "Litter"
+    startsWith(species, "Other Mosses") ~ "Moss",
+    startsWith(species, "Mixed Lichen") ~ "Lichen",
+    startsWith(species, "Litter") ~ "Litter"
     ))
 #of 14
 ```
@@ -365,6 +366,7 @@ head(cn_tc4)
 
 ```{r}
 view(cn_tc4)
+#40 of 7
 
 write.csv(cn_tc4, "~/LTER-pluck/2024_pluck/processed_data/final_data/tc_cn.csv", row.names=FALSE)
 ```

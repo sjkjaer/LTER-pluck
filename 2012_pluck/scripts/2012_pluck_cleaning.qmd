@@ -54,7 +54,7 @@ head(df1)
 df2 <- df1 %>%
   pivot_longer(cols = c(8:22),
                names_to = "block_quad",
-               values_to = "Mass_g")
+               values_to = "mass_g")
 #4725 of 9
 
 head(df2)
@@ -64,7 +64,7 @@ head(df2)
 
 ```{r}
 # create block column
-df3 <- df2 %>% mutate(Block = case_when(
+df3 <- df2 %>% mutate(block = case_when(
     startsWith(block_quad, "b1") ~ "1",
     startsWith(block_quad, "b2") ~ "2",
     startsWith(block_quad, "b3") ~ "3",
@@ -73,32 +73,43 @@ df3 <- df2 %>% mutate(Block = case_when(
 #of 10
 
 # create quad column
-df4 <- df3 %>% mutate(Quad = case_when(
+df4 <- df3 %>% mutate(quad = case_when(
     endsWith(block_quad, "q1") ~ "1",
     endsWith(block_quad, "q2") ~ "2",
     endsWith(block_quad, "q3") ~ "3",
     endsWith(block_quad, "q4") ~ "4",
     endsWith(block_quad, "q5") ~ "5"
     ))
+#of 11
+
+# remove block_quad column
+df5 <- select(df4, -c("block_quad"))
 #of 10
 ```
 
 ### normalize with 2024 pluck
 
 ```{r}
-unique(df4$site)
+unique(df5$site)
 
-df4$site <- df4$site %>% 
+df5$site <- df5$site %>% 
   recode("LTER 2006 Low Nutrient Moist Acidic Tussock Tundra" = "MAT06")
 ```
 
 ### final tidy
 
 ```{r}
-col_order <- c("Date_collected", "Site", "Block", "Treatment", "Quad", "Species", "Tissue", "Biomass_category", "Growth_form", "Mass_g")
+col_order <- c("date", "site", "block", "treatment", "quad", "species", "tissue", "biomass_category", "growth_form", "mass_g")
+df5 <- df5[, col_order]
+```
 
-col_order <- c("Date_collected", "Site", "Block", "Treatment", "Quad", "Surface_area_cm2", "Species", "Tissue", "Growth_form", "Plot_tissue_ID", "Mass_g", "Notes")
-mass5 <- mass5[, col_order]
+### write final_data/ag_mass.csv
+
+```{r}
+view(df5)
+#4725 of 10
+
+write.csv(df5, "~/LTER-pluck/2012_pluck/processed_data/final_data/ag_mass2012.csv", row.names=FALSE)
 ```
 
 
