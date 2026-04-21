@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Savannah Kjaer">
+<meta name="dcterms.date" content="2026-04-15">
 
 <title>EA_cleaning</title>
 <style>
@@ -86,7 +88,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Savannah Kjaer </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 15, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -104,7 +118,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -113,46 +128,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="read-in-data" class="level3">
 <h3 class="anchored" data-anchor-id="read-in-data">read in data</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cn <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/LTER-pluck/raw_data/CN_results2.xlsx"</span>)</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cn <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/LTER-pluck/2024_pluck/raw_data/CN_results2.xlsx"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(cn)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#1007 of 17 variables</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>id <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"~/LTER-pluck/processed_data/ag_pluck_id.csv"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>id <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"~/LTER-pluck/2024_pluck/processed_data/ag_pluck_id.csv"</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="tidy-columns-and-rows" class="level3">
 <h3 class="anchored" data-anchor-id="tidy-columns-and-rows">tidy columns and rows</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cn <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(cn)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "Group"          "Sample name"    "Filename"       "Date"          
- [5] "Inj Date"       "Inj Time"       "Type"           "Weight (mg)"   
- [9] "Protein Factor" "Humidity %"     "AS"             "Vial"          
-[13] "Nitrogen"       "Carbon"         "ID"             "Sample type"   
-[17] "Notes"         </code></pre>
+<pre><code> [1] "group"            "sample_name"      "filename"         "date"            
+ [5] "inj_date"         "inj_time"         "type"             "weight_mg"       
+ [9] "protein_factor"   "humidity_percent" "as"               "vial"            
+[13] "nitrogen"         "carbon"           "id"               "sample_type"     
+[17] "notes"           </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># removing unnecessary columns</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cn1 <span class="ot">&lt;-</span> <span class="fu">select</span>(cn, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Group"</span>, <span class="st">"Sample name"</span>, <span class="st">"Inj Date"</span>, <span class="st">"Inj Time"</span>, <span class="st">"Type"</span>, <span class="st">"Weight (mg)"</span>, <span class="st">"Protein Factor"</span>, <span class="st">"Humidity %"</span>, <span class="st">"AS"</span>, <span class="st">"Vial"</span>))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#of 7</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cn1 <span class="ot">&lt;-</span> <span class="fu">select</span>(cn, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"group"</span>, <span class="st">"sample_name"</span>, <span class="st">"inj_date"</span>, <span class="st">"inj_time"</span>, <span class="st">"type"</span>, <span class="st">"weight_mg"</span>, <span class="st">"protein_factor"</span>, <span class="st">"humidity_percent"</span>, <span class="st">"as"</span>, <span class="st">"vial"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#of 6</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>cn1<span class="sc">$</span>Carbon <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(cn1<span class="sc">$</span>Carbon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>cn1<span class="sc">$</span>carbon <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(cn1<span class="sc">$</span>carbon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: NAs introduced by coercion</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cn1<span class="sc">$</span>Nitrogen <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(cn1<span class="sc">$</span>Nitrogen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cn1<span class="sc">$</span>nitrogen <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(cn1<span class="sc">$</span>nitrogen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: NAs introduced by coercion</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cn1<span class="sc">$</span>Filename <span class="ot">&lt;-</span> <span class="fu">as.character</span>(cn1<span class="sc">$</span>Filename)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn1)[<span class="fu">names</span>(cn1) <span class="sc">==</span> <span class="st">'Sample type'</span>] <span class="ot">&lt;-</span> <span class="st">"Sample_type"</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn1)[<span class="fu">names</span>(cn1) <span class="sc">==</span> <span class="st">"ID"</span>] <span class="ot">&lt;-</span> <span class="st">"Plot_tissue_ID"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cn1<span class="sc">$</span>filename <span class="ot">&lt;-</span> <span class="fu">as.character</span>(cn1<span class="sc">$</span>filename)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn1)[<span class="fu">names</span>(cn1) <span class="sc">==</span> <span class="st">"id"</span>] <span class="ot">&lt;-</span> <span class="st">"plot_tissue_id"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="separate-ag-masses-from-others" class="level3">
 <h3 class="anchored" data-anchor-id="separate-ag-masses-from-others">separate AG masses from others</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cn_ag <span class="ot">&lt;-</span> <span class="fu">filter</span>(cn1, Sample_type <span class="sc">==</span> <span class="st">"AG"</span>)</span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cn_ag <span class="ot">&lt;-</span> <span class="fu">filter</span>(cn1, sample_type <span class="sc">==</span> <span class="st">"AG"</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(cn_ag)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#760</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -160,10 +177,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="corrections" class="level3">
 <h3 class="anchored" data-anchor-id="corrections">corrections</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># two IDs from AG mass data so one renamed to another quad ID</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>Plot_tissue_ID[cn_ag<span class="sc">$</span>Filename <span class="sc">==</span> <span class="st">"09042025013"</span>] <span class="ot">&lt;-</span> <span class="st">"1601"</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># two ids from AG mass data so one renamed to another quad id</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>plot_tissue_id[cn_ag<span class="sc">$</span>filename <span class="sc">==</span> <span class="st">"09042025013"</span>] <span class="ot">&lt;-</span> <span class="st">"1601"</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># looking into IDs that appeared in EA results that are not ID names</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># looking into ids that appeared in EA results that are not id names</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 602, 685, 1548, 1549, 1084, 1355</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 602 was mistyped, paper datasheet say 662</span></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 685 was mistyped, paper datasheet say 658</span></span>
@@ -171,15 +188,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 1549 was mistyped, paper datasheet say 1507</span></span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 223 was mistyped, paper datasheet say 222</span></span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 1084 unclear what sample it was</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 1355 is under the ID 1164, which was missing so showed up as an ID but not a sample</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 1355 is under the id 1164, which was missing so showed up as an id but not a sample</span></span>
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>Plot_tissue_ID[cn_ag<span class="sc">$</span>Filename <span class="sc">==</span> <span class="st">"04042025044"</span>] <span class="ot">&lt;-</span> <span class="st">"662"</span></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>Plot_tissue_ID[cn_ag<span class="sc">$</span>Filename <span class="sc">==</span> <span class="st">"04042025042"</span>] <span class="ot">&lt;-</span> <span class="st">"658"</span></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>Plot_tissue_ID[cn_ag<span class="sc">$</span>Filename <span class="sc">==</span> <span class="st">"09042025017"</span>] <span class="ot">&lt;-</span> <span class="st">"1506"</span></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>Plot_tissue_ID[cn_ag<span class="sc">$</span>Filename <span class="sc">==</span> <span class="st">"09042025018"</span>] <span class="ot">&lt;-</span> <span class="st">"1507"</span></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>Plot_tissue_ID[cn_ag<span class="sc">$</span>Filename <span class="sc">==</span> <span class="st">"03042025105"</span>] <span class="ot">&lt;-</span> <span class="st">"222"</span></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>Plot_tissue_ID[cn_ag<span class="sc">$</span>Filename <span class="sc">==</span> <span class="st">"24032025073"</span>] <span class="ot">&lt;-</span> <span class="st">"NA"</span></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>Plot_tissue_ID[cn_ag<span class="sc">$</span>Filename <span class="sc">==</span> <span class="st">"23012026046"</span>] <span class="ot">&lt;-</span> <span class="st">"1164"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>plot_tissue_id[cn_ag<span class="sc">$</span>filename <span class="sc">==</span> <span class="st">"04042025044"</span>] <span class="ot">&lt;-</span> <span class="st">"662"</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>plot_tissue_id[cn_ag<span class="sc">$</span>filename <span class="sc">==</span> <span class="st">"04042025042"</span>] <span class="ot">&lt;-</span> <span class="st">"658"</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>plot_tissue_id[cn_ag<span class="sc">$</span>filename <span class="sc">==</span> <span class="st">"09042025017"</span>] <span class="ot">&lt;-</span> <span class="st">"1506"</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>plot_tissue_id[cn_ag<span class="sc">$</span>filename <span class="sc">==</span> <span class="st">"09042025018"</span>] <span class="ot">&lt;-</span> <span class="st">"1507"</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>plot_tissue_id[cn_ag<span class="sc">$</span>filename <span class="sc">==</span> <span class="st">"03042025105"</span>] <span class="ot">&lt;-</span> <span class="st">"222"</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>plot_tissue_id[cn_ag<span class="sc">$</span>filename <span class="sc">==</span> <span class="st">"24032025073"</span>] <span class="ot">&lt;-</span> <span class="st">"NA"</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>cn_ag<span class="sc">$</span>plot_tissue_id[cn_ag<span class="sc">$</span>filename <span class="sc">==</span> <span class="st">"23012026046"</span>] <span class="ot">&lt;-</span> <span class="st">"1164"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="combine" class="level3">
@@ -188,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cn_ag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
-  Filename    Date       Nitrogen Carbon Plot_tissue_ID Sample_type Notes       
+  filename    date       nitrogen carbon plot_tissue_id sample_type notes       
   &lt;chr&gt;       &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;       &lt;chr&gt;       
 1 20032025011 03/20/2025     4.34   46.0 1648           AG          burnt sample
 2 20032025012 03/20/2025     4.92   43.4 1649           AG          burnt sample
@@ -202,20 +219,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
-  Block Treatment Surface_area_cm2 Date_collected Species  Tissue Plot_tissue_ID
-  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;date&gt;         &lt;chr&gt;    &lt;chr&gt;           &lt;dbl&gt;
-1     1 CT                     400 2024-07-24     Erivag   Blade…            264
-2     1 CT                     400 2024-07-24     Erivag   Rhizo…            268
-3     1 CT                     400 2024-07-24     Carbig   Blade…            285
-4     1 CT                     400 2024-07-24     Carbig   Rhizo…             NA
-5     1 CT                     400 2024-07-24     OtherGr… Blade…             NA
-6     1 CT                     400 2024-07-24     OtherGr… Rhizo…             NA</code></pre>
+  block treatment surface_area_cm2 site  species           tissue plot_tissue_id
+  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;           &lt;dbl&gt;
+1     1 CT                     400 MAT06 Eriophorum vagin… Blade…            264
+2     1 CT                     400 MAT06 Eriophorum vagin… Rhizo…            268
+3     1 CT                     400 MAT06 Carex bigelowii   Blade…            285
+4     1 CT                     400 MAT06 Carex bigelowii   Rhizo…             NA
+5     1 CT                     400 MAT06 Other Graminoid   Blade…             NA
+6     1 CT                     400 MAT06 Other Graminoid   Rhizo…             NA</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 7 </span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>id<span class="sc">$</span>Plot_tissue_ID <span class="ot">&lt;-</span> <span class="fu">as.character</span>(id<span class="sc">$</span>Plot_tissue_ID)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>id<span class="sc">$</span>plot_tissue_id <span class="ot">&lt;-</span> <span class="fu">as.character</span>(id<span class="sc">$</span>plot_tissue_id)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>cn2 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(cn_ag, id)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Joining with `by = join_by(Plot_tissue_ID)`</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Joining with `by = join_by(plot_tissue_id)`</span></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(cn2)</span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">#760 of 13</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -224,18 +241,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="error-check" class="level3">
 <h3 class="anchored" data-anchor-id="error-check">error check</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>cn2.na <span class="ot">&lt;-</span> <span class="fu">subset</span>(cn2, (<span class="fu">is.na</span>(cn2<span class="sc">$</span>Block)))</span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>cn2.na <span class="ot">&lt;-</span> <span class="fu">subset</span>(cn2, (<span class="fu">is.na</span>(cn2<span class="sc">$</span>block)))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#117 obs</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># remove check results</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>cn3 <span class="ot">&lt;-</span> cn2 <span class="sc">%&gt;%</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">grepl</span>(<span class="st">"Check"</span>, Plot_tissue_ID))</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">grepl</span>(<span class="st">"Check"</span>, plot_tissue_id))</span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">#697</span></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co"># "NA" wasn't NA</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>cn3<span class="sc">$</span>Plot_tissue_ID[cn3<span class="sc">$</span>Plot_tissue_ID <span class="sc">==</span> <span class="st">"NA"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>cn3<span class="sc">$</span>plot_tissue_id[cn3<span class="sc">$</span>plot_tissue_id <span class="sc">==</span> <span class="st">"NA"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>cn3.na <span class="ot">&lt;-</span> <span class="fu">subset</span>(cn3, (<span class="fu">is.na</span>(cn3<span class="sc">$</span>Block)))</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>cn3.na <span class="ot">&lt;-</span> <span class="fu">subset</span>(cn3, (<span class="fu">is.na</span>(cn3<span class="sc">$</span>block)))</span>
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co">#54</span></span>
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 1186, 538, 1617, 1488, 1476</span></span>
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co"># these aren't first quads, just quads that didn't originally get added to the rest</span></span>
@@ -244,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="co"># leave all out for now</span></span>
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>cn4 <span class="ot">&lt;-</span> cn3 <span class="sc">%&gt;%</span></span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(Block <span class="sc">%in%</span> <span class="fu">c</span>(<span class="cn">NA</span>)))</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(block <span class="sc">%in%</span> <span class="fu">c</span>(<span class="cn">NA</span>)))</span>
 <span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="co">#643, good!!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -254,12 +271,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># checking burnt B1 against unburnt B2&amp;3</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> cn4 <span class="sc">%&gt;%</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"F0.5"</span>))</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(treatment <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"F0.5"</span>))</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span></span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Tissue, <span class="at">y=</span>Carbon, <span class="at">col=</span>Notes)) <span class="sc">+</span> </span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>tissue, <span class="at">y=</span>carbon, <span class="at">col=</span>notes)) <span class="sc">+</span> </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -269,8 +286,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">%&gt;%</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Tissue, <span class="at">y=</span>Nitrogen, <span class="at">col=</span>Notes)) <span class="sc">+</span> </span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>tissue, <span class="at">y=</span>nitrogen, <span class="at">col=</span>notes)) <span class="sc">+</span> </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -284,12 +301,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="remove-burnt-samples">remove burnt samples</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>burnt <span class="ot">&lt;-</span> cn4 <span class="sc">%&gt;%</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Notes <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"burnt sample"</span>))</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(notes <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"burnt sample"</span>))</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#40</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># all burnt, should be removed</span></span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>cn5 <span class="ot">&lt;-</span> cn4 <span class="sc">%&gt;%</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(Notes <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"burnt sample"</span>)))</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(notes <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"burnt sample"</span>)))</span>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(cn5)</span>
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co">#603 obs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -299,27 +316,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="create-growth-form-column">create growth form column</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create Growth_form column</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>cn6 <span class="ot">&lt;-</span> cn5 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Growth_form =</span> <span class="fu">case_when</span>(</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Erivag"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherGraminoid"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Carbig"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Betnan"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Salpul"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Vaculi"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherDeciduous"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Ledpal"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Vacvit"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Castet"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherEvergreen"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Rubcha"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Petfri"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherForb"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Sphagnum"</span>) <span class="sc">~</span> <span class="st">"Moss"</span>,</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherMoss"</span>) <span class="sc">~</span> <span class="st">"Moss"</span>,</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Lichen"</span>) <span class="sc">~</span> <span class="st">"Lichen"</span>,</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Attached"</span>) <span class="sc">~</span> <span class="st">"Litter"</span></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    ))</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="co">#of 14</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>cn6 <span class="ot">&lt;-</span> cn5 <span class="sc">%&gt;%</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">growth_form =</span> <span class="fu">case_when</span>(</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Eriophorum vaginatum"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Other Graminoid"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Carex bigelowii"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Betula nana"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Salix pulchra"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Vaccinium uliginosum"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Other Deciduous"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Ledum palustre"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Vaccinium vitis-idaea"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Cassiope tetragona"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Other Evergreen"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Rubus chamaemorus"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Petasites frigidus"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Other Forb"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Sphagnum"</span>) <span class="sc">~</span> <span class="st">"Moss"</span>,</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Other Mosses"</span>) <span class="sc">~</span> <span class="st">"Moss"</span>,</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Mixed Lichen"</span>) <span class="sc">~</span> <span class="st">"Lichen"</span>,</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Litter"</span>) <span class="sc">~</span> <span class="st">"Litter"</span></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="co">#of 14</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="final-tidy" class="level3">
@@ -328,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cn6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 14
-  Filename    Date       Nitrogen Carbon Plot_tissue_ID Sample_type Notes Block
+  filename    date       nitrogen carbon plot_tissue_id sample_type notes block
   &lt;chr&gt;       &lt;chr&gt;         &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt;
 1 20032025058 03/20/2025    1.78    55.0 236            AG          &lt;NA&gt;      1
 2 20032025059 03/20/2025    1.40    53.0 310            AG          &lt;NA&gt;      1
@@ -336,15 +354,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 4 20032025062 03/20/2025    1.08    53.6 315            AG          &lt;NA&gt;      1
 5 20032025063 03/20/2025    0.750   59.1 305            AG          &lt;NA&gt;      1
 6 20032025064 03/20/2025    2.04    52.9 235            AG          &lt;NA&gt;      1
-# ℹ 6 more variables: Treatment &lt;chr&gt;, Surface_area_cm2 &lt;dbl&gt;,
-#   Date_collected &lt;date&gt;, Species &lt;chr&gt;, Tissue &lt;chr&gt;, Growth_form &lt;chr&gt;</code></pre>
+# ℹ 6 more variables: treatment &lt;chr&gt;, surface_area_cm2 &lt;dbl&gt;, site &lt;chr&gt;,
+#   species &lt;chr&gt;, tissue &lt;chr&gt;, growth_form &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>cn7 <span class="ot">&lt;-</span> <span class="fu">select</span>(cn6, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Filename"</span>, <span class="st">"Date"</span>, <span class="st">"Sample_type"</span>, <span class="st">"Surface_area_cm2"</span>))</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Block"</span>, <span class="st">"Treatment"</span>, <span class="st">"Date_collected"</span>, <span class="st">"Species"</span>, <span class="st">"Tissue"</span>, <span class="st">"Plot_tissue_ID"</span>, <span class="st">"Nitrogen"</span>, <span class="st">"Carbon"</span>, <span class="st">"Growth_form"</span>, <span class="st">"Notes"</span>)</span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>cn7 <span class="ot">&lt;-</span> <span class="fu">select</span>(cn6, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"filename"</span>, <span class="st">"date"</span>, <span class="st">"sample_type"</span>, <span class="st">"surface_area_cm2"</span>))</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"site"</span>, <span class="st">"block"</span>, <span class="st">"treatment"</span>,  <span class="st">"species"</span>, <span class="st">"tissue"</span>, <span class="st">"growth_form"</span>, <span class="st">"plot_tissue_id"</span>, <span class="st">"nitrogen"</span>, <span class="st">"carbon"</span>,  <span class="st">"notes"</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>cn7 <span class="ot">&lt;-</span> cn7[, col_order]</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn7)[<span class="fu">names</span>(cn7) <span class="sc">==</span> <span class="st">'Nitrogen'</span>] <span class="ot">&lt;-</span> <span class="st">"Nitrogen_percent"</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn7)[<span class="fu">names</span>(cn7) <span class="sc">==</span> <span class="st">'Carbon'</span>] <span class="ot">&lt;-</span> <span class="st">"Carbon_percent"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn7)[<span class="fu">names</span>(cn7) <span class="sc">==</span> <span class="st">'nitrogen'</span>] <span class="ot">&lt;-</span> <span class="st">"nitrogen_percent"</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn7)[<span class="fu">names</span>(cn7) <span class="sc">==</span> <span class="st">'carbon'</span>] <span class="ot">&lt;-</span> <span class="st">"carbon_percent"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="write-final_dataag_cn.csv" class="level3">
@@ -353,7 +372,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(cn7)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#603 of 10</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(cn7, <span class="st">"~/LTER-pluck/processed_data/final_data/ag_cn.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(cn7, <span class="st">"~/LTER-pluck/2024_pluck/processed_data/final_data/ag_cn.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -362,16 +381,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="read-in-data-1" class="level3">
 <h3 class="anchored" data-anchor-id="read-in-data-1">read in data</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>id_bg <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"~/LTER-pluck/processed_data/bg_pluck_id.csv"</span>)</span>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>id_bg <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"~/LTER-pluck/2024_pluck/processed_data/bg_pluck_id.csv"</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="separate-bg-masses-from-others" class="level3">
 <h3 class="anchored" data-anchor-id="separate-bg-masses-from-others">separate BG masses from others</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn1)[<span class="fu">names</span>(cn1) <span class="sc">==</span> <span class="st">"Plot_tissue_ID"</span>] <span class="ot">&lt;-</span> <span class="st">"Plot_root_ID"</span></span>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn1)[<span class="fu">names</span>(cn1) <span class="sc">==</span> <span class="st">"plot_tissue_id"</span>] <span class="ot">&lt;-</span> <span class="st">"plot_root_id"</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>cn_bg <span class="ot">&lt;-</span> <span class="fu">filter</span>(cn1, Sample_type <span class="sc">==</span> <span class="st">"BG"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>cn_bg <span class="ot">&lt;-</span> <span class="fu">filter</span>(cn1, sample_type <span class="sc">==</span> <span class="st">"BG"</span>)</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(cn_bg)</span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#80</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -379,11 +398,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="corrections-1" class="level3">
 <h3 class="anchored" data-anchor-id="corrections-1">corrections</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># looking into IDs that appeared in EA results that are not ID names</span></span>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># looking into ids that appeared in EA results that are not id names</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 395 unclear what sample it was</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>cn_bg<span class="sc">$</span>Plot_root_ID[cn_bg<span class="sc">$</span>Filename <span class="sc">==</span> <span class="st">"11042025025"</span>] <span class="ot">&lt;-</span> <span class="st">"NA"</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>cn_bg<span class="sc">$</span>Plot_root_ID[cn_bg<span class="sc">$</span>Filename <span class="sc">==</span> <span class="st">"24032025041"</span>] <span class="ot">&lt;-</span> <span class="st">"175"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>cn_bg<span class="sc">$</span>plot_root_id[cn_bg<span class="sc">$</span>filename <span class="sc">==</span> <span class="st">"11042025025"</span>] <span class="ot">&lt;-</span> <span class="st">"NA"</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>cn_bg<span class="sc">$</span>plot_root_id[cn_bg<span class="sc">$</span>filename <span class="sc">==</span> <span class="st">"24032025041"</span>] <span class="ot">&lt;-</span> <span class="st">"175"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="combine-1" class="level3">
@@ -392,20 +411,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(id_bg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
-  Block Treatment Horizon Date_collected Root_type Plot_root_ID
-  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;date&gt;         &lt;chr&gt;            &lt;dbl&gt;
-1     1 CT        O       2024-07-24     Fine                 1
-2     1 CT        O       2024-07-24     Coarse              NA
-3     1 CT        O       2024-07-24     Erivag               3
-4     1 CT        M       2024-07-24     Fine                 4
-5     1 CT        M       2024-07-24     Coarse              NA
-6     1 CT        M       2024-07-24     Erivag               6</code></pre>
+  block treatment horizon site  root_type plot_root_id
+  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
+1     1 CT        O       MAT06 fine                 1
+2     1 CT        O       MAT06 coarse              NA
+3     1 CT        O       MAT06 erivag               3
+4     1 CT        M       MAT06 fine                 4
+5     1 CT        M       MAT06 coarse              NA
+6     1 CT        M       MAT06 erivag               6</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 6</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>id_bg<span class="sc">$</span>Plot_root_ID <span class="ot">&lt;-</span> <span class="fu">as.character</span>(id_bg<span class="sc">$</span>Plot_root_ID)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>id_bg<span class="sc">$</span>plot_root_id <span class="ot">&lt;-</span> <span class="fu">as.character</span>(id_bg<span class="sc">$</span>plot_root_id)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>cn_bg2 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(cn_bg, id_bg)</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Joining with `by = join_by(Plot_root_ID)`</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Joining with `by = join_by(plot_root_id)`</span></span>
 <span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(cn_bg2)</span>
 <span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co">#80 of 12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -414,26 +433,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="error-check-1" class="level3">
 <h3 class="anchored" data-anchor-id="error-check-1">error check</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>cn2.na <span class="ot">&lt;-</span> <span class="fu">subset</span>(cn_bg2, (<span class="fu">is.na</span>(cn_bg2<span class="sc">$</span>Block)))</span>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>cn2.na <span class="ot">&lt;-</span> <span class="fu">subset</span>(cn_bg2, (<span class="fu">is.na</span>(cn_bg2<span class="sc">$</span>block)))</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#7 obs</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># remove check results</span></span>
 <span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>cn_bg3 <span class="ot">&lt;-</span> cn_bg2 <span class="sc">%&gt;%</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">grepl</span>(<span class="st">"Check"</span>, Plot_root_ID))</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">grepl</span>(<span class="st">"Check"</span>, plot_root_id))</span>
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">#74</span></span>
 <span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># "NA" wasn't NA</span></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>cn_bg3<span class="sc">$</span>Plot_root_ID[cn_bg3<span class="sc">$</span>Plot_root_ID <span class="sc">==</span> <span class="st">"NA"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>cn_bg3<span class="sc">$</span>plot_root_id[cn_bg3<span class="sc">$</span>plot_root_id <span class="sc">==</span> <span class="st">"NA"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
 <span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>cn_bg3.na <span class="ot">&lt;-</span> <span class="fu">subset</span>(cn_bg3, (<span class="fu">is.na</span>(cn_bg3<span class="sc">$</span>Plot_root_ID)))</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>cn_bg3.na <span class="ot">&lt;-</span> <span class="fu">subset</span>(cn_bg3, (<span class="fu">is.na</span>(cn_bg3<span class="sc">$</span>plot_root_id)))</span>
 <span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="co">#1</span></span>
 <span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="co"># checked, should be removed </span></span>
 <span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>cn_bg4 <span class="ot">&lt;-</span> cn_bg3 <span class="sc">%&gt;%</span></span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(Plot_root_ID <span class="sc">%in%</span> <span class="fu">c</span>(<span class="cn">NA</span>)))</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(plot_root_id <span class="sc">%in%</span> <span class="fu">c</span>(<span class="cn">NA</span>)))</span>
 <span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="co">#73, good!!</span></span>
 <span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>cn_bg4.na <span class="ot">&lt;-</span> <span class="fu">subset</span>(cn_bg4, (<span class="fu">is.na</span>(cn_bg4<span class="sc">$</span>Block)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>cn_bg4.na <span class="ot">&lt;-</span> <span class="fu">subset</span>(cn_bg4, (<span class="fu">is.na</span>(cn_bg4<span class="sc">$</span>block)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="final-tidy-1" class="level3">
@@ -442,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cn_bg4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 12
-  Filename  Date  Nitrogen Carbon Plot_root_ID Sample_type Notes Block Treatment
+  filename  date  nitrogen carbon plot_root_id sample_type notes block treatment
   &lt;chr&gt;     &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;    
 1 24032025… 03/2…    0.958   48.7 1            BG          &lt;NA&gt;      1 CT       
 2 24032025… 03/2…    1.12    41.3 4            BG          &lt;NA&gt;      1 CT       
@@ -450,14 +469,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 4 24032025… 03/2…    0.492   38.0 6            BG          &lt;NA&gt;      1 CT       
 5 24032025… 03/2…    0.862   46.1 49           BG          &lt;NA&gt;      1 F0.5     
 6 24032025… 03/2…    0.796   40.8 52           BG          &lt;NA&gt;      1 F0.5     
-# ℹ 3 more variables: Horizon &lt;chr&gt;, Date_collected &lt;date&gt;, Root_type &lt;chr&gt;</code></pre>
+# ℹ 3 more variables: horizon &lt;chr&gt;, site &lt;chr&gt;, root_type &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>cn_bg5 <span class="ot">&lt;-</span> <span class="fu">select</span>(cn_bg4, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Filename"</span>, <span class="st">"Date"</span>, <span class="st">"Sample_type"</span>))</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Block"</span>, <span class="st">"Treatment"</span>, <span class="st">"Date_collected"</span>, <span class="st">"Horizon"</span>, <span class="st">"Root_type"</span>, <span class="st">"Plot_root_ID"</span>, <span class="st">"Nitrogen"</span>, <span class="st">"Carbon"</span>, <span class="st">"Notes"</span>)</span>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>cn_bg5 <span class="ot">&lt;-</span> <span class="fu">select</span>(cn_bg4, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"filename"</span>, <span class="st">"date"</span>, <span class="st">"sample_type"</span>))</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"site"</span>, <span class="st">"block"</span>, <span class="st">"treatment"</span>, <span class="st">"horizon"</span>, <span class="st">"root_type"</span>, <span class="st">"plot_root_id"</span>, <span class="st">"nitrogen"</span>, <span class="st">"carbon"</span>, <span class="st">"notes"</span>)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>cn_bg5 <span class="ot">&lt;-</span> cn_bg5[, col_order]</span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn_bg5)[<span class="fu">names</span>(cn_bg5) <span class="sc">==</span> <span class="st">'Nitrogen'</span>] <span class="ot">&lt;-</span> <span class="st">"Nitrogen_percent"</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn_bg5)[<span class="fu">names</span>(cn_bg5) <span class="sc">==</span> <span class="st">'Carbon'</span>] <span class="ot">&lt;-</span> <span class="st">"Carbon_percent"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn_bg5)[<span class="fu">names</span>(cn_bg5) <span class="sc">==</span> <span class="st">'nitrogen'</span>] <span class="ot">&lt;-</span> <span class="st">"nitrogen_percent"</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn_bg5)[<span class="fu">names</span>(cn_bg5) <span class="sc">==</span> <span class="st">'carbon'</span>] <span class="ot">&lt;-</span> <span class="st">"carbon_percent"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="write-final_databg_cn.csv" class="level3">
@@ -466,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(cn_bg5)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co">#73 of 9</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(cn_bg5, <span class="st">"~/LTER-pluck/processed_data/final_data/bg_cn.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(cn_bg5, <span class="st">"~/LTER-pluck/2024_pluck/processed_data/final_data/bg_cn.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -475,9 +494,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="separate-tc-masses-from-others" class="level3">
 <h3 class="anchored" data-anchor-id="separate-tc-masses-from-others">separate TC masses from others</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn1)[<span class="fu">names</span>(cn1) <span class="sc">==</span> <span class="st">"Plot_root_ID"</span>] <span class="ot">&lt;-</span> <span class="st">"Plot_horizon_ID"</span></span>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn1)[<span class="fu">names</span>(cn1) <span class="sc">==</span> <span class="st">"plot_root_id"</span>] <span class="ot">&lt;-</span> <span class="st">"plot_horizon_id"</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>cn_tc <span class="ot">&lt;-</span> <span class="fu">filter</span>(cn1, Sample_type <span class="sc">==</span> <span class="st">"Total Cores"</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>cn_tc <span class="ot">&lt;-</span> <span class="fu">filter</span>(cn1, sample_type <span class="sc">==</span> <span class="st">"Total Cores"</span>)</span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(cn_tc)</span>
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co">#44</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -485,12 +504,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="corrections-2" class="level3">
 <h3 class="anchored" data-anchor-id="corrections-2">corrections</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>cn_tc<span class="sc">$</span>Plot_horizon_ID <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"-T"</span>, <span class="st">"-M"</span>, cn_tc<span class="sc">$</span>Plot_horizon_ID)</span>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>cn_tc<span class="sc">$</span>plot_horizon_id <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"-T"</span>, <span class="st">"-M"</span>, cn_tc<span class="sc">$</span>plot_horizon_id)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># not sure why mineral was labeled as T?</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create block, trt, horizon columns from id</span></span>
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>cn_tc1 <span class="ot">&lt;-</span> cn_tc <span class="sc">%&gt;%</span> </span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(Plot_horizon_ID, <span class="fu">c</span>(<span class="st">"Block"</span>, <span class="st">"Treatment"</span>, <span class="st">"Horizon"</span>), <span class="at">sep =</span> <span class="st">"-"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(plot_horizon_id, <span class="fu">c</span>(<span class="st">"Block"</span>, <span class="st">"Treatment"</span>, <span class="st">"Horizon"</span>), <span class="at">sep =</span> <span class="st">"-"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Expected 3 pieces. Missing pieces filled with `NA` in 4 rows [12, 22,
 34, 44].</code></pre>
@@ -514,7 +533,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>cn_tc3 <span class="ot">&lt;-</span> cn_tc2 <span class="sc">%&gt;%</span></span>
 <span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(Block <span class="sc">%in%</span> <span class="fu">c</span>(<span class="cn">NA</span>)))</span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="co">#40, good!!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="co">#40, good!!</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>cn_tc3 <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(cn_tc3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="final-tidy-2" class="level3">
@@ -523,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cn_tc3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 9
-  Filename    Date     Nitrogen Carbon Block Treatment Horizon Sample_type Notes
+  filename    date     nitrogen carbon block treatment horizon sample_type notes
   &lt;chr&gt;       &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;
 1 10042025018 04/10/2…    1.05    36.1 1     CT        O       Total Cores &lt;NA&gt; 
 2 10042025019 04/10/2…    0.697   33.4 1     F0.5      O       Total Cores &lt;NA&gt; 
@@ -532,20 +553,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5 10042025022 04/10/2…    0.751   23.2 1     F5        O       Total Cores &lt;NA&gt; 
 6 10042025023 04/10/2…    1.42    35.0 1     F10       O       Total Cores &lt;NA&gt; </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>cn_tc4 <span class="ot">&lt;-</span> <span class="fu">select</span>(cn_tc3, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Filename"</span>, <span class="st">"Date"</span>, <span class="st">"Sample_type"</span>))</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Block"</span>, <span class="st">"Treatment"</span>, <span class="st">"Horizon"</span>, <span class="st">"Nitrogen"</span>, <span class="st">"Carbon"</span>, <span class="st">"Notes"</span>)</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>cn_tc4 <span class="ot">&lt;-</span> cn_tc4[, col_order]</span>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>cn_tc3<span class="sc">$</span>site <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MAT06"</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>cn_tc4 <span class="ot">&lt;-</span> <span class="fu">select</span>(cn_tc3, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"filename"</span>, <span class="st">"date"</span>, <span class="st">"sample_type"</span>))</span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn_tc4)[<span class="fu">names</span>(cn_tc4) <span class="sc">==</span> <span class="st">'Nitrogen'</span>] <span class="ot">&lt;-</span> <span class="st">"Nitrogen_percent"</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn_tc4)[<span class="fu">names</span>(cn_tc4) <span class="sc">==</span> <span class="st">'Carbon'</span>] <span class="ot">&lt;-</span> <span class="st">"Carbon_percent"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"site"</span>, <span class="st">"block"</span>, <span class="st">"treatment"</span>, <span class="st">"horizon"</span>, <span class="st">"nitrogen"</span>, <span class="st">"carbon"</span>, <span class="st">"notes"</span>)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>cn_tc4 <span class="ot">&lt;-</span> cn_tc4[, col_order]</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn_tc4)[<span class="fu">names</span>(cn_tc4) <span class="sc">==</span> <span class="st">'nitrogen'</span>] <span class="ot">&lt;-</span> <span class="st">"nitrogen_percent"</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cn_tc4)[<span class="fu">names</span>(cn_tc4) <span class="sc">==</span> <span class="st">'carbon'</span>] <span class="ot">&lt;-</span> <span class="st">"carbon_percent"</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cn_tc4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  site  block treatment horizon nitrogen_percent carbon_percent notes
+  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;              &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;
+1 MAT06 1     CT        O                  1.05            36.1 &lt;NA&gt; 
+2 MAT06 1     F0.5      O                  0.697           33.4 &lt;NA&gt; 
+3 MAT06 1     F1        O                  0.935           31.7 &lt;NA&gt; 
+4 MAT06 1     F2        O                  1.24            32.5 &lt;NA&gt; 
+5 MAT06 1     F5        O                  0.751           23.2 &lt;NA&gt; 
+6 MAT06 1     F10       O                  1.42            35.0 &lt;NA&gt; </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#of 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="write-final_datatc_cn.csv" class="level3">
 <h3 class="anchored" data-anchor-id="write-final_datatc_cn.csv">write final_data/tc_cn.csv</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(cn_tc4)</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(cn_bg5, <span class="st">"~/LTER-pluck/processed_data/final_data/tc_cn.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(cn_tc4)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co">#40 of 7</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(cn_tc4, <span class="st">"~/LTER-pluck/2024_pluck/processed_data/final_data/tc_cn.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>

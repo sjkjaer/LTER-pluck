@@ -118,7 +118,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -128,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="read-in-data">read in data</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in files from /raw_data/ folder</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mass <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/LTER-pluck/raw_data/Shoot_data_collection_mass.xlsx"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mass <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/LTER-pluck/2024_pluck/raw_data/Shoot_data_collection_mass.xlsx"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#74 obs, 141 variables</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -151,9 +152,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-</section>
-<section id="tidy" class="level2">
-<h2 class="anchored" data-anchor-id="tidy">Tidy</h2>
 <section id="tidy-columns-and-rows" class="level3">
 <h3 class="anchored" data-anchor-id="tidy-columns-and-rows">tidy columns and rows</h3>
 <div class="cell">
@@ -164,7 +162,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># drop empty rows at the bottom</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>mass2 <span class="ot">&lt;-</span> mass1[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">73</span><span class="sc">:</span><span class="dv">74</span>),]</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#72 obs of 136 variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#72 obs of 136 variables</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># add site column</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>mass2<span class="sc">$</span>site <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MAT06"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#of 137</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="separate-mass-and-ids" class="level3">
@@ -172,208 +174,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove mass columns</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mass_id <span class="ot">&lt;-</span> <span class="fu">select</span>(mass2, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"mass_g"</span>))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#72 obs, 73 variables</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#72 obs, 74 variables</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># remove other species column</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>mass_id1 <span class="ot">&lt;-</span> <span class="fu">select</span>(mass_id, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"Species"</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>mass_id1 <span class="ot">&lt;-</span> <span class="fu">select</span>(mass_id, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"Species"</span>), <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Date_collected"</span>))</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#72 obs, 68 variables</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># remove name columns</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>mass_g <span class="ot">&lt;-</span> <span class="fu">select</span>(mass2, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"bag_number"</span>))</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#72 obs, 73 variables</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#72 obs, 74 variables</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>mass_g1 <span class="ot">&lt;-</span> <span class="fu">select</span>(mass_g, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"Species"</span>))</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#68 variables</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_g1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 68
-  Block Treatment  Quad Surface_area_cm2 Date_collected     
-  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;dttm&gt;             
-1     1 CT            1              400 2024-07-24 00:00:00
-2     1 CT            2              400 2024-07-24 00:00:00
-3     1 CT            3              400 2024-07-24 00:00:00
-4     1 CT            4              400 2024-07-24 00:00:00
-5     1 F0.5          1              400 2024-07-25 00:00:00
-6     1 F0.5          2              400 2024-07-25 00:00:00
-# ℹ 63 more variables: Erivag_BladeSheathInflCulm_mass_g &lt;dbl&gt;,
-#   Erivag_Rhizome_mass_g &lt;chr&gt;, Carbig_BladeSheathInflCulm_mass_g &lt;dbl&gt;,
-#   Carbig_Rhizome_mass_g &lt;dbl&gt;,
-#   OtherGraminoid_BladeSheathInflCulm_mass_g &lt;chr&gt;,
-#   OtherGraminoid_Rhizome_mass_g &lt;dbl&gt;, Betnan_NewLeaves_mass_g &lt;dbl&gt;,
-#   Betnan_NewStems_mass_g &lt;chr&gt;, Betnan_OldStems_mass_g &lt;dbl&gt;,
-#   Betnan_Inflor_mass_g &lt;chr&gt;, Betnan_BelowStem_mass_g &lt;dbl&gt;, …</code></pre>
-</div>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#69 variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="classes-to-numeric" class="level3">
 <h3 class="anchored" data-anchor-id="classes-to-numeric">classes to numeric</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># some mass columns as characters not numbers</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># turns the "missing" values to NA's</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>cols.num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span><span class="sc">:</span><span class="dv">68</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>mass_g1[cols.num] <span class="ot">&lt;-</span> <span class="fu">sapply</span>(mass_g1[cols.num],as.numeric)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># check</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(mass_g1, class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># some mass columns as characters not numbers</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># turns the "missing" values to NA's</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>mass_g1 <span class="ot">&lt;-</span> mass_g1 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">ends_with</span>(<span class="st">"_mass_g"</span>), as.numeric))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># check</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(mass_g1, class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="create-longform-mass-table-for-publishing" class="level3">
 <h3 class="anchored" data-anchor-id="create-longform-mass-table-for-publishing">create longform mass table for publishing</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wide2long</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>mass_g2 <span class="ot">&lt;-</span> mass_g1 <span class="sc">%&gt;%</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="dv">6</span><span class="sc">:</span><span class="dv">68</span>),</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Tissue"</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Mass_g"</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#4536 obs, 7 variables</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># remove "_mass_g" from tissue col</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>mass_g2<span class="sc">$</span>Tissue <span class="ot">&lt;-</span> </span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_mass_g"</span>,<span class="st">""</span>,mass_g2<span class="sc">$</span>Tissue)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># separate values in Tissue column into Species and Tissue</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>mass_g3 <span class="ot">&lt;-</span> mass_g2 <span class="sc">%&gt;%</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(Tissue, <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Tissue"</span>))</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#4536 of 8</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_g3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 8
-  Block Treatment  Quad Surface_area_cm2 Date_collected      Species      Tissue
-  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;        &lt;chr&gt; 
-1     1 CT            1              400 2024-07-24 00:00:00 Erivag       Blade…
-2     1 CT            1              400 2024-07-24 00:00:00 Erivag       Rhizo…
-3     1 CT            1              400 2024-07-24 00:00:00 Carbig       Blade…
-4     1 CT            1              400 2024-07-24 00:00:00 Carbig       Rhizo…
-5     1 CT            1              400 2024-07-24 00:00:00 OtherGramin… Blade…
-6     1 CT            1              400 2024-07-24 00:00:00 OtherGramin… Rhizo…
-# ℹ 1 more variable: Mass_g &lt;dbl&gt;</code></pre>
-</div>
-</div>
-</section>
-<section id="sort-ids-into-one-per-plot" class="level3">
-<h3 class="anchored" data-anchor-id="sort-ids-into-one-per-plot">sort IDs into one per plot</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wide2long</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>mass_id2 <span class="ot">&lt;-</span> mass_id1 <span class="sc">%&gt;%</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="fu">ends_with</span>(<span class="st">'_bag_number'</span>)),</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Tissue"</span>,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Plot_tissue_ID"</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#4536 obs, 7 variables</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># put all quads into one row per plot</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>mass_id3<span class="ot">&lt;-</span>mass_id2 <span class="sc">%&gt;%</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Quad,</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> Plot_tissue_ID)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 9</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co"># create one ID per plot, ignore quads</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># "NA" wasn't NA</span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>mass_id4 <span class="ot">&lt;-</span> mass_id3 <span class="sc">%&gt;%</span></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(<span class="st">`</span><span class="at">1</span><span class="st">`</span>, <span class="st">`</span><span class="at">2</span><span class="st">`</span>, <span class="st">`</span><span class="at">3</span><span class="st">`</span>, <span class="st">`</span><span class="at">4</span><span class="st">`</span>), <span class="sc">~</span><span class="fu">na_if</span>(., <span class="st">"NA"</span>)))</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co"># ID is the first appearance of a bag number</span></span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="co"># if Q1 exists, uses that number, then tries Q2, Q3, Q4</span></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>mass_id4<span class="sc">$</span>Plot_tissue_ID <span class="ot">&lt;-</span> <span class="fu">coalesce</span>(mass_id4<span class="sc">$</span><span class="st">`</span><span class="at">1</span><span class="st">`</span>, mass_id4<span class="sc">$</span><span class="st">`</span><span class="at">2</span><span class="st">`</span>, mass_id4<span class="sc">$</span><span class="st">`</span><span class="at">3</span><span class="st">`</span>, mass_id4<span class="sc">$</span><span class="st">`</span><span class="at">4</span><span class="st">`</span>)</span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co"># remove "_bag_number" in tissue column</span></span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>mass_id4<span class="sc">$</span>Tissue <span class="ot">&lt;-</span> </span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_bag_number"</span>,<span class="st">""</span>,mass_id4<span class="sc">$</span>Tissue) </span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="co"># separate values in Tissue column into Species and Tissue</span></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>mass_id5 <span class="ot">&lt;-</span> mass_id4 <span class="sc">%&gt;%</span></span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(Tissue, <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Tissue"</span>))</span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 11</span></span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="co"># remove quads</span></span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>mass_id6 <span class="ot">&lt;-</span> mass_id5[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">7</span><span class="sc">:</span><span class="dv">10</span>)]</span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 7</span></span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="co"># now just one ID number for a plot</span></span>
-<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_id6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 7
-  Block Treatment Surface_area_cm2 Date_collected      Species        Tissue    
-  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;          &lt;chr&gt;     
-1     1 CT                     400 2024-07-24 00:00:00 Erivag         BladeShea…
-2     1 CT                     400 2024-07-24 00:00:00 Erivag         Rhizome   
-3     1 CT                     400 2024-07-24 00:00:00 Carbig         BladeShea…
-4     1 CT                     400 2024-07-24 00:00:00 Carbig         Rhizome   
-5     1 CT                     400 2024-07-24 00:00:00 OtherGraminoid BladeShea…
-6     1 CT                     400 2024-07-24 00:00:00 OtherGraminoid Rhizome   
-# ℹ 1 more variable: Plot_tissue_ID &lt;chr&gt;</code></pre>
-</div>
-</div>
-</section>
-<section id="corrections" class="level3">
-<h3 class="anchored" data-anchor-id="corrections">corrections</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># these ID's only correspond with B1 CT Q3&amp;4, which were the burnt samples that will be excluded</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># make them NA's for Q1&amp;2</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>mass_id6<span class="sc">$</span>Plot_tissue_ID[mass_id6<span class="sc">$</span>Plot_tissue_ID <span class="sc">==</span> <span class="st">"204"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>mass_id6<span class="sc">$</span>Plot_tissue_ID[mass_id6<span class="sc">$</span>Plot_tissue_ID <span class="sc">==</span> <span class="st">"205"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>mass_id6<span class="sc">$</span>Plot_tissue_ID[mass_id6<span class="sc">$</span>Plot_tissue_ID <span class="sc">==</span> <span class="st">"258"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>mass_id6<span class="sc">$</span>Plot_tissue_ID[mass_id6<span class="sc">$</span>Plot_tissue_ID <span class="sc">==</span> <span class="st">"59"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="combine" class="level3">
-<h3 class="anchored" data-anchor-id="combine">combine</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_id6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 7
-  Block Treatment Surface_area_cm2 Date_collected      Species        Tissue    
-  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;          &lt;chr&gt;     
-1     1 CT                     400 2024-07-24 00:00:00 Erivag         BladeShea…
-2     1 CT                     400 2024-07-24 00:00:00 Erivag         Rhizome   
-3     1 CT                     400 2024-07-24 00:00:00 Carbig         BladeShea…
-4     1 CT                     400 2024-07-24 00:00:00 Carbig         Rhizome   
-5     1 CT                     400 2024-07-24 00:00:00 OtherGraminoid BladeShea…
-6     1 CT                     400 2024-07-24 00:00:00 OtherGraminoid Rhizome   
-# ℹ 1 more variable: Plot_tissue_ID &lt;chr&gt;</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 7</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_g3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 8
-  Block Treatment  Quad Surface_area_cm2 Date_collected      Species      Tissue
-  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;        &lt;chr&gt; 
-1     1 CT            1              400 2024-07-24 00:00:00 Erivag       Blade…
-2     1 CT            1              400 2024-07-24 00:00:00 Erivag       Rhizo…
-3     1 CT            1              400 2024-07-24 00:00:00 Carbig       Blade…
-4     1 CT            1              400 2024-07-24 00:00:00 Carbig       Rhizo…
-5     1 CT            1              400 2024-07-24 00:00:00 OtherGramin… Blade…
-6     1 CT            1              400 2024-07-24 00:00:00 OtherGramin… Rhizo…
-# ℹ 1 more variable: Mass_g &lt;dbl&gt;</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#4536 of 8</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># join</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>mass3 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(mass_g3, mass_id6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(Block, Treatment, Surface_area_cm2, Date_collected,
-Species, Tissue)`</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Joining with by = join_by(Block, Treatment, Surface_area_cm2, Date_collected, Species, Tissue)</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">#4536 of 9</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 9
-  Block Treatment  Quad Surface_area_cm2 Date_collected      Species      Tissue
-  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;        &lt;chr&gt; 
-1     1 CT            1              400 2024-07-24 00:00:00 Erivag       Blade…
-2     1 CT            1              400 2024-07-24 00:00:00 Erivag       Rhizo…
-3     1 CT            1              400 2024-07-24 00:00:00 Carbig       Blade…
-4     1 CT            1              400 2024-07-24 00:00:00 Carbig       Rhizo…
-5     1 CT            1              400 2024-07-24 00:00:00 OtherGramin… Blade…
-6     1 CT            1              400 2024-07-24 00:00:00 OtherGramin… Rhizo…
-# ℹ 2 more variables: Mass_g &lt;dbl&gt;, Plot_tissue_ID &lt;chr&gt;</code></pre>
-</div>
-</div>
-</section>
-<section id="create-functional-group-column" class="level3">
-<h3 class="anchored" data-anchor-id="create-functional-group-column">create functional group column</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(mass3<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wide2long</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mass_g2 <span class="ot">&lt;-</span> mass_g1 <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">ends_with</span>(<span class="st">"_mass_g"</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"tissue"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"mass_g"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#4536 obs, 8 variables</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># remove "_mass_g" from tissue col</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>mass_g2<span class="sc">$</span>tissue <span class="ot">&lt;-</span> </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_mass_g"</span>,<span class="st">""</span>,mass_g2<span class="sc">$</span>tissue)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># separate values in tissue column into species and tissue</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>mass_g3 <span class="ot">&lt;-</span> mass_g2 <span class="sc">%&gt;%</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(tissue, <span class="fu">c</span>(<span class="st">"species"</span>, <span class="st">"tissue"</span>))</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#4536 of 9</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(mass_g3<span class="sc">$</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Erivag"         "Carbig"         "OtherGraminoid" "Betnan"        
  [5] "Salpul"         "Vaculi"         "OtherDeciduous" "Ledpal"        
@@ -381,71 +226,289 @@ Species, Tissue)`</code></pre>
 [13] "Petfri"         "OtherForb"      "Sphagnum"       "OtherMoss"     
 [17] "Lichen"         "Attached"       "Loose"         </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove "loose litter", not counted consistently</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>mass4 <span class="ot">&lt;-</span> mass3[<span class="sc">!</span>(mass3<span class="sc">$</span>Species <span class="sc">%in%</span> <span class="st">"Loose"</span>),]</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#4464 of 9</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">#create Growth_form column</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>mass5 <span class="ot">&lt;-</span> mass4 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Growth_form =</span> <span class="fu">case_when</span>(</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Erivag"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherGraminoid"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Carbig"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Betnan"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Salpul"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Vaculi"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherDeciduous"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Ledpal"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Vacvit"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Castet"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherEvergreen"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Rubcha"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Petfri"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherForb"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Sphagnum"</span>) <span class="sc">~</span> <span class="st">"Moss"</span>,</span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"OtherMoss"</span>) <span class="sc">~</span> <span class="st">"Moss"</span>,</span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Lichen"</span>) <span class="sc">~</span> <span class="st">"Lichen"</span>,</span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(Species, <span class="st">"Attached"</span>) <span class="sc">~</span> <span class="st">"Litter"</span></span>
-<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>    ))</span>
-<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a><span class="co">#of 10</span></span>
-<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a><span class="co">#Sample ID number appeared twice, 1152 </span></span>
-<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a><span class="co">#counted the one that ran with samples from the same plot</span></span>
-<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>mass5<span class="sc">$</span>Plot_tissue_ID[mass5<span class="sc">$</span>Plot_tissue_ID <span class="sc">==</span> <span class="st">"1152"</span> <span class="sc">&amp;</span> mass5<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"Erivag"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(mass_g3<span class="sc">$</span>tissue)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "BladeSheathInflCulm" "Rhizome"             "NewLeaves"          
+ [4] "NewStems"            "OldStems"            "Inflor"             
+ [7] "BelowStem"           "OldLeaves"           "LeavesStems"        
+[10] "InflorStalks"        "Green"               "Live"               
+[13] "Wood"                "Litter"             </code></pre>
+</div>
+</div>
+</section>
+<section id="sort-ids-into-one-per-plot" class="level3">
+<h3 class="anchored" data-anchor-id="sort-ids-into-one-per-plot">sort IDs into one per plot</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wide2long</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mass_id2 <span class="ot">&lt;-</span> mass_id1 <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="fu">ends_with</span>(<span class="st">'_bag_number'</span>)),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"tissue"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"plot_tissue_ID"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#4536 obs, 7 variables</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># put all quads into one row per plot</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>mass_id3<span class="ot">&lt;-</span>mass_id2 <span class="sc">%&gt;%</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Quad,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> plot_tissue_ID)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 9</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># create one ID per plot, ignore quads</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co"># "NA" wasn't NA</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>mass_id4 <span class="ot">&lt;-</span> mass_id3 <span class="sc">%&gt;%</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(<span class="st">`</span><span class="at">1</span><span class="st">`</span>, <span class="st">`</span><span class="at">2</span><span class="st">`</span>, <span class="st">`</span><span class="at">3</span><span class="st">`</span>, <span class="st">`</span><span class="at">4</span><span class="st">`</span>), <span class="sc">~</span><span class="fu">na_if</span>(., <span class="st">"NA"</span>)))</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co"># ID is the first appearance of a bag number</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="co"># if Q1 exists, uses that number, then tries Q2, Q3, Q4</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>mass_id4<span class="sc">$</span>plot_tissue_ID <span class="ot">&lt;-</span> <span class="fu">coalesce</span>(mass_id4<span class="sc">$</span><span class="st">`</span><span class="at">1</span><span class="st">`</span>, mass_id4<span class="sc">$</span><span class="st">`</span><span class="at">2</span><span class="st">`</span>, mass_id4<span class="sc">$</span><span class="st">`</span><span class="at">3</span><span class="st">`</span>, mass_id4<span class="sc">$</span><span class="st">`</span><span class="at">4</span><span class="st">`</span>)</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="co"># remove "_bag_number" in tissue column</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>mass_id4<span class="sc">$</span>tissue <span class="ot">&lt;-</span> </span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_bag_number"</span>,<span class="st">""</span>,mass_id4<span class="sc">$</span>tissue) </span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="co"># separate values in tissue column into species and tissue</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>mass_id5 <span class="ot">&lt;-</span> mass_id4 <span class="sc">%&gt;%</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(tissue, <span class="fu">c</span>(<span class="st">"species"</span>, <span class="st">"tissue"</span>))</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 11</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="co"># remove quads</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>mass_id6 <span class="ot">&lt;-</span> mass_id5 <span class="sc">%&gt;%</span> </span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">'1'</span>, <span class="st">'2'</span>, <span class="st">'3'</span>, <span class="st">'4'</span>))</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="co">#of 7</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a><span class="co"># now just one ID number for a plot</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_id6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  Block Treatment Surface_area_cm2 site  species        tissue    plot_tissue_ID
+  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;          &lt;chr&gt;     &lt;chr&gt;         
+1     1 CT                     400 MAT06 Erivag         BladeShe… 264           
+2     1 CT                     400 MAT06 Erivag         Rhizome   268           
+3     1 CT                     400 MAT06 Carbig         BladeShe… 285           
+4     1 CT                     400 MAT06 Carbig         Rhizome   258           
+5     1 CT                     400 MAT06 OtherGraminoid BladeShe… 204           
+6     1 CT                     400 MAT06 OtherGraminoid Rhizome   205           </code></pre>
+</div>
+</div>
+</section>
+<section id="corrections" class="level3">
+<h3 class="anchored" data-anchor-id="corrections">corrections</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># these ID's only correspond with B1 CT Q3&amp;4, which were the burnt samples that will be excluded</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># make them NA's for Q1&amp;2</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>mass_id6<span class="sc">$</span>plot_tissue_ID[mass_id6<span class="sc">$</span>plot_tissue_ID <span class="sc">==</span> <span class="st">"204"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>mass_id6<span class="sc">$</span>plot_tissue_ID[mass_id6<span class="sc">$</span>plot_tissue_ID <span class="sc">==</span> <span class="st">"205"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>mass_id6<span class="sc">$</span>plot_tissue_ID[mass_id6<span class="sc">$</span>plot_tissue_ID <span class="sc">==</span> <span class="st">"258"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>mass_id6<span class="sc">$</span>plot_tissue_ID[mass_id6<span class="sc">$</span>plot_tissue_ID <span class="sc">==</span> <span class="st">"59"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># two IDs from AG mass data so one renamed to another quad ID</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>mass_id6<span class="sc">$</span>plot_tissue_ID[mass_id6<span class="sc">$</span>plot_tissue_ID <span class="sc">==</span> <span class="st">"1152"</span> <span class="sc">&amp;</span> mass_id6<span class="sc">$</span>Treatment <span class="sc">==</span> <span class="st">"F5"</span>] <span class="ot">&lt;-</span> <span class="st">"1601"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="clean-column-names" class="level3">
+<h3 class="anchored" data-anchor-id="clean-column-names">clean column names</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mass_id6 <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(mass_id6)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>mass_g3 <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(mass_g3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="expand-species" class="level3">
+<h3 class="anchored" data-anchor-id="expand-species">expand species</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># from species code to full species name, also matches 2012 data</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(mass_g3<span class="sc">$</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Erivag"         "Carbig"         "OtherGraminoid" "Betnan"        
+ [5] "Salpul"         "Vaculi"         "OtherDeciduous" "Ledpal"        
+ [9] "Vacvit"         "Castet"         "OtherEvergreen" "Rubcha"        
+[13] "Petfri"         "OtherForb"      "Sphagnum"       "OtherMoss"     
+[17] "Lichen"         "Attached"       "Loose"         </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>mass_g3<span class="sc">$</span>species <span class="ot">&lt;-</span> mass_g3<span class="sc">$</span>species <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">recode</span>(</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>   <span class="st">"Erivag"</span> <span class="ot">=</span> <span class="st">"Eriophorum vaginatum"</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>     <span class="st">"OtherGraminoid"</span> <span class="ot">=</span> <span class="st">"Other Graminoid"</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Carbig"</span> <span class="ot">=</span> <span class="st">"Carex bigelowii"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Betnan"</span> <span class="ot">=</span> <span class="st">"Betula nana"</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Salpul"</span> <span class="ot">=</span> <span class="st">"Salix pulchra"</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Vaculi"</span> <span class="ot">=</span> <span class="st">"Vaccinium uliginosum"</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>     <span class="st">"OtherDeciduous"</span> <span class="ot">=</span> <span class="st">"Other Deciduous"</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Ledpal"</span> <span class="ot">=</span> <span class="st">"Ledum palustre"</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Vacvit"</span> <span class="ot">=</span> <span class="st">"Vaccinium vitis-idaea"</span>,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Castet"</span> <span class="ot">=</span> <span class="st">"Cassiope tetragona"</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>     <span class="st">"OtherEvergreen"</span> <span class="ot">=</span> <span class="st">"Other Evergreen"</span>,</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Rubcha"</span> <span class="ot">=</span> <span class="st">"Rubus chamaemorus"</span>,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Petfri"</span> <span class="ot">=</span> <span class="st">"Petasites frigidus"</span>,</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>     <span class="st">"OtherForb"</span> <span class="ot">=</span> <span class="st">"Other Forb"</span>,</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>     <span class="st">"OtherMoss"</span> <span class="ot">=</span> <span class="st">"Other Mosses"</span>,</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Lichen"</span> <span class="ot">=</span> <span class="st">"Mixed Lichen"</span>,</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Attached"</span> <span class="ot">=</span> <span class="st">"Litter"</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>mass_id6<span class="sc">$</span>species <span class="ot">&lt;-</span> mass_id6<span class="sc">$</span>species <span class="sc">%&gt;%</span> </span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">recode</span>(</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>   <span class="st">"Erivag"</span> <span class="ot">=</span> <span class="st">"Eriophorum vaginatum"</span>,</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>     <span class="st">"OtherGraminoid"</span> <span class="ot">=</span> <span class="st">"Other Graminoid"</span>,</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Carbig"</span> <span class="ot">=</span> <span class="st">"Carex bigelowii"</span>,</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Betnan"</span> <span class="ot">=</span> <span class="st">"Betula nana"</span>,</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Salpul"</span> <span class="ot">=</span> <span class="st">"Salix pulchra"</span>,</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Vaculi"</span> <span class="ot">=</span> <span class="st">"Vaccinium uliginosum"</span>,</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>     <span class="st">"OtherDeciduous"</span> <span class="ot">=</span> <span class="st">"Other Deciduous"</span>,</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Ledpal"</span> <span class="ot">=</span> <span class="st">"Ledum palustre"</span>,</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Vacvit"</span> <span class="ot">=</span> <span class="st">"Vaccinium vitis-idaea"</span>,</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Castet"</span> <span class="ot">=</span> <span class="st">"Cassiope tetragona"</span>,</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>     <span class="st">"OtherEvergreen"</span> <span class="ot">=</span> <span class="st">"Other Evergreen"</span>,</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Rubcha"</span> <span class="ot">=</span> <span class="st">"Rubus chamaemorus"</span>,</span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Petfri"</span> <span class="ot">=</span> <span class="st">"Petasites frigidus"</span>,</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>     <span class="st">"OtherForb"</span> <span class="ot">=</span> <span class="st">"Other Forb"</span>,</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>     <span class="st">"OtherMoss"</span> <span class="ot">=</span> <span class="st">"Other Mosses"</span>,</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Lichen"</span> <span class="ot">=</span> <span class="st">"Mixed Lichen"</span>,</span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Attached"</span> <span class="ot">=</span> <span class="st">"Litter"</span></span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="create-id-list" class="level3">
+<h3 class="anchored" data-anchor-id="create-id-list">create ID list</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(mass_id6)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(mass_id6, <span class="st">"~/LTER-pluck/2024_pluck/processed_data/ag_pluck_id.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="combine" class="level3">
+<h3 class="anchored" data-anchor-id="combine">combine</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_id6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  block treatment surface_area_cm2 site  species           tissue plot_tissue_id
+  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;         
+1     1 CT                     400 MAT06 Eriophorum vagin… Blade… 264           
+2     1 CT                     400 MAT06 Eriophorum vagin… Rhizo… 268           
+3     1 CT                     400 MAT06 Carex bigelowii   Blade… 285           
+4     1 CT                     400 MAT06 Carex bigelowii   Rhizo… &lt;NA&gt;          
+5     1 CT                     400 MAT06 Other Graminoid   Blade… &lt;NA&gt;          
+6     1 CT                     400 MAT06 Other Graminoid   Rhizo… &lt;NA&gt;          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1134 of 7</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass_g3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 9
+  block treatment  quad surface_area_cm2 date_collected      site  species      
+  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt; &lt;chr&gt;        
+1     1 CT            1              400 2024-07-24 00:00:00 MAT06 Eriophorum v…
+2     1 CT            1              400 2024-07-24 00:00:00 MAT06 Eriophorum v…
+3     1 CT            1              400 2024-07-24 00:00:00 MAT06 Carex bigelo…
+4     1 CT            1              400 2024-07-24 00:00:00 MAT06 Carex bigelo…
+5     1 CT            1              400 2024-07-24 00:00:00 MAT06 Other Gramin…
+6     1 CT            1              400 2024-07-24 00:00:00 MAT06 Other Gramin…
+# ℹ 2 more variables: tissue &lt;chr&gt;, mass_g &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#4536 of 9</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># join</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>mass3 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(mass_g3, mass_id6)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Joining with by = join_by(block, treatment, surface_area_cm2, date_collected, species, tissue)</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">#4536 of 10</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 10
+  block treatment  quad surface_area_cm2 date_collected      site  species      
+  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt; &lt;chr&gt;        
+1     1 CT            1              400 2024-07-24 00:00:00 MAT06 Eriophorum v…
+2     1 CT            1              400 2024-07-24 00:00:00 MAT06 Eriophorum v…
+3     1 CT            1              400 2024-07-24 00:00:00 MAT06 Carex bigelo…
+4     1 CT            1              400 2024-07-24 00:00:00 MAT06 Carex bigelo…
+5     1 CT            1              400 2024-07-24 00:00:00 MAT06 Other Gramin…
+6     1 CT            1              400 2024-07-24 00:00:00 MAT06 Other Gramin…
+# ℹ 3 more variables: tissue &lt;chr&gt;, mass_g &lt;dbl&gt;, plot_tissue_id &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="create-functional-group-column" class="level3">
+<h3 class="anchored" data-anchor-id="create-functional-group-column">create functional group column</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(mass3<span class="sc">$</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Eriophorum vaginatum"  "Carex bigelowii"       "Other Graminoid"      
+ [4] "Betula nana"           "Salix pulchra"         "Vaccinium uliginosum" 
+ [7] "Other Deciduous"       "Ledum palustre"        "Vaccinium vitis-idaea"
+[10] "Cassiope tetragona"    "Other Evergreen"       "Rubus chamaemorus"    
+[13] "Petasites frigidus"    "Other Forb"            "Sphagnum"             
+[16] "Other Mosses"          "Mixed Lichen"          "Litter"               
+[19] "Loose"                </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove "loose litter", not counted consistently</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>mass4 <span class="ot">&lt;-</span> mass3[<span class="sc">!</span>(mass3<span class="sc">$</span>species <span class="sc">%in%</span> <span class="st">"Loose"</span>),]</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#4464 of 10</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create Growth_form column</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>mass5 <span class="ot">&lt;-</span> mass4 <span class="sc">%&gt;%</span> </span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">growth_form =</span> <span class="fu">case_when</span>(</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Eriophorum vaginatum"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Other Graminoid"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Carex bigelowii"</span>) <span class="sc">~</span> <span class="st">"Graminoid"</span>,</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Betula nana"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Salix pulchra"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Vaccinium uliginosum"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Other Deciduous"</span>) <span class="sc">~</span> <span class="st">"Deciduous"</span>,</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Ledum palustre"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Vaccinium vitis-idaea"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Cassiope tetragona"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Other Evergreen"</span>) <span class="sc">~</span> <span class="st">"Evergreen"</span>,</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Rubus chamaemorus"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Petasites frigidus"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Other Forb"</span>) <span class="sc">~</span> <span class="st">"Forb"</span>,</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Sphagnum"</span>) <span class="sc">~</span> <span class="st">"Moss"</span>,</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Other Mosses"</span>) <span class="sc">~</span> <span class="st">"Moss"</span>,</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Mixed Lichen"</span>) <span class="sc">~</span> <span class="st">"Lichen"</span>,</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">startsWith</span>(species, <span class="st">"Litter"</span>) <span class="sc">~</span> <span class="st">"Litter"</span></span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a><span class="co">#of 11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="add-notes" class="level3">
 <h3 class="anchored" data-anchor-id="add-notes">add notes</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add notes</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add notes</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mass5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 10
-  Block Treatment  Quad Surface_area_cm2 Date_collected      Species      Tissue
-  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;        &lt;chr&gt; 
-1     1 CT            1              400 2024-07-24 00:00:00 Erivag       Blade…
-2     1 CT            1              400 2024-07-24 00:00:00 Erivag       Rhizo…
-3     1 CT            1              400 2024-07-24 00:00:00 Carbig       Blade…
-4     1 CT            1              400 2024-07-24 00:00:00 Carbig       Rhizo…
-5     1 CT            1              400 2024-07-24 00:00:00 OtherGramin… Blade…
-6     1 CT            1              400 2024-07-24 00:00:00 OtherGramin… Rhizo…
-# ℹ 3 more variables: Mass_g &lt;dbl&gt;, Plot_tissue_ID &lt;chr&gt;, Growth_form &lt;chr&gt;</code></pre>
+<pre><code># A tibble: 6 × 11
+  block treatment  quad surface_area_cm2 date_collected      site  species      
+  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;            &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt; &lt;chr&gt;        
+1     1 CT            1              400 2024-07-24 00:00:00 MAT06 Eriophorum v…
+2     1 CT            1              400 2024-07-24 00:00:00 MAT06 Eriophorum v…
+3     1 CT            1              400 2024-07-24 00:00:00 MAT06 Carex bigelo…
+4     1 CT            1              400 2024-07-24 00:00:00 MAT06 Carex bigelo…
+5     1 CT            1              400 2024-07-24 00:00:00 MAT06 Other Gramin…
+6     1 CT            1              400 2024-07-24 00:00:00 MAT06 Other Gramin…
+# ℹ 4 more variables: tissue &lt;chr&gt;, mass_g &lt;dbl&gt;, plot_tissue_id &lt;chr&gt;,
+#   growth_form &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>mass5 <span class="ot">&lt;-</span> mass5 <span class="sc">%&gt;%</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Notes =</span> <span class="fu">case_when</span>(</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>      (Plot_tissue_ID <span class="sc">==</span> <span class="st">"1736"</span> <span class="sc">&amp;</span> Quad <span class="sc">==</span> <span class="st">"3"</span>) <span class="sc">~</span> <span class="st">"Suspected misidentified Eri vag rhizomes"</span>,</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>      (Plot_tissue_ID <span class="sc">==</span> <span class="st">"1739"</span> <span class="sc">&amp;</span> Quad <span class="sc">==</span> <span class="st">"3"</span>) <span class="sc">~</span> <span class="st">"Suspected misidentified Litter"</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    ))</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">#of 11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>mass5 <span class="ot">&lt;-</span> mass5 <span class="sc">%&gt;%</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">notes =</span> <span class="fu">case_when</span>(</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>      (plot_tissue_id <span class="sc">==</span> <span class="st">"1736"</span> <span class="sc">&amp;</span> quad <span class="sc">==</span> <span class="st">"3"</span>) <span class="sc">~</span> <span class="st">"Suspected misidentified Eri vag rhizomes"</span>,</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>      (plot_tissue_id <span class="sc">==</span> <span class="st">"1739"</span> <span class="sc">&amp;</span> quad <span class="sc">==</span> <span class="st">"3"</span>) <span class="sc">~</span> <span class="st">"Suspected misidentified Litter"</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co">#of 11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="final-tidy" class="level3">
+<h3 class="anchored" data-anchor-id="final-tidy">final tidy</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date_collected"</span>, <span class="st">"site"</span>, <span class="st">"block"</span>, <span class="st">"treatment"</span>, <span class="st">"quad"</span>, <span class="st">"surface_area_cm2"</span>, <span class="st">"species"</span>, <span class="st">"tissue"</span>, <span class="st">"growth_form"</span>, <span class="st">"plot_tissue_id"</span>, <span class="st">"mass_g"</span>, <span class="st">"notes"</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>mass5 <span class="ot">&lt;-</span> mass5[, col_order]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="write-final_dataag_mass.csv" class="level3">
 <h3 class="anchored" data-anchor-id="write-final_dataag_mass.csv">write final_data/ag_mass.csv</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(mass5)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#4464 of 11</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(mass5, <span class="st">"~/LTER-pluck/processed_data/final_data/ag_mass.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(mass5)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#4464 of 12</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(mass5, <span class="st">"~/LTER-pluck/2024_pluck/processed_data/final_data/ag_mass.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -454,11 +517,11 @@ Species, Tissue)`</code></pre>
 <section id="read-in-data-1" class="level3">
 <h3 class="anchored" data-anchor-id="read-in-data-1">read in data</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>bg <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/LTER-pluck/raw_data/Root_data_collection_mass.xlsx"</span>,</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col_types =</span> <span class="fu">c</span>(<span class="st">"numeric"</span>, <span class="st">"text"</span>, <span class="st">"numeric"</span>, <span class="st">"text"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"date"</span>, <span class="st">"date"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"text"</span>))</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">#146 obs, 15 variables</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">#lots of columns that were numbers were being read as characters, appearing in scientific notation, etc</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>bg <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/LTER-pluck/2024_pluck/raw_data/Root_data_collection_mass.xlsx"</span>,</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col_types =</span> <span class="fu">c</span>(<span class="st">"numeric"</span>, <span class="st">"text"</span>, <span class="st">"numeric"</span>, <span class="st">"text"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"date"</span>, <span class="st">"date"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"text"</span>))</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">#146 obs, 15 variables</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co">#lots of columns that were numbers were being read as characters, appearing in scientific notation, etc</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 15
   Block Treatment  Quad Horizon Core_surface_area_cm2 Depth_cm
@@ -479,32 +542,38 @@ Species, Tissue)`</code></pre>
 <section id="tidy-columns-and-rows-1" class="level3">
 <h3 class="anchored" data-anchor-id="tidy-columns-and-rows-1">tidy columns and rows</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove unwanted columns</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>bg <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(bg)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># remove unwanted columns</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "Block"                  "Treatment"              "Quad"                  
- [4] "Horizon"                "Core_surface_area_cm2"  "Depth_cm"              
- [7] "Date_collected"         "Date_sorted"            "Fine_root_bag_number"  
-[10] "Fine_root_mass_g"       "Coarse_root_bag_number" "Coarse_root_mass_g"    
-[13] "Erivag_root_bag_number" "Erivag_root_mass_g"     "Root_notes"            </code></pre>
+<pre><code> [1] "block"                  "treatment"              "quad"                  
+ [4] "horizon"                "core_surface_area_cm2"  "depth_cm"              
+ [7] "date_collected"         "date_sorted"            "fine_root_bag_number"  
+[10] "fine_root_mass_g"       "coarse_root_bag_number" "coarse_root_mass_g"    
+[13] "erivag_root_bag_number" "erivag_root_mass_g"     "root_notes"            </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>bg1 <span class="ot">&lt;-</span> <span class="fu">select</span>(bg, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Date_sorted"</span>))</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#146 obs, 14 variables</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># remove 2 empty rows</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>bg2 <span class="ot">&lt;-</span> bg1[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">145</span><span class="sc">:</span><span class="dv">146</span>),]</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">#144</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>bg1 <span class="ot">&lt;-</span> <span class="fu">select</span>(bg, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"date_sorted"</span>))</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co">#146 obs, 14 variables</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># remove 2 empty rows</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>bg2 <span class="ot">&lt;-</span> bg1[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">145</span><span class="sc">:</span><span class="dv">146</span>),]</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co">#144</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="co"># add site column</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>bg2<span class="sc">$</span>site <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MAT06"</span>)</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="co">#of 137</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="separate-masses-and-ids" class="level3">
 <h3 class="anchored" data-anchor-id="separate-masses-and-ids">separate masses and IDs</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>bg_names <span class="ot">&lt;-</span> <span class="fu">select</span>(bg2, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"mass_g"</span>))</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co">#144, 11</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>bg_names <span class="ot">&lt;-</span> <span class="fu">select</span>(bg2, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"mass_g"</span>), <span class="sc">-</span><span class="fu">c</span>(<span class="st">"date_collected"</span>))</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#144, 11</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 11
-  Block Treatment  Quad Horizon Core_surface_area_cm2 Depth_cm
+  block treatment  quad horizon core_surface_area_cm2 depth_cm
   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;    &lt;dbl&gt;
 1     1 CT            1 O                        25        4.5
 2     1 CT            1 M                        15.9     18  
@@ -512,16 +581,15 @@ Species, Tissue)`</code></pre>
 4     1 CT            2 M                        15.9     10.5
 5     1 CT            3 O                        25       23  
 6     1 CT            3 M                        15.9     NA  
-# ℹ 5 more variables: Date_collected &lt;dttm&gt;, Fine_root_bag_number &lt;dbl&gt;,
-#   Coarse_root_bag_number &lt;dbl&gt;, Erivag_root_bag_number &lt;dbl&gt;,
-#   Root_notes &lt;chr&gt;</code></pre>
+# ℹ 5 more variables: fine_root_bag_number &lt;dbl&gt;, coarse_root_bag_number &lt;dbl&gt;,
+#   erivag_root_bag_number &lt;dbl&gt;, root_notes &lt;chr&gt;, site &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>bg_mass <span class="ot">&lt;-</span> <span class="fu">select</span>(bg2, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"bag_number"</span>))</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co">#144, 11</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>bg_mass <span class="ot">&lt;-</span> <span class="fu">select</span>(bg2, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"bag_number"</span>))</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">#144, 12</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 11
-  Block Treatment  Quad Horizon Core_surface_area_cm2 Depth_cm
+<pre><code># A tibble: 6 × 12
+  block treatment  quad horizon core_surface_area_cm2 depth_cm
   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;    &lt;dbl&gt;
 1     1 CT            1 O                        25        4.5
 2     1 CT            1 M                        15.9     18  
@@ -529,121 +597,117 @@ Species, Tissue)`</code></pre>
 4     1 CT            2 M                        15.9     10.5
 5     1 CT            3 O                        25       23  
 6     1 CT            3 M                        15.9     NA  
-# ℹ 5 more variables: Date_collected &lt;dttm&gt;, Fine_root_mass_g &lt;dbl&gt;,
-#   Coarse_root_mass_g &lt;dbl&gt;, Erivag_root_mass_g &lt;dbl&gt;, Root_notes &lt;chr&gt;</code></pre>
+# ℹ 6 more variables: date_collected &lt;dttm&gt;, fine_root_mass_g &lt;dbl&gt;,
+#   coarse_root_mass_g &lt;dbl&gt;, erivag_root_mass_g &lt;dbl&gt;, root_notes &lt;chr&gt;,
+#   site &lt;chr&gt;</code></pre>
 </div>
 </div>
 </section>
 <section id="create-longform-mass-table-for-publishing-1" class="level3">
 <h3 class="anchored" data-anchor-id="create-longform-mass-table-for-publishing-1">create longform mass table for publishing</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wide2long</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg_mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wide2long</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg_mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "Block"                 "Treatment"             "Quad"                 
- [4] "Horizon"               "Core_surface_area_cm2" "Depth_cm"             
- [7] "Date_collected"        "Fine_root_mass_g"      "Coarse_root_mass_g"   
-[10] "Erivag_root_mass_g"    "Root_notes"           </code></pre>
+<pre><code> [1] "block"                 "treatment"             "quad"                 
+ [4] "horizon"               "core_surface_area_cm2" "depth_cm"             
+ [7] "date_collected"        "fine_root_mass_g"      "coarse_root_mass_g"   
+[10] "erivag_root_mass_g"    "root_notes"            "site"                 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>bg_mass1 <span class="ot">&lt;-</span> bg_mass <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="dv">8</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">names_to =</span> <span class="st">"Root_type"</span>, <span class="at">values_to =</span> <span class="st">"Mass_g"</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">#432 of 10</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>bg_mass1<span class="sc">$</span>Root_type <span class="ot">&lt;-</span> </span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_root_mass_g"</span>,<span class="st">""</span>,bg_mass1<span class="sc">$</span>Root_type)</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_mass1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 10
-  Block Treatment  Quad Horizon Core_surface_area_cm2 Depth_cm
-  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;    &lt;dbl&gt;
-1     1 CT            1 O                        25        4.5
-2     1 CT            1 O                        25        4.5
-3     1 CT            1 O                        25        4.5
-4     1 CT            1 M                        15.9     18  
-5     1 CT            1 M                        15.9     18  
-6     1 CT            1 M                        15.9     18  
-# ℹ 4 more variables: Date_collected &lt;dttm&gt;, Root_notes &lt;chr&gt;, Root_type &lt;chr&gt;,
-#   Mass_g &lt;dbl&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>bg_mass1 <span class="ot">&lt;-</span> bg_mass <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">ends_with</span>(<span class="st">"_mass_g"</span>), <span class="at">names_to =</span> <span class="st">"root_type"</span>, <span class="at">values_to =</span> <span class="st">"mass_g"</span>)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co">#432 of 10</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>bg_mass1<span class="sc">$</span>root_type <span class="ot">&lt;-</span> </span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_root_mass_g"</span>,<span class="st">""</span>,bg_mass1<span class="sc">$</span>root_type)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sort-ids-into-one-column" class="level3">
 <h3 class="anchored" data-anchor-id="sort-ids-into-one-column">sort IDs into one column</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "Block"                  "Treatment"              "Quad"                  
- [4] "Horizon"                "Core_surface_area_cm2"  "Depth_cm"              
- [7] "Date_collected"         "Fine_root_bag_number"   "Coarse_root_bag_number"
-[10] "Erivag_root_bag_number" "Root_notes"            </code></pre>
+<pre><code> [1] "block"                  "treatment"              "quad"                  
+ [4] "horizon"                "core_surface_area_cm2"  "depth_cm"              
+ [7] "fine_root_bag_number"   "coarse_root_bag_number" "erivag_root_bag_number"
+[10] "root_notes"             "site"                  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>bg_names1 <span class="ot">&lt;-</span> <span class="fu">select</span>(bg_names, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Core_surface_area_cm2"</span>,<span class="st">"Depth_cm"</span>,<span class="st">"Root_notes"</span>))</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co">#144 of 8</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co">#wide2long</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_names1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>bg_names1 <span class="ot">&lt;-</span> <span class="fu">select</span>(bg_names, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"core_surface_area_cm2"</span>,<span class="st">"depth_cm"</span>,<span class="st">"root_notes"</span>))</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">#144 of 8</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co">#wide2long</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_names1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
-  Block Treatment  Quad Horizon Date_collected      Fine_root_bag_number
-  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;dttm&gt;                             &lt;dbl&gt;
-1     1 CT            1 O       2024-07-24 00:00:00                    1
-2     1 CT            1 M       2024-07-24 00:00:00                    4
-3     1 CT            2 O       2024-07-24 00:00:00                    7
-4     1 CT            2 M       2024-07-24 00:00:00                   10
-5     1 CT            3 O       2024-07-24 00:00:00                   13
-6     1 CT            3 M       2024-07-24 00:00:00                   NA
-# ℹ 2 more variables: Coarse_root_bag_number &lt;dbl&gt;,
-#   Erivag_root_bag_number &lt;dbl&gt;</code></pre>
+  block treatment  quad horizon fine_root_bag_number coarse_root_bag_number
+  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                  &lt;dbl&gt;                  &lt;dbl&gt;
+1     1 CT            1 O                          1                     NA
+2     1 CT            1 M                          4                     NA
+3     1 CT            2 O                          7                     NA
+4     1 CT            2 M                         10                     NA
+5     1 CT            3 O                         13                     NA
+6     1 CT            3 M                         NA                     NA
+# ℹ 2 more variables: erivag_root_bag_number &lt;dbl&gt;, site &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>bg_names2 <span class="ot">&lt;-</span> bg_names1 <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">names_to =</span> <span class="st">"Root_type"</span>, <span class="at">values_to =</span> <span class="st">"Plot_root_ID"</span>)</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co">#432 of 7</span></span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>bg_names3<span class="ot">&lt;-</span>bg_names2 <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> Quad, <span class="at">values_from =</span> Plot_root_ID)</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 9</span></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="co"># create ID for plot, ignore quads</span></span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>bg_names3<span class="sc">$</span>Plot_root_ID <span class="ot">&lt;-</span> <span class="fu">coalesce</span>(bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">1</span><span class="st">`</span>, bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">2</span><span class="st">`</span>, bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">3</span><span class="st">`</span>, bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">4</span><span class="st">`</span>)</span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 10</span></span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ID is the first appearance of a bag number</span></span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>bg_names3<span class="sc">$</span>Root_type <span class="ot">&lt;-</span> </span>
-<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_root_bag_number"</span>,<span class="st">""</span>,bg_names3<span class="sc">$</span>Root_type)</span>
-<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="co"># remove quads</span></span>
-<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>bg_names4 <span class="ot">&lt;-</span> bg_names3[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">6</span><span class="sc">:</span><span class="dv">9</span>)]</span>
-<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_names4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>bg_names2 <span class="ot">&lt;-</span> bg_names1 <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">ends_with</span>(<span class="st">"_bag_number"</span>), <span class="at">names_to =</span> <span class="st">"root_type"</span>, <span class="at">values_to =</span> <span class="st">"plot_root_id"</span>)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co">#432 of 7</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>bg_names3 <span class="ot">&lt;-</span> bg_names2 <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> quad, <span class="at">values_from =</span> plot_root_id)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 9</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="co"># create ID for plot, ignore quads</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>bg_names3<span class="sc">$</span>plot_root_id <span class="ot">&lt;-</span> <span class="fu">coalesce</span>(bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">1</span><span class="st">`</span>, bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">2</span><span class="st">`</span>, bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">3</span><span class="st">`</span>, bg_names3<span class="sc">$</span><span class="st">`</span><span class="at">4</span><span class="st">`</span>)</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 10</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ID is the first appearance of a bag number</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>bg_names3<span class="sc">$</span>root_type <span class="ot">&lt;-</span> </span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sub</span>(<span class="st">"_root_bag_number"</span>,<span class="st">""</span>,bg_names3<span class="sc">$</span>root_type)</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a><span class="co"># remove quads</span></span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>bg_names4 <span class="ot">&lt;-</span> bg_names3 <span class="sc">%&gt;%</span> </span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">'1'</span>, <span class="st">'2'</span>, <span class="st">'3'</span>, <span class="st">'4'</span>))</span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="co">#of 6</span></span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_names4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
-  Block Treatment Horizon Date_collected      Root_type Plot_root_ID
-  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;dttm&gt;              &lt;chr&gt;            &lt;dbl&gt;
-1     1 CT        O       2024-07-24 00:00:00 Fine                 1
-2     1 CT        O       2024-07-24 00:00:00 Coarse              NA
-3     1 CT        O       2024-07-24 00:00:00 Erivag               3
-4     1 CT        M       2024-07-24 00:00:00 Fine                 4
-5     1 CT        M       2024-07-24 00:00:00 Coarse              NA
-6     1 CT        M       2024-07-24 00:00:00 Erivag               6</code></pre>
+  block treatment horizon site  root_type plot_root_id
+  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
+1     1 CT        O       MAT06 fine                 1
+2     1 CT        O       MAT06 coarse              NA
+3     1 CT        O       MAT06 erivag               3
+4     1 CT        M       MAT06 fine                 4
+5     1 CT        M       MAT06 coarse              NA
+6     1 CT        M       MAT06 erivag               6</code></pre>
 </div>
+</div>
+</section>
+<section id="create-id-list-1" class="level3">
+<h3 class="anchored" data-anchor-id="create-id-list-1">create ID list</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(bg_names4)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(bg_names4, <span class="st">"~/LTER-pluck/2024_pluck/processed_data/bg_pluck_id.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="combine-1" class="level3">
 <h3 class="anchored" data-anchor-id="combine-1">combine</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_names4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_names4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
-  Block Treatment Horizon Date_collected      Root_type Plot_root_ID
-  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;dttm&gt;              &lt;chr&gt;            &lt;dbl&gt;
-1     1 CT        O       2024-07-24 00:00:00 Fine                 1
-2     1 CT        O       2024-07-24 00:00:00 Coarse              NA
-3     1 CT        O       2024-07-24 00:00:00 Erivag               3
-4     1 CT        M       2024-07-24 00:00:00 Fine                 4
-5     1 CT        M       2024-07-24 00:00:00 Coarse              NA
-6     1 CT        M       2024-07-24 00:00:00 Erivag               6</code></pre>
+  block treatment horizon site  root_type plot_root_id
+  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
+1     1 CT        O       MAT06 fine                 1
+2     1 CT        O       MAT06 coarse              NA
+3     1 CT        O       MAT06 erivag               3
+4     1 CT        M       MAT06 fine                 4
+5     1 CT        M       MAT06 coarse              NA
+6     1 CT        M       MAT06 erivag               6</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 6</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_mass1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co">#108 of 7</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bg_mass1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 10
-  Block Treatment  Quad Horizon Core_surface_area_cm2 Depth_cm
+<pre><code># A tibble: 6 × 11
+  block treatment  quad horizon core_surface_area_cm2 depth_cm
   &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;    &lt;dbl&gt;
 1     1 CT            1 O                        25        4.5
 2     1 CT            1 O                        25        4.5
@@ -651,36 +715,21 @@ Species, Tissue)`</code></pre>
 4     1 CT            1 M                        15.9     18  
 5     1 CT            1 M                        15.9     18  
 6     1 CT            1 M                        15.9     18  
-# ℹ 4 more variables: Date_collected &lt;dttm&gt;, Root_notes &lt;chr&gt;, Root_type &lt;chr&gt;,
-#   Mass_g &lt;dbl&gt;</code></pre>
+# ℹ 5 more variables: date_collected &lt;dttm&gt;, root_notes &lt;chr&gt;, site &lt;chr&gt;,
+#   root_type &lt;chr&gt;, mass_g &lt;dbl&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">#432 of 10</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>bg3<span class="ot">&lt;-</span><span class="fu">left_join</span>(bg_mass1, bg_names4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(Block, Treatment, Horizon, Date_collected,
-Root_type)`</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># join_by(Block, Treatment, Horizon, Date_collected, Root_type)</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co">#432 of 11</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co"># reorder columns</span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "Block"                 "Treatment"             "Quad"                 
- [4] "Horizon"               "Core_surface_area_cm2" "Depth_cm"             
- [7] "Date_collected"        "Root_notes"            "Root_type"            
-[10] "Mass_g"                "Plot_root_ID"         </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Block"</span>, <span class="st">"Treatment"</span>, <span class="st">"Quad"</span>, <span class="st">"Horizon"</span>, <span class="st">"Core_surface_area_cm2"</span>, <span class="st">"Depth_cm"</span>, <span class="st">"Date_collected"</span>, <span class="st">"Root_type"</span>, <span class="st">"Mass_g"</span>, <span class="st">"Plot_root_ID"</span>, <span class="st">"Root_notes"</span>)</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>bg3 <span class="ot">&lt;-</span> bg3[, col_order]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#432 of 11</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>bg3 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(bg_mass1, bg_names4)</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co"># join_by(block, treatment, horizon, date_collected, site, root_type)</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="co">#432 of 12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="corrections-1" class="level3">
 <h3 class="anchored" data-anchor-id="corrections-1">corrections</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tidying notes</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(bg3<span class="sc">$</span>Root_notes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tidying notes</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(bg3<span class="sc">$</span>root_notes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA                                                                                          
 [2] "NA depth means permafrost was in organic layer"                                            
@@ -691,22 +740,38 @@ Root_type)`</code></pre>
 [7] "Corer not long enough to reach permafrost"                                                 
 [8] "Large fine and all coarse roots are questionably root"                                     </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># "First with new corer" </span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co"># "Bag number is not mistake"</span></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "Sorting date"</span></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co"># all organizational for sorting, not relevant to data</span></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>bg4 <span class="ot">&lt;-</span> <span class="fu">transform</span>(bg3, <span class="at">Root_notes =</span> <span class="fu">replace</span>(Root_notes, <span class="fu">startsWith</span>(Root_notes, <span class="st">"First with new corer"</span>), <span class="cn">NA</span>))</span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>bg4 <span class="ot">&lt;-</span> <span class="fu">transform</span>(bg4, <span class="at">Root_notes =</span> <span class="fu">replace</span>(Root_notes, <span class="fu">startsWith</span>(Root_notes, <span class="st">"Bag number"</span>), <span class="cn">NA</span>))</span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>bg4 <span class="ot">&lt;-</span> <span class="fu">transform</span>(bg4, <span class="at">Root_notes =</span> <span class="fu">replace</span>(Root_notes, <span class="fu">startsWith</span>(Root_notes, <span class="st">"Sorting date"</span>), <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># "First with new corer" </span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="co"># "Bag number is not mistake"</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "Sorting date"</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="co"># all organizational for sorting, not relevant to data</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>bg4 <span class="ot">&lt;-</span> <span class="fu">transform</span>(bg3, <span class="at">root_notes =</span> <span class="fu">replace</span>(root_notes, <span class="fu">startsWith</span>(root_notes, <span class="st">"First with new corer"</span>), <span class="cn">NA</span>))</span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>bg4 <span class="ot">&lt;-</span> <span class="fu">transform</span>(bg4, <span class="at">root_notes =</span> <span class="fu">replace</span>(root_notes, <span class="fu">startsWith</span>(root_notes, <span class="st">"Bag number"</span>), <span class="cn">NA</span>))</span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>bg4 <span class="ot">&lt;-</span> <span class="fu">transform</span>(bg4, <span class="at">root_notes =</span> <span class="fu">replace</span>(root_notes, <span class="fu">startsWith</span>(root_notes, <span class="st">"Sorting date"</span>), <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="final-tidy-1" class="level3">
+<h3 class="anchored" data-anchor-id="final-tidy-1">final tidy</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reorder columns</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bg4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "block"                 "treatment"             "quad"                 
+ [4] "horizon"               "core_surface_area_cm2" "depth_cm"             
+ [7] "date_collected"        "root_notes"            "site"                 
+[10] "root_type"             "mass_g"                "plot_root_id"         </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date_collected"</span>, <span class="st">"site"</span>, <span class="st">"block"</span>, <span class="st">"treatment"</span>, <span class="st">"quad"</span>, <span class="st">"horizon"</span>, <span class="st">"core_surface_area_cm2"</span>, <span class="st">"depth_cm"</span>, <span class="st">"root_type"</span>, <span class="st">"plot_root_id"</span>, <span class="st">"mass_g"</span>, <span class="st">"root_notes"</span>)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>bg4 <span class="ot">&lt;-</span> bg4[, col_order]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="write-final_databg_mass.csv" class="level3">
 <h3 class="anchored" data-anchor-id="write-final_databg_mass.csv">write final_data/bg_mass.csv</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(bg4)</span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(bg4, <span class="st">"~/LTER-pluck/processed_data/final_data/bg_mass.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(bg4)</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="co">#432 of 12</span></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(bg4, <span class="st">"~/LTER-pluck/2024_pluck/processed_data/final_data/bg_mass.csv"</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -715,26 +780,26 @@ Root_type)`</code></pre>
 <section id="read-in-data-2" class="level3">
 <h3 class="anchored" data-anchor-id="read-in-data-2">read in data</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in files from /raw_data/ folder</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>tc <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/LTER-pluck/raw_data/Soil_data_total_cores_jm.xlsx"</span>)</span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="co">#83 obs, 16 variables</span></span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in files from /raw_data/ folder</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>tc <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/LTER-pluck/2024_pluck/raw_data/soil_data_total_cores_jm.xlsx"</span>, <span class="at">col_types =</span> <span class="fu">c</span>(<span class="st">"numeric"</span>, <span class="st">"text"</span>, <span class="st">"numeric"</span>, <span class="st">"text"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"date"</span>, <span class="st">"date"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"text"</span>))</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co">#83 obs, 16 variables</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 16
-  Block Treatment Quad  Sample_Type Core_surface_area_cm2 Organic_core_depth_cm
-  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;                       &lt;dbl&gt;                 &lt;dbl&gt;
-1     1 CT        1     Total_core                   22.1                     1
-2     1 CT        2     Total_core                   22.1                    12
-3     1 CT        3     Total_core                   22.1                    10
-4     1 CT        4     Total_core                   22.1                    21
-5     1 F0.5      1     Total_core                   16.6                     7
-6     1 F0.5      2     Total_core                   16.6                     5
-# ℹ 10 more variables: Mineral_core_depth_cm &lt;chr&gt;,
+  Block Treatment  Quad Sample_Type Core_surface_area_cm2 Organic_core_depth_cm
+  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt;                 &lt;dbl&gt;
+1     1 CT            1 Total_core                   22.1                     1
+2     1 CT            2 Total_core                   22.1                    12
+3     1 CT            3 Total_core                   22.1                    10
+4     1 CT            4 Total_core                   22.1                    21
+5     1 F0.5          1 Total_core                   16.6                     7
+6     1 F0.5          2 Total_core                   16.6                     5
+# ℹ 10 more variables: Mineral_core_depth_cm &lt;dbl&gt;,
 #   Depth_from_mineral_to_permafrost_cm &lt;dbl&gt;,
 #   Depth_of_core_to_permafrost_cm &lt;dbl&gt;,
-#   Ice_depth_accidentally_cored_cm &lt;chr&gt;, Date_collected &lt;dttm&gt;,
-#   Date_sorted &lt;dttm&gt;, Dry_mass_aboveground_g &lt;chr&gt;,
-#   Dry_mass_organic_horizon_g &lt;chr&gt;, Dry_mass_mineral_horizon_g &lt;chr&gt;,
+#   Ice_depth_accidentally_cored_cm &lt;dbl&gt;, Date_collected &lt;dttm&gt;,
+#   Date_sorted &lt;dttm&gt;, Dry_mass_aboveground_g &lt;dbl&gt;,
+#   Dry_mass_organic_horizon_g &lt;dbl&gt;, Dry_mass_mineral_horizon_g &lt;dbl&gt;,
 #   Soil_notes &lt;chr&gt;</code></pre>
 </div>
 </div>
@@ -742,42 +807,48 @@ Root_type)`</code></pre>
 <section id="tidy-columns" class="level3">
 <h3 class="anchored" data-anchor-id="tidy-columns">tidy columns</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>tc <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(tc)</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "Block"                               "Treatment"                          
- [3] "Quad"                                "Sample_Type"                        
- [5] "Core_surface_area_cm2"               "Organic_core_depth_cm"              
- [7] "Mineral_core_depth_cm"               "Depth_from_mineral_to_permafrost_cm"
- [9] "Depth_of_core_to_permafrost_cm"      "Ice_depth_accidentally_cored_cm"    
-[11] "Date_collected"                      "Date_sorted"                        
-[13] "Dry_mass_aboveground_g"              "Dry_mass_organic_horizon_g"         
-[15] "Dry_mass_mineral_horizon_g"          "Soil_notes"                         </code></pre>
+<pre><code> [1] "block"                               "treatment"                          
+ [3] "quad"                                "sample_type"                        
+ [5] "core_surface_area_cm2"               "organic_core_depth_cm"              
+ [7] "mineral_core_depth_cm"               "depth_from_mineral_to_permafrost_cm"
+ [9] "depth_of_core_to_permafrost_cm"      "ice_depth_accidentally_cored_cm"    
+[11] "date_collected"                      "date_sorted"                        
+[13] "dry_mass_aboveground_g"              "dry_mass_organic_horizon_g"         
+[15] "dry_mass_mineral_horizon_g"          "soil_notes"                         </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># not really relevant other than for our organization during pluck</span></span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>tc1 <span class="ot">&lt;-</span> <span class="fu">select</span>(tc, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"Date_sorted"</span>))</span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co">#83 obs, 15 variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># not really relevant other than for our organization during pluck</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>tc1 <span class="ot">&lt;-</span> <span class="fu">select</span>(tc, <span class="sc">-</span><span class="fu">c</span>(<span class="st">"date_sorted"</span>, <span class="st">"sample_type"</span>))</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="co">#83 obs, 14 variables</span></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="co"># add site column</span></span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>tc1<span class="sc">$</span>site <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"MAT06"</span>)</span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a><span class="co">#of 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="corrections-2" class="level3">
 <h3 class="anchored" data-anchor-id="corrections-2">corrections</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># duplicate corrections</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="co"># B3 F5 Q4 two live, org and min, unclear which was used, kept A because it has depths and B mineral contained org</span></span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="co"># B3 F0.5 Q4_defunct, mislabeled</span></span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="co"># B2 F10 Q3 org labeled min, no record of 3B, just used 3A</span></span>
-<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="co"># B2 F5 Q3 used redo 3B, excluded original 3A</span></span>
-<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="co"># B2 F1 Q3 used redo 3B, excluded original 3A</span></span>
-<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="co"># B2 F0.5 Q2 used redo 2B, excluded original 2A</span></span>
-<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="co"># B2 CT Q4 no record of 4B, just used 4A</span></span>
-<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a><span class="co"># B1 F10 Q1 no record of 1B, just used 1A</span></span>
-<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a><span class="co"># B1 F2 Q3 no record of 3B, just used 3A</span></span>
-<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a><span class="co"># B1 F1 Q3 no notes about two org samples existing, removed second with no depth</span></span>
-<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a><span class="co"># B1 F0.5 Q4_defunct, mislabeled</span></span>
-<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a>tc2 <span class="ot">&lt;-</span> tc1[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">79</span>, <span class="dv">65</span>, <span class="dv">56</span>, <span class="dv">50</span>, <span class="dv">41</span>, <span class="dv">35</span>, <span class="dv">33</span>, <span class="dv">25</span>, <span class="dv">18</span>, <span class="dv">13</span>, <span class="dv">8</span>),]</span>
-<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a><span class="co">#72 obs, dropped 11</span></span>
-<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a><span class="co"># tidying notes</span></span>
-<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(tc2<span class="sc">$</span>Soil_notes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># duplicate corrections</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="co"># B3 F5 Q4 two live, org and min, unclear which was used, kept A because it has depths and B mineral contained org</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="co"># B3 F0.5 Q4_defunct, mislabeled</span></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="co"># B2 F10 Q3 org labeled min, no record of 3B, just used 3A</span></span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="co"># B2 F5 Q3 used redo 3B, excluded original 3A</span></span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a><span class="co"># B2 F1 Q3 used redo 3B, excluded original 3A</span></span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a><span class="co"># B2 F0.5 Q2 used redo 2B, excluded original 2A</span></span>
+<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a><span class="co"># B2 CT Q4 no record of 4B, just used 4A</span></span>
+<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a><span class="co"># B1 F10 Q1 no record of 1B, just used 1A</span></span>
+<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a><span class="co"># B1 F2 Q3 no record of 3B, just used 3A</span></span>
+<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a><span class="co"># B1 F1 Q3 no notes about two org samples existing, removed second with no depth</span></span>
+<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a><span class="co"># B1 F0.5 Q4_defunct, mislabeled</span></span>
+<span id="cb69-13"><a href="#cb69-13" aria-hidden="true" tabindex="-1"></a>tc2 <span class="ot">&lt;-</span> tc1[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">79</span>, <span class="dv">65</span>, <span class="dv">56</span>, <span class="dv">50</span>, <span class="dv">41</span>, <span class="dv">35</span>, <span class="dv">33</span>, <span class="dv">25</span>, <span class="dv">18</span>, <span class="dv">13</span>, <span class="dv">8</span>),]</span>
+<span id="cb69-14"><a href="#cb69-14" aria-hidden="true" tabindex="-1"></a><span class="co">#72 obs, dropped 15</span></span>
+<span id="cb69-15"><a href="#cb69-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-16"><a href="#cb69-16" aria-hidden="true" tabindex="-1"></a><span class="co"># tidying notes</span></span>
+<span id="cb69-17"><a href="#cb69-17" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(tc2<span class="sc">$</span>soil_notes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] NA                                                                      
  [2] "Mineral is 4 cm from permafrost"                                       
@@ -807,35 +878,43 @@ Root_type)`</code></pre>
 [26] "Absolute nonsense amount of cores separated as best we could"          
 [27] "Subtracted 4 cm from total depth (already did in printed sheet)"       </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the info from "mineral is", "depth to permafrost", and "total depth to perm" got its own column, so removed from notes</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sludge cores were removed, so added explanation to redo</span></span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc2, <span class="at">Soil_notes =</span> <span class="fu">replace</span>(Soil_notes, <span class="fu">startsWith</span>(Soil_notes, <span class="st">"Mineral is"</span>), <span class="cn">NA</span>))</span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc3, <span class="at">Soil_notes =</span> <span class="fu">replace</span>(Soil_notes, <span class="fu">startsWith</span>(Soil_notes, <span class="st">"Depth to permafrost"</span>), <span class="cn">NA</span>))</span>
-<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc3, <span class="at">Soil_notes =</span> <span class="fu">replace</span>(Soil_notes, <span class="fu">startsWith</span>(Soil_notes, <span class="st">"Total depth"</span>), <span class="cn">NA</span>))</span>
-<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc3, <span class="at">Soil_notes =</span> <span class="fu">replace</span>(Soil_notes, <span class="fu">startsWith</span>(Soil_notes, <span class="st">"This was the redo of 3A"</span>), <span class="st">"This was a redo of 3A, which had a lot of sludge"</span>))</span>
-<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc3, <span class="at">Soil_notes =</span> <span class="fu">replace</span>(Soil_notes, <span class="fu">startsWith</span>(Soil_notes, <span class="st">"This was a redo of 3A"</span>), <span class="st">"This was a redo of 3A, which had a lot of sludge"</span>))</span>
-<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc3, <span class="at">Soil_notes =</span> <span class="fu">replace</span>(Soil_notes, <span class="fu">startsWith</span>(Soil_notes, <span class="st">"This was the redo of 2A"</span>), <span class="st">"This was a redo of 2A, which had a lot of sludge"</span>))</span>
-<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(tc3<span class="sc">$</span>Soil_notes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] NA                                                                      
-[2] "No mineral sample. Approximately 2 cm from permafrost"                 
-[3] "This was a redo of 2A, which had a lot of sludge"                      
-[4] "This was a redo of 3A, which had a lot of sludge"                      
-[5] "Subtracted 2.5 cm from total depth of 15 cm; all mineral is permafrost"
-[6] "Subtracted 2.5 cm from total mineral depth of 24 cm"                   
-[7] "Subtracted 6.5 cm from the listed 28 cm depth of mineral"              
-[8] "Absolute nonsense amount of cores separated as best we could"          
-[9] "Subtracted 4 cm from total depth (already did in printed sheet)"       </code></pre>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the info from "mineral is", "depth to permafrost", and "total depth to perm" got its own column, so removed from notes</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sludge cores were removed, so added explanation to redo</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc2, <span class="at">soil_notes =</span> <span class="fu">replace</span>(soil_notes, <span class="fu">startsWith</span>(soil_notes, <span class="st">"Mineral is"</span>), <span class="cn">NA</span>))</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc3, <span class="at">soil_notes =</span> <span class="fu">replace</span>(soil_notes, <span class="fu">startsWith</span>(soil_notes, <span class="st">"Depth to permafrost"</span>), <span class="cn">NA</span>))</span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc3, <span class="at">soil_notes =</span> <span class="fu">replace</span>(soil_notes, <span class="fu">startsWith</span>(soil_notes, <span class="st">"Total depth"</span>), <span class="cn">NA</span>))</span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc3, <span class="at">soil_notes =</span> <span class="fu">replace</span>(soil_notes, <span class="fu">startsWith</span>(soil_notes, <span class="st">"This was the redo of 3A"</span>), <span class="st">"This was a redo of 3A, which had a lot of sludge"</span>))</span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc3, <span class="at">soil_notes =</span> <span class="fu">replace</span>(soil_notes, <span class="fu">startsWith</span>(soil_notes, <span class="st">"This was a redo of 3A"</span>), <span class="st">"This was a redo of 3A, which had a lot of sludge"</span>))</span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> <span class="fu">transform</span>(tc3, <span class="at">soil_notes =</span> <span class="fu">replace</span>(soil_notes, <span class="fu">startsWith</span>(soil_notes, <span class="st">"This was the redo of 2A"</span>), <span class="st">"This was a redo of 2A, which had a lot of sludge"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="final-tidy-2" class="level3">
+<h3 class="anchored" data-anchor-id="final-tidy-2">final tidy</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reorder columns</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tc3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "block"                               "treatment"                          
+ [3] "quad"                                "core_surface_area_cm2"              
+ [5] "organic_core_depth_cm"               "mineral_core_depth_cm"              
+ [7] "depth_from_mineral_to_permafrost_cm" "depth_of_core_to_permafrost_cm"     
+ [9] "ice_depth_accidentally_cored_cm"     "date_collected"                     
+[11] "dry_mass_aboveground_g"              "dry_mass_organic_horizon_g"         
+[13] "dry_mass_mineral_horizon_g"          "soil_notes"                         
+[15] "site"                               </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>col_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date_collected"</span>, <span class="st">"site"</span>, <span class="st">"block"</span>, <span class="st">"treatment"</span>, <span class="st">"quad"</span>, <span class="st">"core_surface_area_cm2"</span>, <span class="st">"organic_core_depth_cm"</span>, <span class="st">"mineral_core_depth_cm"</span>, <span class="st">"depth_from_mineral_to_permafrost_cm"</span>, <span class="st">"depth_of_core_to_permafrost_cm"</span>, <span class="st">"ice_depth_accidentally_cored_cm"</span>, <span class="st">"dry_mass_aboveground_g"</span>, <span class="st">"dry_mass_organic_horizon_g"</span>, <span class="st">"dry_mass_mineral_horizon_g"</span>, <span class="st">"soil_notes"</span>)</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>tc3 <span class="ot">&lt;-</span> tc3[, col_order]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="write-final_datatc_mass_quad.csv" class="level3">
 <h3 class="anchored" data-anchor-id="write-final_datatc_mass_quad.csv">write final_data/tc_mass_quad.csv</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(tc3)</span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(tc3, <span class="st">"~/LTER-pluck/processed_data/final_data/tc_mass.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(tc3)</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="co">#72 of 15</span></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(tc3, <span class="st">"~/LTER-pluck/2024_pluck/processed_data/final_data/tc_mass.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
