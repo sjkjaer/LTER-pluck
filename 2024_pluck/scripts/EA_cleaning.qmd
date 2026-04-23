@@ -114,10 +114,8 @@ cn3$plot_tissue_id[cn3$plot_tissue_id == "NA"] <- NA
 cn3.na <- subset(cn3, (is.na(cn3$block)))
 #54
 # 1186, 538, 1617, 1488, 1476
-# these aren't first quads, just quads that didn't originally get added to the rest
-# how to combine with other samples? better just left out? I don't want to average with the other values bc then it'll be over-represented
-# ask Duncan?
-# leave all out for now
+# these are single quads that weren't included on the first run, ran as a single quad later
+# leave out for now, don't want to over-repesent these quads
 
 cn4 <- cn3 %>%
   filter(!(block %in% c(NA)))
@@ -126,7 +124,7 @@ cn4 <- cn3 %>%
 
 ### burnt samples
 
-Looked at values of burnt against unburnt samples, not terribly different but I think it's best to remove them entirely, rather than keep even potentially flawed samples. This removes all samples from B1 F0.5, and B1 CT Q3&4.
+Looked at values of burnt against unburnt samples, not terribly different but I think it's best to remove them entirely, rather than keep potentially flawed samples. This removes all samples from B1 F0.5, and B1 CT Q3&4.
 
 ```{r}
 # checking burnt B1 against unburnt B2&3
