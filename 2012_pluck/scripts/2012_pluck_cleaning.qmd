@@ -109,7 +109,7 @@ df5 <- df5[, col_order]
 view(df5)
 #4725 of 10
 
-write.csv(df5, "~/LTER-pluck/2012_pluck/processed_data/final_data/ag_mass2012.csv", row.names=FALSE)
+write.csv(df5, "~/LTER-pluck/2012_pluck/processed_data/final_data/mass_2012.csv", row.names=FALSE)
 ```
 
 

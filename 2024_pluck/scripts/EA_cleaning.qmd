@@ -47,7 +47,7 @@ cn1$filename <- as.character(cn1$filename)
 names(cn1)[names(cn1) == "id"] <- "plot_tissue_id"
 ```
 
-### separate AG masses from others
+### separate AG from others
 
 ```{r}
 cn_ag <- filter(cn1, sample_type == "AG")
@@ -115,7 +115,7 @@ cn3.na <- subset(cn3, (is.na(cn3$block)))
 #54
 # 1186, 538, 1617, 1488, 1476
 # these are single quads that weren't included on the first run, ran as a single quad later
-# leave out for now, don't want to over-repesent these quads
+# leave out for now, don't want to over-represent these quads
 
 cn4 <- cn3 %>%
   filter(!(block %in% c(NA)))
@@ -216,7 +216,7 @@ id_bg <- read_csv("~/LTER-pluck/2024_pluck/processed_data/bg_pluck_id.csv")
 #108 of 6
 ```
 
-### separate BG masses from others
+### separate BG from others
 
 ```{r}
 names(cn1)[names(cn1) == "plot_tissue_id"] <- "plot_root_id"
@@ -299,7 +299,7 @@ write.csv(cn_bg5, "~/LTER-pluck/2024_pluck/processed_data/final_data/bg_cn.csv",
 
 ## Total Cores
 
-### separate TC masses from others
+### separate TC from others
 
 ```{r}
 names(cn1)[names(cn1) == "plot_root_id"] <- "plot_horizon_id"
