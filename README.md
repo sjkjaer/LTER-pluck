@@ -19,7 +19,7 @@ It also includes cleaning 2012 pluck data to make it easier to use in R and read
 ## Folder organization
 
 -   2012_pluck - everything related to 2012 pluck data cleaning
-  
+
     -   raw_data - contains unedited, raw copies of all data. DO NOT edit!
 
     -   processed_data - any edited, intermediate versions of data
@@ -82,21 +82,20 @@ Wrote:
 
     -   clean, longform version of total core dry masses
 
-
 ### 2024_pluck/scripts/EA_cleaning.qmd
 
 Notes:
 
-- Each individual EA run was combined into one spreadsheet, CN_results2.xlsx
-- Dropped unhelpful columns from the EA output
-- Corrected ID numbers by referencing photos of the handwritten mass datasheets
-- Combine CN results with IDs to get block, treatment, species, tissue, etc
-- Left out single quads that were missed in combining with the others in a plot, then redone alone, so as to not over-represent them.
-- Standardized column names to snake case
-- Removed burnt samples. These samples were exposed to too high drying oven temps and were visibly blackened. I compared the burnt block to unburnt blocks, but with such a small sample size didn't feel like I could say they weren't affected, so chose to just remove them (AG).
-- Renamed to plot_root_id (BG) and plot_horizon_id (TC)
-- Corrected T to M for mineral (TC)
-- separated plot_horizon_id into block, treatment, horizon columns (TC), no id numbers used
+-   Each individual EA run was combined into one spreadsheet, CN_results2.xlsx
+-   Dropped unhelpful columns from the EA output
+-   Corrected ID numbers by referencing photos of the handwritten mass datasheets
+-   Combine CN results with IDs to get block, treatment, species, tissue, etc
+-   Left out single quads that were missed in combining with the others in a plot, then redone alone, so as to not over-represent them.
+-   Standardized column names to snake case
+-   Removed burnt samples (B1F0.5). These samples were exposed to too high drying oven temps and were visibly blackened. I compared the burnt block to unburnt blocks, but with such a small sample size didn't feel like I could say they weren't affected, so chose to just remove them (AG).
+-   Renamed to plot_root_id (BG) and plot_horizon_id (TC)
+-   Corrected T to M for mineral (TC)
+-   separated plot_horizon_id into block, treatment, horizon columns (TC), no id numbers used
 
 Read in:
 
@@ -120,25 +119,47 @@ Wrote:
 
     -   CN results for each plot and horizon combined across quads for total core samples
 
-
 ### 2012_pluck/scripts/2012_pluck_cleaning.qmd
 
 Notes:
 
-- Removed any calculations from data, just kept raw data
-- Created a longform table
-- Separated the 'block_quad' column into two separate columns
-- changed the site name from LTER 2006 Low Nutrient Moist Acidic Tussock Tundra to MAT06 to match current site naming conventions
-- Standardized column names to snake case
+-   Removed any calculations from data, just kept raw data
+-   Created a longform table
+-   Separated the 'block_quad' column into two separate columns
+-   changed the site name from LTER 2006 Low Nutrient Moist Acidic Tussock Tundra to MAT06 to match current site naming conventions
+-   Standardized column names to snake case
+-   Changed soil horizon and root size values to match the 2024 values (BG).
 
 Read in:
 
 -   ../raw_data/**2012lg06ttbiomass Sep23.xlsx**
 
-    -   raw data of dry masses
+    -   raw data of aboveground dry masses
+
+-   ../raw_data/**2012_MAT_RootBiomass.xlsx**
+
+    -   raw data of belowground dry masses
 
 Wrote:
 
 -   ../processed_data/final_data/**mass_2012.csv**
 
-    -   clean, longform version of dry masses
+    -   clean, longform version of aboveground dry masses
+
+-   ../processed_data/final_data/**bg_mass_2012.csv**
+
+    -   clean, longform version of belowground dry masses
+
+### 2012_pluck/scripts/2012_CN_cleaning.qmd
+
+tbd
+
+Read in:
+
+-   ../raw_data/**Shoot_data_collection_mass.xlsx**
+
+    -   raw data of aboveground dry masses
+
+-   ../raw_data/**Root_data_collection_mass.xlsx**
+
+    -   raw data of belowground dry masses

@@ -113,3 +113,181 @@ write.csv(df5, "~/LTER-pluck/2012_pluck/processed_data/final_data/mass_2012.csv"
 ```
 
 
+## Belowground
+
+### read in data
+
+```{r, message=FALSE, warning=FALSE}
+# read in all sheets from files from /raw_data/ folder
+file_path <- "~/LTER-pluck/2012_pluck/raw_data/2012_MAT_RootBiomass.xlsx"
+sheet_names <- excel_sheets(file_path)
+data_list <- lapply(sheet_names, function(x) read_excel(file_path, sheet = x))
+names(data_list) <- sheet_names
+list2env(data_list, envir = .GlobalEnv)
+# 22 of 24 variables
+# 4 sheets and a 5th empty one
+
+```
+
+### tidy columns and rows
+
+```{r}
+# rename columns, remove other title rows
+colnames(`Biomass-MAT CT`) <- `Biomass-MAT CT`[2, ]
+colnames(`Biomass-MAT F2`) <- `Biomass-MAT F2`[2, ]
+colnames(`Biomass-MAT F5`) <- `Biomass-MAT F5`[2, ]
+colnames(`Biomass-MAT F10`) <- `Biomass-MAT F10`[2, ]
+
+ct <- `Biomass-MAT CT`[-c(1:2), ]
+f2 <- `Biomass-MAT F2`[-c(1:2), ]
+f5 <- `Biomass-MAT F5`[-c(1:2), ]
+f10 <- `Biomass-MAT F10`[-c(1:2), ]
+# 20 obs 
+
+# add treatment column
+ct$Treatment <- "CT"
+f2$Treatment <- "F2"
+f5$Treatment <- "F5"
+f10$Treatment <- "F10"
+# 25 variables
+
+# combine sheets
+ct <- ct %>% rename('Root Size' = 'Root size')
+bg <- bind_rows(ct, f2, f5, f10)
+# 80 obs of 25, good!!
+
+# clean names
+bg <- clean_names(bg)
+
+# fill every row with descriptive values (soil layer, species)
+bg <- bg %>% 
+  fill(soil_layer, .direction = "down")
+bg <- bg %>% 
+  fill(species, .direction = "down")
+
+# remove calculations from raw data
+bg1 <- select(bg, -c("average", "std_err", "count", "sum_block_1", "sum_block_2", "sum_block_3"))
+# 80 of 19
+
+# correct to numeric
+bg1 <- bg1 %>% 
+  mutate(across(b1q1:b3q5, as.numeric))
+
+# Judgement call- I believe the blank/NA values are better characterized as 0's, since it seems roots were looked for, but none were found. However, the highlighted cells in the raw excel file "means no soil layer present", so I've changed these to NA.
+
+bg2 <- bg1 %>% 
+  mutate(across(c(b1q1:b3q5), ~ replace_na(., 0)))
+
+# CT
+bg2 <- bg2 %>%
+  mutate(across(c(b1q4, b2q2), 
+    ~ if_else(soil_layer == "Mineral" & treatment == "CT" &
+              . == 0, NA_real_, .))) 
+
+# F2
+bg2 <- bg2 %>% 
+  mutate(across(c(b1q2, b2q3), 
+    ~ if_else(soil_layer == "Mineral" & treatment == "F2" & . == 0, NA_real_, .)))
+
+# F5
+bg2 <- bg2 %>%
+  mutate(across(c(b1q2, b1q5, b2q2, b2q5, b3q4, b3q5), 
+    ~ if_else(soil_layer == "Mineral" & treatment == "F5" &
+              . == 0, NA_real_, .)))
+
+# F10
+bg2 <- bg2 %>%
+  mutate(across(c(b2q2, b2q3, b2q4), 
+    ~ if_else(soil_layer == "Mineral" & treatment == "F10" &
+              . == 0, NA_real_, .)))
+bg2 <- bg2 %>%
+  mutate(across(c(b1q3), 
+    ~ if_else(soil_layer == "Transition" & treatment == "F10" &
+              . == 0, NA_real_, .)))
+```
+
+### longform
+
+```{r}
+# wide2long
+head(bg2)
+bg3 <- bg2 %>%
+  pivot_longer(cols = c(4:18),
+               names_to = "block_quad",
+               values_to = "mass_g")
+# 1200 of 6
+
+```
+
+### create block and quad column
+
+```{r}
+# create block column
+bg4 <- bg3 %>% mutate(block = case_when(
+    startsWith(block_quad, "b1") ~ "1",
+    startsWith(block_quad, "b2") ~ "2",
+    startsWith(block_quad, "b3") ~ "3",
+    startsWith(block_quad, "b4") ~ "4"
+    ))
+# of 7
+
+# create quad column
+bg5 <- bg4 %>% mutate(quad = case_when(
+    endsWith(block_quad, "q1") ~ "1",
+    endsWith(block_quad, "q2") ~ "2",
+    endsWith(block_quad, "q3") ~ "3",
+    endsWith(block_quad, "q4") ~ "4",
+    endsWith(block_quad, "q5") ~ "5"
+    ))
+# of 8
+
+# remove block_quad column
+bg6 <- select(bg5, -c("block_quad"))
+# of 7
+```
+
+### normalize with 2024 pluck
+
+```{r}
+# add site
+bg6$site <- "MAT06"
+
+# dates listed as 25-30 July 2012
+bg6$date_collected <- "2012-07-25 to 2012-07-30"
+
+# match 2024 data
+bg6 <- rename(bg6, horizon = soil_layer)
+bg6 <- bg6 %>% 
+  mutate(horizon = case_when(
+    horizon == "Organic" ~ "O",
+    horizon == "Transition" ~ "T",
+    horizon == "Mineral" ~ "M",
+    TRUE ~ horizon  # Keeps all other values unchanged
+  ))
+
+bg6 <- bg6 %>% 
+  mutate(root_size = case_when(
+    root_size == "Coarse (>2mm)" ~ "coarse",
+    root_size == "Fine (<2mm)" ~ "fine",
+    TRUE ~ root_size  # Keeps all other values unchanged
+  ))
+
+head(bg6)
+```
+
+### final tidy
+
+```{r}
+col_order <- c("date_collected", "site", "block", "treatment", "quad", "horizon",  "root_size", "species", "mass_g")
+bg6 <- bg6[, col_order]
+```
+
+### write final_data/ag_mass.csv
+
+```{r}
+view(bg6)
+# 1200 of 9
+
+write.csv(bg6, "~/LTER-pluck/2012_pluck/processed_data/final_data/bg_mass_2012.csv", row.names=FALSE)
+```
+
