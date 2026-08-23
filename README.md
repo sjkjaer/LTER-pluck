@@ -128,6 +128,7 @@ Notes:
 -   Separated the 'block_quad' column into two separate columns
 -   changed the site name from LTER 2006 Low Nutrient Moist Acidic Tussock Tundra to MAT06 to match current site naming conventions
 -   Standardized column names to snake case
+-   There were no masses of 0.00, just blank cells, so I replaced the blank/NA values with 0's, since it seems roots were looked for, but none were found. However, the highlighted cells in the raw excel file "means no soil layer present", so I changed these to NA's.
 -   Changed soil horizon and root size values to match the 2024 values (BG).
 
 Read in:
